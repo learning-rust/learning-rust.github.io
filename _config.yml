@@ -1,26 +1,23 @@
-title: Hexo
-subtitle: "A fast, simple & powerful blog framework powered by Node.js."
-description: "Hexo is a fast, simple & powerful blog framework powered by Node.js."
-author: Hexo
+title: Learning Rust
+subtitle: "Rust Programming Language Tutorials"
+description: "Rust Programming Language Tutorials"
+author: Dumindu Madunuwan
 language: en
 timezone: UTC
 
-url: https://hexo.io
+url: https://learning-rust.github.io
 root: /
 theme: navy
 deploy:
   type: git
-  repo: git@github.com:hexojs/hexojs.github.io.git
+  repo: git@github.com:learning-rust/learning-rust.github.io.git
 
 highlight:
   enable: true
   line_number: false
 
 google_analytics: XXXXX-Y
-fb_admins: xxxxxxxxxxxxx
 algolia:
   en:
     api_key: xxxxxxxxxxxxxxxx
     index_name: xxxx
-twitter: hexojs
-github: hexojs/hexo
