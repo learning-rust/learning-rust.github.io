@@ -21,3 +21,4 @@ algolia:
   en:
     api_key: xxxxxxxxxxxxxxxx
     index_name: xxxx
+github: learning-rust/learning-rust.github.io
