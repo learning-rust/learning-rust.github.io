@@ -1,0 +1,124 @@
+#banner
+  color: rgba(255, 255, 255, 0.8)
+  text-align: center
+
+#banner-title
+  padding-top: 20px
+  font-size: 40px
+  line-height: 1.15
+  font-weight: 300
+  font-family: font-title
+  @media mq-normal
+    padding-top: 100px
+    font-size: 50px
+
+#banner-start
+  text-align: center
+  padding: 40px 0
+  @media mq-normal
+    padding: 60px 0
+    font-size: 18px
+
+#banner-start-command
+  background: lighten(color-navy, 10%)
+  font-family: font-mono
+  display: inline-block
+  padding: 15px 20px
+  &:before
+    content: "$"
+    opacity: 0.5
+    padding-right: 10px
+
+#banner-start-link
+  color: #fff
+  background: color-link
+  display: inline-block
+  padding: 15px
+  text-decoration: none
+  transition: 0.2s
+  &:hover
+    background: color-link-hover
+
+#banner-share
+  display: none
+  padding-bottom: 60px
+  @media mq-normal
+    display: block
+
+#intro-feature-list
+  padding-top: 20px
+  display: flex
+  flex-flow: column
+  @media mq-normal
+    flex-flow: row wrap
+
+.intro-feature-wrap
+  padding-top: 20px
+  @media mq-normal
+    flex: 0 0 50%
+    padding-top: 50px
+
+.intro-feature
+  position: relative
+  text-align: center
+  @media mq-normal
+    text-align: left
+    padding-left: 70px
+
+.intro-feature-icon
+  color: color-link
+  font-size: 36px
+  padding-bottom: 26px
+  text-align: center
+  @media mq-normal
+    position: absolute
+    top: 0
+    left: 20px
+    font-size: 24px
+    width: @font-size
+
+.intro-feature-title
+  color: color-link
+  font-family: font-title
+  font-size: 24px
+
+.intro-feature-desc
+  margin: line-height 0
+  line-height: line-height
+
+#intro-cmd-wrap
+  max-width: 700px
+  background: #eee
+  padding: 15px 0
+  margin: 25px gutter-width * -1 0
+  @media mq-normal
+    margin: 50px auto 0
+
+.intro-cmd-item
+  font-size: 16px
+  font-family: font-mono
+  line-height: 2
+  padding: 0 30px
+  &:before
+    content: "$"
+    color: color-link
+    padding-right: 15px
+
+#intro-get-started-wrap
+  text-align: center
+
+#intro-get-started-link
+  font-size: 18px
+  font-family: font-title
+  display: inline-block
+  color: color-link
+  text-decoration: none
+  margin: 40px 0
+  border: 3px solid
+  border-color: lighten(color-link, 20%)
+  padding: 12px 24px
+  position: relative
+  transition: 0.2s
+  &:hover
+    background: @border-color
+    color: #fff

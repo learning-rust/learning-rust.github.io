@@ -1,0 +1,23 @@
+menu:
+  docs: Docs
+  labs: Labs
+  search: Search
+
+index:
+  get_started: Get started
+
+page:
+  contents: Table of contents
+  back_to_top: Back to Top
+  improve: Improve this doc
+  prev: Prev
+  next: Next
+  last_updated: "Last updated: %s"
+
+sidebar:
+  docs:
+    docs: Documentation
+    overview: Overview
+  labs:
+    labs: Laboratory
+    overview: Overview
