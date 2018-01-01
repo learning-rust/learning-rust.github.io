@@ -30,7 +30,3 @@ docs:
     workspaces: d5.workspaces.html
     use: d6.use.html
     std_primitives_and_preludes: d7.std_primitives_and_preludes.html
-
-labs:
-  labs:
-    overview: index.html
