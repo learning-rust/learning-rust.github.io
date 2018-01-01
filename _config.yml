@@ -18,9 +18,9 @@ highlight:
 hljs:
   enable: true
 
-google_analytics: XXXXX-Y
+google_analytics: UA-111784617-1
 algolia:
   en:
-    api_key: xxxxxxxxxxxxxxxx
-    index_name: xxxx
+    api_key: b17ac7ce519a79aadc96360a450369a5
+    index_name: learning_rust
 github: learning-rust/site
