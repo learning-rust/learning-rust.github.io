@@ -13,8 +13,10 @@ deploy:
   repo: git@github.com:learning-rust/learning-rust.github.io.git
 
 highlight:
+  enable: false
+
+hljs:
   enable: true
-  line_number: false
 
 google_analytics: XXXXX-Y
 algolia:
