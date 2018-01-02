@@ -1,4 +1,4 @@
-# Learning Rust(source)
+# learning-rust.github.io(source)
 
 The website is built with [Hexo](https://hexo.io/) Nodejs blog framework. You can see the generated files at [learning-rust/learning-rust.github.io](https://github.com/learning-rust/learning-rust.github.io) repository.
 
