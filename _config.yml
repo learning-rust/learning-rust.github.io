@@ -21,6 +21,6 @@ hljs:
 google_analytics: UA-111784617-1
 algolia:
   en:
-    api_key: 89e88cf5bde2d813df238d00d6c0b6dd
+    api_key: 219b278e94416804a2d4bb47b3bf3d0b
     index_name: learning_rust
 github: learning-rust/site

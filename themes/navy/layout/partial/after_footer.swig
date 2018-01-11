@@ -6,7 +6,7 @@
 <!-- endbuild -->
 <!-- Algolia -->
 {% if config.algolia[page.lang] %}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/rust.min.js"></script>
 <script type="text/javascript">
