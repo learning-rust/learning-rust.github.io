@@ -1,8 +1,9 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.title }}</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rust Programming Language Tutorials">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Canonical links -->
   <link rel="canonical" href="{{ url }}">
   <!-- Alternative links -->
