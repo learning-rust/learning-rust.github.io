@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* \[basics\]
+* Basics
   * [why\_rust](source/docs/a1.why_rust.md)
   * [installation](source/docs/a2.installation.md)
   * [hello\_world](source/docs/a3.hello_world.md)
