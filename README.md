@@ -19,7 +19,7 @@
 * [Generics](source/docs/b4.generics.md)
 * [Impls and traits](source/docs/b5.impls_and_traits.md)
 
-###The Tough Part
+### The Tough Part
 * [Ownership](source/docs/c1.ownership.md)
 * [Borrowing](source/docs/c2.borrowing.md)
 * [Lifetimes](source/docs/c3.lifetimes.md)
