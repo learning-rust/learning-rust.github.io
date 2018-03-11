@@ -1,0 +1,31 @@
+# Summary
+
+* [basics]
+    * [why_rust](source/docs/a1.why_rust.md)
+    * [installation](source/docs/a2.installation.md)
+    * [hello_world](source/docs/a3.hello_world.md)
+    * [cargo,crates_and_basic_project_structure](source/docs/a4.cargo,crates_and_basic_project_structure.md)
+    * [comments_and_documenting_the_code](source/docs/a5.comments_and_documenting_the_code.md)
+    * [variable_bindings,constants_and_statics](source/docs/a6.variable_bindings,constants_and_statics.md)
+    * [functions](source/docs/a7.functions.md)
+    * [primitive_data_types](source/docs/a8.primitive_data_types.md)
+    * [operators](source/docs/a9.operators.md)
+    * [control_flows](source/docs/a10.control_flows.md)
+* [beyond_the_basics]
+    * [vectors](source/docs/b1.vectors.md)
+    * [structs](source/docs/b2.structs.md)
+    * [enums](source/docs/b3.enums.md)
+    * [generics](source/docs/b4.generics.md)
+    * [impls_and_traits](source/docs/b5.impls_and_traits.md)
+* [the_tough_part]
+    * [ownership](source/docs/c1.ownership.md)
+    * [borrowing](source/docs/c2.borrowing.md)
+    * [lifetimes](source/docs/c3.lifetimes.md)
+* [lets_get_it_started]
+    * [code_organization](source/docs/d1.code_organization.md)
+    * [functions_co](source/docs/d2.functions.md)
+    * [modules](source/docs/d3.modules.md)
+    * [crates](source/docs/d4.crates.md)
+    * [workspaces](source/docs/d5.workspaces.md)
+    * [use](source/docs/d6.use.md)
+    * [std_primitives_and_preludes](source/docs/d7.std_primitives_and_preludes.md)
