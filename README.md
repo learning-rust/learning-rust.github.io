@@ -1,4 +1,4 @@
-# Learning Rust
+# Learning Rust <img src="https://learning-rust.github.io/logo.svg" width="5%">
 
 ### Basics
 * [Why Rust](source/docs/a1.why_rust.md)
