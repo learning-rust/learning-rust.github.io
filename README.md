@@ -33,10 +33,18 @@
 * [use](source/docs/d6.use.md)
 * [std, primitives and preludes](source/docs/d7.std_primitives_and_preludes.md)
 
+### Error Handling
+* [Smart Compiler](source/docs/e1.smart_compiler.md)
+* [Panicking](source/docs/e2.panicking.md)
+* [Option and Result](source/docs/e3.option_and_result.md)
+* [Unwrap and Expect](source/docs/e4.unwrap_and_expect.md)
+* [Error and None Propagation](source/docs/e5.error_and_none_propagation.md)
+* [Combinators](source/docs/e6.combinators.md)
+* [Custom Error Types](source/docs/e7.custom_error_types.md)
+
 ---
 * Site : http://learning-rust.github.io
 * Medium: https://medium.com/learning-rust
-* Gitbook: https://www.gitbook.com/book/learning-rust/book
 
 > 🐣 I am a **Sri Lankan** 🇱🇰 Web Developer who lives in **Vietnam** 🇻🇳. So I am not a native English speaker and just learning Rust, If you found any mistake or something need to be changed, even a spelling or a grammar mistake, feel free to create a pull request. Thanks.
 
