@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.7.1"
+    "version": "3.8.0"
   },
   "scripts": {
     "build": "hexo generate && gulp",
@@ -22,7 +22,7 @@
     "hexo-server": "^0.2.0",
     "lodash": "^4.17.10",
     "lunr": "^2.2.1",
-    "npm": "^6.1.0"
+    "npm": "^6.4.1"
   },
   "devDependencies": {
     "del": "^3.0.0",
