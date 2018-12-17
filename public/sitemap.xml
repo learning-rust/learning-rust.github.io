@@ -2,9 +2,184 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/a1.why_rust.html</loc>
+    
+    <lastmod>2018-12-17T12:53:35.069Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/d7.std_primitives_and_preludes.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/c3.lifetimes.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/d5.workspaces.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/d3.modules.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/d2.functions.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/d6.use.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/c1.ownership.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/c2.borrowing.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/b5.impls_and_traits.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/b4.generics.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/d4.crates.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/d1.code_organization.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/b2.structs.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/b1.vectors.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/a8.primitive_data_types.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/a9.operators.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/a7.functions.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/a6.variable_bindings,constants_and_statics.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/a5.comments_and_documenting_the_code.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/a4.cargo,crates_and_basic_project_structure.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/a10.control_flows.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/a3.hello_world.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/b3.enums.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/zh-cn/a2.installation.html</loc>
+    
+    <lastmod>2018-09-26T14:47:08.433Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://learning-rust.github.io/zh-cn/index.html</loc>
     
-    <lastmod>2018-09-26T14:32:47.825Z</lastmod>
+    <lastmod>2018-09-26T14:46:00.371Z</lastmod>
     
   </url>
   
@@ -86,21 +261,14 @@
   </url>
   
   <url>
-    <loc>https://learning-rust.github.io/docs/c1.ownership.html</loc>
-    
-    <lastmod>2018-09-26T13:47:29.332Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://learning-rust.github.io/docs/b4.generics.html</loc>
-    
-    <lastmod>2018-09-26T13:47:29.332Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://learning-rust.github.io/docs/c2.borrowing.html</loc>
+    
+    <lastmod>2018-09-26T13:47:29.332Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/c1.ownership.html</loc>
     
     <lastmod>2018-09-26T13:47:29.332Z</lastmod>
     
@@ -114,14 +282,14 @@
   </url>
   
   <url>
-    <loc>https://learning-rust.github.io/docs/b3.enums.html</loc>
+    <loc>https://learning-rust.github.io/docs/b4.generics.html</loc>
     
-    <lastmod>2018-09-26T13:47:29.331Z</lastmod>
+    <lastmod>2018-09-26T13:47:29.332Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://learning-rust.github.io/docs/b2.structs.html</loc>
+    <loc>https://learning-rust.github.io/docs/b3.enums.html</loc>
     
     <lastmod>2018-09-26T13:47:29.331Z</lastmod>
     
@@ -135,14 +303,21 @@
   </url>
   
   <url>
-    <loc>https://learning-rust.github.io/docs/a8.primitive_data_types.html</loc>
+    <loc>https://learning-rust.github.io/docs/b2.structs.html</loc>
+    
+    <lastmod>2018-09-26T13:47:29.331Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/a9.operators.html</loc>
     
     <lastmod>2018-09-26T13:47:29.330Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://learning-rust.github.io/docs/a9.operators.html</loc>
+    <loc>https://learning-rust.github.io/docs/a8.primitive_data_types.html</loc>
     
     <lastmod>2018-09-26T13:47:29.330Z</lastmod>
     
@@ -163,20 +338,6 @@
   </url>
   
   <url>
-    <loc>https://learning-rust.github.io/docs/a3.hello_world.html</loc>
-    
-    <lastmod>2018-09-26T13:47:29.329Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://learning-rust.github.io/docs/a6.variable_bindings,constants_and_statics.html</loc>
-    
-    <lastmod>2018-09-26T13:47:29.329Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://learning-rust.github.io/docs/a5.comments_and_documenting_the_code.html</loc>
     
     <lastmod>2018-09-26T13:47:29.329Z</lastmod>
@@ -191,14 +352,28 @@
   </url>
   
   <url>
-    <loc>https://learning-rust.github.io/docs/a1.why_rust.html</loc>
+    <loc>https://learning-rust.github.io/docs/a3.hello_world.html</loc>
+    
+    <lastmod>2018-09-26T13:47:29.329Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/a6.variable_bindings,constants_and_statics.html</loc>
+    
+    <lastmod>2018-09-26T13:47:29.329Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://learning-rust.github.io/docs/a10.control_flows.html</loc>
     
     <lastmod>2018-09-26T13:47:29.328Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://learning-rust.github.io/docs/a10.control_flows.html</loc>
+    <loc>https://learning-rust.github.io/docs/a1.why_rust.html</loc>
     
     <lastmod>2018-09-26T13:47:29.328Z</lastmod>
     

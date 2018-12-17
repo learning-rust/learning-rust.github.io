@@ -1,0 +1,52 @@
+menu:
+  docs: 文档
+  labs: 实验台
+  search: 搜索
+
+index:
+  get_started: 旅程开始
+
+page:
+  contents: 内容清单
+  back_to_top: 返回顶端 ⇡
+  improve: 改进此文档
+  prev: 上一页
+  next: 下一页
+  last_updated: "最后更新于: %s"
+
+sidebar:
+  docs:
+    docs: Documentation
+    overview: Overview
+    basics: Basics
+    beyond_the_basics: Beyond The Basics
+    the_tough_part: The Tough Part
+    lets_get_it_started: Let's Get It Started
+    why_rust: Why Rust?
+    installation: Installation
+    hello_world: Hello World
+    cargo,crates_and_basic_project_structure: Cargo, Crates and Basic Project Structure
+    comments_and_documenting_the_code: Comments and Documenting the code
+    variable_bindings,constants_and_statics: Variable bindings, Constants and Statics
+    functions: Functions
+    primitive_data_types: Primitive Data Types
+    operators: Operators
+    control_flows: Control Flows
+    vectors: Vectors
+    structs: Structs
+    enums: Enums
+    generics: Generics
+    impls_and_traits: Impls and Traits
+    ownership: Ownership
+    borrowing: Borrowing
+    lifetimes: Lifetimes
+    code_organization: Code Organization
+    functions_co: Functions
+    modules: Modules
+    crates: Crates
+    workspaces: Workspaces
+    use: Use
+    std_primitives_and_preludes: STD, Primitives and Preludes
+  labs:
+    labs: Laboratory
+    overview: Overview
