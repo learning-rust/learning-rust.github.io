@@ -2,7 +2,9 @@ title: Learning Rust
 subtitle: "Rust Programming Language Tutorials"
 description: "Rust Programming Language Tutorials"
 author: Dumindu Madunuwan
-language: en
+language: 
+- en
+- zh-cn
 timezone: UTC
 
 url: https://learning-rust.github.io

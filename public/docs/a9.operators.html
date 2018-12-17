@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.7.1">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Operators | Learning Rust</title>
+  <meta name="description" content="Rust Programming Language Tutorials">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://learning-rust.github.io/docs/a9.operators.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://learning-rust.github.io/docs/a9.operators.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://learning-rust.github.io/zh-cn/docs/a9.operators.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" href="/icon.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111784617-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="header-outer">
+  <header id="header" class="wrapper">
+    <div id="header-inner" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Learning Rust</a>
+      </h1>
+      <nav id="main-nav">
+        <a href="/docs/a1.why_rust.html" class="main-nav-link">Docs</a>
+        <a href="https://github.com/learning-rust/site" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+        <div id="search-input-wrap">
+          <div id="search-input-icon">
+            <i class="fa fa-search"></i>
+          </div>
+          <input type="search" id="search-input" placeholder="Search...">
+        </div>
+      </nav>
+      <div id="lang-select-wrap">
+        <label id="lang-select-label"><i class="fa fa-language"></i><span>English</span></label>
+        <select id="lang-select" data-canonical="docs/a9.operators.html">
+          
+            <option value="en" selected>English</option>
+          
+            <option value="zh-cn">Chinese</option>
+          
+        </select>
+      </div>
+      <a id="mobile-nav-toggle">
+        <span class="mobile-nav-toggle-bar"></span>
+        <span class="mobile-nav-toggle-bar"></span>
+        <span class="mobile-nav-toggle-bar"></span>
+      </a>
+    </div>
+  </header>
+</div>
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope="" itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Operators</h1>
+                <a href="https://github.com/learning-rust/site/edit/master/source/docs/a9.operators.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Arithmetic-Operators" class="article-heading"><a href="#Arithmetic-Operators" class="headerlink" title="Arithmetic Operators"></a>Arithmetic Operators<a class="article-anchor" href="#Arithmetic-Operators" aria-hidden="true"></a></h2><p><strong> + - * / %</strong></p>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let a = 5;
+let b = a + 1; //6
+let c = a - 1; //4
+let d = a * 2; //10
+let e = a / 2; // ⭐️ 2 not 2.5
+let f = a % 2; //1
+
+let g = 5.0 / 2.0; //2.5
+</code></pre>
+<blockquote>
+<p>💡 Also <strong>+</strong> is used for <strong>array and string concatenation</strong></p>
+</blockquote>
+<h2 id="Comparison-Operators" class="article-heading"><a href="#Comparison-Operators" class="headerlink" title="Comparison Operators"></a>Comparison Operators<a class="article-anchor" href="#Comparison-Operators" aria-hidden="true"></a></h2><p>== != &lt; &gt; &lt;= &gt;=</p>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let a = 1;
+let b = 2;
+
+let c = a == b; //false
+let d = a != b; //true
+let e = a &lt; b; //true
+let f = a &gt; b; //false
+let g = a &lt;= a; //true
+let h = a &gt;= a; //true
+
+// 🔎
+let i = true &gt; false; //true
+let j = &#39;a&#39; &gt; &#39;A&#39;; //true
+</code></pre>
+<h2 id="Logical-Operators" class="article-heading"><a href="#Logical-Operators" class="headerlink" title="Logical Operators"></a>Logical Operators<a class="article-anchor" href="#Logical-Operators" aria-hidden="true"></a></h2><p>! &amp;&amp; ||</p>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let a = true;
+let b = false;
+
+let c = !a; //false
+let d = a &amp;&amp; b; //false
+let e = a || b; //true
+</code></pre>
+<blockquote>
+<p>🔎 On integer types, ! inverts the individual bits in the two’s complement representation of the value.</p>
+</blockquote>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let a = !-2; //1
+let b = !-1; //0
+let c = !0; //-1
+let d = !1; //-2
+</code></pre>
+<h2 id="Bitwise-Operators" class="article-heading"><a href="#Bitwise-Operators" class="headerlink" title="Bitwise Operators"></a>Bitwise Operators<a class="article-anchor" href="#Bitwise-Operators" aria-hidden="true"></a></h2><p>&amp; | ^ &lt;&lt; &gt;&gt;</p>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let a = 1;
+let b = 2;
+
+let c = a &amp; b; //0  (01 &amp;&amp; 10 -&gt; 00)
+let d = a | b; //3  (01 || 10 -&gt; 11)
+let e = a ^ b; //3  (01 != 10 -&gt; 11)
+let f = a &lt;&lt; b; //4  (add 2 positions to the end -&gt; &#39;01&#39;+&#39;00&#39; -&gt; 100)
+let g = a &gt;&gt; a; //0  (remove 2 positions from the end -&gt; o̶1̶ -&gt; 0)
+</code></pre>
+<h2 id="Assignment-and-Compound-Assignment-Operators" class="article-heading"><a href="#Assignment-and-Compound-Assignment-Operators" class="headerlink" title="Assignment and Compound Assignment Operators"></a>Assignment and Compound Assignment Operators<a class="article-anchor" href="#Assignment-and-Compound-Assignment-Operators" aria-hidden="true"></a></h2><p>The = operator is used to assign a name to a value or a function. Compound Assignment Operators are created by composing one of + - * / % &amp; | ^ &lt;&lt; &gt;&gt; operators with = operator.</p>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let mut a = 2;
+
+a += 5; //2 + 5 = 7
+a -= 2; //7 - 2 = 5
+a *= 5; //5 * 5 = 25
+a /= 2; //25 / 2 = 12 not 12.5
+a %= 5; //12 % 5 = 2
+
+a &amp;= 2; //10 &amp;&amp; 10 -&gt; 10 -&gt; 2
+a |= 5; //010 || 101 -&gt; 111 -&gt; 7
+a ^= 2; //111 != 010 -&gt; 101 -&gt; 5
+a &lt;&lt;= 1; //&#39;101&#39;+&#39;0&#39; -&gt; 1010 -&gt; 10
+a &gt;&gt;= 2; //101̶0̶ -&gt; 10 -&gt; 2
+</code></pre>
+<h2 id="Type-Casting-Operator" class="article-heading"><a href="#Type-Casting-Operator" class="headerlink" title="Type Casting Operator"></a>Type Casting Operator<a class="article-anchor" href="#Type-Casting-Operator" aria-hidden="true"></a></h2><p>as</p>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let a = 15;
+let b = (a as f64) / 2.0; //7.5
+</code></pre>
+<h2 id="Borrowing-and-Dereference-Operators" class="article-heading"><a href="#Borrowing-and-Dereference-Operators" class="headerlink" title="Borrowing and Dereference Operators"></a>Borrowing and Dereference Operators<a class="article-anchor" href="#Borrowing-and-Dereference-Operators" aria-hidden="true"></a></h2><p>&amp; &amp;mut *</p>
+<p>The <strong>&amp; or &amp;mut</strong> operators are used for <strong>borrowing</strong> and <strong>*</strong> operator for <strong>Dereferencing</strong>.</p>
+<blockquote>
+<p>🔎 For more information, refer <a href="c1.ownership.html">Ownership</a>, <a href="c2.borrowing.html">Borrowing</a> &amp; <a href="c3.lifetimes.html">Lifetimes</a> sections.</p>
+</blockquote>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-09-26T13:47:29.330Z" itemprop="dateModified">Last updated: 2018-09-26</time>
+                <a href="a8.primitive_data_types.html" class="article-footer-prev" title="Primitive Data Types"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="a10.control_flows.html" class="article-footer-next" title="Control Flows"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Table of contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Arithmetic-Operators"><span class="toc-text">Arithmetic Operators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Comparison-Operators"><span class="toc-text">Comparison Operators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logical-Operators"><span class="toc-text">Logical Operators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bitwise-Operators"><span class="toc-text">Bitwise Operators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Assignment-and-Compound-Assignment-Operators"><span class="toc-text">Assignment and Compound Assignment Operators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Type-Casting-Operator"><span class="toc-text">Type Casting Operator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Borrowing-and-Dereference-Operators"><span class="toc-text">Borrowing and Dereference Operators</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top ⇡</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Documentation</strong><a href="index.html" class="sidebar-link">Overview</a><strong class="sidebar-title">Basics</strong><a href="a1.why_rust.html" class="sidebar-link">Why Rust?</a><a href="a2.installation.html" class="sidebar-link">Installation</a><a href="a3.hello_world.html" class="sidebar-link">Hello World</a><a href="a4.cargo,crates_and_basic_project_structure.html" class="sidebar-link">Cargo, Crates and Basic Project Structure</a><a href="a5.comments_and_documenting_the_code.html" class="sidebar-link">Comments and Documenting the code</a><a href="a6.variable_bindings,constants_and_statics.html" class="sidebar-link">Variable bindings, Constants and Statics</a><a href="a7.functions.html" class="sidebar-link">Functions</a><a href="a8.primitive_data_types.html" class="sidebar-link">Primitive Data Types</a><a href="a9.operators.html" class="sidebar-link current">Operators</a><a href="a10.control_flows.html" class="sidebar-link">Control Flows</a><strong class="sidebar-title">Beyond The Basics</strong><a href="b1.vectors.html" class="sidebar-link">Vectors</a><a href="b2.structs.html" class="sidebar-link">Structs</a><a href="b3.enums.html" class="sidebar-link">Enums</a><a href="b4.generics.html" class="sidebar-link">Generics</a><a href="b5.impls_and_traits.html" class="sidebar-link">Impls and Traits</a><strong class="sidebar-title">The Tough Part</strong><a href="c1.ownership.html" class="sidebar-link">Ownership</a><a href="c2.borrowing.html" class="sidebar-link">Borrowing</a><a href="c3.lifetimes.html" class="sidebar-link">Lifetimes</a><strong class="sidebar-title">Let's Get It Started</strong><a href="d1.code_organization.html" class="sidebar-link">Code Organization</a><a href="d2.functions.html" class="sidebar-link">Functions</a><a href="d3.modules.html" class="sidebar-link">Modules</a><a href="d4.crates.html" class="sidebar-link">Crates</a><a href="d5.workspaces.html" class="sidebar-link">Workspaces</a><a href="d6.use.html" class="sidebar-link">Use</a><a href="d7.std_primitives_and_preludes.html" class="sidebar-link">STD, Primitives and Preludes</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <div id="footer-outer">
+  <footer id="footer" class="wrapper">
+    <div class="inner">
+      <div id="footer-copyright">
+        &copy; 2018 <a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/hexojs/site/tree/master/themes/navy" target="_blank">Navy</a> theme.
+      </div>
+    </div>
+  </footer>
+</div>
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/a1.why_rust.html" class="mobile-nav-link">Docs</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/learning-rust/site" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Documentation</strong><a href="index.html" class="mobile-nav-link">Overview</a><strong class="mobile-nav-title">Basics</strong><a href="a1.why_rust.html" class="mobile-nav-link">Why Rust?</a><a href="a2.installation.html" class="mobile-nav-link">Installation</a><a href="a3.hello_world.html" class="mobile-nav-link">Hello World</a><a href="a4.cargo,crates_and_basic_project_structure.html" class="mobile-nav-link">Cargo, Crates and Basic Project Structure</a><a href="a5.comments_and_documenting_the_code.html" class="mobile-nav-link">Comments and Documenting the code</a><a href="a6.variable_bindings,constants_and_statics.html" class="mobile-nav-link">Variable bindings, Constants and Statics</a><a href="a7.functions.html" class="mobile-nav-link">Functions</a><a href="a8.primitive_data_types.html" class="mobile-nav-link">Primitive Data Types</a><a href="a9.operators.html" class="mobile-nav-link current">Operators</a><a href="a10.control_flows.html" class="mobile-nav-link">Control Flows</a><strong class="mobile-nav-title">Beyond The Basics</strong><a href="b1.vectors.html" class="mobile-nav-link">Vectors</a><a href="b2.structs.html" class="mobile-nav-link">Structs</a><a href="b3.enums.html" class="mobile-nav-link">Enums</a><a href="b4.generics.html" class="mobile-nav-link">Generics</a><a href="b5.impls_and_traits.html" class="mobile-nav-link">Impls and Traits</a><strong class="mobile-nav-title">The Tough Part</strong><a href="c1.ownership.html" class="mobile-nav-link">Ownership</a><a href="c2.borrowing.html" class="mobile-nav-link">Borrowing</a><a href="c3.lifetimes.html" class="mobile-nav-link">Lifetimes</a><strong class="mobile-nav-title">Let's Get It Started</strong><a href="d1.code_organization.html" class="mobile-nav-link">Code Organization</a><a href="d2.functions.html" class="mobile-nav-link">Functions</a><a href="d3.modules.html" class="mobile-nav-link">Modules</a><a href="d4.crates.html" class="mobile-nav-link">Crates</a><a href="d5.workspaces.html" class="mobile-nav-link">Workspaces</a><a href="d6.use.html" class="mobile-nav-link">Use</a><a href="d7.std_primitives_and_preludes.html" class="mobile-nav-link">STD, Primitives and Preludes</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-language"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/a9.operators.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">Chinese</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/rust.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: '219b278e94416804a2d4bb47b3bf3d0b',
+  indexName: 'learning_rust',
+  inputSelector: '#search-input'
+});
+
+hljs.initHighlightingOnLoad();
+</script>
+
+
+</body>
+</html>

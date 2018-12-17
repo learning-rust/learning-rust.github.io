@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.7.1">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Primitive Data Types | Learning Rust</title>
+  <meta name="description" content="Rust Programming Language Tutorials">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://learning-rust.github.io/docs/a8.primitive_data_types.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://learning-rust.github.io/docs/a8.primitive_data_types.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://learning-rust.github.io/zh-cn/docs/a8.primitive_data_types.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" href="/icon.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111784617-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="header-outer">
+  <header id="header" class="wrapper">
+    <div id="header-inner" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Learning Rust</a>
+      </h1>
+      <nav id="main-nav">
+        <a href="/docs/a1.why_rust.html" class="main-nav-link">Docs</a>
+        <a href="https://github.com/learning-rust/site" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+        <div id="search-input-wrap">
+          <div id="search-input-icon">
+            <i class="fa fa-search"></i>
+          </div>
+          <input type="search" id="search-input" placeholder="Search...">
+        </div>
+      </nav>
+      <div id="lang-select-wrap">
+        <label id="lang-select-label"><i class="fa fa-language"></i><span>English</span></label>
+        <select id="lang-select" data-canonical="docs/a8.primitive_data_types.html">
+          
+            <option value="en" selected>English</option>
+          
+            <option value="zh-cn">Chinese</option>
+          
+        </select>
+      </div>
+      <a id="mobile-nav-toggle">
+        <span class="mobile-nav-toggle-bar"></span>
+        <span class="mobile-nav-toggle-bar"></span>
+        <span class="mobile-nav-toggle-bar"></span>
+      </a>
+    </div>
+  </header>
+</div>
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope="" itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Primitive Data Types</h1>
+                <a href="https://github.com/learning-rust/site/edit/master/source/docs/a8.primitive_data_types.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <ul>
+<li><h2 id="bool" class="article-heading"><a href="#bool" class="headerlink" title="bool"></a>bool<a class="article-anchor" href="#bool" aria-hidden="true"></a></h2>true or false</li>
+</ul>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let x = true;
+let y: bool = false;
+
+// ⭐️ no TRUE, FALSE, 1, 0
+</code></pre>
+<ul>
+<li><h2 id="char" class="article-heading"><a href="#char" class="headerlink" title="char"></a>char<a class="article-anchor" href="#char" aria-hidden="true"></a></h2>A single Unicode scalar value</li>
+</ul>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let x = &#39;x&#39;;
+let y = &#39;😎&#39;;
+
+// ⭐️ no &quot;x&quot;, only single quotes
+//because of Unicode support, char is not a single byte, but four.
+</code></pre>
+<ul>
+<li><h2 id="i8-i16-i32-i64-i128" class="article-heading"><a href="#i8-i16-i32-i64-i128" class="headerlink" title="i8, i16, i32, i64, i128"></a>i8, i16, i32, i64, i128<a class="article-anchor" href="#i8-i16-i32-i64-i128" aria-hidden="true"></a></h2>Fixed size(bit) signed(+/-) integer types</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>DATA TYPE</th>
+<th>MIN</th>
+<th>MAX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i8</td>
+<td>-128</td>
+<td>127</td>
+</tr>
+<tr>
+<td>i16</td>
+<td>-32768</td>
+<td>32767</td>
+</tr>
+<tr>
+<td>i32</td>
+<td>-2147483648</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>i64</td>
+<td>-9223372036854775808</td>
+<td>9223372036854775807</td>
+</tr>
+<tr>
+<td>i128</td>
+<td>-170141183460469231731687303715884105728</td>
+<td>170141183460469231731687303715884105727</td>
+</tr>
+</tbody>
+</table>
+<p>💡 Min and max values are based on IEEE standard for Binary Floating-Point Arithmetic; From <strong>-2ⁿ⁻¹ to 2ⁿ⁻¹-1</strong> . You can use <strong>min_value()</strong> and <strong>max_value()</strong> to find min and max of each integer type, ex. i8::min_value();</p>
+<ul>
+<li><h2 id="u8-u16-u32-u64-u128" class="article-heading"><a href="#u8-u16-u32-u64-u128" class="headerlink" title="u8, u16, u32, u64, u128"></a>u8, u16, u32, u64, u128<a class="article-anchor" href="#u8-u16-u32-u64-u128" aria-hidden="true"></a></h2>Fixed size(bit) unsigned(+) integer types</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>DATA TYPE</th>
+<th>MIN</th>
+<th>MAX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>u8</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr>
+<td>u16</td>
+<td>0</td>
+<td>65535</td>
+</tr>
+<tr>
+<td>u32</td>
+<td>0</td>
+<td>4294967295</td>
+</tr>
+<tr>
+<td>u64</td>
+<td>0</td>
+<td>18446744073709551615</td>
+</tr>
+<tr>
+<td>u128</td>
+<td>0</td>
+<td>340282366920938463463374607431768211455</td>
+</tr>
+</tbody>
+</table>
+<p>💡 Same as signed numbers, min and max values are based on IEEE standard for Binary Floating-Point Arithmetic; From <strong>0 to 2ⁿ-1</strong> . Same way you can use <strong>min_value()</strong> and <strong>max_value()</strong> to find min and max of each integer type, ex. u8::max_value();</p>
+<ul>
+<li><h2 id="isize" class="article-heading"><a href="#isize" class="headerlink" title="isize"></a>isize<a class="article-anchor" href="#isize" aria-hidden="true"></a></h2>Variable sized signed(+/-) integer</li>
+</ul>
+<p>Simply this is the data type to cover all signed integer types but memory allocates according to the size of a pointer. Min and max values are similar to i64 .</p>
+<ul>
+<li><h2 id="usize" class="article-heading"><a href="#usize" class="headerlink" title="usize"></a>usize<a class="article-anchor" href="#usize" aria-hidden="true"></a></h2>Variable sized unsigned(+) integer</li>
+</ul>
+<p>Simply this is the data type to cover all unsigned integer types but memory allocates according to the size of a pointer. Min and max values are similar to u64.</p>
+<ul>
+<li><h2 id="f32" class="article-heading"><a href="#f32" class="headerlink" title="f32"></a>f32<a class="article-anchor" href="#f32" aria-hidden="true"></a></h2>32-bit floating point</li>
+</ul>
+<p>Similar to float in other languages, <strong>Single precision</strong>.</p>
+<p>💡 Should avoid using this unless you need to reduce memory consumption badly or if you are doing low-level optimization, when targeted hardware not supports for double-precision or when single-precision is faster than double-precision on it.</p>
+<ul>
+<li><h2 id="f64" class="article-heading"><a href="#f64" class="headerlink" title="f64"></a>f64<a class="article-anchor" href="#f64" aria-hidden="true"></a></h2>64-bit floating point</li>
+</ul>
+<p>Similar to double in other languages, <strong>Double precision</strong>.</p>
+<ul>
+<li><h2 id="arrays" class="article-heading"><a href="#arrays" class="headerlink" title="arrays"></a>arrays<a class="article-anchor" href="#arrays" aria-hidden="true"></a></h2>Fixed size list of elements of same data type</li>
+</ul>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let a = [1, 2, 3]; // a[0] = 1, a[1] = 2, a[2] = 3
+let mut b = [1, 2, 3];
+
+let c: [i32; 0] = []; //[Type; NO of elements] -&gt; [] /empty array
+let d: [i32; 3] = [1, 2, 3];
+
+let e = [&quot;my value&quot;; 3]; //[&quot;my value&quot;, &quot;my value&quot;, &quot;my value&quot;];
+
+println!(&quot;{:?}&quot;, a); //[1, 2, 3]
+println!(&quot;{:#?}&quot;, a);
+//  [
+//      1,
+//      2,
+//      3
+//  ]
+</code></pre>
+<p>⭐️ Arrays are <strong>immutable</strong> by default and also <strong>even with mut, its element count can not be changed</strong>.</p>
+<blockquote>
+<p>🔎 If you are looking for a dynamic/growable array, you can use <strong>Vec</strong>. Vectors can contain any type of elements but all elements must be in the same data type.</p>
+</blockquote>
+<ul>
+<li><h2 id="tuples" class="article-heading"><a href="#tuples" class="headerlink" title="tuples"></a>tuples<a class="article-anchor" href="#tuples" aria-hidden="true"></a></h2>Fixed size ordered list of elements of different(or same) data types</li>
+</ul>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let a = (1, 1.5, true, &#39;a&#39;, &quot;Hello, world!&quot;);
+// a.0 = 1, a.1 = 1.5, a.2 = true, a.3 = &#39;a&#39;, a.4 = &quot;Hello, world!&quot;
+
+let b: (i32, f64) = (1, 1.5);
+
+let (c, d) = b; // c = 1, d = 1.5
+let (e, _, _, _, f) = a; //e = 1, f = &quot;Hello, world!&quot;, _ indicates not interested of that item
+
+let g = (0,); //single-element tuple
+
+let h = (b, (2, 4), 5); //((1, 1.5), (2, 4), 5)
+
+println!(&quot;{:?}&quot;, a); //(1, 1.5, true, &#39;a&#39;, &quot;Hello, world!&quot;)
+</code></pre>
+<p>⭐️ Tuples are also <strong>immutable</strong> by default and <strong>even with mut, its element count can not be changed. Also, if you want to change an element’s value, new value should have the same data type of previous value</strong>.</p>
+<ul>
+<li><h2 id="slice" class="article-heading"><a href="#slice" class="headerlink" title="slice"></a>slice<a class="article-anchor" href="#slice" aria-hidden="true"></a></h2>Dynamically-sized reference to another data structure</li>
+</ul>
+<p>Think you want to get/pass a part of an array or any other data structure. Instead of copy it to another array (or same data structure), Rust allows to create a view/reference to access only that part of data. And it can be mutable or not.</p>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let a: [i32; 4] = [1, 2, 3, 4];//Parent Array
+
+let b: &amp;[i32] = &amp;a; //Slicing whole array
+let c = &amp;a[0..4]; // From 0th position to 4th(excluding)
+let d = &amp;a[..]; //Slicing whole array
+
+let e = &amp;a[1..3]; //[2, 3]
+let f = &amp;a[1..]; //[2, 3, 4]
+let g = &amp;a[..3]; //[1, 2, 3]
+</code></pre>
+<ul>
+<li><h2 id="str" class="article-heading"><a href="#str" class="headerlink" title="str"></a>str<a class="article-anchor" href="#str" aria-hidden="true"></a></h2>Unsized UTF-8 sequence of Unicode string slices</li>
+</ul>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">let a = &quot;Hello, world.&quot;; //a: &amp;&#39;static str
+let b: &amp;str = &quot;こんにちは, 世界!&quot;;
+</code></pre>
+<p>⭐️ It’s an <strong>immutable/statically allocated slice</strong> holding an <strong>unknown sized sequence of UTF-8</strong> code points stored in somewhere in memory. <strong>&amp;str</strong> is used to borrow and assign the whole array to the given variable binding.</p>
+<blockquote>
+<p>🔎 A <a href="https://doc.rust-lang.org/std/string/struct.String.html" target="_blank" rel="noopener">String</a> is a <strong>heap</strong>-allocated string. This string is growable, and is also guaranteed to be UTF-8. They are commonly created by converting from a string slice using the <strong>to_string()</strong> or <strong>String::from()</strong> methods. ex: <code>“Hello”.to_string();</code>  <code>String::from(&quot;Hello&quot;);</code></p>
+</blockquote>
+<p>💡 In general, you should use <strong>String</strong> when you need <strong>ownership</strong>, and <strong>&amp;str</strong> when you just need to <strong>borrow a string</strong>.</p>
+<ul>
+<li><h2 id="functions" class="article-heading"><a href="#functions" class="headerlink" title="functions"></a>functions<a class="article-anchor" href="#functions" aria-hidden="true"></a></h2>As we discussed on functions section, b is a function pointer, to plus_one function</li>
+</ul>
+<p></p><p class="code-caption" data-lang="rust" data-line_number="undefined" data-trim_indent="undefined" data-label_position="outer" data-labels_left="" data-labels_right="" data-labels_copy=""><span class="code-caption-label"></span></p><p></p>
+<pre><code class="rust">fn plus_one(a: i32) -&gt; i32 {
+    a + 1
+}
+
+let b: fn(i32) -&gt; i32 = plus_one;
+let c = b(5); //6
+</code></pre>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-09-26T13:47:29.330Z" itemprop="dateModified">Last updated: 2018-09-26</time>
+                <a href="a7.functions.html" class="article-footer-prev" title="Functions"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="a9.operators.html" class="article-footer-next" title="Operators"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Table of contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#bool"><span class="toc-text">bool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#char"><span class="toc-text">char</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#i8-i16-i32-i64-i128"><span class="toc-text">i8, i16, i32, i64, i128</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u8-u16-u32-u64-u128"><span class="toc-text">u8, u16, u32, u64, u128</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#isize"><span class="toc-text">isize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#usize"><span class="toc-text">usize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#f32"><span class="toc-text">f32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#f64"><span class="toc-text">f64</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arrays"><span class="toc-text">arrays</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tuples"><span class="toc-text">tuples</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#slice"><span class="toc-text">slice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#str"><span class="toc-text">str</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#functions"><span class="toc-text">functions</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top ⇡</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Documentation</strong><a href="index.html" class="sidebar-link">Overview</a><strong class="sidebar-title">Basics</strong><a href="a1.why_rust.html" class="sidebar-link">Why Rust?</a><a href="a2.installation.html" class="sidebar-link">Installation</a><a href="a3.hello_world.html" class="sidebar-link">Hello World</a><a href="a4.cargo,crates_and_basic_project_structure.html" class="sidebar-link">Cargo, Crates and Basic Project Structure</a><a href="a5.comments_and_documenting_the_code.html" class="sidebar-link">Comments and Documenting the code</a><a href="a6.variable_bindings,constants_and_statics.html" class="sidebar-link">Variable bindings, Constants and Statics</a><a href="a7.functions.html" class="sidebar-link">Functions</a><a href="a8.primitive_data_types.html" class="sidebar-link current">Primitive Data Types</a><a href="a9.operators.html" class="sidebar-link">Operators</a><a href="a10.control_flows.html" class="sidebar-link">Control Flows</a><strong class="sidebar-title">Beyond The Basics</strong><a href="b1.vectors.html" class="sidebar-link">Vectors</a><a href="b2.structs.html" class="sidebar-link">Structs</a><a href="b3.enums.html" class="sidebar-link">Enums</a><a href="b4.generics.html" class="sidebar-link">Generics</a><a href="b5.impls_and_traits.html" class="sidebar-link">Impls and Traits</a><strong class="sidebar-title">The Tough Part</strong><a href="c1.ownership.html" class="sidebar-link">Ownership</a><a href="c2.borrowing.html" class="sidebar-link">Borrowing</a><a href="c3.lifetimes.html" class="sidebar-link">Lifetimes</a><strong class="sidebar-title">Let's Get It Started</strong><a href="d1.code_organization.html" class="sidebar-link">Code Organization</a><a href="d2.functions.html" class="sidebar-link">Functions</a><a href="d3.modules.html" class="sidebar-link">Modules</a><a href="d4.crates.html" class="sidebar-link">Crates</a><a href="d5.workspaces.html" class="sidebar-link">Workspaces</a><a href="d6.use.html" class="sidebar-link">Use</a><a href="d7.std_primitives_and_preludes.html" class="sidebar-link">STD, Primitives and Preludes</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <div id="footer-outer">
+  <footer id="footer" class="wrapper">
+    <div class="inner">
+      <div id="footer-copyright">
+        &copy; 2018 <a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/hexojs/site/tree/master/themes/navy" target="_blank">Navy</a> theme.
+      </div>
+    </div>
+  </footer>
+</div>
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/a1.why_rust.html" class="mobile-nav-link">Docs</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/learning-rust/site" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Documentation</strong><a href="index.html" class="mobile-nav-link">Overview</a><strong class="mobile-nav-title">Basics</strong><a href="a1.why_rust.html" class="mobile-nav-link">Why Rust?</a><a href="a2.installation.html" class="mobile-nav-link">Installation</a><a href="a3.hello_world.html" class="mobile-nav-link">Hello World</a><a href="a4.cargo,crates_and_basic_project_structure.html" class="mobile-nav-link">Cargo, Crates and Basic Project Structure</a><a href="a5.comments_and_documenting_the_code.html" class="mobile-nav-link">Comments and Documenting the code</a><a href="a6.variable_bindings,constants_and_statics.html" class="mobile-nav-link">Variable bindings, Constants and Statics</a><a href="a7.functions.html" class="mobile-nav-link">Functions</a><a href="a8.primitive_data_types.html" class="mobile-nav-link current">Primitive Data Types</a><a href="a9.operators.html" class="mobile-nav-link">Operators</a><a href="a10.control_flows.html" class="mobile-nav-link">Control Flows</a><strong class="mobile-nav-title">Beyond The Basics</strong><a href="b1.vectors.html" class="mobile-nav-link">Vectors</a><a href="b2.structs.html" class="mobile-nav-link">Structs</a><a href="b3.enums.html" class="mobile-nav-link">Enums</a><a href="b4.generics.html" class="mobile-nav-link">Generics</a><a href="b5.impls_and_traits.html" class="mobile-nav-link">Impls and Traits</a><strong class="mobile-nav-title">The Tough Part</strong><a href="c1.ownership.html" class="mobile-nav-link">Ownership</a><a href="c2.borrowing.html" class="mobile-nav-link">Borrowing</a><a href="c3.lifetimes.html" class="mobile-nav-link">Lifetimes</a><strong class="mobile-nav-title">Let's Get It Started</strong><a href="d1.code_organization.html" class="mobile-nav-link">Code Organization</a><a href="d2.functions.html" class="mobile-nav-link">Functions</a><a href="d3.modules.html" class="mobile-nav-link">Modules</a><a href="d4.crates.html" class="mobile-nav-link">Crates</a><a href="d5.workspaces.html" class="mobile-nav-link">Workspaces</a><a href="d6.use.html" class="mobile-nav-link">Use</a><a href="d7.std_primitives_and_preludes.html" class="mobile-nav-link">STD, Primitives and Preludes</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-language"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/a8.primitive_data_types.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">Chinese</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/rust.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: '219b278e94416804a2d4bb47b3bf3d0b',
+  indexName: 'learning_rust',
+  inputSelector: '#search-input'
+});
+
+hljs.initHighlightingOnLoad();
+</script>
+
+
+</body>
+</html>
