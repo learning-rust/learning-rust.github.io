@@ -30,3 +30,11 @@ docs:
     workspaces: d5.workspaces.html
     use: d6.use.html
     std_primitives_and_preludes: d7.std_primitives_and_preludes.html
+  error_handling:
+    smart_compiler: e1.smart_compiler.html
+    panicking: e2.panicking.html
+    option_and_result: e3.option_and_result.html
+    unwrap_and_expect: e4.unwrap_and_expect.html
+    error_and_none_propagation: e5.error_and_none_propagation.html
+    combinators: e6.combinators.html
+    custom_error_types: e7.custom_error_types.html
