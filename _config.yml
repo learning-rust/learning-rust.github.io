@@ -7,7 +7,9 @@ timezone: UTC
 
 url: https://learning-rust.github.io
 root: /
+
 theme: navy
+
 deploy:
   type: git
   repo: git@github.com:learning-rust/learning-rust.github.io.git
