@@ -14,6 +14,7 @@
     "cheerio": "^0.22.0",
     "hexo": "hexojs/hexo",
     "hexo-clean-css": "^1.0.0",
+    "hexo-deployer-git": "^2.1.0",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-sitemap": "^1.1.2",
     "hexo-renderer-marked": "^2.0.0",
