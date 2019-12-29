@@ -54,13 +54,15 @@ note-warn = hsl(0, 100%, 50%)
 
 .toc-link
   @extend .sidebar-link
+  &[href="#Before-going-to-the-next…"]
+    margin-top: 0.2em
 
 .toc-child
   padding-left: 1em
   font-size: 0.9em
 
 #article-toc-top
-  margin-top: 2em
+  margin-top: 2.6em
   font-size: 0.9em
   text-decoration: none
   color: color-default
@@ -246,3 +248,8 @@ $article-footer-link
 
 .article-footer-updated
   font-size: 0.9em
+
+#Before-going-to-the-next…
+  padding-top: 1.6em
+  &:before
+    content: "👨‍🏫 "
