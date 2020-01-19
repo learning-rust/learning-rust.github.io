@@ -23,7 +23,7 @@
 * [Ownership](source/docs/c1.ownership.md)
 * [Borrowing](source/docs/c2.borrowing.md)
 * [Lifetimes](source/docs/c3.lifetimes.md)
-    
+
 ### Lets Get It Started
 * [Code organization](source/docs/d1.code_organization.md)
 * [Functions](source/docs/d2.functions.md)
@@ -59,7 +59,7 @@ The website is built with [Hexo](https://hexo.io/) Nodejs blog framework. You ca
 Install dependencies:
 
 ``` bash
-$ git clone git@github.com:learning-rust/site.git
+$ git clone https://github.com/learning-rust/site.git
 $ cd site
 $ npm install
 $ npm install hexo-cli -g
