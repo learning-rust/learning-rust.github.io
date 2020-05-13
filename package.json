@@ -20,6 +20,7 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-pug": "^1.0.0",
     "hexo-renderer-stylus": "^1.0.0",
+    "hexo-renderer-swig": "^1.1.0",
     "hexo-server": "^1.0.0",
     "hexo-uglify": "^1.0.0",
     "lunr": "2.3.8",
@@ -30,7 +31,7 @@
     "eslint-config-hexo": "^4.0.0",
     "husky": "^4.0.7",
     "imagemin-lint-staged": "^0.4.0",
-    "lint-staged": "^9.2.0"
+    "lint-staged": "^10.2.2"
   },
   "husky": {
     "hooks": {
