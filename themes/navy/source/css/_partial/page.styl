@@ -127,8 +127,10 @@ note-warn = hsl(0, 100%, 50%)
     font-size: 12pt
   p, ol, ul, dl, table, blockquote, iframe, .highlight
     margin: 1.6em 0 .1em
-  blockquote p, blockquote ol, blockquote ul, blockquote dl
+  blockquote p
     margin: 1em 0
+  blockquote ol, blockquote ul, blockquote dl
+    margin: 0 1em 1em 1em
   h1
     font-size: 2em
   h2
@@ -168,6 +170,8 @@ note-warn = hsl(0, 100%, 50%)
     list-style: decimal
   dl
     list-style: square
+  li > ul
+    list-style: circle
   li
     p
       margin: 0
