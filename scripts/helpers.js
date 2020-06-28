@@ -16,8 +16,8 @@ hexo.extend.helper.register('page_nav', function() {
   const list = {};
   const prefix = 'sidebar.' + type + '.';
 
-  for (let i in sidebar) {
-    for (let j in sidebar[i]) {
+  for (const i in sidebar) {
+    for (const j in sidebar[i]) {
       list[sidebar[i][j]] = j;
     }
   }
@@ -49,10 +49,10 @@ hexo.extend.helper.register('doc_sidebar', function(className) {
     return '';
   }
 
-  for (let [title, menu] of Object.entries(sidebar)) {
+  for (const [title, menu] of Object.entries(sidebar)) {
     result += '<strong class="' + className + '-title">' + self.__(prefix + title) + '</strong>';
 
-    for (let [text, link] of Object.entries(menu)) {
+    for (const [text, link] of Object.entries(menu)) {
       let itemClass = className + '-link';
       if (link === path) itemClass += ' current';
 
@@ -70,10 +70,11 @@ hexo.extend.helper.register('header_menu', function(className) {
   const lang = this.page.lang;
   const isEnglish = lang === 'en';
 
-  for (let [title, path] of Object.entries(menu)) {
-    if (!isEnglish && ~localizedPath.indexOf(title)) path = lang + path;
+  for (const [title, path] of Object.entries(menu)) {
+    let langPath = path;
+    if (!isEnglish && ~localizedPath.indexOf(title)) langPath = lang + path;
 
-    result += `<a href="${self.url_for(path)}" class="${className}-link">${self.__('menu.' + title)}</a>`;
+    result += `<a href="${self.url_for(langPath)}" class="${className}-link">${self.__('menu.' + title)}</a>`;
   }
 
   return result;
@@ -97,7 +98,7 @@ hexo.extend.helper.register('url_for_lang', function(path) {
 
 hexo.extend.helper.register('raw_link', (path) => `https://github.com/learning-rust/site/edit/master/source/${path}`);
 
-hexo.extend.helper.register('page_anchor', function(str) {
+hexo.extend.helper.register('page_anchor', str => {
   const $ = cheerio.load(str, {decodeEntities: false});
   const headings = $('h1, h2, h3, h4, h5, h6');
 
@@ -114,24 +115,14 @@ hexo.extend.helper.register('page_anchor', function(str) {
   return $.html();
 });
 
-hexo.extend.helper.register('lunr_index', function(data) {
+hexo.extend.helper.register('lunr_index', data => {
   const index = lunr(function() {
     this.field('name', {boost: 10});
     this.field('tags', {boost: 50});
     this.field('description');
-    this.ref('id');
+    this.ref('name');
 
-    data.concat().sort((a, b) => {
-      if (a.name > b.name) {
-        return 1;
-      } else if (b.name > a.name) {
-        return -1;
-      }
-      return 0;
-    }).forEach((item, i) => {
-      const object = Object.assign({}, { id: i }, item);
-      this.add(object);
-    });
+    data.forEach(this.add, this);
   });
 
   return JSON.stringify(index);
