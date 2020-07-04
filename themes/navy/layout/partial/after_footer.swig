@@ -6,8 +6,8 @@
 <!-- Algolia -->
 {% if config.algolia[page.lang] %}
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/languages/rust.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/highlight.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/languages/rust.min.js"></script>
 <script type="text/javascript">
 document.getElementById('search-input-wrap').classList.add('on');
 docsearch({
