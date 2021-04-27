@@ -46,7 +46,7 @@
 * Site : http://learning-rust.github.io
 * Medium: https://medium.com/learning-rust
 
-> 🐣 I am a **Sri Lankan** 🇱🇰 Web Developer who lives in **Vietnam** 🇻🇳. So I am not a native English speaker and just learning Rust, If you found any mistake or something need to be changed, even a spelling or a grammar mistake, feel free to create a pull request. Thanks.
+> 🐣 I am a **Sri Lankan**🇱🇰 Web Developer who lives in **Singapore**🇸🇬. I am not a native English speaker and just practicing Rust in my leisure time, while working as a Golang/Devops developer. So, if you found any mistake or something I need to be changed, even a spelling/ grammar mistake, feel free to buzz me.
 
 ---
 
