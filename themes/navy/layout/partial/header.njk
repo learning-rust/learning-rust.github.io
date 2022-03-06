@@ -17,8 +17,8 @@
       <div id="lang-select-wrap">
         <label id="lang-select-label"><i class="fa fa-language"></i><span>{{ lang_name(page.lang) }}</span></label>
         <select id="lang-select" data-canonical="{{ canonical_path_for_nav() }}">
-          {% for lang in site.data.languages %}
-            <option value="{{ loop.key }}"{% if page.lang === loop.key %} selected{% endif %}>{{ lang_name(loop.key) }}</option>
+          {% for lang, value in site.data.languages %}
+            <option value="{{ lang }}"{% if page.lang === lang %} selected{% endif %}>{{ lang_name(lang) }}</option>
           {% endfor %}
         </select>
       </div>

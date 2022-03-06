@@ -6,8 +6,8 @@
 <!-- Algolia -->
 {% if config.algolia[page.lang] %}
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/highlight.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/languages/rust.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/rust.min.js"></script>
 <script type="text/javascript">
 document.getElementById('search-input-wrap').classList.add('on');
 docsearch({
@@ -16,6 +16,6 @@ docsearch({
   inputSelector: '#search-input'
 });
 
-hljs.initHighlightingOnLoad();
+hljs.highlightAll();
 </script>
 {% endif %}
