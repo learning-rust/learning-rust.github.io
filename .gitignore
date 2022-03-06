@@ -6,4 +6,5 @@ db.json
 public/
 .deploy*/
 package-lock.json
+yarn.lock
 /.vscode
