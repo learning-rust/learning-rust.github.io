@@ -62,7 +62,6 @@ Install dependencies:
 $ git clone https://github.com/learning-rust/site.git
 $ cd site
 $ npm install
-$ npm install hexo-cli -g
 ```
 
 Generate:
