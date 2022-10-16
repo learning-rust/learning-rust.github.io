@@ -1,0 +1,13 @@
+[[main]]
+identifier = 'home'
+name = 'Home'
+pre = "<i class='icon icon-home'></i>"
+url = '/'
+weight = 1
+
+[[main]]
+identifier = 'docs'
+name = 'Documentation'
+pre = "<i class='icon icon-book'></i>"
+url = '/docs/'
+weight = 2

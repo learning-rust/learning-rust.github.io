@@ -1,10 +1,6 @@
-.DS_Store
-.idea/
-node_modules/
-*.log
-db.json
-public/
-.deploy*/
-package-lock.json
-yarn.lock
+/.idea
 /.vscode
+/public
+.DS_Store
+/resources/
+.hugo_build.lock

@@ -1,0 +1,50 @@
+- title: Documentation
+  pages:
+    - title: Overview
+
+- title: Basics
+  pages:
+    - title: Why Rust?
+    - title: Installation
+    - title: Hello World
+    - title: Cargo, Crates and Basic Project Structure
+    - title: Comments and Documenting the code
+    - title: Variable bindings, Constants and Statics
+    - title: Functions
+    - title: Primitive Data Types
+    - title: Operators
+    - title: Control Flows
+
+- title: Beyond The Basics
+  pages:
+    - title: Vectors
+    - title: Structs
+    - title: Enums
+    - title: Generics
+    - title: Impls and Traits
+
+- title: The Tough Part
+  pages:
+    - title: Ownership
+    - title: Borrowing
+    - title: Lifetimes
+
+- title: Let's Get It Started
+  pages:
+    - title: Code Organization
+    - title: Functions (02)
+    - title: Modules
+    - title: Crates
+    - title: Workspaces
+    - title: Use
+    - title: STD, Primitives and Preludes
+
+- title: Error Handling
+  pages:
+    - title: Smart Compiler
+    - title: Panicking
+    - title: Option and Result
+    - title: Unwrap and Expect
+    - title: Error and None Propagation
+    - title: Combinators
+    - title: Custom Error Types

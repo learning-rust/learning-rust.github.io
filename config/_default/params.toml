@@ -1,0 +1,23 @@
+description = 'Rust Programming Language Tutorials'
+
+author = 'Dumindu Madunuwan'
+authorURL = 'https://github.com/dumindu'
+
+facebookURL = ''
+twitterURL = ''
+githubURL = 'https://github.com/learning-rust'
+youtubeURL = ''
+
+githubRepo = 'learning-rust/site'
+githubSponsorURL = 'https://github.com/sponsors/dumindu'
+buyMeACoffeeURL = 'https://www.buymeacoffee.com/dumindu'
+
+hugoURL = 'https://gohugo.io/'
+docuraURL = 'https://docura.github.io/'
+
+[algolia]
+[algolia.en]
+container = '#site-header-search'
+appId = 'QEN78N5RTO'
+indexName = 'learning_rust'
+apiKey = '5c62287966941f0b43ee0b4d00e28238'
