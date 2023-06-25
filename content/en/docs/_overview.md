@@ -1,8 +1,8 @@
 ---
 title: Overview
-url: "docs"
+url: "docs/overview"
 aliases:
-- "/docs/overview"
+- "/docs"
 ---
 
 This is based on the posts I wrote on **Medium**, https://medium.com/learning-rust
