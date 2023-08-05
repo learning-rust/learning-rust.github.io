@@ -3,6 +3,9 @@ description = 'Rust Programming Language Tutorials'
 author = 'Dumindu Madunuwan'
 authorURL = 'https://github.com/dumindu'
 
+currentYear = 2023
+projectStartYear = 2018
+
 facebookURL = ''
 twitterURL = ''
 githubURL = 'https://github.com/learning-rust'
