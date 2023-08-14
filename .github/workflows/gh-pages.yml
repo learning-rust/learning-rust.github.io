@@ -12,12 +12,9 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
-
-      - name: Clone Docura theme repository
-        uses: actions/checkout@v3
         with:
-          repository: docura/docura
-          path: themes/docura
+          fetch-depth: 0
+          submodules: true
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
