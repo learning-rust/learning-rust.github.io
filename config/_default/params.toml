@@ -15,6 +15,8 @@ githubRepo = 'learning-rust/site'
 githubSponsorURL = 'https://github.com/sponsors/dumindu'
 buyMeACoffeeURL = 'https://www.buymeacoffee.com/dumindu'
 
+googleAdSense = 'ca-pub-9552880603796919'
+
 [algolia]
 [algolia.en]
 container = '#site-header-search'
