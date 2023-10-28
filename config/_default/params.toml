@@ -12,10 +12,9 @@ githubURL = 'https://github.com/learning-rust'
 youtubeURL = ''
 
 githubRepo = 'learning-rust/site'
-githubSponsorURL = 'https://github.com/sponsors/dumindu'
-buyMeACoffeeURL = 'https://www.buymeacoffee.com/dumindu'
 
-googleAdSense = 'ca-pub-9552880603796919'
+buyMeACoffee = 'dumindu'
+githubSponsor = 'dumindu'
 
 [algolia]
 [algolia.en]
