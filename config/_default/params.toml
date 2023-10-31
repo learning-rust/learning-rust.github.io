@@ -1,7 +1,8 @@
 description = 'Rust Programming Language Tutorials'
 
-author = 'Dumindu Madunuwan'
-authorURL = 'https://github.com/dumindu'
+[author]
+name= 'Dumindu Madunuwan'
+URL = 'https://github.com/dumindu'
 
 currentYear = 2023
 projectStartYear = 2016
