@@ -4,10 +4,12 @@ baseURL = 'https://learning-rust.github.io/'
 defaultContentLanguage = 'en'
 languageCode = 'en-us'
 
-googleAnalytics = 'G-FZHQCXSZ89'
-
 enableGitInfo = true
 
 theme = 'docura'
 
 markup.highlight.noClasses = false
+
+[services]
+[services.googleAnalytics]
+ID = 'G-FZHQCXSZ89'

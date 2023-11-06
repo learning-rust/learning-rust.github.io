@@ -1,9 +1,5 @@
 description = 'Rust Programming Language Tutorials'
 
-[author]
-name= 'Dumindu Madunuwan'
-URL = 'https://github.com/dumindu'
-
 currentYear = 2023
 projectStartYear = 2016
 
@@ -16,6 +12,10 @@ githubRepo = 'learning-rust/site'
 
 buyMeACoffee = 'dumindu'
 githubSponsor = 'dumindu'
+
+[author]
+name= 'Dumindu Madunuwan'
+URL = 'https://github.com/dumindu'
 
 [algolia]
 [algolia.en]
