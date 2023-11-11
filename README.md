@@ -1,16 +1,9 @@
 # Learning Rust
 
-This website is built using [Hugo](https://gohugo.io/) and [Docura](https://docura.github.io/).
+- Website: http://learning-rust.github.io
+- Buy me a coffee: [🥤](https://www.buymeacoffee.com/dumindu)
 
-## Local setup
-- [Install the extended version of Hugo](https://gohugo.io/getting-started/installing/)
-- Clone the repository and start Hugo server
-    ```
-    $ git clone --depth 1 https://github.com/learning-rust/site.git
-    $ cd site
-    $ git submodule update --init --recursive
-    $ hugo server
-    ```
+> Based on the previous posts, I wrote on https://medium.com/learning-rust
 
 ## Content
 
@@ -56,8 +49,3 @@ This website is built using [Hugo](https://gohugo.io/) and [Docura](https://docu
 * [Combinators](content/en/docs/e6.combinators.md)
 * [Custom Error Types](content/en/docs/e7.custom-error-types.md)
 
----
-* Site : http://learning-rust.github.io
-* Medium: https://medium.com/learning-rust
-
-> 🐣 I am a **Sri Lankan**🇱🇰 Web Developer who lives in **Singapore**🇸🇬. I am not a native English speaker and just practicing Rust in my leisure time, while working as a Golang/Devops developer. So, if you found any mistake or something I need to be changed, even a spelling/ grammar mistake, feel free to buzz me.
