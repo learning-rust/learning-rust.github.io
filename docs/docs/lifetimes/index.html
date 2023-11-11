@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
+  <meta name="author" content="Dumindu Madunuwan">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>Lifetimes · Learning Rust</title>
+  <link rel="canonical" href="https://learning-rust.github.io/docs/lifetimes/">
+  <link rel="stylesheet" href="/assets/css/docs.min.min.9deba2d55bb7534667e8b6e4ac842dd1330bdc793b12b633d5413d263a72db4a.css" integrity="">
+
+  <link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon/favicon.ico">
+<link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FZHQCXSZ89');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="/" class="site-logo">Learning Rust</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Documentation</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/overview/">
+                  
+                  Overview
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/why-rust/">
+                  
+                  Why Rust?
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/installation/">
+                  
+                  Installation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/hello-world/">
+                  
+                  Hello World
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/cargo-crates-and-basic-project-structure/">
+                  
+                  Cargo, Crates and Basic Project Structure
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/comments-and-documenting-the-code/">
+                  
+                  Comments and Documenting the code
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/variable-bindings-constants-and-statics/">
+                  
+                  Variable bindings, Constants and Statics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions/">
+                  
+                  Functions
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/primitive-data-types/">
+                  
+                  Primitive Data Types
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/operators/">
+                  
+                  Operators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/control-flows/">
+                  
+                  Control Flows
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Beyond The Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/vectors/">
+                  
+                  Vectors
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/structs/">
+                  
+                  Structs
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/enums/">
+                  
+                  Enums
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/generics/">
+                  
+                  Generics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/impls-and-traits/">
+                  
+                  Impls and Traits
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>The Tough Part</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/ownership/">
+                  
+                  Ownership
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/borrowing/">
+                  
+                  Borrowing
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="active" href="/docs/lifetimes/">
+                  
+                  Lifetimes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Let&#39;s Get It Started</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/code-organization/">
+                  
+                  Code Organization
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions-02/">
+                  
+                  Functions (02)
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/modules/">
+                  
+                  Modules
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/crates/">
+                  
+                  Crates
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/workspaces/">
+                  
+                  Workspaces
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/use/">
+                  
+                  Use
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/std-primitives-and-preludes/">
+                  
+                  STD, Primitives and Preludes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Error Handling</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/smart-compiler/">
+                  
+                  Smart Compiler
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/panicking/">
+                  
+                  Panicking
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/option-and-result/">
+                  
+                  Option and Result
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/unwrap-and-expect/">
+                  
+                  Unwrap and Expect
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/error-and-none-propagation/">
+                  
+                  Error and None Propagation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/combinators/">
+                  
+                  Combinators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/custom-error-types/">
+                  
+                  Custom Error Types
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="/" class="site-logo">Learning Rust</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Lifetimes</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <p>When we are dealing with references, we have to make sure that the referencing data stay alive until we stop using the references.</p>
+<p>Think,</p>
+<ul>
+<li>We have a <strong>variable binding</strong>, <code>a</code>.</li>
+<li>We are <strong>referencing</strong> the value of <code>a</code>, <strong>from another variable binding</strong> <code>x</code>.
+We have to make sure that <strong><code>a</code> lives until we stop using <code>x</code></strong>.</li>
+</ul>
+<blockquote>
+<p>🔎 <strong>Memory management</strong> is a form of resource management applied to computer memory. Up until the mid-1990s, the majority of programming languages used <strong>Manual Memory Management</strong> which <strong>requires the programmer to give manual instructions</strong> to identify and deallocate unused objects/ garbage. Around 1959 John McCarthy invented <strong>Garbage collection</strong>(GC), a form of <strong>Automatic Memory Management</strong>(AMM). It determines what memory is no longer used and frees it automatically instead of relying on the programmer. However <strong>Objective-C and Swift</strong> provide similar functionality through <strong>Automatic Reference Counting</strong>(ARC).</p>
+</blockquote>
+<h2 id="what-is-lifetime">What is Lifetime?</h2>
+<p>In Rust,</p>
+<ul>
+<li>A resource can only have <strong>one owner</strong> at a time. When it goes <strong>out of the scope</strong>, Rust removes it from the Memory.</li>
+<li>When we want to reuse the same resource, we are <strong>referencing</strong> it/ <strong>borrowing</strong> its content.</li>
+<li>When dealing with <strong>references</strong>, we have to specify <strong>lifetime annotations</strong> to provide instructions for the <strong>compiler</strong> to set <strong>how long</strong> those referenced resources <strong>should be alive</strong>.</li>
+<li>⭐ But because of lifetime annotations make the <strong>code more verbose</strong>, in order to make <strong>common patterns</strong> more ergonomic, Rust allows lifetimes to be <strong>elided/omitted</strong> in <code>fn</code> definitions. In this case, the compiler assigns lifetime annotations <strong>implicitly</strong>.</li>
+</ul>
+<p>Lifetime annotations are <strong>checked at compile-time</strong>. Compiler checks when a data is used for the first and the last times. According to that, Rust manages memory in <strong>run time</strong>. This is the major reason for <strong>slower compilation times</strong> in Rust.</p>
+<blockquote>
+<ul>
+<li>Unlike C and C++, <strong>usually</strong>, Rust doesn’t explicitly drop values at all.</li>
+<li>Unlike GC, Rust doesn’t place deallocation calls where the data is no longer referenced.</li>
+<li>Rust places deallocation calls where the data is about to go out of the scope and then enforces that no references to that resource exist after that point.</li>
+</ul>
+</blockquote>
+<h2 id="usage">Usage</h2>
+<p>Lifetimes are denoted with an apostrophe. By convention, a lowercase letter is used for naming. Usually <strong>starts with</strong> <code>'a</code> and <strong>follows alphabetic order</strong> when we need to add <strong>multiple lifetime</strong> annotations.</p>
+<p>When using references,</p>
+<h3 id="01-on-function-declaration">01. On Function Declaration</h3>
+<ul>
+<li>
+<p>Input and output parameters with references should attach lifetimes after the <code>&amp;</code> sign.
+ex. <code>..(x: &amp;'a str)</code> , <code>..(x: &amp;'a mut str)</code></p>
+</li>
+<li>
+<p>After the function name, we should mention that the given lifetimes are generic types.
+ex. <code>fn foo&lt;'a&gt;(..)</code> , <code>fn foo&lt;'a, 'b&gt;(..)</code></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// No inputs, return a reference
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">function</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Single input
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">function</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Single input and output, both have the same lifetime
+</span></span></span><span class="line"><span class="cl"><span class="c1">// The output should live at least as long as input exists
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">function</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Multiple inputs, only one input and the output share same lifetime
+</span></span></span><span class="line"><span class="cl"><span class="c1">// The output should live at least as long as y exists
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">function</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Multiple inputs, both inputs and the output share same lifetime
+</span></span></span><span class="line"><span class="cl"><span class="c1">// The output should live at least as long as x and y exist
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">function</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Multiple inputs, inputs can have different lifetimes 🔎
+</span></span></span><span class="line"><span class="cl"><span class="c1">// The output should live at least as long as x exists
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">function</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="p">,</span><span class="w"> </span><span class="na">&#39;b</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;b</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="02-on-struct-or-enum-declaration">02. On Struct or Enum Declaration</h3>
+<ul>
+<li>Elements with references should attach lifetimes after the <code>&amp;</code> sign.</li>
+<li>After the name of the struct or enum, we should mention that the given lifetimes are generic types.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Single element
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Data of x should live at least as long as Struct exists
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">Struct</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Multiple elements
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Data of x and y should live at least as long as Struct exists
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">Struct</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Variant with a single element
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Data of the variant should live at least as long as Enum exists
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">enum</span> <span class="nc">Enum</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Variant</span><span class="p">(</span><span class="o">&amp;</span><span class="na">&#39;a</span><span class="w"> </span><span class="n">Type</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="03-with-impls-and-traits">03. With Impls and Traits</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Struct</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">impl</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Struct</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">fn</span> <span class="nf">function</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="n">x</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Struct</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">impl</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Struct</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Struct</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// No need to specify &lt;&#39;a&gt; after new; impl already has it
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">          </span><span class="n">Struct</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="n">x</span><span class="w"> </span>: <span class="nc">x</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="n">y</span><span class="w"> </span>: <span class="nc">y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 🔎
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">impl</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Trait</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Type</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">impl</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Trait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Type</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="04-with-generic-types">04. With Generic Types</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 🔎
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">function</span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="n">f</span>: <span class="nc">F</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">for</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">F</span>: <span class="nb">FnOnce</span><span class="p">(</span><span class="o">&amp;</span><span class="na">&#39;a</span><span class="w"> </span><span class="n">Type</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Struct</span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">for</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">F</span>: <span class="nb">FnOnce</span><span class="p">(</span><span class="o">&amp;</span><span class="na">&#39;a</span><span class="w"> </span><span class="n">Type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="nc">F</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">enum</span> <span class="nc">Enum</span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">for</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">F</span>: <span class="nb">FnOnce</span><span class="p">(</span><span class="o">&amp;</span><span class="na">&#39;a</span><span class="w"> </span><span class="n">Type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Variant</span><span class="p">(</span><span class="n">F</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">impl</span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Struct</span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">for</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">F</span>: <span class="nb">FnOnce</span><span class="p">(</span><span class="o">&amp;</span><span class="na">&#39;a</span><span class="w"> </span><span class="n">Type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">fn</span> <span class="nf">x</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="nc">F</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h2 id="lifetime-elision">Lifetime Elision</h2>
+<p>As I mentioned earlier, in order to make <strong>common patterns</strong> more ergonomic, Rust allows lifetimes to be <strong>elided/omitted</strong>. This process is called <strong>Lifetime Elision</strong>.</p>
+<p>💡 For the moment Rust supports Lifetime Elisions only on <code>fn</code> definitions. But in the future, it will support for <code>impl</code> headers as well.</p>
+<p>Lifetime annotations of <code>fn</code> definitions can be elided<br>
+if its <strong>parameter list</strong> has either,</p>
+<ul>
+<li><strong>only one input parameter passes by reference</strong>.</li>
+<li>a parameter with <strong>either</strong> <code>&amp;self</code> <strong>or</strong> <strong>&amp;mut self</strong> reference.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">triple</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="kt">u64</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">u64</span> <span class="p">{</span><span class="w"> </span><span class="c1">// Only one input parameter passes by reference
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">filter</span><span class="p">(</span><span class="n">x</span>: <span class="kt">u8</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="kt">str</span> <span class="p">{</span><span class="w"> </span><span class="c1">// Only one input parameter passes by reference
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&#34;invalid inputs&#34;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Player</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span>: <span class="kt">u8</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">impl</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Player</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// So far Lifetime Elisions are allowed only on fn definitions. But in the future, they might support on impl headers as well.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">id</span>: <span class="kt">u8</span><span class="p">,</span><span class="w"> </span><span class="n">name</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Player</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Only one input parameter passes by reference
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">            </span><span class="n">Player</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">id</span><span class="w"> </span>: <span class="nc">id</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">name</span><span class="w"> </span>: <span class="nc">name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">fn</span> <span class="nf">heading_text</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w"> </span><span class="c1">// An fn definition with &amp;self (or &amp;mut self) reference
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">            </span><span class="fm">format!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">: </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">player1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Player</span>::<span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Serena Williams&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">player1_heading_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player1</span><span class="p">.</span><span class="n">heading_text</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">player1_heading_text</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><blockquote>
+<p>💡 In the Lifetime Elision process of fn definitions,</p>
+<ul>
+<li>Each parameter passed by reference has got a distinct lifetime annotation.
+ex. <code>..(x: &amp;str, y: &amp;str)</code> → <code>..&lt;'a, 'b&gt;(x: &amp;'a str, y: &amp;'b str)</code></li>
+<li>If the parameter list only has one parameter passed by reference, that lifetime is assigned to all elided lifetimes in the return values of that function.
+ex. <code>..(x: i32, y: &amp;str) -&gt; &amp;str</code> → <code>..&lt;'a&gt;(x: i32, y: &amp;'a str) -&gt; &amp;'a str</code></li>
+<li>Even if it has multiple parameters passed by reference, if one of them has &amp;self or &amp;mut self, the lifetime of self is assigned to all elided output lifetimes.
+ex. <code>impl Impl{ fn function(&amp;self, x: &amp;str) -&gt; &amp;str {} }</code> →
+<code>impl&lt;'a&gt; Impl&lt;'a&gt;{ fn function(&amp;'a self, x: &amp;'b str) -&gt; &amp;'a str {} }</code></li>
+<li>For all other cases, we have to write lifetime annotations manually.</li>
+</ul>
+</blockquote>
+<h2 id="static-annotations"><code>'static</code> Annotations</h2>
+<p><code>'static</code> lifetime annotation is a <strong>reserved</strong> lifetime annotation. These <strong>references are valid for the entire program</strong>. They are saved in the data segment of the binary and the data referred to will never go out of scope.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">static</span><span class="w"> </span><span class="n">N</span>: <span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// A constant with &#39;static lifetime
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Hello, world.&#34;</span><span class="p">;</span><span class="w"> </span><span class="c1">// a: &amp;&#39;static str
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">index</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="nb">&#39;static</span> <span class="kt">str</span> <span class="p">{</span><span class="w"> </span><span class="c1">// No need to mention &lt;&#39;static&gt; ; fn index ̶&lt;̶&#39;̶s̶t̶a̶t̶i̶c̶&gt;̶ 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="s">&#34;Hello, world!&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h2 id="few-more-examples-about-the-usage-of-rust-lifetimes">Few more examples about the usage of Rust lifetimes.</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">greeting</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s">&#34;Hi!&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">fullname</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fname</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">lname</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="fm">format!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s"> </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">fname</span><span class="p">,</span><span class="w"> </span><span class="n">lname</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Person</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">fname</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">lname</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">impl</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Person</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">fname</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">lname</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Person</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// No need to specify &lt;&#39;a&gt; after new; impl already has it
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">          </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="n">fname</span><span class="w"> </span>: <span class="nc">fname</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="n">lname</span><span class="w"> </span>: <span class="nc">lname</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">fn</span> <span class="nf">fullname</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="fm">format!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s"> </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">fname</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">lname</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;Serena&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Williams&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">player_fullname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="n">fullname</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Player: </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">player_fullname</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div>
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+          
+
+          <time datetime="2022-10-17"><i>🕒</i> Updated: 2022-10-17</time>
+          
+          <a href="/docs/borrowing/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="/docs/code-organization/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-lifetime">What is Lifetime?</a></li>
+    <li><a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#01-on-function-declaration">01. On Function Declaration</a></li>
+        <li><a href="#02-on-struct-or-enum-declaration">02. On Struct or Enum Declaration</a></li>
+        <li><a href="#03-with-impls-and-traits">03. With Impls and Traits</a></li>
+        <li><a href="#04-with-generic-types">04. With Generic Types</a></li>
+      </ul>
+    </li>
+    <li><a href="#lifetime-elision">Lifetime Elision</a></li>
+    <li><a href="#static-annotations"><code>'static</code> Annotations</a></li>
+    <li><a href="#few-more-examples-about-the-usage-of-rust-lifetimes">Few more examples about the usage of Rust lifetimes.</a></li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2023<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="/assets/js/docs.min.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>

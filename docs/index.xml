@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning Rust</title>
+    <link>https://learning-rust.github.io/</link>
+    <description>Recent content on Learning Rust</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://learning-rust.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Borrowing</title>
+      <link>https://learning-rust.github.io/docs/borrowing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/borrowing/</guid>
+      <description>In real life applications, most of the times we have to pass variable bindings to other functions or assign them to other variable bindings. In this case, we are referencing the original binding; borrow the data of it.
+What is Borrowing? Borrow (verb)
+To receive something with the promise of returning it.
+Shared &amp;amp; Mutable borrowings ⭐️ There are two types of Borrowing,
+Shared Borrowing (&amp;amp;T)
+A piece of data can be borrowed by a single or multiple users, but data should not be altered.</description>
+    </item>
+    <item>
+      <title>Cargo, Crates and Basic Project Structure</title>
+      <link>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</guid>
+      <description>Cargo Cargo is Rust’s built-in package manager and the build system. It can be used to,
+Create a new project: cargo new Create a new project in an existing directory: cargo init Build the project: cargo build Run the project: cargo run Update project dependencies: cargo update Run tests: cargo test Run benchmarks: cargo bench Generate the project documentation via rustdoc: cargo doc Analyze the project to see it has any errors, without building it: cargo check In addition, there are cargo commands to publish the project as a crate/ package to Rust&amp;rsquo;s official crate registry, crates.</description>
+    </item>
+    <item>
+      <title>Code Organization</title>
+      <link>https://learning-rust.github.io/docs/code-organization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/code-organization/</guid>
+      <description>When a single code block is getting larger, it should be decomposed into smaller pieces and should be organized in a proper manner. Rust supports different levels of code organization.
+1. Functions 2. Modules Can be mapped to a,
+Inline module File Directory hierarchy 3. Crates Can be mapped to a,
+lib.rs file on the same executable crate
+Dependency crate specified on Cargo.toml
+Can be specified from,
+Path Git repository crates.</description>
+    </item>
+    <item>
+      <title>Combinators</title>
+      <link>https://learning-rust.github.io/docs/combinators/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/combinators/</guid>
+      <description>What is a combinator? One meaning of “combinator” is a more informal sense referring to the combinator pattern, a style of organizing libraries centered around the idea of combining things. Usually there is some type T, some functions for constructing “primitive” values of type T, and some “combinators” which can combine values of type T in various ways to build up more complex values of type T. The other definition is &amp;ldquo;function with no free variables&amp;rdquo;.</description>
+    </item>
+    <item>
+      <title>Comments and Documenting the code</title>
+      <link>https://learning-rust.github.io/docs/comments-and-documenting-the-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/comments-and-documenting-the-code/</guid>
+      <description>Comments // Line comments /* Block comments */ Nested block comments are supported.
+💡 By convention, try to avoid using block comments. Use line comments instead.
+Doc Comments As we discussed, we can generate the project documentation via rustdoc by running the cargo doc command. It uses the doc comments to generate the documentation.
+💡 Usually we are adding doc comments on library crates. Also, we can use Markdown notations inside the doc comments.</description>
+    </item>
+    <item>
+      <title>Control Flows</title>
+      <link>https://learning-rust.github.io/docs/control-flows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/control-flows/</guid>
+      <description>if - else if - else Using only if block. let age = 13; if age &amp;lt; 18 { println!(&amp;#34;Hello, child!&amp;#34;); // The code prints this } Using only if and else blocks. let i = 7; if i % 2 == 0 { println!(&amp;#34;Even&amp;#34;); } else { println!(&amp;#34;Odd&amp;#34;); // The code prints this } Using with let statement. let age: u8 = 13; let is_below_eighteen = if age &amp;lt; 18 { true } else { false }; // true More examples, // i.</description>
+    </item>
+    <item>
+      <title>Crates</title>
+      <link>https://learning-rust.github.io/docs/crates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/crates/</guid>
+      <description>💭 Crates are a bit similar to the packages in some other languages. Crates compile individually. If the crate has child file modules, those files will get merged with the crate file and compile as a single unit.
+💭 A crate can produce an executable/ a binary or a library. src/main.rs is the crate root/ entry point for a binary crate and src/lib.rs is the entry point for a library crate.</description>
+    </item>
+    <item>
+      <title>Custom Error Types</title>
+      <link>https://learning-rust.github.io/docs/custom-error-types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/custom-error-types/</guid>
+      <description>Rust allow us to create our own Err types. We call them “Custom Error Types”.
+Error trait As you know traits define the functionality a type must provide. But we don’t always need to define new traits for common functionalities, because Rust standard library provides reusable traits which can be implemented on our own types. While creating custom error types the std::error::Error trait helps us to convert any type to an Err type.</description>
+    </item>
+    <item>
+      <title>Enums</title>
+      <link>https://learning-rust.github.io/docs/enums/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/enums/</guid>
+      <description>⭐️ An enum is a single type. It contains variants, which are possible values of the enum at a given time. For example,
+enum Day { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday } // The `Day` is the enum // Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday are the variants ⭐️ Variants can be accessed through :: notation, ex. Day::Sunday
+⭐️ Each enum variant can have,
+No data (unit variant) Unnamed ordered data (tuple variant) Named data (struct variant) enum FlashMessage { Success, // A unit variant Warning{ category: i32, message: String }, // A struct variant Error(String) // A tuple variant } fn main() { let mut form_status = FlashMessage::Success; print_flash_message(form_status); form_status = FlashMessage::Warning {category: 2, message: String::from(&amp;#34;Field X is required&amp;#34;)}; print_flash_message(form_status); form_status = FlashMessage::Error(String::from(&amp;#34;Connection Error&amp;#34;)); print_flash_message(form_status); } fn print_flash_message(m : FlashMessage) { // Pattern matching with enum match m { FlashMessage::Success =&amp;gt; println!</description>
+    </item>
+    <item>
+      <title>Error and None Propagation</title>
+      <link>https://learning-rust.github.io/docs/error-and-none-propagation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/error-and-none-propagation/</guid>
+      <description>We should use panics like panic!(), unwrap(), expect() only if we can not handle the situation in a better way. Also if a function contains expressions which can produce either None or Err,
+we can handle them inside the same function. Or, we can return None and Err types immediately to the caller. So the caller can decide how to handle them. 💡 None types no need to handle by the caller of the function always.</description>
+    </item>
+    <item>
+      <title>Functions</title>
+      <link>https://learning-rust.github.io/docs/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/functions/</guid>
+      <description>Named functions Named functions are declared with the keyword fn When using arguments, you must declare the data types. By default, functions return an empty tuple/ (). If you want to return a value, the return type must be specified after -&amp;gt; i. Hello world fn main() { println!(&amp;#34;Hello, world!&amp;#34;); } ii. Passing arguments fn print_sum(a: i8, b: i8) { println!(&amp;#34;sum is: {}&amp;#34;, a + b); } iii. Returning values // 01.</description>
+    </item>
+    <item>
+      <title>Functions (02)</title>
+      <link>https://learning-rust.github.io/docs/functions-02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/functions-02/</guid>
+      <description>Functions are the first line of organization in any program.
+fn main() { greet(); // Do one thing ask_location(); // Do another thing } fn greet() { println!(&amp;#34;Hello!&amp;#34;); } fn ask_location() { println!(&amp;#34;Where are you from?&amp;#34;); } We can add unit tests in the same file.
+fn main() { greet(); } fn greet() -&amp;gt; String { &amp;#34;Hello, world!&amp;#34;.to_string() } #[test] // Test attribute indicates this is a test function fn test_greet() { assert_eq!</description>
+    </item>
+    <item>
+      <title>Generics</title>
+      <link>https://learning-rust.github.io/docs/generics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/generics/</guid>
+      <description>📖 Sometimes, when writing a function or data type, we may want it to work for multiple types of arguments. In Rust, we can do this with generics.
+💭 The concept is, instead of declaring a specific data type we use an uppercase letter(or PascalCase identifier). ex, instead of x : u8 we use x : T . but we have to inform to the compiler that T is a generic type(can be any type) by adding &amp;lt;T&amp;gt; at first.</description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://learning-rust.github.io/docs/hello-world/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/hello-world/</guid>
+      <description>Hello, World! fn main() { println!(&amp;#34;Hello, world!&amp;#34;); } fn means function. The main function is the beginning of every Rust program.
+println!() prints text to the console and its ! indicates that it’s a macro rather than a function.
+💡 Rust files should have .rs file extension and if you’re using more than one word for the file name, follow the snake_case convention.
+Save the above code in file.rs , but it can be any name with .</description>
+    </item>
+    <item>
+      <title>Impls &amp; Traits</title>
+      <link>https://learning-rust.github.io/docs/impls-and-traits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/impls-and-traits/</guid>
+      <description>💡 When we discussed about C-like structs, I mentioned that those are similar to classes in OOP languages but without their methods. impls are used to define methods for Rust structs and enums.
+💡 Traits are kind of similar to interfaces in OOP languages. They are used to define the functionality a type must provide. Multiple traits can be implemented for a single type.
+⭐️️ But traits can also include default implementations of methods.</description>
+    </item>
+    <item>
+      <title>Installation</title>
+      <link>https://learning-rust.github.io/docs/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/installation/</guid>
+      <description>Rustup There are many ways to install Rust on your system. For the moment the official way to install Rust is using Rustup.
+📖 Rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between stable, beta, and nightly compilers and keep them updated. It makes cross-compiling simpler with binary builds of the standard library for common platforms.
+📖 Rustup installs rustc, cargo, rustup and other standard tools to Cargo&amp;rsquo;s bin directory.</description>
+    </item>
+    <item>
+      <title>Lifetimes</title>
+      <link>https://learning-rust.github.io/docs/lifetimes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/lifetimes/</guid>
+      <description>When we are dealing with references, we have to make sure that the referencing data stay alive until we stop using the references.
+Think,
+We have a variable binding, a. We are referencing the value of a, from another variable binding x. We have to make sure that a lives until we stop using x. 🔎 Memory management is a form of resource management applied to computer memory. Up until the mid-1990s, the majority of programming languages used Manual Memory Management which requires the programmer to give manual instructions to identify and deallocate unused objects/ garbage.</description>
+    </item>
+    <item>
+      <title>Modules</title>
+      <link>https://learning-rust.github.io/docs/modules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/modules/</guid>
+      <description>01. In the same file Related code and data are grouped into a module and stored in the same file.
+fn main() { greetings::hello(); } mod greetings { // ⭐️ By default, everything inside a module is private pub fn hello() { // ⭐️ So function has to be public to access from outside println!(&amp;#34;Hello, world!&amp;#34;); } } Modules can also be nested.
+fn main() { phrases::greetings::hello(); } mod phrases { pub mod greetings { pub fn hello() { println!</description>
+    </item>
+    <item>
+      <title>Operators</title>
+      <link>https://learning-rust.github.io/docs/operators/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/operators/</guid>
+      <description>Arithmetic Operators + - * / %
+let a = 5; let b = a + 1; //6 let c = a - 1; //4 let d = a * 2; //10 let e = a / 2; // ⭐️ 2 not 2.5 let f = a % 2; //1 let g = 5.0 / 2.0; //2.5 Comparison Operators == != &amp;lt; &amp;gt; &amp;lt;= &amp;gt;=
+let a = 1; let b = 2; let c = a == b; //false let d = a !</description>
+    </item>
+    <item>
+      <title>Option and Result</title>
+      <link>https://learning-rust.github.io/docs/option-and-result/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/option-and-result/</guid>
+      <description>Why Option and Result? Many languages use null\ nil\ undefined types to represent empty outputs, and Exceptions to handle errors. Rust skips using both, especially to prevent issues like null pointer exceptions, sensitive data leakages through exceptions and etc. Instead, Rust provides two special generic enums;Option and Result to deal with above cases.
+💭 In the previous sections, we have discussed about the basics of enums, generics and Result &amp;amp; Option types.</description>
+    </item>
+    <item>
+      <title>Overview</title>
+      <link>https://learning-rust.github.io/docs/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/overview/</guid>
+      <description>This is based on the posts I wrote on Medium, https://medium.com/learning-rust
+🐣 I am a Sri Lankan 🇱🇰 Web Developer who lives in Singapore 🇸🇬. So I am not a native English speaker and just learning Rust, If you found any mistake or something need to be changed, even a spelling or a grammar mistake, feel free to create a pull request. Thanks.</description>
+    </item>
+    <item>
+      <title>Ownership</title>
+      <link>https://learning-rust.github.io/docs/ownership/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/ownership/</guid>
+      <description>fn main() { let a = [1, 2, 3]; let b = a; println!(&amp;#34;{:?} {:?}&amp;#34;, a, b); // [1, 2, 3] [1, 2, 3] } fn main() { let a = vec![1, 2, 3]; let b = a; println!(&amp;#34;{:?} {:?}&amp;#34;, a, b); // Error; use of moved value: `a` } In the above examples, we are just trying to assign the value of a to b . Almost the same code in both code blocks, but having two different data types.</description>
+    </item>
+    <item>
+      <title>Panicking</title>
+      <link>https://learning-rust.github.io/docs/panicking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/panicking/</guid>
+      <description>panic!() In some cases, when an error occurs we can not do anything to handle it, if the error is something which should not have happened. In other words, if it’s an unrecoverable error. Also when we are not using a feature-rich debugger or proper logs, sometimes we need to debug the code by quitting the program from a specific line of code by printing out a specific message or a value of a variable binding to understand the current flow of the program.</description>
+    </item>
+    <item>
+      <title>Primitive Data Types</title>
+      <link>https://learning-rust.github.io/docs/primitive-data-types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/primitive-data-types/</guid>
+      <description>bool true or false
+let x = true; let y: bool = false; // ⭐️ no TRUE, FALSE, 1, 0 char A single Unicode scalar value
+let x = &amp;#39;x&amp;#39;; let y: char = &amp;#39;😎&amp;#39;; // ⭐️ no &amp;#34;x&amp;#34;, only single quotes Because of Unicode support, char is not a single byte, but four(32 bits).
+i8, i16, i32, i64, i128 8, 16, 32, 64 and 128 bit fixed sized signed(+/-) integer types</description>
+    </item>
+    <item>
+      <title>Smart Compiler</title>
+      <link>https://learning-rust.github.io/docs/smart-compiler/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/smart-compiler/</guid>
+      <description>Why Compiler? The Rust compiler does the most significant job to prevent errors in Rust programs. It analyzes the code at compile-time and issues warnings, if the code does not follow memory management rules or lifetime annotations correctly.
+For example,
+#[allow(unused_variables)] //💡 A lint attribute used to suppress the warning; unused variable: `b` fn main() { let a = vec![1, 2, 3]; let b = a; println!(&amp;#34;{:?}&amp;#34;, a); } // ------ Compile-time error ------ error[E0382]: use of moved value: `a` --&amp;gt; src/main.</description>
+    </item>
+    <item>
+      <title>STD, Primitives and Preludes</title>
+      <link>https://learning-rust.github.io/docs/std-primitives-and-preludes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/std-primitives-and-preludes/</guid>
+      <description>⭐️ In Rust, language elements are implemented by not only std library crate but also compiler as well. Examples,
+Primitives: Defined by the compiler and methods are implemented by std library directly on primitives. Standard Macros: Defined by both compiler and std The std library has been divided into modules, according to the main areas each covered.
+⭐️ While primitives are implemented by the compiler, the standard library implements the most useful methods directly on the primitive types.</description>
+    </item>
+    <item>
+      <title>Structs</title>
+      <link>https://learning-rust.github.io/docs/structs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/structs/</guid>
+      <description>⭐️ Structs are used to encapsulate related properties into one unified data type.
+💡 By convention, the name of the struct should follow PascalCase.
+There are 3 variants of structs,
+C-like structs One or more comma-separated name:value pairs Brace-enclosed list Similar to classes (without its methods) in OOP languages Because fields have names, we can access them through dot notation Tuple structs One or more comma-separated values A parenthesized list like tuples Looks like a named tuples Unit structs A struct with no members at all It defines a new type but it resembles an empty tuple, () Rarely in use, useful with generics ⭐️ When regarding OOP in Rust, attributes and methods are placed separately on structs and traits.</description>
+    </item>
+    <item>
+      <title>Unwrap and Expect</title>
+      <link>https://learning-rust.github.io/docs/unwrap-and-expect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/unwrap-and-expect/</guid>
+      <description>unwrap() If an Option type has Some value or a Result type has a Ok value, the value inside them passes to the next step. If the Option type has None value or the Result type has Err value, program panics; If Err, panics with the error message. The functionality is bit similar to the following codes, which are using match instead unwrap().
+Example with Option and match, before using unwrap()</description>
+    </item>
+    <item>
+      <title>Use</title>
+      <link>https://learning-rust.github.io/docs/use/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/use/</guid>
+      <description>Let&amp;rsquo;s see the main usages of the use keyword.
+01. Bind a full path to a new name Mainly use keyword is used to bind a full path of an element to a new name. So the user doesn’t want to repeat the full path each time.
+// -- Initial code without the `use` keyword -- mod phrases { pub mod greetings { pub fn hello() { println!(&amp;#34;Hello, world!&amp;#34;); } } } fn main() { phrases::greetings::hello(); // Using full path } // -- Usage of the `use` keyword -- // 01.</description>
+    </item>
+    <item>
+      <title>Variable bindings, Constants &amp; Statics</title>
+      <link>https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/</guid>
+      <description>Variable bindings, Constants &amp;amp; Statics ⭐️ In Rust, variables are immutable by default, so we call them Variable bindings. To make them mutable, the mut keyword is used.
+⭐️ Rust is a statically typed language; it checks data types at compile-time. But it doesn’t require you to actually type it when declaring variable bindings. In that case, the compiler checks the usage and sets a better data type for it. But for constants and statics, you must annotate the type.</description>
+    </item>
+    <item>
+      <title>Vectors</title>
+      <link>https://learning-rust.github.io/docs/vectors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/vectors/</guid>
+      <description>If you remember, the array is a fixed-size list of elements, of the same data type. Even with mut, its element count cannot be changed. A vector is kind of a re-sizable array but all elements must be in the same type.
+⭐️ It’s a generic type, written as Vec&amp;lt;T&amp;gt; . T can have any type, ex. The type of a Vec of i32s is Vec&amp;lt;i32&amp;gt;. Also, Vectors always allocate their data in a dynamically allocated heap.</description>
+    </item>
+    <item>
+      <title>Why Rust?</title>
+      <link>https://learning-rust.github.io/docs/why-rust/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/why-rust/</guid>
+      <description>History of Rust Rust was initially designed and developed by former Mozilla employee Graydon Hoare as a personal project. Mozilla began sponsoring the project in 2009 and announced it in 2010. But the first stable release, Rust 1.0 was released on May 15, 2015.
+Initial Goals The goal of Rust is to be a good programming language for creating highly concurrent, safe and performant systems.
+&amp;ldquo;Rust is a systems programming language focused on three goals: safety, speed, and concurrency.</description>
+    </item>
+    <item>
+      <title>Workspaces</title>
+      <link>https://learning-rust.github.io/docs/workspaces/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://learning-rust.github.io/docs/workspaces/</guid>
+      <description>When the code base is getting larger, you might need to work with multiple crates on the same project. Rust supports this via Workspaces. You can analyze (cargo check), build, run tests or generate docs for all crates at once by running cargo commands from the project root.
+⭐️ When working on multiple crates same time, there is a higher possibility of having shared dependencies on crates. To prevent downloading and compiling the same dependency multiple times, Rust uses a shared build directory under the project root, while running cargo build from the project root.</description>
+    </item>
+  </channel>
+</rss>

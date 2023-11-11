@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
+  <meta name="author" content="Dumindu Madunuwan">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>Error and None Propagation · Learning Rust</title>
+  <link rel="canonical" href="https://learning-rust.github.io/docs/error-and-none-propagation/">
+  <link rel="stylesheet" href="/assets/css/docs.min.min.9deba2d55bb7534667e8b6e4ac842dd1330bdc793b12b633d5413d263a72db4a.css" integrity="">
+
+  <link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon/favicon.ico">
+<link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FZHQCXSZ89');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="/" class="site-logo">Learning Rust</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Documentation</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/overview/">
+                  
+                  Overview
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/why-rust/">
+                  
+                  Why Rust?
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/installation/">
+                  
+                  Installation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/hello-world/">
+                  
+                  Hello World
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/cargo-crates-and-basic-project-structure/">
+                  
+                  Cargo, Crates and Basic Project Structure
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/comments-and-documenting-the-code/">
+                  
+                  Comments and Documenting the code
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/variable-bindings-constants-and-statics/">
+                  
+                  Variable bindings, Constants and Statics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions/">
+                  
+                  Functions
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/primitive-data-types/">
+                  
+                  Primitive Data Types
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/operators/">
+                  
+                  Operators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/control-flows/">
+                  
+                  Control Flows
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Beyond The Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/vectors/">
+                  
+                  Vectors
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/structs/">
+                  
+                  Structs
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/enums/">
+                  
+                  Enums
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/generics/">
+                  
+                  Generics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/impls-and-traits/">
+                  
+                  Impls and Traits
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>The Tough Part</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/ownership/">
+                  
+                  Ownership
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/borrowing/">
+                  
+                  Borrowing
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/lifetimes/">
+                  
+                  Lifetimes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Let&#39;s Get It Started</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/code-organization/">
+                  
+                  Code Organization
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions-02/">
+                  
+                  Functions (02)
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/modules/">
+                  
+                  Modules
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/crates/">
+                  
+                  Crates
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/workspaces/">
+                  
+                  Workspaces
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/use/">
+                  
+                  Use
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/std-primitives-and-preludes/">
+                  
+                  STD, Primitives and Preludes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Error Handling</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/smart-compiler/">
+                  
+                  Smart Compiler
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/panicking/">
+                  
+                  Panicking
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/option-and-result/">
+                  
+                  Option and Result
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/unwrap-and-expect/">
+                  
+                  Unwrap and Expect
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="active" href="/docs/error-and-none-propagation/">
+                  
+                  Error and None Propagation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/combinators/">
+                  
+                  Combinators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/custom-error-types/">
+                  
+                  Custom Error Types
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="/" class="site-logo">Learning Rust</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Error and None Propagation</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <p>We should use panics like <code>panic!()</code>, <code>unwrap()</code>, <code>expect()</code> only if we can not handle the situation in a better way. Also if a function contains expressions which can produce either <code>None</code> or <code>Err</code>,</p>
+<ul>
+<li>we can handle them inside the same function. Or,</li>
+<li>we can return <code>None</code> and <code>Err</code> types immediately to the caller. So the caller can decide how to handle them.</li>
+</ul>
+<p>💡 <code>None</code> types no need to handle by the caller of the function always. But Rusts’ convention to handle <strong><code>Err</code></strong> types is, <strong>return them immediately to the caller to give more control to the caller to decide how to handle them.</strong></p>
+<h2 id="-operator">? Operator</h2>
+<ul>
+<li>If an <code>Option</code> type has <strong><code>Some</code></strong> value or a <code>Result</code> type has a <strong><code>Ok</code></strong> value, <strong>the value inside them</strong> passes to the next step.</li>
+<li>If the <code>Option</code> type has <strong><code>None</code></strong> value or the <code>Result</code> type has <strong><code>Err</code></strong> value, <strong>return them immediately</strong> to the caller of the function.</li>
+</ul>
+<p>Example with <code>Option</code> type,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">complex_function</span><span class="p">().</span><span class="n">is_none</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;X not exists!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">complex_function</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="nb">&#39;static</span><span class="w"> </span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_an_optional_value</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w"> </span><span class="c1">// if None, returns immediately; if Some(&#34;abc&#34;), set x to &#34;abc&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// some other code, ex
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// &#34;abc&#34; ; if you change line 19 `false` to `true` 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">get_an_optional_value</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="nb">&#39;static</span><span class="w"> </span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//if the optional value is not empty
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="s">&#34;abc&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//else
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="nb">None</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>Example with <code>Result</code> Type,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// `main` function is the caller of `complex_function` function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="c1">// So we handle errors of complex_function(), inside main()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">complex_function</span><span class="p">().</span><span class="n">is_err</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Can not calculate X!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">complex_function</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">u64</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">function_with_error</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w"> </span><span class="c1">// if Err, returns immediately; if Ok(255), set x to 255
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// some other code, ex
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// 255 ; if you change line 20 `true` to `false`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">function_with_error</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">u64</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//if error happens
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="s">&#34;some message&#34;</span><span class="p">.</span><span class="n">to_string</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// else, return valid output
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h2 id="try">try!()</h2>
+<p>⭐ <code>?</code> operator was added in Rust version 1.13. <code>try!()</code> macro is the old way to propagate errors before that. So we <strong>should avoid</strong> using this now.</p>
+<ul>
+<li>If a <code>Result</code> type has <strong><code>Ok</code></strong> value, <strong>the value inside it</strong> passes to the next step. If it has <strong><code>Err</code></strong> value, <strong>returns it immediately</strong> to the caller of the function.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// using `?`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">function_with_error</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w"> </span><span class="c1">// if Err, returns immediately; if Ok(255), set x to 255
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// using `try!()`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">try</span><span class="o">!</span><span class="p">(</span><span class="n">function_with_error</span><span class="p">());</span><span class="w">
+</span></span></span></code></pre></div><h2 id="error-propagation-frommain">Error propagation from main()</h2>
+<p>Before Rust version 1.26, we couldn&rsquo;t propagate <code>Result</code> and <code>Option</code> types from the <code>main()</code> function. But now, we <strong>can propagate <code>Result</code> types</strong> from the <code>main()</code> function and it prints the <strong><code>Debug</code> representation of the <code>Err</code></strong>.</p>
+<p>💡 We are going to discuss about <code>Debug</code> representations under <a href="/docs/custom-error-types/#error-trait">Error trait section</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">fs</span>::<span class="n">File</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">std</span>::<span class="n">io</span>::<span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span>::<span class="n">open</span><span class="p">(</span><span class="s">&#34;not-existing-file.txt&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w"> </span><span class="c1">// Because of the default return value of Rust functions is an empty tuple/ ()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Because of the program can not find not-existing-file.txt , it produces,
+</span></span></span><span class="line"><span class="cl"><span class="c1">//    Err(Os { code: 2, kind: NotFound, message: &#34;No such file or directory&#34; })
+</span></span></span><span class="line"><span class="cl"><span class="c1">// While propagating error, the program prints,
+</span></span></span><span class="line"><span class="cl"><span class="c1">//    Error: Os { code: 2, kind: NotFound, message: &#34;No such file or directory&#34; }
+</span></span></span></code></pre></div><blockquote>
+<p>💯 If you want to know about the all kind of errors <code>std::fs::File::open()</code> can produce, check the <a href="https://doc.rust-lang.org/std/fs/struct.OpenOptions.html#errors">error list on <code>std::fs::OpenOptions</code></a>.</p>
+</blockquote>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          <time datetime="2022-10-17"><i>🕒</i> Updated: 2022-10-17</time>
+          
+          <a href="/docs/unwrap-and-expect/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="/docs/combinators/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-operator">? Operator</a></li>
+    <li><a href="#try">try!()</a></li>
+    <li><a href="#error-propagation-frommain">Error propagation from main()</a></li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2023<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="/assets/js/docs.min.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>

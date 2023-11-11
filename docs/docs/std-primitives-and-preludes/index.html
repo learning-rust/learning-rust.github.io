@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
+  <meta name="author" content="Dumindu Madunuwan">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>STD, Primitives and Preludes · Learning Rust</title>
+  <link rel="canonical" href="https://learning-rust.github.io/docs/std-primitives-and-preludes/">
+  <link rel="stylesheet" href="/assets/css/docs.min.min.9deba2d55bb7534667e8b6e4ac842dd1330bdc793b12b633d5413d263a72db4a.css" integrity="">
+
+  <link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon/favicon.ico">
+<link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FZHQCXSZ89');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="/" class="site-logo">Learning Rust</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Documentation</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/overview/">
+                  
+                  Overview
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/why-rust/">
+                  
+                  Why Rust?
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/installation/">
+                  
+                  Installation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/hello-world/">
+                  
+                  Hello World
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/cargo-crates-and-basic-project-structure/">
+                  
+                  Cargo, Crates and Basic Project Structure
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/comments-and-documenting-the-code/">
+                  
+                  Comments and Documenting the code
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/variable-bindings-constants-and-statics/">
+                  
+                  Variable bindings, Constants and Statics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions/">
+                  
+                  Functions
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/primitive-data-types/">
+                  
+                  Primitive Data Types
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/operators/">
+                  
+                  Operators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/control-flows/">
+                  
+                  Control Flows
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Beyond The Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/vectors/">
+                  
+                  Vectors
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/structs/">
+                  
+                  Structs
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/enums/">
+                  
+                  Enums
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/generics/">
+                  
+                  Generics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/impls-and-traits/">
+                  
+                  Impls and Traits
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>The Tough Part</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/ownership/">
+                  
+                  Ownership
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/borrowing/">
+                  
+                  Borrowing
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/lifetimes/">
+                  
+                  Lifetimes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Let&#39;s Get It Started</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/code-organization/">
+                  
+                  Code Organization
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions-02/">
+                  
+                  Functions (02)
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/modules/">
+                  
+                  Modules
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/crates/">
+                  
+                  Crates
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/workspaces/">
+                  
+                  Workspaces
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/use/">
+                  
+                  Use
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="active" href="/docs/std-primitives-and-preludes/">
+                  
+                  STD, Primitives and Preludes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Error Handling</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/smart-compiler/">
+                  
+                  Smart Compiler
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/panicking/">
+                  
+                  Panicking
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/option-and-result/">
+                  
+                  Option and Result
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/unwrap-and-expect/">
+                  
+                  Unwrap and Expect
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/error-and-none-propagation/">
+                  
+                  Error and None Propagation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/combinators/">
+                  
+                  Combinators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/custom-error-types/">
+                  
+                  Custom Error Types
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="/" class="site-logo">Learning Rust</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>STD, Primitives and Preludes</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <p>⭐️ In Rust, language elements are implemented by not only <strong><code>std</code> library</strong> crate but also <strong>compiler</strong> as well. Examples,</p>
+<ul>
+<li><strong><a href="https://doc.rust-lang.org/std/#primitives">Primitives</a></strong>: Defined by the compiler and methods are implemented by <code>std</code> library directly on primitives.</li>
+<li><strong><a href="https://doc.rust-lang.org/std/#macros">Standard Macros</a></strong>: Defined by both compiler and <code>std</code></li>
+</ul>
+<p>The <strong><code>std</code></strong> library has been divided into <strong><a href="https://doc.rust-lang.org/std/#modules">modules</a></strong>, according to the main areas each covered.</p>
+<p>⭐️ While primitives are implemented by the <strong>compiler</strong>, the standard library implements the <strong>most useful methods</strong> directly on the primitive types. But some <strong>rarely useful language elements</strong> of some primitives are stored on relevant <strong><code>std</code> modules</strong>. This is why you can see <code>char</code>, <code>str</code> and integer types on both <a href="https://doc.rust-lang.org/std/#primitives">primitives</a> and <a href="https://doc.rust-lang.org/std/#modules"><code>std</code> modules</a>.</p>
+<h2 id="primitives">Primitives</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Primitives: Defined by the compiler and methods are directly implemented by std
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="kt">str</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="kt">i16</span><span class="p">,</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="kt">i64</span><span class="p">,</span><span class="w"> </span><span class="kt">i128</span><span class="p">,</span><span class="w"> </span><span class="kt">isize</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">u8</span><span class="p">,</span><span class="w"> </span><span class="kt">u16</span><span class="p">,</span><span class="w"> </span><span class="kt">u32</span><span class="p">,</span><span class="w"> </span><span class="kt">u64</span><span class="p">,</span><span class="w"> </span><span class="kt">u128</span><span class="p">,</span><span class="w"> </span><span class="kt">usize</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">f32</span><span class="p">,</span><span class="w"> </span><span class="kt">f64</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">array</span><span class="p">,</span><span class="w"> </span><span class="n">tuple</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">pointer</span><span class="p">,</span><span class="w"> </span><span class="k">fn</span><span class="p">,</span><span class="w"> </span><span class="n">reference</span><span class="w">
+</span></span></span></code></pre></div><h2 id="standard-macros">Standard Macros</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Standard Macros also defined by both compiler and std
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">print</span><span class="p">,</span><span class="w"> </span><span class="n">println</span><span class="p">,</span><span class="w"> </span><span class="n">eprint</span><span class="p">,</span><span class="w"> </span><span class="n">eprintln</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="n">format_args</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">write</span><span class="p">,</span><span class="w"> </span><span class="n">writeln</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">concat</span><span class="p">,</span><span class="w"> </span><span class="n">concat_idents</span><span class="p">,</span><span class="w"> </span><span class="n">stringify</span><span class="w"> </span><span class="c1">// concat_idents: nightly-only experimental API
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">include</span><span class="p">,</span><span class="w"> </span><span class="n">include_bytes</span><span class="p">,</span><span class="w"> </span><span class="n">include_str</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">assert</span><span class="p">,</span><span class="w"> </span><span class="n">assert_eq</span><span class="p">,</span><span class="w"> </span><span class="n">assert_ne</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">debug_assert</span><span class="p">,</span><span class="w"> </span><span class="n">debug_assert_eq</span><span class="p">,</span><span class="w"> </span><span class="n">debug_assert_ne</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">try</span><span class="p">,</span><span class="w"> </span><span class="n">panic</span><span class="p">,</span><span class="w"> </span><span class="n">compile_error</span><span class="p">,</span><span class="w"> </span><span class="n">unreachable</span><span class="p">,</span><span class="w"> </span><span class="n">unimplemented</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="n">column</span><span class="p">,</span><span class="w"> </span><span class="n">module_path</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">option_env</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">cfg</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">select</span><span class="p">,</span><span class="w"> </span><span class="n">thread_local</span><span class="w"> </span><span class="c1">// select: nightly-only experimental API
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">vec</span><span class="w">
+</span></span></span></code></pre></div><h2 id="std-modules">Std Modules</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// std modules
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="kt">str</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="kt">i16</span><span class="p">,</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="kt">i64</span><span class="p">,</span><span class="w"> </span><span class="kt">i128</span><span class="p">,</span><span class="w"> </span><span class="kt">isize</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">u8</span><span class="p">,</span><span class="w"> </span><span class="kt">u16</span><span class="p">,</span><span class="w"> </span><span class="kt">u32</span><span class="w"> </span><span class="p">,</span><span class="kt">u64</span><span class="p">,</span><span class="w"> </span><span class="kt">u128</span><span class="p">,</span><span class="w"> </span><span class="kt">usize</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">f32</span><span class="p">,</span><span class="w"> </span><span class="kt">f64</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">num</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">vec</span><span class="p">,</span><span class="w"> </span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">hash</span><span class="p">,</span><span class="w"> </span><span class="n">heap</span><span class="p">,</span><span class="w"> </span><span class="n">collections</span><span class="w"> </span><span class="c1">// heap: nightly-only experimental API
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">ascii</span><span class="p">,</span><span class="w"> </span><span class="n">fmt</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">default</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">marker</span><span class="p">,</span><span class="w"> </span><span class="n">clone</span><span class="p">,</span><span class="w"> </span><span class="n">convert</span><span class="p">,</span><span class="w"> </span><span class="n">cmp</span><span class="p">,</span><span class="w"> </span><span class="n">iter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ops</span><span class="p">,</span><span class="w"> </span><span class="n">ffi</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">option</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">panic</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">io</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">fs</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mem</span><span class="p">,</span><span class="w"> </span><span class="n">thread</span><span class="p">,</span><span class="w"> </span><span class="n">sync</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">process</span><span class="p">,</span><span class="w"> </span><span class="n">env</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">net</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">time</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">os</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="n">boxed</span><span class="p">,</span><span class="w"> </span><span class="n">borrow</span><span class="p">,</span><span class="w"> </span><span class="n">cell</span><span class="p">,</span><span class="w"> </span><span class="n">any</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">prelude</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">intrinsics</span><span class="w"> </span><span class="c1">// intrinsics: nightly-only experimental API
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">raw</span><span class="w"> </span><span class="c1">// raw: nightly-only experimental API
+</span></span></span></code></pre></div><blockquote>
+<p>🔎 When examining <a href="https://github.com/rust-lang/rust">Rust’s source code</a>, you can see that the <a href="https://github.com/rust-lang/rust/tree/master/src"><code>src</code> directory</a> is a <strong>workspace</strong>. Even though it is having many library crates, by examining <a href="https://github.com/rust-lang/rust/blob/master/src/Cargo.toml">root <code>Cargo.toml</code></a> file you can easily identify that main crates are <strong><a href="https://github.com/rust-lang/rust/tree/master/src/rustc">rustc</a></strong>(compiler) and <strong><a href="https://github.com/rust-lang/rust/tree/master/src/libstd">libstd</a></strong> (std). In libstd/lib.rs std modules have been <strong>re-exported</strong> via <code>pub use</code> and the original location of most of the <code>std</code> modules is <a href="https://github.com/rust-lang/rust/tree/master/src/libcore"><code>src/libcore</code></a>.</p>
+</blockquote>
+<p><strong>Few important <code>std</code> modules are,</strong></p>
+<ul>
+<li><code>std::io</code> - Core <strong>I/O</strong> functionality</li>
+<li><code>std::fs</code> - <strong>Filesystem</strong> specific functionality</li>
+<li><code>std::path</code> - <strong>Cross-platform path</strong> specific functionality</li>
+<li><code>std::env</code> - <strong>Process’s environment</strong> related functionality</li>
+<li><code>std::mem</code> - <strong>Memory</strong> related functionality</li>
+<li><code>std::net</code> - <strong>TCP/UDP</strong> communication</li>
+<li><code>std::os</code> - <strong>OS</strong> specific functionality</li>
+<li><code>std::thread</code> - Native <strong>threads</strong> specific functionality</li>
+<li><code>std::collections</code> - Core <strong>Collection types</strong></li>
+</ul>
+<blockquote>
+<p>💯 Refer <a href="https://doc.rust-lang.org/std/">Rust Standard Library Documentation</a> for more details.</p>
+</blockquote>
+<h2 id="preludes">Preludes</h2>
+<p>Even though Rust <code>std</code> contains many modules, by default it doesn’t load each and everything of <code>std</code> library on every rust program. Instead, it loads only the <strong>smallest list of things which require for almost every single Rust program</strong>. These are called <strong><a href="https://doc.rust-lang.org/std/prelude/">preludes</a></strong>. They import only,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Reexported core operators
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">marker</span>::<span class="p">{</span><span class="nb">Copy</span><span class="p">,</span><span class="w"> </span><span class="nb">Send</span><span class="p">,</span><span class="w"> </span><span class="nb">Sized</span><span class="p">,</span><span class="w"> </span><span class="nb">Sync</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">ops</span>::<span class="p">{</span><span class="nb">Drop</span><span class="p">,</span><span class="w"> </span><span class="nb">Fn</span><span class="p">,</span><span class="w"> </span><span class="nb">FnMut</span><span class="p">,</span><span class="w"> </span><span class="nb">FnOnce</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Reexported functions
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">mem</span>::<span class="nb">drop</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Reexported types and traits
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">boxed</span>::<span class="nb">Box</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">borrow</span>::<span class="nb">ToOwned</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">clone</span>::<span class="nb">Clone</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">cmp</span>::<span class="p">{</span><span class="nb">PartialEq</span><span class="p">,</span><span class="w"> </span><span class="nb">PartialOrd</span><span class="p">,</span><span class="w"> </span><span class="nb">Eq</span><span class="p">,</span><span class="w"> </span><span class="nb">Ord</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">convert</span>::<span class="p">{</span><span class="nb">AsRef</span><span class="p">,</span><span class="w"> </span><span class="nb">AsMut</span><span class="p">,</span><span class="w"> </span><span class="nb">Into</span><span class="p">,</span><span class="w"> </span><span class="nb">From</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">default</span>::<span class="nb">Default</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">iter</span>::<span class="p">{</span><span class="nb">Iterator</span><span class="p">,</span><span class="w"> </span><span class="nb">Extend</span><span class="p">,</span><span class="w"> </span><span class="nb">IntoIterator</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">iter</span>::<span class="p">{</span><span class="nb">DoubleEndedIterator</span><span class="p">,</span><span class="w"> </span><span class="nb">ExactSizeIterator</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">option</span>::<span class="nb">Option</span>::<span class="p">{</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="nb">Some</span><span class="p">,</span><span class="w"> </span><span class="nb">None</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">result</span>::<span class="nb">Result</span>::<span class="p">{</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="nb">Ok</span><span class="p">,</span><span class="w"> </span><span class="nb">Err</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">slice</span>::<span class="n">SliceConcatExt</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">string</span>::<span class="p">{</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nb">ToString</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">vec</span>::<span class="nb">Vec</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><blockquote>
+<p>Preludes have been imported explicitly on <a href="https://github.com/rust-lang/rust/blob/master/src/libstd/lib.rs#L353"><code>libstd/lib.rs</code></a> and the whole list can be seen on <a href="https://github.com/rust-lang/rust/blob/master/src/libstd/prelude/v1.rs"><code>libstd/prelude/v1.rs</code></a>.</p>
+</blockquote>
+<p>⭐️ So technically, Rust inserts,</p>
+<ul>
+<li><code>extern crate std;</code> : into the <strong>crate root of every crate</strong></li>
+<li><code>use std::prelude::v1::*;</code> : into <strong>every module</strong>
+So you don’t need to import these each time.</li>
+</ul>
+<p>The concept of preludes is quite common on Rust libraries. Even some modules inside <code>std</code> crate (ex.<a href="https://github.com/rust-lang/rust/blob/master/src/libstd/io/prelude.rs"><code>std::io</code></a>) and many libraries (ex. <a href="https://github.com/diesel-rs/diesel/blob/master/diesel/src/lib.rs#L324">Diesel</a>) are having their own <code>prelude</code> modules.</p>
+<p>⭐️ But <strong>preludes</strong> are used to <strong>create a single place to import all important components</strong> which are <strong>required while using the library</strong>. They <strong>do not load automatically</strong> unless you imported them manually. Only <code>std::prelude</code> imports automatically in every Rust programs.</p>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          <time datetime="2022-10-17"><i>🕒</i> Updated: 2022-10-17</time>
+          
+          <a href="/docs/use/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="/docs/smart-compiler/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#primitives">Primitives</a></li>
+    <li><a href="#standard-macros">Standard Macros</a></li>
+    <li><a href="#std-modules">Std Modules</a></li>
+    <li><a href="#preludes">Preludes</a></li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2023<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="/assets/js/docs.min.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>

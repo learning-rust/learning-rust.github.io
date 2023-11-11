@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
+  <meta name="author" content="Dumindu Madunuwan">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>Crates · Learning Rust</title>
+  <link rel="canonical" href="https://learning-rust.github.io/docs/crates/">
+  <link rel="stylesheet" href="/assets/css/docs.min.min.9deba2d55bb7534667e8b6e4ac842dd1330bdc793b12b633d5413d263a72db4a.css" integrity="">
+
+  <link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon/favicon.ico">
+<link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FZHQCXSZ89');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="/" class="site-logo">Learning Rust</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Documentation</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/overview/">
+                  
+                  Overview
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/why-rust/">
+                  
+                  Why Rust?
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/installation/">
+                  
+                  Installation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/hello-world/">
+                  
+                  Hello World
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/cargo-crates-and-basic-project-structure/">
+                  
+                  Cargo, Crates and Basic Project Structure
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/comments-and-documenting-the-code/">
+                  
+                  Comments and Documenting the code
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/variable-bindings-constants-and-statics/">
+                  
+                  Variable bindings, Constants and Statics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions/">
+                  
+                  Functions
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/primitive-data-types/">
+                  
+                  Primitive Data Types
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/operators/">
+                  
+                  Operators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/control-flows/">
+                  
+                  Control Flows
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Beyond The Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/vectors/">
+                  
+                  Vectors
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/structs/">
+                  
+                  Structs
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/enums/">
+                  
+                  Enums
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/generics/">
+                  
+                  Generics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/impls-and-traits/">
+                  
+                  Impls and Traits
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>The Tough Part</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/ownership/">
+                  
+                  Ownership
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/borrowing/">
+                  
+                  Borrowing
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/lifetimes/">
+                  
+                  Lifetimes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Let&#39;s Get It Started</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/code-organization/">
+                  
+                  Code Organization
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions-02/">
+                  
+                  Functions (02)
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/modules/">
+                  
+                  Modules
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="active" href="/docs/crates/">
+                  
+                  Crates
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/workspaces/">
+                  
+                  Workspaces
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/use/">
+                  
+                  Use
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/std-primitives-and-preludes/">
+                  
+                  STD, Primitives and Preludes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Error Handling</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/smart-compiler/">
+                  
+                  Smart Compiler
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/panicking/">
+                  
+                  Panicking
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/option-and-result/">
+                  
+                  Option and Result
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/unwrap-and-expect/">
+                  
+                  Unwrap and Expect
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/error-and-none-propagation/">
+                  
+                  Error and None Propagation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/combinators/">
+                  
+                  Combinators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/custom-error-types/">
+                  
+                  Custom Error Types
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="/" class="site-logo">Learning Rust</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Crates</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <p>💭 Crates are a bit similar to the packages in some other languages. Crates compile individually. If the crate has child file modules, those files will get merged with the crate file and compile as a single unit.</p>
+<p>💭 A crate can produce an executable/ a binary or a library. <code>src/main.rs</code> is the crate root/ entry point for a binary crate and <code>src/lib.rs</code> is the entry point for a library crate.</p>
+<h2 id="01-librs-on-executable-crate">01. lib.rs on executable crate</h2>
+<p>💡 When writing binary crates, we can move the main functionalities to <code>src/lib.rs</code> and use it as a library from <code>src/main.rs</code>. This pattern is quite common on executable crates.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// # Think we run,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cargo</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">greetings</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">touch</span><span class="w"> </span><span class="n">greetings</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">lib</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// # It generates,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">greetings</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">├──</span><span class="w"> </span><span class="n">Cargo</span><span class="p">.</span><span class="n">toml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">└──</span><span class="w"> </span><span class="n">src</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="n">lib</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="n">main</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// # Think we modify following files,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 01. greetings/src/lib.rs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. greetings/src/main.rs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">greetings</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">greetings</span>::<span class="n">hello</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><blockquote>
+<p>💯 As I mentioned earlier, in here we use simplest examples to reduce the complexity of learning materials. But this is how we need to write <code>greetings/src/lib.rs</code> to make the code more testable.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// greetings/src/lib.rs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">hello</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="sd">//! This returns `Hello, world!` String
+</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="w">  </span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">).</span><span class="n">to_string</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 01. Tests for `hello()`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#[test]</span><span class="w"> </span><span class="c1">// Indicates that this is a test function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">test_hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">hello</span><span class="p">(),</span><span class="w"> </span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. Tests for `hello()`, Idiomatic way
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#[cfg(test)]</span><span class="w"> </span><span class="c1">// Only compiles when running tests
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Separates tests from code
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="n">hello</span><span class="p">;</span><span class="w"> </span><span class="c1">// Import root `hello()` function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cp">#[test]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">test_hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">hello</span><span class="p">(),</span><span class="w"> </span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><blockquote>
+<p><a href="https://doc.rust-lang.org/book/first-edition/crates-and-modules.html">📖</a> When importing a crate that has dashes in its name “like-this”, which is not a valid Rust identifier, it will be converted by changing the dashes to underscores, so you would write <code>extern crate like_this;</code></p>
+</blockquote>
+<p><code>lib.rs</code> can link with multiple files.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// # Think we run,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cargo</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">phrases</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">touch</span><span class="w"> </span><span class="n">phrases</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">lib</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">touch</span><span class="w"> </span><span class="n">phrases</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">greetings</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// # It generates,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">phrases</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">├──</span><span class="w"> </span><span class="n">Cargo</span><span class="p">.</span><span class="n">toml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">└──</span><span class="w"> </span><span class="n">src</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="n">greetings</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="n">lib</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="n">main</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// # Think we modify following files,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 01. phrases/src/greetings.rs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. phrases/src/main.rs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">phrases</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">phrases</span>::<span class="n">greetings</span>::<span class="n">hello</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 03. phrases/src/lib.rs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">mod</span> <span class="nn">greetings</span><span class="p">;</span><span class="w"> </span><span class="c1">// ⭐️ Import `greetings` module as a public module
+</span></span></span></code></pre></div><h2 id="02-dependency-crate-on-cargotoml">02. Dependency crate on Cargo.toml</h2>
+<p>When the code in the <code>lib.rs</code> file is getting larger, we can move those into a separate library crate and use it as a dependency of the main crate. As we mentioned earlier, a dependency can be specified from a folder path, git repository or by crates.io.</p>
+<h3 id="a-using-folder-path">a. Using folder path</h3>
+<p>Let’s see how to create a nested crate and use it as a dependency using folder path,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// # Think we run,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cargo</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">phrases</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">cargo</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">phrases</span><span class="o">/</span><span class="n">greetings</span><span class="w"> </span><span class="o">--</span><span class="n">lib</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// # It generates,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">phrases</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">├──</span><span class="w"> </span><span class="n">Cargo</span><span class="p">.</span><span class="n">toml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">├──</span><span class="w"> </span><span class="n">greetings</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">│</span><span class="w">  </span><span class="err">├──</span><span class="w"> </span><span class="n">Cargo</span><span class="p">.</span><span class="n">toml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">│</span><span class="w">  </span><span class="err">└──</span><span class="w"> </span><span class="n">src</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">│</span><span class="w">     </span><span class="err">└──</span><span class="w"> </span><span class="n">lib</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">└──</span><span class="w"> </span><span class="n">src</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="n">main</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// # Think we modify following files,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 01. phrases/Cargo.toml
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">[</span><span class="n">package</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;phrases&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;0.1.0&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#34;Dumindu Madunuwan&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">greetings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;greetings&#34;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. phrases/greetings/src/lib.rs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 03. phrases/src/main.rs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">greetings</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">greetings</span>::<span class="n">hello</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="b-using-git-repository">b. Using git repository</h3>
+<p>If you want to use a library crate on multiple projects, one way is moving crate code to a git repository and use it as a dependency when needed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// -- Cargo.toml --
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 01. Get the latest commit on the master branch
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">rocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;https://github.com/SergioBenitez/Rocket&#34;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. Get the latest commit of a specific branch
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">rocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;https://github.com/SergioBenitez/Rocket&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;v0.3&#34;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 03. Get a specific tag
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">rocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;https://github.com/SergioBenitez/Rocket&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;v0.3.2&#34;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 04. Get a specific revision (on master or any branch, according to rev)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">rocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;https://github.com/SergioBenitez/Rocket&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">rev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;8183f636305cef4adaa9525506c33cbea72d1745&#34;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="c-using-cratesio">c. Using crates.io</h3>
+<p>The other way is uploading it to <a href="http://crates.io/">crates.io</a> and use it as a dependency when needed.</p>
+<p>🚧 First, let’s <code>create</code> a simple “Hello world” crate <code>and upload</code> it to <a href="http://crates.io/">crates.io</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// # Think we run,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cargo</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">test_crate_hello_world</span><span class="w"> </span><span class="o">--</span><span class="n">lib</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// # It generates,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">test_crate_hello_world</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">├──</span><span class="w"> </span><span class="n">Cargo</span><span class="p">.</span><span class="n">toml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">└──</span><span class="w"> </span><span class="n">src</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="n">lib</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// # Think we modify following files,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 01. test_crate_hello_world/Cargo.toml
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">[</span><span class="n">package</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;test_crate_hello_world&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;0.1.0&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#34;Dumindu Madunuwan&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;A Simple Hello World Crate&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">repository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;https://github.com/dumindu/test_crate_hello_world&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">keywords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#34;hello&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;world&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Apache-2.0&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. test_crate_hello_world/src/lib.rs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="sd">//! A Simple Hello World Crate
+</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// This function returns the greeting; `Hello, world!`
+</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">hello</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">).</span><span class="n">to_string</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[cfg(test)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="n">hello</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cp">#[test]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">test_hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">hello</span><span class="p">(),</span><span class="w"> </span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><blockquote>
+<p>💭 <strong>//! doc comments</strong> are used to write crate and module-level documentation. On other places, we have to use /// outside of the block. And when uploading a crate to <a href="http://crates.io/">crates.io</a>, cargo generates the documentation from these doc comments and host it on <a href="https://docs.rs/">docs.rs</a>.</p>
+</blockquote>
+<p>💡 We have to add the <strong>description</strong> and <strong>license</strong> fields to <code>Cargo.toml</code>. Otherwise, we will get <code>error: api errors: missing or empty metadata fields: description, license. Please see http://doc.crates.io/manifest.html</code></p>
+<p>To upload this to crates.io,</p>
+<ol>
+<li>We have to create an account on crates.io to acquire an API token</li>
+<li>Then run <code>cargo login &lt;token&gt;</code> with that API token and cargo publish</li>
+</ol>
+<p><a href="http://doc.crates.io/crates-io.html">📖</a> This is <a href="http://doc.crates.io/crates-io.html">how it describes on Cargo Docs</a> with more details.</p>
+<blockquote>
+<ul>
+<li>You’ll need an account on crates.io to acquire an API token. To do so, <a href="https://crates.io/">visit the home page</a> and log in via a GitHub account (required for now). After this, visit your <a href="https://crates.io/me">Account Settings</a> page and run the <code>cargo login</code> command specified.
+Ex. <code>cargo login abcdefghijklmnopqrstuvwxyz012345</code></li>
+</ul>
+</blockquote>
+<ul>
+<li>The next step is to package up your crate into a format that can be uploaded to crates.io. For this we’ll use the <code>cargo package</code> sub-command.</li>
+<li>Now, it can be uploaded to crates.io with the <code>cargo publish</code> command.</li>
+<li>If you’d like to skip the <code>cargo package</code> step, the <code>cargo publish</code> sub-command will automatically package up the local crate if a copy isn’t found already.</li>
+</ul>
+<p>The name of our crate is <code>test_crate_hello_world</code>. So it can be found on,
+📦 <a href="https://crates.io/crates/test_crate_hello_world">https://<strong>crates.io/crates</strong>/test_crate_hello_world</a>
+📑 <a href="https://docs.rs/test_crate_hello_world">https://<strong>docs.rs</strong>/test_crate_hello_world</a></p>
+<blockquote>
+<p>💯 crates.io supports readme files as well. To enable it, we have to add the readme field to Cargo.toml. Ex: <code>readme=&quot;README.md&quot;</code></p>
+</blockquote>
+<p>🏗️ Okay then, Let’s see how we can <strong>use this from another crate</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// # Think we run,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cargo</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">greetings</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// # It generates,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">greetings</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">├──</span><span class="w"> </span><span class="n">Cargo</span><span class="p">.</span><span class="n">toml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="err">└──</span><span class="w"> </span><span class="n">src</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="n">main</span><span class="p">.</span><span class="n">rs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// # Think we modify following files,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 01. greetings/Cargo.toml
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">[</span><span class="n">package</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;greetings&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;0.1.0&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#34;Dumindu Madunuwan&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">test_crate_hello_world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;0.1.0&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. greetings/src/main.rs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">test_crate_hello_world</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">test_crate_hello_world</span>::<span class="n">hello</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>By default, Cargo looks dependencies on <a href="https://crates.io/">crates.io</a>. So we have to add only the crate name and a version string to <strong><code>Cargo.toml</code></strong> and then run <code>cargo build</code> to fetch the dependencies and compile them.</p>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+          
+
+          <time datetime="2022-10-17"><i>🕒</i> Updated: 2022-10-17</time>
+          
+          <a href="/docs/modules/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="/docs/workspaces/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#01-librs-on-executable-crate">01. lib.rs on executable crate</a></li>
+    <li><a href="#02-dependency-crate-on-cargotoml">02. Dependency crate on Cargo.toml</a>
+      <ul>
+        <li><a href="#a-using-folder-path">a. Using folder path</a></li>
+        <li><a href="#b-using-git-repository">b. Using git repository</a></li>
+        <li><a href="#c-using-cratesio">c. Using crates.io</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2023<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="/assets/js/docs.min.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>

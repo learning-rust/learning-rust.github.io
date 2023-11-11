@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
+  <meta name="author" content="Dumindu Madunuwan">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>Vectors · Learning Rust</title>
+  <link rel="canonical" href="https://learning-rust.github.io/docs/vectors/">
+  <link rel="stylesheet" href="/assets/css/docs.min.min.9deba2d55bb7534667e8b6e4ac842dd1330bdc793b12b633d5413d263a72db4a.css" integrity="">
+
+  <link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon/favicon.ico">
+<link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FZHQCXSZ89');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="/" class="site-logo">Learning Rust</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Documentation</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/overview/">
+                  
+                  Overview
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/why-rust/">
+                  
+                  Why Rust?
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/installation/">
+                  
+                  Installation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/hello-world/">
+                  
+                  Hello World
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/cargo-crates-and-basic-project-structure/">
+                  
+                  Cargo, Crates and Basic Project Structure
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/comments-and-documenting-the-code/">
+                  
+                  Comments and Documenting the code
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/variable-bindings-constants-and-statics/">
+                  
+                  Variable bindings, Constants and Statics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions/">
+                  
+                  Functions
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/primitive-data-types/">
+                  
+                  Primitive Data Types
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/operators/">
+                  
+                  Operators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/control-flows/">
+                  
+                  Control Flows
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Beyond The Basics</summary>
+          <ul><li>
+              
+                
+                <a class="active" href="/docs/vectors/">
+                  
+                  Vectors
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/structs/">
+                  
+                  Structs
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/enums/">
+                  
+                  Enums
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/generics/">
+                  
+                  Generics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/impls-and-traits/">
+                  
+                  Impls and Traits
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>The Tough Part</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/ownership/">
+                  
+                  Ownership
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/borrowing/">
+                  
+                  Borrowing
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/lifetimes/">
+                  
+                  Lifetimes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Let&#39;s Get It Started</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/code-organization/">
+                  
+                  Code Organization
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions-02/">
+                  
+                  Functions (02)
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/modules/">
+                  
+                  Modules
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/crates/">
+                  
+                  Crates
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/workspaces/">
+                  
+                  Workspaces
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/use/">
+                  
+                  Use
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/std-primitives-and-preludes/">
+                  
+                  STD, Primitives and Preludes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Error Handling</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/smart-compiler/">
+                  
+                  Smart Compiler
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/panicking/">
+                  
+                  Panicking
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/option-and-result/">
+                  
+                  Option and Result
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/unwrap-and-expect/">
+                  
+                  Unwrap and Expect
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/error-and-none-propagation/">
+                  
+                  Error and None Propagation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/combinators/">
+                  
+                  Combinators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/custom-error-types/">
+                  
+                  Custom Error Types
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="/" class="site-logo">Learning Rust</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Vectors</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <p>If you remember, the array is a fixed-size list of elements, of the same data type. Even with mut, its element count cannot be changed. A vector is kind of <strong>a re-sizable array</strong> but <strong>all elements must be in the same type</strong>.</p>
+<p>⭐️ It’s a generic type, written as <strong><code>Vec&lt;T&gt;</code></strong> . T can have any type, ex. The type of a Vec of i32s is <code>Vec&lt;i32&gt;</code>. Also, Vectors always allocate their data in a dynamically allocated heap.</p>
+<h2 id="create-empty-vector">Create empty vector</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span><span class="w"> </span><span class="c1">//1.With new() keyword
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[];</span><span class="w"> </span><span class="c1">//2.Using the vec! macro
+</span></span></span></code></pre></div><h2 id="create-with-data-types">Create with data types</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">a2</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b2</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="k">i32</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span><span class="c1">//Suffixing 1st value with data type
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b5</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b6</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="k">i32</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="c1">//Ten zeroes
+</span></span></span></code></pre></div><h2 id="access-and-change-data">Access and change data</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">//Accessing and changing existing data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//c[6] = 2; Cannot assign values this way, index out of bounds
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{:?}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="c1">//[1, 2, 3, 2, 1]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//push and pop
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">d</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">d</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">//[1] : Add an element to the end
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">d</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">//[1, 2]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">d</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"> </span><span class="c1">//[1] : : Remove an element from the end
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 🔎 Capacity and reallocation
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">e</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">with_capacity</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Length: </span><span class="si">{}</span><span class="s">, Capacity : </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">len</span><span class="p">(),</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">capacity</span><span class="p">());</span><span class="w"> </span><span class="c1">//Length: 0, Capacity : 10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// These are all done without reallocating...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="mi">10</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ...but this may make the vector reallocate
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">e</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><p>⭐️ Mainly a vector represent 3 things,</p>
+<ul>
+<li>A <strong>pointer</strong> to the data</li>
+<li><strong>No of elements</strong> currently have(<strong>length</strong>)</li>
+<li><strong>Capacity</strong> (Amount of space allocated for any future elements).</li>
+</ul>
+<p>If the length of a vector exceeds its capacity, its capacity will be increased automatically. But its elements will be reallocated(which can be slow). So always use Vec::<strong>with_capacity</strong> whenever it’s possible.</p>
+<blockquote>
+<p>💡 The <strong>String</strong> data type is a UTF-8 encoded vector. But you can not index into a String because of encoding.</p>
+</blockquote>
+<p>💯 Vectors can be used with iterators in three ways,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;A reference to </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;A mutable reference to </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Take ownership of the vector and its element </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div>
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+          
+
+          <time datetime="2022-10-22"><i>🕒</i> Updated: 2022-10-22</time>
+          
+          <a href="/docs/control-flows/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="/docs/structs/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-empty-vector">Create empty vector</a></li>
+    <li><a href="#create-with-data-types">Create with data types</a></li>
+    <li><a href="#access-and-change-data">Access and change data</a></li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2023<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="/assets/js/docs.min.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>

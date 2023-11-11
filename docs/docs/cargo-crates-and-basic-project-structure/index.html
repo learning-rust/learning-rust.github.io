@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
+  <meta name="author" content="Dumindu Madunuwan">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>Cargo, Crates and Basic Project Structure · Learning Rust</title>
+  <link rel="canonical" href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/">
+  <link rel="stylesheet" href="/assets/css/docs.min.min.9deba2d55bb7534667e8b6e4ac842dd1330bdc793b12b633d5413d263a72db4a.css" integrity="">
+
+  <link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon/favicon.ico">
+<link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FZHQCXSZ89');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="/" class="site-logo">Learning Rust</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Documentation</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/overview/">
+                  
+                  Overview
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/why-rust/">
+                  
+                  Why Rust?
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/installation/">
+                  
+                  Installation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/hello-world/">
+                  
+                  Hello World
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="active" href="/docs/cargo-crates-and-basic-project-structure/">
+                  
+                  Cargo, Crates and Basic Project Structure
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/comments-and-documenting-the-code/">
+                  
+                  Comments and Documenting the code
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/variable-bindings-constants-and-statics/">
+                  
+                  Variable bindings, Constants and Statics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions/">
+                  
+                  Functions
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/primitive-data-types/">
+                  
+                  Primitive Data Types
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/operators/">
+                  
+                  Operators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/control-flows/">
+                  
+                  Control Flows
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Beyond The Basics</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/vectors/">
+                  
+                  Vectors
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/structs/">
+                  
+                  Structs
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/enums/">
+                  
+                  Enums
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/generics/">
+                  
+                  Generics
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/impls-and-traits/">
+                  
+                  Impls and Traits
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>The Tough Part</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/ownership/">
+                  
+                  Ownership
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/borrowing/">
+                  
+                  Borrowing
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/lifetimes/">
+                  
+                  Lifetimes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Let&#39;s Get It Started</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/code-organization/">
+                  
+                  Code Organization
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/functions-02/">
+                  
+                  Functions (02)
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/modules/">
+                  
+                  Modules
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/crates/">
+                  
+                  Crates
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/workspaces/">
+                  
+                  Workspaces
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/use/">
+                  
+                  Use
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/std-primitives-and-preludes/">
+                  
+                  STD, Primitives and Preludes
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Error Handling</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/smart-compiler/">
+                  
+                  Smart Compiler
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/panicking/">
+                  
+                  Panicking
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/option-and-result/">
+                  
+                  Option and Result
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/unwrap-and-expect/">
+                  
+                  Unwrap and Expect
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/error-and-none-propagation/">
+                  
+                  Error and None Propagation
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/combinators/">
+                  
+                  Combinators
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/custom-error-types/">
+                  
+                  Custom Error Types
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="/" class="site-logo">Learning Rust</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Cargo, Crates and Basic Project Structure</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h2 id="cargo">Cargo</h2>
+<p>Cargo is Rust’s built-in package manager and the build system. It can be used to,</p>
+<ul>
+<li>Create a new project: <code>cargo new</code></li>
+<li>Create a new project in an existing directory: <code>cargo init</code></li>
+<li>Build the project: <code>cargo build</code></li>
+<li>Run the project: <code>cargo run</code></li>
+<li>Update project dependencies: <code>cargo update</code></li>
+<li>Run tests: <code>cargo test</code></li>
+<li>Run benchmarks: <code>cargo bench</code></li>
+<li>Generate the project documentation via <a href="https://doc.rust-lang.org/stable/rustdoc/">rustdoc</a>: <code>cargo doc</code></li>
+<li>Analyze the project to see it has any errors, without building it: <code>cargo check</code></li>
+</ul>
+<p>In addition, there are <code>cargo</code> commands to publish the project as a crate/ package to <strong>Rust&rsquo;s official crate registry, <a href="https://crates.io/">crates.io</a></strong>.</p>
+<blockquote>
+<p>💡 We need to get an API token from <a href="https://crates.io/">crates.io</a> to publish a crate to it. The API token can be found in the <a href="https://crates.io/me">Account Settings page</a>, after login to that site. We will discuss more about this under <a href="/docs/crates#c-using-cratesio">code organization with crates</a>.</p>
+</blockquote>
+<ul>
+<li>Login to <a href="https://crates.io/">crates.io</a> with the API token: <code>cargo login</code></li>
+<li>Make the local crate uploadable to <a href="https://crates.io/">crates.io</a>: <code>cargo package</code></li>
+<li>Upload the crate to <a href="https://crates.io/">crates.io</a>: <code>cargo publish</code></li>
+<li>Install a Rust binary: <code>cargo install</code></li>
+<li>Uninstall a Rust binary: <code>cargo uninstall</code></li>
+</ul>
+<h2 id="crate">Crate</h2>
+<p>A crate is a package, which can be shared via <a href="https://crates.io/">crates.io</a>. A crate can produce an executable or a library. In other words, it can be a <strong>binary</strong> crate or a <strong>library</strong> crate.</p>
+<ol>
+<li><code>cargo new crate_name --bin</code> or <code>cargo new crate_name</code>: Produces an executable</li>
+<li><code>cargo new crate_name --lib</code>: Produces a library</li>
+</ol>
+<p>The first one generates,</p>
+<pre tabindex="0"><code>├── Cargo.toml
+└── src
+    └── main.rs
+</code></pre><p>and the second one generates,</p>
+<pre tabindex="0"><code>├── Cargo.toml
+└── src
+    └── lib.rs
+</code></pre><ul>
+<li><strong>Cargo.toml</strong>(capital c) is the configuration file which contains all of the metadata that Cargo needs to compile your project.</li>
+<li><strong>src</strong> folder is the place to store the source code.</li>
+<li>Each crate has an implicit crate root/ entry point. <strong>main.rs</strong> is the crate root for a binary crate and <strong>lib.rs</strong> is the crate root for a library crate.</li>
+</ul>
+<blockquote>
+<p>💡 When we build a binary crate via <code>cargo build</code> or <code>cargo run</code>, the executable file will be stored in the <strong>target/debug/</strong> folder. But when building it via <strong><code>cargo build --release</code></strong> for a release it will be stored in the <strong>target/release/</strong> folder. The release builds are applying more optimizations while compiling the code, to make the code run faster. But it takes more compile time.</p>
+</blockquote>
+<h2 id="project-structure">Project Structure</h2>
+<p>This is how <a href="https://doc.rust-lang.org/cargo/guide/project-layout.html">Cargo documentation describes</a> about the recommended project layout,</p>
+<pre tabindex="0"><code>.
+├── Cargo.toml
+├── Cargo.lock
+├── src
+│   ├── main.rs
+│   ├── lib.rs
+│   └── bin
+│       └── another_executable.rs
+├── tests
+│   └── some_integration_tests.rs
+├── benches
+│   └── simple_bench.rs
+└── examples
+    └── simple_example.rs
+</code></pre><ul>
+<li>The source code goes in the <code>src</code> directory.
+<ul>
+<li>The default executable file is <code>src/main.rs</code>.</li>
+<li>The default library file is <code>src/lib.rs</code>.</li>
+<li>Other executables can be placed in <code>src/bin/*.rs</code>.</li>
+</ul>
+</li>
+<li>Integration tests go in the <code>tests</code> directory (unit tests go in each file they&rsquo;re testing).</li>
+<li>Benchmarks go in the <code>benches</code> directory.</li>
+<li>Examples go in the <code>examples</code> directory.</li>
+</ul>
+<h2 id="rust-editions">Rust Editions</h2>
+<p>After the initial release in 2015, according to the feedback got from user communities, the Rust team was focusing to increase the <strong>productivity</strong> of the language and the ecosystem. After 3 years of hard work in 2018, a new Rust edition was released with new features, simplified syntax and better tooling. We call it <strong>Rust 2018</strong> edition.</p>
+<p>To keep the promise of supporting backward compatibility, the new <code>edition = &quot;2018&quot;</code> configuration was added to the <code>Cargo.toml</code> file. For new projects, the <code>cargo new</code> command adds this configuration by default. So, you don&rsquo;t need to care. But on legacy crates, if you can not see any <code>edition</code> configuration, Cargo will consider it as a Rust 2015 edition crate.</p>
+<h2 id="-before-going-to-the-next">👨‍🏫 Before going to the next&hellip;</h2>
+<ul>
+<li>
+<p>The <strong><code>.cargo/bin</code> directory of your home directory</strong> is the default location of Rust binaries. Not only the official binaries like <code>rustup</code>, <code>rustc</code>, <code>cargo</code>, <code>rustfmt</code>, <code>rustdoc</code>, <code>rls</code> and also the binaries you can install via <code>cargo install</code> command, will be stored in this directory.</p>
+</li>
+<li>
+<p>Even though the initial convention for naming crates and file names is using the <a href="https://en.wikipedia.org/wiki/Snake_case"><code>snake_case</code></a>, some crate developers are using <code>kebab-case</code> on both crates and file names. To make your code more consistent, use the initial convention <code>snake_case</code>; especially on file names.</p>
+</li>
+<li>
+<p>Create an executable crate via <code>cargo new</code> command and run it via <code>cargo run</code>.</p>
+</li>
+<li>
+<p>Create a library crate via <code>cargo new</code> command and run <code>cargo test</code>.</p>
+</li>
+</ul>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+          
+
+          <time datetime="2022-10-22"><i>🕒</i> Updated: 2022-10-22</time>
+          
+          <a href="/docs/hello-world/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="/docs/comments-and-documenting-the-code/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cargo">Cargo</a></li>
+    <li><a href="#crate">Crate</a></li>
+    <li><a href="#project-structure">Project Structure</a></li>
+    <li><a href="#rust-editions">Rust Editions</a></li>
+    <li><a href="#-before-going-to-the-next">👨‍🏫 Before going to the next&hellip;</a></li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2023<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="/assets/js/docs.min.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Learning Rust</title>
+    <link>https://learning-rust.github.io/categories/</link>
+    <description>Recent content in Categories on Learning Rust</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://learning-rust.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
