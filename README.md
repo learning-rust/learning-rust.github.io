@@ -1,13 +1,9 @@
 # Learning Rust
+[![buymeacoffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=ffffff&labelColor=333333)](https://www.buymeacoffee.com/dumindu)
 
-- Website: http://learning-rust.github.io
-- Buy me a coffee: [🥤](https://www.buymeacoffee.com/dumindu)
+[![learning-rust.github.io](https://img.shields.io/github/stars/learning-rust/learning-rust.github.io?style=for-the-badge&logo=rust&label=learning-rust.github.io&labelColor=333333&color=F46623)](https://learning-rust.github.io)
 
-> Based on the previous posts, I wrote on https://medium.com/learning-rust
-
-## Content
-
-### Basics
+## Basics
 * [Why Rust](content/en/docs/a1.why-rust.md)
 * [Installation](content/en/docs/a2.installation.md)
 * [Hello World](content/en/docs/a3.hello-world.md)
@@ -19,19 +15,19 @@
 * [Operators](content/en/docs/a9.operators.md)
 * [Control flows](content/en/docs/a10.control-flows.md)
 
-### Beyond The Basics
+## Beyond The Basics
 * [Vectors](content/en/docs/b1.vectors.md)
 * [Structs](content/en/docs/b2.structs.md)
 * [Enums](content/en/docs/b3.enums.md)
 * [Generics](content/en/docs/b4.generics.md)
 * [Impls and traits](content/en/docs/b5.impls-and-traits.md)
 
-### The Tough Part
+## The Tough Part
 * [Ownership](content/en/docs/c1.ownership.md)
 * [Borrowing](content/en/docs/c2.borrowing.md)
 * [Lifetimes](content/en/docs/c3.lifetimes.md)
 
-### Lets Get It Started
+## Lets Get It Started
 * [Code organization](content/en/docs/d1.code-organization.md)
 * [Functions](content/en/docs/d2.functions.md)
 * [Modules](content/en/docs/d3.modules.md)
@@ -40,7 +36,7 @@
 * [use](content/en/docs/d6.use.md)
 * [std, primitives and preludes](content/en/docs/d7.std-primitives-and-preludes.md)
 
-### Error Handling
+## Error Handling
 * [Smart Compiler](content/en/docs/e1.smart-compiler.md)
 * [Panicking](content/en/docs/e2.panicking.md)
 * [Option and Result](content/en/docs/e3.option-and-result.md)
