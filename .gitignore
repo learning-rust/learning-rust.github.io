@@ -5,3 +5,4 @@ hugo.yaml
 .hugo_build.lock
 /data
 /themes
+/static
