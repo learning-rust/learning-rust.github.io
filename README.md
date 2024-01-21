@@ -1,7 +1,7 @@
-# Learning Rust
 [![buymeacoffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=ffffff&labelColor=333333)](https://www.buymeacoffee.com/dumindu)
 
-[![learning-rust.github.io](https://img.shields.io/github/stars/learning-rust/learning-rust.github.io?style=for-the-badge&logo=rust&label=learning-rust.github.io&labelColor=333333&color=F46623)](https://learning-rust.github.io)
+
+# Learning Rust
 
 ## Basics
 * [Why Rust](content/en/docs/a1.why-rust.md)
@@ -44,4 +44,3 @@
 * [Error and None Propagation](content/en/docs/e5.error-and-none-propagation.md)
 * [Combinators](content/en/docs/e6.combinators.md)
 * [Custom Error Types](content/en/docs/e7.custom-error-types.md)
-
