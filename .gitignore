@@ -1,3 +1,8 @@
-/.idea
-/.vscode
+.idea
+.vscode
 .DS_Store
+hugo.yaml
+.hugo_build.lock
+/docs
+/data
+/themes
