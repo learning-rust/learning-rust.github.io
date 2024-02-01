@@ -390,7 +390,7 @@
         </header>
         <div id="article-body">
           <h2 id="why-option-and-result">Why Option and Result?</h2>
-<p>Many languages use <strong><code>null</code>\ <code>nil</code>\ <code>undefined</code> types</strong> to represent empty outputs, and <strong><code>Exceptions</code></strong> to handle errors. Rust skips using both, especially to prevent issues like <strong>null pointer exceptions, sensitive data leakages through exceptions</strong> and etc. Instead, Rust provides two special <strong>generic enums</strong>;<code>Option</code> and <code>Result</code> to deal with above cases.</p>
+<p>Many languages use <strong><code>null</code>\ <code>nil</code>\ <code>undefined</code> types</strong> to represent empty outputs, and <strong><code>Exceptions</code></strong> to handle errors. Rust skips using both, especially to prevent issues like <strong>null pointer exceptions, sensitive data leakages through exceptions</strong>, etc. Instead, Rust provides two special <strong>generic enums</strong>;<code>Option</code> and <code>Result</code> to deal with above cases.</p>
 <blockquote>
 <p>💭 In the previous sections, we have discussed about the basics of <a href="/docs/enums">enums</a>, <a href="/docs/generics">generics</a> and <a href="/docs/generics/#generalizing-enums"><code>Result</code> &amp; <code>Option</code> types</a>.</p>
 </blockquote>
@@ -415,11 +415,11 @@
 <p>When writing a function or data type,</p>
 <ul>
 <li>if an <strong>argument</strong> of the function is optional,</li>
-<li>If the function is non-void and if the output it <strong>returns</strong> can be empty,</li>
-<li>If the value, of a <strong>property of the data type</strong> can be empty,
-We have to use their data type as an <code>Option</code> type</li>
+<li>if the function is non-void and if the output it <strong>returns</strong> can be empty,</li>
+<li>if the value of a <strong>property of the data type</strong> can be empty,</li>
 </ul>
-<p>For example, if the function outputs a <code>&amp;str</code> value and the output can be empty, the return type of the function should set as <code>Option&lt;&amp;str&gt;</code>.</p>
+<p>we have to use their data type as an <code>Option</code> type.</p>
+<p>For example, if the function outputs a <code>&amp;str</code> value and the output can be empty, the return type of the function should be set as <code>Option&lt;&amp;str&gt;</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">get_an_optional_value</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//if the optional value is not empty
@@ -428,13 +428,13 @@ We have to use their data type as an <code>Option</code> type</li>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//else
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="nb">None</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>Same way, if the value of a property of a data type can be empty or optional like the <code>middle_name</code> of <code>Name</code> data type in the following example, we should set its data type as an <code>Option</code> type.</p>
+</span></span></span></code></pre></div><p>In the same way, if the value of a property of a data type can be empty or optional like the <code>middle_name</code> of the <code>Name</code> data type in the following example, we should set its data type as an <code>Option</code> type.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Name</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">first_name</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">middle_name</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="c1">// middle_name can be empty
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="n">last_name</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>💭 As you know, we can use pattern matching to catch the relevant return type (<code>Some</code>/ <code>None</code>) via <code>match</code>. There is a function to get the current user’s home directory in <strong><code>std::env</code></strong> as <strong><a href="https://doc.rust-lang.org/std/env/fn.home_dir.html"><code>home_dir()</code></a></strong>. Because of all users doesn’t have a home directory in the systems like Linux, home directory of the user can be optional. So it returns an <code>Option</code> type; <a href="https://doc.rust-lang.org/std/path/struct.PathBuf.html"><code>Option&lt;PathBuf&gt;</code></a>.</p>
+</span></span></span></code></pre></div><p>💭 As you know, we can use pattern matching to catch the relevant return type (<code>Some</code>/ <code>None</code>) via <code>match</code>. There is a function in <strong><code>std::env</code></strong> called <strong><a href="https://doc.rust-lang.org/std/env/fn.home_dir.html"><code>home_dir()</code></a></strong> to get the current user&rsquo;s home directory. However, not all users have a home directory in systems like Linux, so the home directory of a user can be optional. So it returns an <code>Option</code> type; <a href="https://doc.rust-lang.org/std/path/struct.PathBuf.html"><code>Option&lt;PathBuf&gt;</code></a>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">env</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -460,7 +460,7 @@ We have to use their data type as an <code>Option</code> type</li>
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 💡 Better create a struct as Person with fname, lname, mname fields and create a impl function as full_name()
 </span></span></span></code></pre></div><p>🔎 Other than that, <code>Option</code> types are used with <strong>nullable pointers</strong> in Rust. Because there are <strong>no null pointers in Rust</strong>, the pointer types should point to a valid location. So if a pointer can be nullable, we have use <code>Option&lt;Box&lt;T&gt;&gt;</code> .</p>
 <h2 id="basic-usages-of-result">Basic usages of Result</h2>
-<p>If a function can produce an error, we have to use a <code>Result</code> type by <strong>combining the data type of the valid output and the data type of the error</strong>. For example, if the data type of the valid output is <code>u64</code> and error type is <code>String</code>, return type should be <code>Result&lt;u64, String&gt;</code>.</p>
+<p>If a function can produce an error, we have to use a <code>Result</code> type by <strong>combining the data type of the valid output and the data type of the error</strong>. For example, if the data type of the valid output is <code>u64</code> and error type is <code>String</code>, the return type should be <code>Result&lt;u64, String&gt;</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">function_with_error</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">u64</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//if error happens
@@ -469,7 +469,7 @@ We have to use their data type as an <code>Option</code> type</li>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// else, return valid output
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>💭 As you know, we can use the pattern matching to catch the relevant return types (<code>Ok</code>/<code>Err</code>) via <code>match</code>. There is a function to fetch the value of any environment variable in <strong><code>std::env</code></strong> as <strong><a href="https://doc.rust-lang.org/std/env/fn.var.html"><code>var()</code></a></strong> . Its input is the environment variable name. This can produce an error, if we passes a wrong environment variable or the program can not extract the value of the environment variable while running. So, its return type is a <code>Result</code> type; <a href="https://doc.rust-lang.org/std/env/enum.VarError.html"><code>Result&lt;String, VarError&gt;</code></a>.</p>
+</span></span></span></code></pre></div><p>💭 As you know, we can use the pattern matching to catch the relevant return types (<code>Ok</code>/<code>Err</code>) via <code>match</code>. There is a function to fetch the value of any environment variable in <strong><code>std::env</code></strong> called <strong><a href="https://doc.rust-lang.org/std/env/fn.var.html"><code>var()</code></a></strong>. Its input is the environment variable name. This can produce an error if we pass a wrong environment variable or the program cannot extract the value of the environment variable while running. So, its return type is a <code>Result</code> type; <a href="https://doc.rust-lang.org/std/env/enum.VarError.html"><code>Result&lt;String, VarError&gt;</code></a>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">env</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -491,7 +491,7 @@ We have to use their data type as an <code>Option</code> type</li>
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">y</span><span class="p">.</span><span class="n">is_err</span><span class="p">(),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><h2 id="ok-err-for-result-types">ok(), err() for Result types</h2>
-<p>In addition to that Rust provides <code>ok()</code> and <code>err()</code> for <code>Result</code> types. They convert the <code>Ok&lt;T&gt;</code> and <code>Err&lt;E&gt;</code> values of a <strong><code>Result</code> type to <code>Option</code> types</strong>.</p>
+<p>In addition to that, Rust provides <code>ok()</code> and <code>err()</code> for <code>Result</code> types. They convert the <code>Ok&lt;T&gt;</code> and <code>Err&lt;E&gt;</code> values of a <strong><code>Result</code> type to <code>Option</code> types</strong>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">o</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">e</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="s">&#34;message&#34;</span><span class="p">);</span><span class="w">
@@ -756,7 +756,7 @@ We have to use their data type as an <code>Option</code> type</li>
           
           
 
-          <time datetime="2023-11-11"><i>🕒</i> Updated: 2023-11-11</time>
+          <time datetime="2024-02-01"><i>🕒</i> Updated: 2024-02-01</time>
           
           <a href="/docs/panicking/"><i>﹤</i> Previous</a>
           
