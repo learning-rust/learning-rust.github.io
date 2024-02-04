@@ -190,8 +190,8 @@ let a = 1; let b = 2; let c = a == b; //false let d = a !</description>
       <link>https://learning-rust.github.io/docs/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://learning-rust.github.io/docs/overview/</guid>
-      <description>This is based on the posts I wrote on Medium, https://medium.com/learning-rust
-🐣 I am a Sri Lankan 🇱🇰 Web Developer who lives in Singapore 🇸🇬. So I am not a native English speaker and just learning Rust, If you found any mistake or something need to be changed, even a spelling or a grammar mistake, feel free to create a pull request. Thanks.</description>
+      <description>This publication has its origins in the posts I authored on Medium at https://medium.com/learning-rust. However, please note that I have ceased updating the Medium posts. All current and future updates, new content, code, and grammar fixes will be exclusively maintained and released here, https://learning-rust.github.io.
+🧑‍💻 I am an expat working in Singapore as a Go Backend and DevOps Engineer. Feel free to reach out if you find any mistakes or anything that needs to be changed, including spelling or grammar errors.</description>
     </item>
     <item>
       <title>Ownership</title>
