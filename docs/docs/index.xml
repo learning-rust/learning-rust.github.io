@@ -284,8 +284,7 @@ Example with Option and match, before using unwrap()</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://learning-rust.github.io/docs/why-rust/</guid>
       <description>History of Rust Rust was initially designed and developed by former Mozilla employee Graydon Hoare as a personal project. Mozilla began sponsoring the project in 2009 and announced it in 2010. But the first stable release, Rust 1.0 was released on May 15, 2015.
-Initial Goals The goal of Rust is to be a good programming language for creating highly concurrent, safe and performant systems.
-&amp;ldquo;Rust is a systems programming language focused on three goals: safety, speed, and concurrency.</description>
+Since the initial stable release, the language has seen a series of improvements every three years through new editions; Rust 2015 with the release of Rust 1.</description>
     </item>
     <item>
       <title>Workspaces</title>
