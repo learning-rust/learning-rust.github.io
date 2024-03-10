@@ -24,8 +24,8 @@ A piece of data can be borrowed by a single or multiple users, but data should n
       <link>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</guid>
-      <description>Cargo Cargo is Rust’s built-in package manager and the build system. It can be used to,
-Create a new project: cargo new Create a new project in an existing directory: cargo init Build the project: cargo build Run the project: cargo run Update project dependencies: cargo update Run tests: cargo test Run benchmarks: cargo bench Generate the project documentation via rustdoc: cargo doc Analyze the project to see it has any errors, without building it: cargo check In addition, there are cargo commands to publish the project as a crate/ package to Rust&amp;rsquo;s official crate registry, crates.</description>
+      <description>Cargo Cargo is Rust’s built-in package manager and build system. It also supports the following actions,
+Command Action cargo new Create a new project cargo init Create a new project in an existing directory cargo check Verify the project compiles without errors cargo build Build the executable cargo run Build the executable and run 💡 The cargo check command verifies that the project compiles without errors, without producing an executable. Thus, it is often faster than cargo build.</description>
     </item>
     <item>
       <title>Code Organization</title>
@@ -147,7 +147,7 @@ Save the above code in file.rs , but it can be any name with .</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://learning-rust.github.io/docs/installation/</guid>
       <description>Rustup There are many ways to install Rust on your system. For the moment the official way to install Rust is using Rustup.
-📖 Rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between stable, beta, and nightly compilers and keep them updated. It makes cross-compiling simpler with binary builds of the standard library for common platforms.
+📖 Rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between stable, beta, and nightly compilers and keep them updated. It also makes cross-compiling simpler with binary builds of the standard library for common platforms.
 📖 Rustup installs rustc, cargo, rustup and other standard tools to Cargo&amp;rsquo;s bin directory.</description>
     </item>
     <item>
@@ -190,8 +190,8 @@ let a = 1; let b = 2; let c = a == b; //false let d = a !</description>
       <link>https://learning-rust.github.io/docs/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://learning-rust.github.io/docs/overview/</guid>
-      <description>This publication has its origins in the posts I authored on Medium at https://medium.com/learning-rust. However, please note that I have ceased updating the Medium posts. All current and future updates, new content, code, and grammar fixes will be exclusively maintained and released here, https://learning-rust.github.io.
-🧑‍💻 I am an expat working in Singapore as a Go Backend and DevOps Engineer. Feel free to reach out if you find any mistakes or anything that needs to be changed, including spelling or grammar errors.</description>
+      <description>About me 🧑‍💻 I am an expat working in Singapore as a Go Backend and DevOps Engineer. Feel free to reach out if you find any mistakes or anything that needs to be changed, including spelling or grammar errors. Alternatively, you can create a pull request, open an issue, or share your awesome ideas in this gist. Good luck with learning Rust!
+Overview This publication has its origins in the posts I authored on Medium at https://medium.</description>
     </item>
     <item>
       <title>Ownership</title>

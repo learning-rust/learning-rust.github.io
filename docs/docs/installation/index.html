@@ -12,7 +12,7 @@
 
   <title>Installation · Learning Rust</title>
   <link rel="canonical" href="https://learning-rust.github.io/docs/installation/">
-  <link rel="stylesheet" href="/assets/css/docs.min.67fc7b3b41d707b198af1dd244ec62e1a1dd4665e40cb6f1d97e9257e597ff1d.css" integrity="">
+  <link rel="stylesheet" href="/assets/css/docs.min.a6d52fd5461b892ef08a611a76391f8b999c6aca8f2a2317d6827c1143c0ca03.css" integrity="">
 
   <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon/favicon.ico">
@@ -391,7 +391,7 @@
         <div id="article-body">
           <h2 id="rustup">Rustup</h2>
 <p>There are many ways to install Rust on your system. For the moment the official way to install Rust is using <a href="https://rustup.rs/">Rustup</a>.</p>
-<p><a href="https://rust-lang.github.io/rustup/index.html">📖</a> Rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between <strong>stable, beta, and nightly</strong> compilers and keep them updated. It makes <strong>cross-compiling</strong> simpler with binary builds of the standard library for common platforms.</p>
+<p><a href="https://rust-lang.github.io/rustup/index.html">📖</a> Rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between <strong>stable, beta, and nightly</strong> compilers and keep them updated. It also makes cross-compiling simpler with binary builds of the standard library for common platforms.</p>
 <p><a href="https://rust-lang.github.io/rustup/installation/index.html">📖</a> Rustup installs <strong><code>rustc</code>, <code>cargo</code>, <code>rustup</code></strong> and other standard tools to Cargo&rsquo;s <code>bin</code> directory. On Unix it is located at <code>$HOME/.cargo/bin</code> and on Windows at <code>%USERPROFILE%\.cargo\bin</code>. This is the same directory that <code>cargo install</code> will install Rust programs and Cargo plugins.</p>
 <blockquote>
 <p>🔎 The main tools Rustup installs to the Cargo&rsquo;s <code>bin</code> directory,</p>
@@ -403,8 +403,9 @@
 <li><code>cargo-fmt</code>: Helps to run <code>rustfmt</code> on whole Rust projects, including multi-crate workspaces.</li>
 <li><code>cargo-clippy</code>: A lint tool that provides extra checks for common mistakes and stylistic choices.</li>
 <li><code>cargo-miri</code>:An experimental Rust interpreter, which can be used for checking for undefined-behavior.</li>
-<li><code>rls</code>: A language server that provides support for editors and IDEs.</li>
 <li><code>rustdoc</code>: A local copy of the Rust documentation.</li>
+<li><code>rust-analyzer</code>: A language server that provides support for editors and IDEs.</li>
+<li><code>rust-gdb</code>: A debugger that wraps GNU Debugger(GDB).</li>
 </ul>
 </blockquote>
 <h2 id="installation">Installation</h2>
@@ -413,13 +414,14 @@
 </span></span></code></pre></div><h3 id="for-windows-users">For Windows Users</h3>
 <p>Download <strong><code>rustup-init.exe</code></strong> from <a href="https://rustup.rs/">www.rustup.rs</a> and run.</p>
 <blockquote>
-<p>⭐ If you are on <strong>Microsoft Windows</strong>, you have to install <strong><a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual C++ Build Tools</a></strong> 2015 or higher, which requires an additional 3–4 GBs.</p>
+<p>💡 You may need to install <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual C++ Build Tools</a> 2015 or higher, which requires an additional 3–4 GBs.</p>
 </blockquote>
 <h2 id="-before-going-to-the-next">👨‍🏫 Before going to the next&hellip;</h2>
 <ul>
-<li>To verify the current Rust version, use the <strong><code>rustc --version</code></strong> or <strong><code>rustc -V</code></strong> command.</li>
-<li>Rust ships releases on <strong>six week cycles</strong>. When a new Rust version released, use the <strong><code>rustup update</code></strong> command to update the Rust ecosystem.</li>
-<li>To open the offline Rust documentation, use the <strong><code>rustup doc</code></strong> command. For more <code>rustup</code> commands, check the <strong><code>rustup --help</code></strong> command.</li>
+<li>To verify the current Rust version, use the <strong><code>rustc --version</code></strong> or shorter form<code>rustc -V</code> command.</li>
+<li>Rust follows <strong>six week</strong> release cycles. Use the <strong><code>rustup update</code></strong> command to update the Rust ecosystem.</li>
+<li>You can access Rust&rsquo;s offline documentation via the <code>rustup doc</code> command.</li>
+<li>For a full list of <code>rustup</code> commands, refer to the <code>rustup --help</code> command.</li>
 </ul>
 
         </div>
@@ -468,7 +470,7 @@
           
           
 
-          <time datetime="2022-10-22"><i>🕒</i> Updated: 2022-10-22</time>
+          <time datetime="2024-03-10"><i>🕒</i> Updated: 2024-03-10</time>
           
           <a href="/docs/why-rust/"><i>﹤</i> Previous</a>
           

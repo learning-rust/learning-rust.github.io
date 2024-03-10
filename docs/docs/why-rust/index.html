@@ -12,7 +12,7 @@
 
   <title>Why Rust? · Learning Rust</title>
   <link rel="canonical" href="https://learning-rust.github.io/docs/why-rust/">
-  <link rel="stylesheet" href="/assets/css/docs.min.67fc7b3b41d707b198af1dd244ec62e1a1dd4665e40cb6f1d97e9257e597ff1d.css" integrity="">
+  <link rel="stylesheet" href="/assets/css/docs.min.a6d52fd5461b892ef08a611a76391f8b999c6aca8f2a2317d6827c1143c0ca03.css" integrity="">
 
   <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon/favicon.ico">
@@ -418,8 +418,11 @@
 <li>Message passing and Thread failure: Erlang</li>
 </ul>
 <p>and etc.</p>
-<p>Rust <strong>doesn&rsquo;t use an automated garbage collection</strong> system(GC) by default.</p>
-<p>Rust compiler observes the code <strong>at compile-time</strong> and helps to <a href="https://doc.rust-lang.org/error-index.html"><strong>prevent many types of errors</strong></a> that are possible to write in C, C++ like programming languages.</p>
+<p>Rust <strong>doesn&rsquo;t use a built-in runtime</strong> or an automated garbage collection system (GC).</p>
+<blockquote>
+<p>💡However, async Rust requires an async runtime, which is provided by community-maintained crates like <a href="https://github.com/tokio-rs/tokio"><code>tokio</code></a>, <a href="https://github.com/async-rs/async-std"><code>async-std</code></a>, <a href="https://github.com/smol-rs/smol"><code>soml</code></a> etc. The async runtime will be bundled into the final executable.</p>
+</blockquote>
+<p>Rust compiler <strong>observes the code at compile-time</strong> and helps to <a href="https://doc.rust-lang.org/error-index.html">prevent many types of errors</a> that are possible to write in C, C++ like programming languages.</p>
 <h2 id="-before-going-to-the-next">👨‍🏫 Before going to the next&hellip;</h2>
 <ul>
 <li>The following guides will be helpful for you to understand the maturity of the Rust ecosystem and the tools you need to choose, according to the area you want to master.
@@ -471,7 +474,7 @@
           
           
 
-          <time datetime="2024-02-04"><i>🕒</i> Updated: 2024-02-04</time>
+          <time datetime="2024-03-10"><i>🕒</i> Updated: 2024-03-10</time>
           
           <a href="/docs/overview/"><i>﹤</i> Previous</a>
           
