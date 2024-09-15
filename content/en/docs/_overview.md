@@ -7,7 +7,7 @@ aliases:
 
 ## About me
 
-> 🧑‍💻 I am an expat working in Singapore as a Go Backend and DevOps Engineer. Feel free to reach out if you find any mistakes or anything that needs to be changed, including spelling or grammar errors. Alternatively, you can create a pull request, open an issue, or [share your awesome ideas in this gist](https://gist.github.com/dumindu/00a0be2d175ed5ff3bc3c17bbf1ca5b6). Good luck with learning Rust!
+> 🧑‍💻 I am an expert working in Singapore as a Go Backend and DevOps Engineer. Feel free to reach out if you find any mistakes or anything that needs to be changed, including spelling or grammar errors. Alternatively, you can create a pull request, open an issue, or [share your awesome ideas in this gist](https://gist.github.com/dumindu/00a0be2d175ed5ff3bc3c17bbf1ca5b6). Good luck with learning Rust!
 
 [![learning-rust.github.io](https://img.shields.io/github/stars/learning-rust/learning-rust.github.io?style=for-the-badge&logo=rust&label=learning-rust.github.io&logoColor=333333&labelColor=f9f9f9&color=F46623)](https://github.com/learning-rust/learning-rust.github.io)
 [![learning-cloud-native-go.github.io](https://img.shields.io/github/stars/learning-cloud-native-go/learning-cloud-native-go.github.io?style=for-the-badge&logo=go&logoColor=333333&label=learning-cloud-native-go.github.io&labelColor=f9f9f9&color=00ADD8)](https://learning-cloud-native-go.github.io)
