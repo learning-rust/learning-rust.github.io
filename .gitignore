@@ -1,8 +1,10 @@
 .idea
 .vscode
+.zed
 .DS_Store
 hugo.yaml
 .hugo_build.lock
+.gitmodules
 /docs
 /data
 /themes
