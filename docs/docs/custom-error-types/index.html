@@ -8,25 +8,24 @@
   <meta name="author" content="Dumindu Madunuwan">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
-  
-
   <title>Custom Error Types · Learning Rust</title>
   <link rel="canonical" href="https://learning-rust.github.io/docs/custom-error-types/">
-  <link rel="stylesheet" href="/assets/css/docs.min.a6d52fd5461b892ef08a611a76391f8b999c6aca8f2a2317d6827c1143c0ca03.css" integrity="">
+  <link rel="stylesheet" href="/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css" integrity="">
 
   <link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon/favicon.ico">
-<link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/favicon/favicon.ico">
+  <link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
+  
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
-<script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-FZHQCXSZ89');
-</script>
+  </script>
 </head>
 
 <body>
@@ -38,344 +37,147 @@
       <div>
         <button class="btn"><i>❌</i>Close</button>
       </div>
-      <a href="/" class="site-logo">Learning Rust</a>
+
+      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
 
       <nav role="navigation">
         <details open>
           <summary>Documentation</summary>
-          <ul><li>
-              
-                
-                <a class="" href="/docs/overview/">
-                  
-                  Overview
-                  
-                </a>
-              
+          <ul>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/overview/">Overview</a>
             </li>
-
-          </ul>
-        </details><details open>
-          <summary>Basics</summary>
-          <ul><li>
-              
-                
-                <a class="" href="/docs/why-rust/">
-                  
-                  Why Rust?
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/installation/">
-                  
-                  Installation
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/hello-world/">
-                  
-                  Hello World
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/cargo-crates-and-basic-project-structure/">
-                  
-                  Cargo, Crates and Basic Project Structure
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/comments-and-documenting-the-code/">
-                  
-                  Comments and Documenting the code
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/variable-bindings-constants-and-statics/">
-                  
-                  Variable bindings, Constants and Statics
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/functions/">
-                  
-                  Functions
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/primitive-data-types/">
-                  
-                  Primitive Data Types
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/operators/">
-                  
-                  Operators
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/control-flows/">
-                  
-                  Control Flows
-                  
-                </a>
-              
-            </li>
-
-          </ul>
-        </details><details open>
-          <summary>Beyond The Basics</summary>
-          <ul><li>
-              
-                
-                <a class="" href="/docs/vectors/">
-                  
-                  Vectors
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/structs/">
-                  
-                  Structs
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/enums/">
-                  
-                  Enums
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/generics/">
-                  
-                  Generics
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/impls-and-traits/">
-                  
-                  Impls and Traits
-                  
-                </a>
-              
-            </li>
-
-          </ul>
-        </details><details open>
-          <summary>The Tough Part</summary>
-          <ul><li>
-              
-                
-                <a class="" href="/docs/ownership/">
-                  
-                  Ownership
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/borrowing/">
-                  
-                  Borrowing
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/lifetimes/">
-                  
-                  Lifetimes
-                  
-                </a>
-              
-            </li>
-
-          </ul>
-        </details><details open>
-          <summary>Let&#39;s Get It Started</summary>
-          <ul><li>
-              
-                
-                <a class="" href="/docs/code-organization/">
-                  
-                  Code Organization
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/functions-02/">
-                  
-                  Functions (02)
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/modules/">
-                  
-                  Modules
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/crates/">
-                  
-                  Crates
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/workspaces/">
-                  
-                  Workspaces
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/use/">
-                  
-                  Use
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/std-primitives-and-preludes/">
-                  
-                  STD, Primitives and Preludes
-                  
-                </a>
-              
-            </li>
-
-          </ul>
-        </details><details open>
-          <summary>Error Handling</summary>
-          <ul><li>
-              
-                
-                <a class="" href="/docs/smart-compiler/">
-                  
-                  Smart Compiler
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/panicking/">
-                  
-                  Panicking
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/option-and-result/">
-                  
-                  Option and Result
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/unwrap-and-expect/">
-                  
-                  Unwrap and Expect
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/error-and-none-propagation/">
-                  
-                  Error and None Propagation
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="" href="/docs/combinators/">
-                  
-                  Combinators
-                  
-                </a>
-              
-            </li><li>
-              
-                
-                <a class="active" href="/docs/custom-error-types/">
-                  
-                  Custom Error Types
-                  
-                </a>
-              
-            </li>
-
-          </ul>
+            </ul>
         </details>
+        <details open>
+          <summary>Basics</summary>
+          <ul>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/why-rust/">Why Rust?</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/installation/">Installation</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/hello-world/">Hello World</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/">Cargo, Crates and Basic Project Structure</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/comments-and-documenting-the-code/">Comments and Documenting the code</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/variables-constants-and-statics/">Variables, Constants and Statics</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/functions/">Functions</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/primitive-data-types/">Primitive Data Types</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/operators/">Operators</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/control-flows/">Control Flows</a>
+            </li>
+            </ul>
+        </details>
+        <details open>
+          <summary>Beyond The Basics</summary>
+          <ul>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/vectors/">Vectors</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/structs/">Structs</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/enums/">Enums</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/generics/">Generics</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/impls-and-traits/">Impls and Traits</a>
+            </li>
+            </ul>
+        </details>
+        <details open>
+          <summary>The Tough Part</summary>
+          <ul>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/ownership/">Ownership</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/borrowing/">Borrowing</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/lifetimes/">Lifetimes</a>
+            </li>
+            </ul>
+        </details>
+        <details open>
+          <summary>Let&#39;s Get It Started</summary>
+          <ul>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/code-organization/">Code Organization</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/functions-02/">Functions (02)</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/modules/">Modules</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/crates/">Crates</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/workspaces/">Workspaces</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/use/">Use</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/std-primitives-and-preludes/">STD, Primitives and Preludes</a>
+            </li>
+            </ul>
+        </details>
+        <details open>
+          <summary>Error Handling</summary>
+          <ul>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/smart-compiler/">Smart Compiler</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/panicking/">Panicking</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/option-and-result/">Option and Result</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/unwrap-and-expect/">Unwrap and Expect</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/error-and-none-propagation/">Error and None Propagation</a>
+            </li>
+            <li>
+              <a class="" href="https://learning-rust.github.io/docs/combinators/">Combinators</a>
+            </li>
+            <li>
+              <a class="active" href="https://learning-rust.github.io/docs/custom-error-types/">Custom Error Types</a>
+            </li>
+            </ul>
+        </details>
+        
       </nav>
     </aside>
   </div>
 
   <div id="content-wrapper">
     <header>
-      <a href="/" class="site-logo">Learning Rust</a>
+      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
     </header>
 
     <main>
@@ -398,8 +200,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">source</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="p">(</span><span class="n">Error</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">&#39;static</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><blockquote>
-<p>As we discussed under <a href="/docs/impls-and-traits/#traits-inheritance">traits inheritance</a>, a trait can be inherited from another traits. <code>trait Error: Debug + Display</code> means <code>Error</code> trait inherits from <code>fmt::Debug</code> and <code>fmt::Display</code> traits.</p>
-</blockquote>
+<p>As we discussed under <a href="/docs/impls-and-traits/#traits-inheritance">traits inheritance</a>, a trait can be inherited from another traits. <code>trait Error: Debug + Display</code> means <code>Error</code> trait inherits from <code>fmt::Debug</code> and <code>fmt::Display</code> traits.</p></blockquote>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// traits inside Rust standard library core fmt module/ std::fmt
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">trait</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">fmt</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">f</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Formatter</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="n">Error</span><span class="o">&gt;</span><span class="p">;</span><span class="w">
@@ -519,8 +320,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>⭐️ Rust standard library provides not only reusable traits and also it facilitates to <strong>magically generate implementations for few traits</strong> via <code>#[derive]</code> attribute. Rust support <code>derive</code> <code>std::fmt::Debug</code>, to provide a default format for debug messages. So we <strong>can skip <code>std::fmt::Debug</code> implementation</strong> for custom error types and use <code>#[derive(Debug)]</code> before <code>struct</code> declaration.</p>
 <blockquote>
-<p>For a struct <code>#[derive(Debug)]</code> prints, the name of the <code>struct</code> , <code>{</code> , comma-separated list of each field’s name and debug value and <code>}</code>.</p>
-</blockquote>
+<p>For a struct <code>#[derive(Debug)]</code> prints, the name of the <code>struct</code> , <code>{</code> , comma-separated list of each field’s name and debug value and <code>}</code>.</p></blockquote>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">fmt</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[derive(Debug)]</span><span class="w"> </span><span class="c1">// derive std::fmt::Debug on AppError
@@ -570,8 +370,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">from</span><span class="p">(</span><span class="n">_</span>: <span class="nc">T</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><blockquote>
-<p>💡 As you know, <code>String::from()</code> function is used to create a <code>String</code> from <code>&amp;str</code> data type. Actually this also an implementation of <code>std::convert::From</code> trait.</p>
-</blockquote>
+<p>💡 As you know, <code>String::from()</code> function is used to create a <code>String</code> from <code>&amp;str</code> data type. Actually this also an implementation of <code>std::convert::From</code> trait.</p></blockquote>
 <p>Let’s see how to implement <code>std::convert::From</code> trait on a custom error type.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">fs</span>::<span class="n">File</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span><span class="w">
@@ -657,296 +456,15 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 03. If hello_world.txt contains non-numeric content. ex Hello, world!
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Error</span>: <span class="nc">AppError</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">kind</span>: <span class="s">&#34;parse&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span>: <span class="s">&#34;invalid digit found in string&#34;</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><blockquote>
-<p>🔎 Search about the implementation of <a href="https://doc.rust-lang.org/std/io/enum.ErrorKind.html"><code>std::io::ErrorKind</code></a>, to see how to organize error types further.</p>
-</blockquote>
+<p>🔎 Search about the implementation of <a href="https://doc.rust-lang.org/std/io/enum.ErrorKind.html"><code>std::io::ErrorKind</code></a>, to see how to organize error types further.</p></blockquote>
 
         </div>
 
         <footer>
-          
-
-          
-          
-          
-          
-
-          
-          
-          
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
-          
-          
-          
-
           <time datetime="2023-11-11"><i>🕒</i> Updated: 2023-11-11</time>
-          
-          <a href="/docs/combinators/"><i>﹤</i> Previous</a>
-          
-
-          
+          <a href="https://learning-rust.github.io/docs/combinators/"><i>﹤</i> Previous</a>
           <a class="hidden">Next <i>﹥</i></a>
-          
-
-        </footer>
+          </footer>
       </article>
 
       <aside>
@@ -964,7 +482,7 @@
     </main>
 
     <footer>
-      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2024<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
       <div>
         <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
       </div>
