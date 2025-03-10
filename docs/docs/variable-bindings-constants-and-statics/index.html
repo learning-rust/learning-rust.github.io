@@ -1,300 +1,43 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
-  <meta name="author" content="Dumindu Madunuwan">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
-  <title>Variable bindings, Constants &amp; Statics · Learning Rust</title>
-  <link rel="canonical" href="https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/">
-  <link rel="stylesheet" href="/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css" integrity="">
-
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon/favicon.ico">
-  <link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-FZHQCXSZ89');
-  </script>
-</head>
-
-<body>
-
-<div id="outer-wrapper">
-
-  <div id="aside-wrapper">
-    <aside>
-      <div>
-        <button class="btn"><i>❌</i>Close</button>
-      </div>
-
-      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
-
-      <nav role="navigation">
-        <details open>
-          <summary>Documentation</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/overview/">Overview</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Basics</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/why-rust/">Why Rust?</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/installation/">Installation</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/hello-world/">Hello World</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/">Cargo, Crates and Basic Project Structure</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/comments-and-documenting-the-code/">Comments and Documenting the code</a>
-            </li>
-            <li>
-              <a class="active" href="https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/">Variable bindings, Constants and Statics</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/functions/">Functions</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/primitive-data-types/">Primitive Data Types</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/operators/">Operators</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/control-flows/">Control Flows</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Beyond The Basics</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/vectors/">Vectors</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/structs/">Structs</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/enums/">Enums</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/generics/">Generics</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/impls-and-traits/">Impls and Traits</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>The Tough Part</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/ownership/">Ownership</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/borrowing/">Borrowing</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/lifetimes/">Lifetimes</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Let&#39;s Get It Started</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/code-organization/">Code Organization</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/functions-02/">Functions (02)</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/modules/">Modules</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/crates/">Crates</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/workspaces/">Workspaces</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/use/">Use</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/std-primitives-and-preludes/">STD, Primitives and Preludes</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Error Handling</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/smart-compiler/">Smart Compiler</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/panicking/">Panicking</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/option-and-result/">Option and Result</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/unwrap-and-expect/">Unwrap and Expect</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/error-and-none-propagation/">Error and None Propagation</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/combinators/">Combinators</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/custom-error-types/">Custom Error Types</a>
-            </li>
-            </ul>
-        </details>
-        
-      </nav>
-    </aside>
-  </div>
-
-  <div id="content-wrapper">
-    <header>
-      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
-    </header>
-
-    <main>
-      <article>
-        <nav>
-          <button class="btn"><i>⬅️</i> On this section</button>
-          <button class="btn">On this page <i>➡️</i></button>
-        </nav>
-        <header>
-          <h1>Variable bindings, Constants &amp; Statics</h1>
-          <p></p>
-        </header>
-        <div id="article-body">
-          <h2 id="variable-bindings-constants--statics">Variable bindings, Constants &amp; Statics</h2>
-<p>⭐️ In Rust, variables are <strong>immutable by default</strong>, so we call them <strong>Variable bindings</strong>. To make them mutable, the <code>mut</code> keyword is used.</p>
-<p>⭐️ Rust is a <strong>statically typed</strong> language; it checks data types at compile-time. But it <strong>doesn’t require you to actually type it when declaring variable bindings</strong>. In that case, the compiler checks the usage and sets a better data type for it. But for <strong>constants and statics, you must annotate the type</strong>. Types come after a colon(<code>:</code>).</p>
-<blockquote>
-<p>💭 In the following examples, we will use <a href="/docs/primitive-data-types">data types</a> like <code>bool</code>, <code>i32</code>, <code>i64</code> and <code>f64</code>. Don&rsquo;t worry about them for now; they&rsquo;ll be discussed later.</p></blockquote>
-<ul>
-<li><strong>Variable bindings</strong></li>
-</ul>
-<p>The <strong><code>let</code></strong> keyword is used in binding expressions. We can bind a name to a value or a function. Also, because the left-hand side of a let expression is a <em>&ldquo;pattern&rdquo;</em>, you can bind multiple names to a set of values or function values.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// Declaration; without data type
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Assignment
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">b</span>: <span class="kt">i8</span><span class="p">;</span><span class="w"> </span><span class="c1">// Declaration; with data type 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">        </span><span class="c1">// Declaration + assignment; without data type
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="n">f</span>: <span class="kt">bool</span> <span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// Declaration + assignment; with data type
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// x = 1 and y = 2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// z = 3
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w"> </span><span class="c1">// z = 3
-</span></span></span></code></pre></div><ul>
-<li><strong>Constants</strong></li>
-</ul>
-<p>The <strong><code>const</code></strong> keyword is used to define constants and after the assignment their values are not allowed to change. They live for the entire lifetime of a program but has no fixed address in the memory.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">const</span><span class="w"> </span><span class="n">N</span>: <span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><ul>
-<li><strong>Statics</strong></li>
-</ul>
-<p>The <strong><code>static</code></strong> keyword is used to define a <em>&ldquo;global variable&rdquo;</em> type facility. There is only one instance for each value, and it’s at a <strong>fixed location in memory</strong>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">static</span><span class="w"> </span><span class="n">N</span>: <span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><blockquote>
-<p>💭 While you need constants, always use <code>const</code>, instead of <code>static</code>. It’s pretty rare that you actually want a memory location associated with your constant, and using a const allows for optimizations like <a href="https://en.wikipedia.org/wiki/Constant_folding#Constant_propagation">constant propagation</a>, not only in your crate but also in downstream crates.</p></blockquote>
-<h2 id="variable-shadowing">Variable Shadowing</h2>
-<p>Sometimes, while dealing with data, initially we get them in one unit but need to transform them into another unit for further processing. In this situation, instead of using different variable names, Rust allows us to <strong>redeclare the same variable with a different data type and/ or with a different mutability setting</strong>. We call this Shadowing.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span>: <span class="kt">f64</span> <span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">20.48</span><span class="p">;</span><span class="w"> </span><span class="c1">// float
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span>: <span class="kt">i64</span> <span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">floor</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">i64</span><span class="p">;</span><span class="w"> </span><span class="c1">// int
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// -21
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span> <span class="o">=</span><span class="w"> </span><span class="s">&#34;hello&#34;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &amp;str
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span>: <span class="nb">String</span> <span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">to_uppercase</span><span class="p">();</span><span class="w"> </span><span class="c1">// String
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="c1">// HELLO
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h2 id="-before-going-to-the-next">👨‍🏫 Before going to the next&hellip;</h2>
-<ul>
-<li>
-<p>The naming convention for the variable bindings is using the <a href="https://en.wikipedia.org/wiki/Snake_case"><code>snake_case</code></a>. But, for constants and statics, we should follow the <a href="https://en.wikipedia.org/wiki/Snake_case"><code>SCREAMING_SNAKE_CASE</code></a>.</p>
-</li>
-<li>
-<p>Usually, constants and statics are placed at the top of the code file, outside the functions (after module imports/ <a href="/docs/use"><code>use</code> declarations</a>).</p>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">const</span><span class="w"> </span><span class="no">PI</span>: <span class="kt">f64</span> <span class="o">=</span><span class="w"> </span><span class="mf">3.14159265359</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;π value is </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="no">PI</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div>
-        </div>
-
-        <footer>
-          <time datetime="2023-11-11"><i>🕒</i> Updated: 2023-11-11</time>
-          <a href="https://learning-rust.github.io/docs/comments-and-documenting-the-code/"><i>﹤</i> Previous</a>
-          <a href="https://learning-rust.github.io/docs/functions/">Next <i>﹥</i></a>
-          </footer>
-      </article>
-
-      <aside>
-        <div>
-          <button class="btn"><i>❌</i>Close</button>
-        </div>
-        <strong>On this page</strong>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#variable-bindings-constants--statics">Variable bindings, Constants &amp; Statics</a></li>
-    <li><a href="#variable-shadowing">Variable Shadowing</a></li>
-    <li><a href="#-before-going-to-the-next">👨‍🏫 Before going to the next&hellip;</a></li>
-  </ul>
-</nav>
-      </aside>
-    </main>
-
-    <footer>
-      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
-      <div>
-        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
-      </div>
-    </footer>
-  </div>
-
-</div>
-
-<div id="body-model-outer"></div>
-<script type="text/javascript" src="/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
-</body>
-</html>
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Rust Programming Language Tutorials for Everyone!"><meta name=author content="Dumindu Madunuwan"><meta name=theme-color content="#ffffff" media="(prefers-color-scheme: light)"><meta name=theme-color content="#101010" media="(prefers-color-scheme: dark)"><title>Variable bindings, Constants & Statics · Learning Rust</title>
+<link rel=canonical href=https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/><link rel=stylesheet href=/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css integrity><link rel=manifest href=/manifest.json><link rel=icon href=/favicon/favicon.ico><link rel=icon href=/favicon/favicon-16x16.png sizes=16x16 type=image/png><link rel=icon href=/favicon/favicon-32x32.png sizes=32x32 type=image/png><link rel=apple-touch-icon href=/favicon/apple-touch-icon.png sizes=180x180><script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-FZHQCXSZ89")</script></head><body><div id=outer-wrapper><div id=aside-wrapper><aside><div><button class=btn><i>❌</i>Close</button></div><a href=https://learning-rust.github.io/ class=site-logo>Learning Rust</a><nav role=navigation><details open><summary>Documentation</summary><ul><li><a href=https://learning-rust.github.io/docs/overview/>Overview</a></li></ul></details><details open><summary>Basics</summary><ul><li><a href=https://learning-rust.github.io/docs/why-rust/>Why Rust?</a></li><li><a href=https://learning-rust.github.io/docs/installation/>Installation</a></li><li><a href=https://learning-rust.github.io/docs/hello-world/>Hello World</a></li><li><a href=https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/>Cargo, Crates and Basic Project Structure</a></li><li><a href=https://learning-rust.github.io/docs/comments-and-documenting-the-code/>Comments and Documenting the code</a></li><li><a class=active href=https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/>Variable bindings, Constants and Statics</a></li><li><a href=https://learning-rust.github.io/docs/functions/>Functions</a></li><li><a href=https://learning-rust.github.io/docs/primitive-data-types/>Primitive Data Types</a></li><li><a href=https://learning-rust.github.io/docs/operators/>Operators</a></li><li><a href=https://learning-rust.github.io/docs/control-flows/>Control Flows</a></li></ul></details><details open><summary>Beyond The Basics</summary><ul><li><a href=https://learning-rust.github.io/docs/vectors/>Vectors</a></li><li><a href=https://learning-rust.github.io/docs/structs/>Structs</a></li><li><a href=https://learning-rust.github.io/docs/enums/>Enums</a></li><li><a href=https://learning-rust.github.io/docs/generics/>Generics</a></li><li><a href=https://learning-rust.github.io/docs/impls-and-traits/>Impls and Traits</a></li></ul></details><details open><summary>The Tough Part</summary><ul><li><a href=https://learning-rust.github.io/docs/ownership/>Ownership</a></li><li><a href=https://learning-rust.github.io/docs/borrowing/>Borrowing</a></li><li><a href=https://learning-rust.github.io/docs/lifetimes/>Lifetimes</a></li></ul></details><details open><summary>Let's Get It Started</summary><ul><li><a href=https://learning-rust.github.io/docs/code-organization/>Code Organization</a></li><li><a href=https://learning-rust.github.io/docs/functions-02/>Functions (02)</a></li><li><a href=https://learning-rust.github.io/docs/modules/>Modules</a></li><li><a href=https://learning-rust.github.io/docs/crates/>Crates</a></li><li><a href=https://learning-rust.github.io/docs/workspaces/>Workspaces</a></li><li><a href=https://learning-rust.github.io/docs/use/>Use</a></li><li><a href=https://learning-rust.github.io/docs/std-primitives-and-preludes/>STD, Primitives and Preludes</a></li></ul></details><details open><summary>Error Handling</summary><ul><li><a href=https://learning-rust.github.io/docs/smart-compiler/>Smart Compiler</a></li><li><a href=https://learning-rust.github.io/docs/panicking/>Panicking</a></li><li><a href=https://learning-rust.github.io/docs/option-and-result/>Option and Result</a></li><li><a href=https://learning-rust.github.io/docs/unwrap-and-expect/>Unwrap and Expect</a></li><li><a href=https://learning-rust.github.io/docs/error-and-none-propagation/>Error and None Propagation</a></li><li><a href=https://learning-rust.github.io/docs/combinators/>Combinators</a></li><li><a href=https://learning-rust.github.io/docs/custom-error-types/>Custom Error Types</a></li></ul></details></nav></aside></div><div id=content-wrapper><header><a href=https://learning-rust.github.io/ class=site-logo>Learning Rust</a></header><main><article><nav><button class=btn><i>⬅️</i> On this section</button>
+<button class=btn>On this page <i>➡️</i></button></nav><header><h1>Variable bindings, Constants & Statics</h1><p></p></header><div id=article-body><h2 id=variable-bindings-constants--statics>Variable bindings, Constants & Statics</h2><p>⭐️ In Rust, variables are <strong>immutable by default</strong>, so we call them <strong>Variable bindings</strong>. To make them mutable, the <code>mut</code> keyword is used.</p><p>⭐️ Rust is a <strong>statically typed</strong> language; it checks data types at compile-time. But it <strong>doesn’t require you to actually type it when declaring variable bindings</strong>. In that case, the compiler checks the usage and sets a better data type for it. But for <strong>constants and statics, you must annotate the type</strong>. Types come after a colon(<code>:</code>).</p><blockquote><p>💭 In the following examples, we will use <a href=/docs/primitive-data-types>data types</a> like <code>bool</code>, <code>i32</code>, <code>i64</code> and <code>f64</code>. Don&rsquo;t worry about them for now; they&rsquo;ll be discussed later.</p></blockquote><ul><li><strong>Variable bindings</strong></li></ul><p>The <strong><code>let</code></strong> keyword is used in binding expressions. We can bind a name to a value or a function. Also, because the left-hand side of a let expression is a <em>&ldquo;pattern&rdquo;</em>, you can bind multiple names to a set of values or function values.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=kd>let</span><span class=w> </span><span class=n>a</span><span class=p>;</span><span class=w> </span><span class=c1>// Declaration; without data type
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>a</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>5</span><span class=p>;</span><span class=w> </span><span class=c1>// Assignment
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>let</span><span class=w> </span><span class=n>b</span>: <span class=kt>i8</span><span class=p>;</span><span class=w> </span><span class=c1>// Declaration; with data type 
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>b</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>5</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>let</span><span class=w> </span><span class=n>t</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=kc>true</span><span class=p>;</span><span class=w>        </span><span class=c1>// Declaration + assignment; without data type
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span><span class=w> </span><span class=n>f</span>: <span class=kt>bool</span> <span class=o>=</span><span class=w> </span><span class=kc>false</span><span class=p>;</span><span class=w> </span><span class=c1>// Declaration + assignment; with data type
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>let</span><span class=w> </span><span class=p>(</span><span class=n>x</span><span class=p>,</span><span class=w> </span><span class=n>y</span><span class=p>)</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=w> </span><span class=mi>2</span><span class=p>);</span><span class=w> </span><span class=c1>// x = 1 and y = 2
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>5</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>6</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>let</span><span class=w> </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>y</span><span class=w> </span><span class=p>};</span><span class=w> </span><span class=c1>// z = 3
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>let</span><span class=w> </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>1</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>y</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>x</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>y</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>};</span><span class=w> </span><span class=c1>// z = 3
+</span></span></span></code></pre></div><ul><li><strong>Constants</strong></li></ul><p>The <strong><code>const</code></strong> keyword is used to define constants and after the assignment their values are not allowed to change. They live for the entire lifetime of a program but has no fixed address in the memory.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>const</span><span class=w> </span><span class=n>N</span>: <span class=kt>i32</span> <span class=o>=</span><span class=w> </span><span class=mi>5</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></div><ul><li><strong>Statics</strong></li></ul><p>The <strong><code>static</code></strong> keyword is used to define a <em>&ldquo;global variable&rdquo;</em> type facility. There is only one instance for each value, and it’s at a <strong>fixed location in memory</strong>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>static</span><span class=w> </span><span class=n>N</span>: <span class=kt>i32</span> <span class=o>=</span><span class=w> </span><span class=mi>5</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></div><blockquote><p>💭 While you need constants, always use <code>const</code>, instead of <code>static</code>. It’s pretty rare that you actually want a memory location associated with your constant, and using a const allows for optimizations like <a href=https://en.wikipedia.org/wiki/Constant_folding#Constant_propagation>constant propagation</a>, not only in your crate but also in downstream crates.</p></blockquote><h2 id=variable-shadowing>Variable Shadowing</h2><p>Sometimes, while dealing with data, initially we get them in one unit but need to transform them into another unit for further processing. In this situation, instead of using different variable names, Rust allows us to <strong>redeclare the same variable with a different data type and/ or with a different mutability setting</strong>. We call this Shadowing.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span>: <span class=kt>f64</span> <span class=o>=</span><span class=w> </span><span class=o>-</span><span class=mf>20.48</span><span class=p>;</span><span class=w> </span><span class=c1>// float
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span>: <span class=kt>i64</span> <span class=o>=</span><span class=w> </span><span class=n>x</span><span class=p>.</span><span class=n>floor</span><span class=p>()</span><span class=w> </span><span class=k>as</span><span class=w> </span><span class=kt>i64</span><span class=p>;</span><span class=w> </span><span class=c1>// int
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>x</span><span class=p>);</span><span class=w> </span><span class=c1>// -21
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>s</span>: <span class=kp>&amp;</span><span class=kt>str</span> <span class=o>=</span><span class=w> </span><span class=s>&#34;hello&#34;</span><span class=p>;</span><span class=w> </span><span class=c1>// &amp;str
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>s</span>: <span class=nb>String</span> <span class=o>=</span><span class=w> </span><span class=n>s</span><span class=p>.</span><span class=n>to_uppercase</span><span class=p>();</span><span class=w> </span><span class=c1>// String
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>s</span><span class=p>)</span><span class=w> </span><span class=c1>// HELLO
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h2 id=-before-going-to-the-next>👨‍🏫 Before going to the next&mldr;</h2><ul><li><p>The naming convention for the variable bindings is using the <a href=https://en.wikipedia.org/wiki/Snake_case><code>snake_case</code></a>. But, for constants and statics, we should follow the <a href=https://en.wikipedia.org/wiki/Snake_case><code>SCREAMING_SNAKE_CASE</code></a>.</p></li><li><p>Usually, constants and statics are placed at the top of the code file, outside the functions (after module imports/ <a href=/docs/use><code>use</code> declarations</a>).</p></li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>const</span><span class=w> </span><span class=no>PI</span>: <span class=kt>f64</span> <span class=o>=</span><span class=w> </span><span class=mf>3.14159265359</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;π value is </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=no>PI</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div></div><footer><time datetime=2023-11-11><i>🕒</i> Updated: 2023-11-11</time>
+<a href=https://learning-rust.github.io/docs/comments-and-documenting-the-code/><i>﹤</i> Previous</a>
+<a href=https://learning-rust.github.io/docs/functions/>Next <i>﹥</i></a></footer></article><aside><div><button class=btn><i>❌</i>Close</button></div><strong>On this page</strong><nav id=TableOfContents><ul><li><a href=#variable-bindings-constants--statics>Variable bindings, Constants & Statics</a></li><li><a href=#variable-shadowing>Variable Shadowing</a></li><li><a href=#-before-going-to-the-next>👨‍🏫 Before going to the next&mldr;</a></li></ul></nav></aside></main><footer><div><i>🧑‍💻</i>Built by and copyright<a href=https://github.com/dumindu target=_blank>Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href=https://github.com/learning-rust target=_blank>GitHub</a></div><div><button class=btn><i>☀️</i><i>⁄</i><i>🌑</i></button></div></footer></div></div><div id=body-model-outer></div><script type=text/javascript src=/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js integrity></script></body></html>

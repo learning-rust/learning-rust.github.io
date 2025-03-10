@@ -1,285 +1,55 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
-  <meta name="author" content="Dumindu Madunuwan">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
-  <title>Workspaces · Learning Rust</title>
-  <link rel="canonical" href="https://learning-rust.github.io/docs/workspaces/">
-  <link rel="stylesheet" href="/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css" integrity="">
-
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon/favicon.ico">
-  <link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-FZHQCXSZ89');
-  </script>
-</head>
-
-<body>
-
-<div id="outer-wrapper">
-
-  <div id="aside-wrapper">
-    <aside>
-      <div>
-        <button class="btn"><i>❌</i>Close</button>
-      </div>
-
-      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
-
-      <nav role="navigation">
-        <details open>
-          <summary>Documentation</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/overview/">Overview</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Basics</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/why-rust/">Why Rust?</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/installation/">Installation</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/hello-world/">Hello World</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/">Cargo, Crates and Basic Project Structure</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/comments-and-documenting-the-code/">Comments and Documenting the code</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/">Variable bindings, Constants and Statics</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/functions/">Functions</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/primitive-data-types/">Primitive Data Types</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/operators/">Operators</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/control-flows/">Control Flows</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Beyond The Basics</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/vectors/">Vectors</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/structs/">Structs</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/enums/">Enums</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/generics/">Generics</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/impls-and-traits/">Impls and Traits</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>The Tough Part</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/ownership/">Ownership</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/borrowing/">Borrowing</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/lifetimes/">Lifetimes</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Let&#39;s Get It Started</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/code-organization/">Code Organization</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/functions-02/">Functions (02)</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/modules/">Modules</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/crates/">Crates</a>
-            </li>
-            <li>
-              <a class="active" href="https://learning-rust.github.io/docs/workspaces/">Workspaces</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/use/">Use</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/std-primitives-and-preludes/">STD, Primitives and Preludes</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Error Handling</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/smart-compiler/">Smart Compiler</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/panicking/">Panicking</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/option-and-result/">Option and Result</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/unwrap-and-expect/">Unwrap and Expect</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/error-and-none-propagation/">Error and None Propagation</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/combinators/">Combinators</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/custom-error-types/">Custom Error Types</a>
-            </li>
-            </ul>
-        </details>
-        
-      </nav>
-    </aside>
-  </div>
-
-  <div id="content-wrapper">
-    <header>
-      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
-    </header>
-
-    <main>
-      <article>
-        <nav>
-          <button class="btn"><i>⬅️</i> On this section</button>
-          <button class="btn">On this page <i>➡️</i></button>
-        </nav>
-        <header>
-          <h1>Workspaces</h1>
-          <p></p>
-        </header>
-        <div id="article-body">
-          <p>When the code base is getting larger, you might need to work with <strong>multiple crates on the same project</strong>. Rust supports this via Workspaces. You can <strong>analyze (<code>cargo check</code>), build, run tests or generate docs for all crates</strong> at once by running <code>cargo</code> commands from the project root.</p>
-<p>⭐️ When working on multiple crates same time, there is a higher possibility of having shared dependencies on crates. To prevent downloading and compiling the same dependency multiple times, Rust uses a <strong>shared build directory</strong> under the project root, while running <code>cargo build</code> from the project root.</p>
-<p>Let&rsquo;s create a library crate with a simple hello world function and a binary crate which uses the library crate.</p>
-<p>Assume we run,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir greetings
-</span></span><span class="line"><span class="cl">touch greetings/Cargo.toml
-</span></span><span class="line"><span class="cl">cargo new greetings/lib --lib
-</span></span><span class="line"><span class="cl">cargo new greetings/examples/hello
-</span></span></code></pre></div><p>That generates,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">greetings
-</span></span><span class="line"><span class="cl"> ├── Cargo.toml
-</span></span><span class="line"><span class="cl"> ├── examples
-</span></span><span class="line"><span class="cl"> │  └── hello
-</span></span><span class="line"><span class="cl"> │     ├── Cargo.toml
-</span></span><span class="line"><span class="cl"> │     └── src
-</span></span><span class="line"><span class="cl"> │        └── main.rs
-</span></span><span class="line"><span class="cl"> └── lib
-</span></span><span class="line"><span class="cl">    ├── Cargo.toml
-</span></span><span class="line"><span class="cl">    └── src
-</span></span><span class="line"><span class="cl">       └── lib.rs
-</span></span></code></pre></div><p>We have to modify the following files,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 01. greetings/Cargo.toml to mark as a workspace and to add members
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">[</span><span class="n">workspace</span><span class="p">]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;lib&#34;</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;examples/hello&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02.1 greetings/lib/Cargo.toml to change the package name to greetings
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">[</span><span class="n">package</span><span class="p">]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;greetings&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;0.1.0&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#34;Dumindu Madunuwan&#34;</span><span class="p">]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02.2 greetings/lib/src/lib.rs to add a simple hello world function
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 03.1 greetings/examples/hello/Cargo.toml to add the `greetings` lib as a dependency
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">[</span><span class="n">package</span><span class="p">]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;hello&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;0.1.0&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#34;Dumindu Madunuwan&#34;</span><span class="p">]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">greetings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;../../lib&#34;</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 03.2 greetings/examples/hello/src/main.rs to import the `greetings` lib and call its hello world function
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">greetings</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">greetings</span>::<span class="n">hello</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>💡 On Linux and Mac, you can run <code>cargo</code> commands on each crate without changing the working directory all the times via Subshells (A command list embedded between parentheses). For example, if you are in the <code>greetings</code> directory, even you run <code>(cd examples/hello &amp;&amp; cargo run)</code> your working directory will be kept  as same in <code>greetings</code> folder.</p>
-<blockquote>
-<p>🔎 <a href="https://github.com/rust-lang/rust/tree/master/src">rust-lang/rust source folder</a> is a good example for a workspace.</p></blockquote>
-
-        </div>
-
-        <footer>
-          <time datetime="2022-10-17"><i>🕒</i> Updated: 2022-10-17</time>
-          <a href="https://learning-rust.github.io/docs/crates/"><i>﹤</i> Previous</a>
-          <a href="https://learning-rust.github.io/docs/use/">Next <i>﹥</i></a>
-          </footer>
-      </article>
-
-      <aside>
-        <div>
-          <button class="btn"><i>❌</i>Close</button>
-        </div>
-        <strong>On this page</strong>
-        <nav id="TableOfContents"></nav>
-      </aside>
-    </main>
-
-    <footer>
-      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
-      <div>
-        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
-      </div>
-    </footer>
-  </div>
-
-</div>
-
-<div id="body-model-outer"></div>
-<script type="text/javascript" src="/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
-</body>
-</html>
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Rust Programming Language Tutorials for Everyone!"><meta name=author content="Dumindu Madunuwan"><meta name=theme-color content="#ffffff" media="(prefers-color-scheme: light)"><meta name=theme-color content="#101010" media="(prefers-color-scheme: dark)"><title>Workspaces · Learning Rust</title>
+<link rel=canonical href=https://learning-rust.github.io/docs/workspaces/><link rel=stylesheet href=/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css integrity><link rel=manifest href=/manifest.json><link rel=icon href=/favicon/favicon.ico><link rel=icon href=/favicon/favicon-16x16.png sizes=16x16 type=image/png><link rel=icon href=/favicon/favicon-32x32.png sizes=32x32 type=image/png><link rel=apple-touch-icon href=/favicon/apple-touch-icon.png sizes=180x180><script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-FZHQCXSZ89")</script></head><body><div id=outer-wrapper><div id=aside-wrapper><aside><div><button class=btn><i>❌</i>Close</button></div><a href=https://learning-rust.github.io/ class=site-logo>Learning Rust</a><nav role=navigation><details open><summary>Documentation</summary><ul><li><a href=https://learning-rust.github.io/docs/overview/>Overview</a></li></ul></details><details open><summary>Basics</summary><ul><li><a href=https://learning-rust.github.io/docs/why-rust/>Why Rust?</a></li><li><a href=https://learning-rust.github.io/docs/installation/>Installation</a></li><li><a href=https://learning-rust.github.io/docs/hello-world/>Hello World</a></li><li><a href=https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/>Cargo, Crates and Basic Project Structure</a></li><li><a href=https://learning-rust.github.io/docs/comments-and-documenting-the-code/>Comments and Documenting the code</a></li><li><a href=https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/>Variable bindings, Constants and Statics</a></li><li><a href=https://learning-rust.github.io/docs/functions/>Functions</a></li><li><a href=https://learning-rust.github.io/docs/primitive-data-types/>Primitive Data Types</a></li><li><a href=https://learning-rust.github.io/docs/operators/>Operators</a></li><li><a href=https://learning-rust.github.io/docs/control-flows/>Control Flows</a></li></ul></details><details open><summary>Beyond The Basics</summary><ul><li><a href=https://learning-rust.github.io/docs/vectors/>Vectors</a></li><li><a href=https://learning-rust.github.io/docs/structs/>Structs</a></li><li><a href=https://learning-rust.github.io/docs/enums/>Enums</a></li><li><a href=https://learning-rust.github.io/docs/generics/>Generics</a></li><li><a href=https://learning-rust.github.io/docs/impls-and-traits/>Impls and Traits</a></li></ul></details><details open><summary>The Tough Part</summary><ul><li><a href=https://learning-rust.github.io/docs/ownership/>Ownership</a></li><li><a href=https://learning-rust.github.io/docs/borrowing/>Borrowing</a></li><li><a href=https://learning-rust.github.io/docs/lifetimes/>Lifetimes</a></li></ul></details><details open><summary>Let's Get It Started</summary><ul><li><a href=https://learning-rust.github.io/docs/code-organization/>Code Organization</a></li><li><a href=https://learning-rust.github.io/docs/functions-02/>Functions (02)</a></li><li><a href=https://learning-rust.github.io/docs/modules/>Modules</a></li><li><a href=https://learning-rust.github.io/docs/crates/>Crates</a></li><li><a class=active href=https://learning-rust.github.io/docs/workspaces/>Workspaces</a></li><li><a href=https://learning-rust.github.io/docs/use/>Use</a></li><li><a href=https://learning-rust.github.io/docs/std-primitives-and-preludes/>STD, Primitives and Preludes</a></li></ul></details><details open><summary>Error Handling</summary><ul><li><a href=https://learning-rust.github.io/docs/smart-compiler/>Smart Compiler</a></li><li><a href=https://learning-rust.github.io/docs/panicking/>Panicking</a></li><li><a href=https://learning-rust.github.io/docs/option-and-result/>Option and Result</a></li><li><a href=https://learning-rust.github.io/docs/unwrap-and-expect/>Unwrap and Expect</a></li><li><a href=https://learning-rust.github.io/docs/error-and-none-propagation/>Error and None Propagation</a></li><li><a href=https://learning-rust.github.io/docs/combinators/>Combinators</a></li><li><a href=https://learning-rust.github.io/docs/custom-error-types/>Custom Error Types</a></li></ul></details></nav></aside></div><div id=content-wrapper><header><a href=https://learning-rust.github.io/ class=site-logo>Learning Rust</a></header><main><article><nav><button class=btn><i>⬅️</i> On this section</button>
+<button class=btn>On this page <i>➡️</i></button></nav><header><h1>Workspaces</h1><p></p></header><div id=article-body><p>When the code base is getting larger, you might need to work with <strong>multiple crates on the same project</strong>. Rust supports this via Workspaces. You can <strong>analyze (<code>cargo check</code>), build, run tests or generate docs for all crates</strong> at once by running <code>cargo</code> commands from the project root.</p><p>⭐️ When working on multiple crates same time, there is a higher possibility of having shared dependencies on crates. To prevent downloading and compiling the same dependency multiple times, Rust uses a <strong>shared build directory</strong> under the project root, while running <code>cargo build</code> from the project root.</p><p>Let&rsquo;s create a library crate with a simple hello world function and a binary crate which uses the library crate.</p><p>Assume we run,</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir greetings
+</span></span><span class=line><span class=cl>touch greetings/Cargo.toml
+</span></span><span class=line><span class=cl>cargo new greetings/lib --lib
+</span></span><span class=line><span class=cl>cargo new greetings/examples/hello
+</span></span></code></pre></div><p>That generates,</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>greetings
+</span></span><span class=line><span class=cl> ├── Cargo.toml
+</span></span><span class=line><span class=cl> ├── examples
+</span></span><span class=line><span class=cl> │  └── hello
+</span></span><span class=line><span class=cl> │     ├── Cargo.toml
+</span></span><span class=line><span class=cl> │     └── src
+</span></span><span class=line><span class=cl> │        └── main.rs
+</span></span><span class=line><span class=cl> └── lib
+</span></span><span class=line><span class=cl>    ├── Cargo.toml
+</span></span><span class=line><span class=cl>    └── src
+</span></span><span class=line><span class=cl>       └── lib.rs
+</span></span></code></pre></div><p>We have to modify the following files,</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 01. greetings/Cargo.toml to mark as a workspace and to add members
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>[</span><span class=n>workspace</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>members</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>[</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=s>&#34;lib&#34;</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=s>&#34;examples/hello&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 02.1 greetings/lib/Cargo.toml to change the package name to greetings
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>[</span><span class=n>package</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>name</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;greetings&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>version</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;0.1.0&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>authors</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>[</span><span class=s>&#34;Dumindu Madunuwan&#34;</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>[</span><span class=n>dependencies</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 02.2 greetings/lib/src/lib.rs to add a simple hello world function
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>hello</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;Hello, world!&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 03.1 greetings/examples/hello/Cargo.toml to add the `greetings` lib as a dependency
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>[</span><span class=n>package</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>name</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;hello&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>version</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;0.1.0&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>authors</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>[</span><span class=s>&#34;Dumindu Madunuwan&#34;</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>[</span><span class=n>dependencies</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>greetings</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=n>path</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;../../lib&#34;</span><span class=w> </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 03.2 greetings/examples/hello/src/main.rs to import the `greetings` lib and call its hello world function
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>extern</span><span class=w> </span><span class=k>crate</span><span class=w> </span><span class=n>greetings</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>greetings</span>::<span class=n>hello</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p>💡 On Linux and Mac, you can run <code>cargo</code> commands on each crate without changing the working directory all the times via Subshells (A command list embedded between parentheses). For example, if you are in the <code>greetings</code> directory, even you run <code>(cd examples/hello && cargo run)</code> your working directory will be kept as same in <code>greetings</code> folder.</p><blockquote><p>🔎 <a href=https://github.com/rust-lang/rust/tree/master/src>rust-lang/rust source folder</a> is a good example for a workspace.</p></blockquote></div><footer><time datetime=2022-10-17><i>🕒</i> Updated: 2022-10-17</time>
+<a href=https://learning-rust.github.io/docs/crates/><i>﹤</i> Previous</a>
+<a href=https://learning-rust.github.io/docs/use/>Next <i>﹥</i></a></footer></article><aside><div><button class=btn><i>❌</i>Close</button></div><strong>On this page</strong><nav id=TableOfContents></nav></aside></main><footer><div><i>🧑‍💻</i>Built by and copyright<a href=https://github.com/dumindu target=_blank>Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href=https://github.com/learning-rust target=_blank>GitHub</a></div><div><button class=btn><i>☀️</i><i>⁄</i><i>🌑</i></button></div></footer></div></div><div id=body-model-outer></div><script type=text/javascript src=/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js integrity></script></body></html>

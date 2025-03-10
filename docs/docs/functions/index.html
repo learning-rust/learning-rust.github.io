@@ -1,326 +1,66 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
-  <meta name="author" content="Dumindu Madunuwan">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
-  <title>Functions · Learning Rust</title>
-  <link rel="canonical" href="https://learning-rust.github.io/docs/functions/">
-  <link rel="stylesheet" href="/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css" integrity="">
-
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon/favicon.ico">
-  <link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-FZHQCXSZ89');
-  </script>
-</head>
-
-<body>
-
-<div id="outer-wrapper">
-
-  <div id="aside-wrapper">
-    <aside>
-      <div>
-        <button class="btn"><i>❌</i>Close</button>
-      </div>
-
-      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
-
-      <nav role="navigation">
-        <details open>
-          <summary>Documentation</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/overview/">Overview</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Basics</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/why-rust/">Why Rust?</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/installation/">Installation</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/hello-world/">Hello World</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/">Cargo, Crates and Basic Project Structure</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/comments-and-documenting-the-code/">Comments and Documenting the code</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/">Variable bindings, Constants and Statics</a>
-            </li>
-            <li>
-              <a class="active" href="https://learning-rust.github.io/docs/functions/">Functions</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/primitive-data-types/">Primitive Data Types</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/operators/">Operators</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/control-flows/">Control Flows</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Beyond The Basics</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/vectors/">Vectors</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/structs/">Structs</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/enums/">Enums</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/generics/">Generics</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/impls-and-traits/">Impls and Traits</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>The Tough Part</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/ownership/">Ownership</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/borrowing/">Borrowing</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/lifetimes/">Lifetimes</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Let&#39;s Get It Started</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/code-organization/">Code Organization</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/functions-02/">Functions (02)</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/modules/">Modules</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/crates/">Crates</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/workspaces/">Workspaces</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/use/">Use</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/std-primitives-and-preludes/">STD, Primitives and Preludes</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Error Handling</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/smart-compiler/">Smart Compiler</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/panicking/">Panicking</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/option-and-result/">Option and Result</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/unwrap-and-expect/">Unwrap and Expect</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/error-and-none-propagation/">Error and None Propagation</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/combinators/">Combinators</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/custom-error-types/">Custom Error Types</a>
-            </li>
-            </ul>
-        </details>
-        
-      </nav>
-    </aside>
-  </div>
-
-  <div id="content-wrapper">
-    <header>
-      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
-    </header>
-
-    <main>
-      <article>
-        <nav>
-          <button class="btn"><i>⬅️</i> On this section</button>
-          <button class="btn">On this page <i>➡️</i></button>
-        </nav>
-        <header>
-          <h1>Functions</h1>
-          <p></p>
-        </header>
-        <div id="article-body">
-          <h2 id="named-functions">Named functions</h2>
-<ul>
-<li>Named functions are declared with the keyword <strong><code>fn</code></strong></li>
-<li>When using <strong>arguments</strong>, you <strong>must declare the data types</strong>.</li>
-<li>By default, functions <strong>return an empty <a href="/docs/primitive-data-types/#tuple">tuple</a>/ <code>()</code></strong>. If you want to return a value, the <strong>return type must be specified</strong> after <strong><code>-&gt;</code></strong></li>
-</ul>
-<h3 id="i-hello-world">i. Hello world</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="ii-passing-arguments">ii. Passing arguments</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">print_sum</span><span class="p">(</span><span class="n">a</span>: <span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>: <span class="kt">i8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;sum is: </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="iii-returning-values">iii. Returning values</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 01. Without the return keyword. Only the last expression returns.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">plus_one</span><span class="p">(</span><span class="n">a</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// There is no ending ; in the above line.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="c1">// It means this is an expression which equals to `return a + 1;`.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 02. With the return keyword.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">plus_two</span><span class="p">(</span><span class="n">a</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Should use return keyword only on conditional/ early returns.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="c1">// Using return keyword in the last expression is a bad practice.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="iv-function-pointers-usage-as-a-data-type">iv. Function pointers, Usage as a Data Type</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 01. Without type declarations.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plus_one</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// 6
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 02. With type declarations.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">p1</span>: <span class="nc">fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="n">plus_one</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// 6
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">plus_one</span><span class="p">(</span><span class="n">a</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h2 id="closures">Closures</h2>
-<ul>
-<li>Also known as <strong>anonymous functions</strong> or <strong>lambda functions</strong>.</li>
-<li>The <strong>data types of arguments and returns are optional <a href="/docs/functions/#iv-without-optional-type-declarations-creating-and-calling-together"> ⃰ⁱᵛ</a></strong>.</li>
-</ul>
-<p>Example with a named function, before using closures.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">get_square_value</span><span class="p">(</span><span class="n">x</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">get_square_value</span><span class="p">(</span><span class="n">i</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="i-with-optional-type-declarations-of-input-and-return-types">i. With optional type declarations of input and return types</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">i</span>: <span class="kt">i32</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w"> </span><span class="c1">// Input parameters are passed inside | | and expression body is wrapped within { }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="ii-without-type-declarations-of-input-and-return-types">ii. Without type declarations of input and return types</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">i</span><span class="o">|</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="c1">// { } are optional for single-lined closures
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="iii-with-optional-type-declarations-creating-and-calling-together">iii. With optional type declarations; Creating and calling together</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x_square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">i</span>: <span class="kt">i32</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">}(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// { } are mandatory while creating and calling same time.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x_square</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="iv-without-optional-type-declarations-creating-and-calling-together">iv. Without optional type declarations; Creating and calling together</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x_square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">i</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">}(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// ⭐️ The return type is mandatory.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x_square</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div>
-        </div>
-
-        <footer>
-          <time datetime="2023-11-11"><i>🕒</i> Updated: 2023-11-11</time>
-          <a href="https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/"><i>﹤</i> Previous</a>
-          <a href="https://learning-rust.github.io/docs/primitive-data-types/">Next <i>﹥</i></a>
-          </footer>
-      </article>
-
-      <aside>
-        <div>
-          <button class="btn"><i>❌</i>Close</button>
-        </div>
-        <strong>On this page</strong>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#named-functions">Named functions</a>
-      <ul>
-        <li><a href="#i-hello-world">i. Hello world</a></li>
-        <li><a href="#ii-passing-arguments">ii. Passing arguments</a></li>
-        <li><a href="#iii-returning-values">iii. Returning values</a></li>
-        <li><a href="#iv-function-pointers-usage-as-a-data-type">iv. Function pointers, Usage as a Data Type</a></li>
-      </ul>
-    </li>
-    <li><a href="#closures">Closures</a>
-      <ul>
-        <li><a href="#i-with-optional-type-declarations-of-input-and-return-types">i. With optional type declarations of input and return types</a></li>
-        <li><a href="#ii-without-type-declarations-of-input-and-return-types">ii. Without type declarations of input and return types</a></li>
-        <li><a href="#iii-with-optional-type-declarations-creating-and-calling-together">iii. With optional type declarations; Creating and calling together</a></li>
-        <li><a href="#iv-without-optional-type-declarations-creating-and-calling-together">iv. Without optional type declarations; Creating and calling together</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </aside>
-    </main>
-
-    <footer>
-      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
-      <div>
-        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
-      </div>
-    </footer>
-  </div>
-
-</div>
-
-<div id="body-model-outer"></div>
-<script type="text/javascript" src="/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
-</body>
-</html>
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Rust Programming Language Tutorials for Everyone!"><meta name=author content="Dumindu Madunuwan"><meta name=theme-color content="#ffffff" media="(prefers-color-scheme: light)"><meta name=theme-color content="#101010" media="(prefers-color-scheme: dark)"><title>Functions · Learning Rust</title>
+<link rel=canonical href=https://learning-rust.github.io/docs/functions/><link rel=stylesheet href=/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css integrity><link rel=manifest href=/manifest.json><link rel=icon href=/favicon/favicon.ico><link rel=icon href=/favicon/favicon-16x16.png sizes=16x16 type=image/png><link rel=icon href=/favicon/favicon-32x32.png sizes=32x32 type=image/png><link rel=apple-touch-icon href=/favicon/apple-touch-icon.png sizes=180x180><script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-FZHQCXSZ89")</script></head><body><div id=outer-wrapper><div id=aside-wrapper><aside><div><button class=btn><i>❌</i>Close</button></div><a href=https://learning-rust.github.io/ class=site-logo>Learning Rust</a><nav role=navigation><details open><summary>Documentation</summary><ul><li><a href=https://learning-rust.github.io/docs/overview/>Overview</a></li></ul></details><details open><summary>Basics</summary><ul><li><a href=https://learning-rust.github.io/docs/why-rust/>Why Rust?</a></li><li><a href=https://learning-rust.github.io/docs/installation/>Installation</a></li><li><a href=https://learning-rust.github.io/docs/hello-world/>Hello World</a></li><li><a href=https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/>Cargo, Crates and Basic Project Structure</a></li><li><a href=https://learning-rust.github.io/docs/comments-and-documenting-the-code/>Comments and Documenting the code</a></li><li><a href=https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/>Variable bindings, Constants and Statics</a></li><li><a class=active href=https://learning-rust.github.io/docs/functions/>Functions</a></li><li><a href=https://learning-rust.github.io/docs/primitive-data-types/>Primitive Data Types</a></li><li><a href=https://learning-rust.github.io/docs/operators/>Operators</a></li><li><a href=https://learning-rust.github.io/docs/control-flows/>Control Flows</a></li></ul></details><details open><summary>Beyond The Basics</summary><ul><li><a href=https://learning-rust.github.io/docs/vectors/>Vectors</a></li><li><a href=https://learning-rust.github.io/docs/structs/>Structs</a></li><li><a href=https://learning-rust.github.io/docs/enums/>Enums</a></li><li><a href=https://learning-rust.github.io/docs/generics/>Generics</a></li><li><a href=https://learning-rust.github.io/docs/impls-and-traits/>Impls and Traits</a></li></ul></details><details open><summary>The Tough Part</summary><ul><li><a href=https://learning-rust.github.io/docs/ownership/>Ownership</a></li><li><a href=https://learning-rust.github.io/docs/borrowing/>Borrowing</a></li><li><a href=https://learning-rust.github.io/docs/lifetimes/>Lifetimes</a></li></ul></details><details open><summary>Let's Get It Started</summary><ul><li><a href=https://learning-rust.github.io/docs/code-organization/>Code Organization</a></li><li><a href=https://learning-rust.github.io/docs/functions-02/>Functions (02)</a></li><li><a href=https://learning-rust.github.io/docs/modules/>Modules</a></li><li><a href=https://learning-rust.github.io/docs/crates/>Crates</a></li><li><a href=https://learning-rust.github.io/docs/workspaces/>Workspaces</a></li><li><a href=https://learning-rust.github.io/docs/use/>Use</a></li><li><a href=https://learning-rust.github.io/docs/std-primitives-and-preludes/>STD, Primitives and Preludes</a></li></ul></details><details open><summary>Error Handling</summary><ul><li><a href=https://learning-rust.github.io/docs/smart-compiler/>Smart Compiler</a></li><li><a href=https://learning-rust.github.io/docs/panicking/>Panicking</a></li><li><a href=https://learning-rust.github.io/docs/option-and-result/>Option and Result</a></li><li><a href=https://learning-rust.github.io/docs/unwrap-and-expect/>Unwrap and Expect</a></li><li><a href=https://learning-rust.github.io/docs/error-and-none-propagation/>Error and None Propagation</a></li><li><a href=https://learning-rust.github.io/docs/combinators/>Combinators</a></li><li><a href=https://learning-rust.github.io/docs/custom-error-types/>Custom Error Types</a></li></ul></details></nav></aside></div><div id=content-wrapper><header><a href=https://learning-rust.github.io/ class=site-logo>Learning Rust</a></header><main><article><nav><button class=btn><i>⬅️</i> On this section</button>
+<button class=btn>On this page <i>➡️</i></button></nav><header><h1>Functions</h1><p></p></header><div id=article-body><h2 id=named-functions>Named functions</h2><ul><li>Named functions are declared with the keyword <strong><code>fn</code></strong></li><li>When using <strong>arguments</strong>, you <strong>must declare the data types</strong>.</li><li>By default, functions <strong>return an empty <a href=/docs/primitive-data-types/#tuple>tuple</a>/ <code>()</code></strong>. If you want to return a value, the <strong>return type must be specified</strong> after <strong><code>-></code></strong></li></ul><h3 id=i-hello-world>i. Hello world</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;Hello, world!&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h3 id=ii-passing-arguments>ii. Passing arguments</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>print_sum</span><span class=p>(</span><span class=n>a</span>: <span class=kt>i8</span><span class=p>,</span><span class=w> </span><span class=n>b</span>: <span class=kt>i8</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;sum is: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>a</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>b</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h3 id=iii-returning-values>iii. Returning values</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 01. Without the return keyword. Only the last expression returns.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>fn</span> <span class=nf>plus_one</span><span class=p>(</span><span class=n>a</span>: <span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>i32</span> <span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>a</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// There is no ending ; in the above line.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=c1>// It means this is an expression which equals to `return a + 1;`.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 02. With the return keyword.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>fn</span> <span class=nf>plus_two</span><span class=p>(</span><span class=n>a</span>: <span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>i32</span> <span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>return</span><span class=w> </span><span class=n>a</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// Should use return keyword only on conditional/ early returns.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=c1>// Using return keyword in the last expression is a bad practice.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h3 id=iv-function-pointers-usage-as-a-data-type>iv. Function pointers, Usage as a Data Type</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// 01. Without type declarations.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>p1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>plus_one</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>p1</span><span class=p>(</span><span class=mi>5</span><span class=p>);</span><span class=w> </span><span class=c1>// 6
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// 02. With type declarations.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>p1</span>: <span class=nc>fn</span><span class=p>(</span><span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>i32</span> <span class=o>=</span><span class=w> </span><span class=n>plus_one</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>p1</span><span class=p>(</span><span class=mi>5</span><span class=p>);</span><span class=w> </span><span class=c1>// 6
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>plus_one</span><span class=p>(</span><span class=n>a</span>: <span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>i32</span> <span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>a</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h2 id=closures>Closures</h2><ul><li>Also known as <strong>anonymous functions</strong> or <strong>lambda functions</strong>.</li><li>The <strong>data types of arguments and returns are optional <a href=/docs/functions/#iv-without-optional-type-declarations-creating-and-calling-together>⃰ⁱᵛ</a></strong>.</li></ul><p>Example with a named function, before using closures.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>get_square_value</span><span class=p>(</span><span class=n>x</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>get_square_value</span><span class=p>(</span><span class=n>i</span>: <span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>i32</span> <span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>i</span><span class=w> </span><span class=o>*</span><span class=w> </span><span class=n>i</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h3 id=i-with-optional-type-declarations-of-input-and-return-types>i. With optional type declarations of input and return types</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>square</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>|</span><span class=n>i</span>: <span class=kt>i32</span><span class=o>|</span><span class=w> </span>-&gt; <span class=kt>i32</span> <span class=p>{</span><span class=w> </span><span class=c1>// Input parameters are passed inside | | and expression body is wrapped within { }
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>        </span><span class=n>i</span><span class=w> </span><span class=o>*</span><span class=w> </span><span class=n>i</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>};</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>square</span><span class=p>(</span><span class=n>x</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h3 id=ii-without-type-declarations-of-input-and-return-types>ii. Without type declarations of input and return types</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>square</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>|</span><span class=n>i</span><span class=o>|</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>*</span><span class=w> </span><span class=n>i</span><span class=p>;</span><span class=w> </span><span class=c1>// { } are optional for single-lined closures
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>square</span><span class=p>(</span><span class=n>x</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h3 id=iii-with-optional-type-declarations-creating-and-calling-together>iii. With optional type declarations; Creating and calling together</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x_square</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>|</span><span class=n>i</span>: <span class=kt>i32</span><span class=o>|</span><span class=w> </span>-&gt; <span class=kt>i32</span> <span class=p>{</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>*</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=p>}(</span><span class=n>x</span><span class=p>);</span><span class=w> </span><span class=c1>// { } are mandatory while creating and calling same time.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>x_square</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h3 id=iv-without-optional-type-declarations-creating-and-calling-together>iv. Without optional type declarations; Creating and calling together</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x_square</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>|</span><span class=n>i</span><span class=o>|</span><span class=w> </span>-&gt; <span class=kt>i32</span> <span class=p>{</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>*</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=p>}(</span><span class=n>x</span><span class=p>);</span><span class=w> </span><span class=c1>// ⭐️ The return type is mandatory.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>x_square</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div></div><footer><time datetime=2023-11-11><i>🕒</i> Updated: 2023-11-11</time>
+<a href=https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/><i>﹤</i> Previous</a>
+<a href=https://learning-rust.github.io/docs/primitive-data-types/>Next <i>﹥</i></a></footer></article><aside><div><button class=btn><i>❌</i>Close</button></div><strong>On this page</strong><nav id=TableOfContents><ul><li><a href=#named-functions>Named functions</a><ul><li><a href=#i-hello-world>i. Hello world</a></li><li><a href=#ii-passing-arguments>ii. Passing arguments</a></li><li><a href=#iii-returning-values>iii. Returning values</a></li><li><a href=#iv-function-pointers-usage-as-a-data-type>iv. Function pointers, Usage as a Data Type</a></li></ul></li><li><a href=#closures>Closures</a><ul><li><a href=#i-with-optional-type-declarations-of-input-and-return-types>i. With optional type declarations of input and return types</a></li><li><a href=#ii-without-type-declarations-of-input-and-return-types>ii. Without type declarations of input and return types</a></li><li><a href=#iii-with-optional-type-declarations-creating-and-calling-together>iii. With optional type declarations; Creating and calling together</a></li><li><a href=#iv-without-optional-type-declarations-creating-and-calling-together>iv. Without optional type declarations; Creating and calling together</a></li></ul></li></ul></nav></aside></main><footer><div><i>🧑‍💻</i>Built by and copyright<a href=https://github.com/dumindu target=_blank>Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href=https://github.com/learning-rust target=_blank>GitHub</a></div><div><button class=btn><i>☀️</i><i>⁄</i><i>🌑</i></button></div></footer></div></div><div id=body-model-outer></div><script type=text/javascript src=/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js integrity></script></body></html>

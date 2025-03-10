@@ -1,417 +1,162 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
-  <meta name="author" content="Dumindu Madunuwan">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
-  <title>Unwrap and Expect · Learning Rust</title>
-  <link rel="canonical" href="https://learning-rust.github.io/docs/unwrap-and-expect/">
-  <link rel="stylesheet" href="/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css" integrity="">
-
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon/favicon.ico">
-  <link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-FZHQCXSZ89');
-  </script>
-</head>
-
-<body>
-
-<div id="outer-wrapper">
-
-  <div id="aside-wrapper">
-    <aside>
-      <div>
-        <button class="btn"><i>❌</i>Close</button>
-      </div>
-
-      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
-
-      <nav role="navigation">
-        <details open>
-          <summary>Documentation</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/overview/">Overview</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Basics</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/why-rust/">Why Rust?</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/installation/">Installation</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/hello-world/">Hello World</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/">Cargo, Crates and Basic Project Structure</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/comments-and-documenting-the-code/">Comments and Documenting the code</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/">Variable bindings, Constants and Statics</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/functions/">Functions</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/primitive-data-types/">Primitive Data Types</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/operators/">Operators</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/control-flows/">Control Flows</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Beyond The Basics</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/vectors/">Vectors</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/structs/">Structs</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/enums/">Enums</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/generics/">Generics</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/impls-and-traits/">Impls and Traits</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>The Tough Part</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/ownership/">Ownership</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/borrowing/">Borrowing</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/lifetimes/">Lifetimes</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Let&#39;s Get It Started</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/code-organization/">Code Organization</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/functions-02/">Functions (02)</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/modules/">Modules</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/crates/">Crates</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/workspaces/">Workspaces</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/use/">Use</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/std-primitives-and-preludes/">STD, Primitives and Preludes</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Error Handling</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/smart-compiler/">Smart Compiler</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/panicking/">Panicking</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/option-and-result/">Option and Result</a>
-            </li>
-            <li>
-              <a class="active" href="https://learning-rust.github.io/docs/unwrap-and-expect/">Unwrap and Expect</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/error-and-none-propagation/">Error and None Propagation</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/combinators/">Combinators</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/custom-error-types/">Custom Error Types</a>
-            </li>
-            </ul>
-        </details>
-        
-      </nav>
-    </aside>
-  </div>
-
-  <div id="content-wrapper">
-    <header>
-      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
-    </header>
-
-    <main>
-      <article>
-        <nav>
-          <button class="btn"><i>⬅️</i> On this section</button>
-          <button class="btn">On this page <i>➡️</i></button>
-        </nav>
-        <header>
-          <h1>Unwrap and Expect</h1>
-          <p></p>
-        </header>
-        <div id="article-body">
-          <h2 id="unwrap">unwrap()</h2>
-<ul>
-<li>If an <code>Option</code> type has <strong><code>Some</code></strong> value or a <code>Result</code> type has a <strong><code>Ok</code></strong> value, <strong>the value inside them</strong> passes to the next step.</li>
-<li>If the <code>Option</code> type has <strong><code>None</code></strong> value or the <code>Result</code> type has <strong><code>Err</code></strong> value, <strong>program panics</strong>; If <code>Err</code>, panics with the error message.</li>
-</ul>
-<p>The functionality is bit similar to the following codes, which are using <code>match</code> instead <code>unwrap()</code>.</p>
-<p>Example with <code>Option</code> and <code>match</code>, before using <code>unwrap()</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">get_an_optional_value</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="c1">// if Some(&#34;abc&#34;), set x to &#34;abc&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">panic!</span><span class="p">(),</span><span class="w"> </span><span class="c1">// if None, panic without any message
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// &#34;abc&#34; ; if you change line 14 `false` to `true`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">get_an_optional_value</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="nb">&#39;static</span><span class="w"> </span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//if the optional value is not empty
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="s">&#34;abc&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//else
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="nb">None</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// --------------- Compile-time error ---------------
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">thread</span><span class="w"> </span><span class="na">&#39;main&#39;</span><span class="w"> </span><span class="n">panicked</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="na">&#39;explicit</span><span class="w"> </span><span class="n">panic</span><span class="na">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="p">.</span><span class="n">rs</span>:<span class="mi">5</span>:<span class="mi">17</span><span class="w">
-</span></span></span></code></pre></div><p>Example with <code>Result</code> and <code>match</code>, before using <code>unwrap()</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">function_with_error</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="c1">// if Ok(255), set x to 255
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">panic!</span><span class="p">(</span><span class="n">e</span><span class="p">),</span><span class="w"> </span><span class="c1">// if Err(&#34;some message&#34;), panic with error message &#34;some message&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// 255 ; if you change line 13 `true` to `false`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">function_with_error</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">u64</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//if error happens
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="s">&#34;some message&#34;</span><span class="p">.</span><span class="n">to_string</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// else, return valid output
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ---------- Compile-time error ----------
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">thread</span><span class="w"> </span><span class="na">&#39;main&#39;</span><span class="w"> </span><span class="n">panicked</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="na">&#39;some</span><span class="w"> </span><span class="n">message</span><span class="na">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="p">.</span><span class="n">rs</span>:<span class="mi">5</span>:<span class="mi">19</span><span class="w">
-</span></span></span></code></pre></div><p>Same codes in above <code>main</code> functions can be written with <code>unwrap()</code> using two lines.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 01. unwrap error message for None
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_an_optional_value</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// --------------- Compile-time error ---------------
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">thread</span><span class="w"> </span><span class="na">&#39;main&#39;</span><span class="w"> </span><span class="n">panicked</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="na">&#39;called</span><span class="w"> </span><span class="err">`</span><span class="nb">Option</span>::<span class="n">unwrap</span><span class="p">()</span><span class="err">`</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="err">`</span><span class="nb">None</span><span class="err">`</span><span class="w"> </span><span class="n">value</span><span class="na">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">libcore</span><span class="o">/</span><span class="n">option</span><span class="p">.</span><span class="n">rs</span>:<span class="mi">345</span>:<span class="mi">21</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. unwrap error message for Err
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">function_with_error</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// --------------- Compile-time error ---------------
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">thread</span><span class="w"> </span><span class="na">&#39;main&#39;</span><span class="w"> </span><span class="n">panicked</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="na">&#39;called</span><span class="w"> </span><span class="err">`</span><span class="nb">Result</span>::<span class="n">unwrap</span><span class="p">()</span><span class="err">`</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="err">`</span><span class="nb">Err</span><span class="err">`</span><span class="w"> </span><span class="n">value</span>: <span class="s">&#34;some message&#34;</span><span class="na">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">libcore</span><span class="o">/</span><span class="n">result</span><span class="p">.</span><span class="n">rs</span>:<span class="mi">945</span>:<span class="mi">5</span><span class="w">
-</span></span></span></code></pre></div><p>⭐ But as you can see, when using <code>unwrap()</code> error messages are not showing the exact line numbers where the panic happens.</p>
-<h2 id="expect">expect()</h2>
-<p>Similar to <code>unwrap()</code> but can set a custom message for the panics.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 01. expect error message for None
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">n</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="kt">i8</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">None</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">n</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;empty value returned&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// --------------- Compile-time error ---------------
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">thread</span><span class="w"> </span><span class="na">&#39;main&#39;</span><span class="w"> </span><span class="n">panicked</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="na">&#39;empty</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">returned</span><span class="na">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">libcore</span><span class="o">/</span><span class="n">option</span><span class="p">.</span><span class="n">rs</span>:<span class="mi">989</span>:<span class="mi">5</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. expect error message for Err
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">e</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="s">&#34;some message&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;expect error message&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// --------------- Compile-time error ---------------
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">thread</span><span class="w"> </span><span class="na">&#39;main&#39;</span><span class="w"> </span><span class="n">panicked</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="na">&#39;expect</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="n">message</span>: <span class="s">&#34;some message&#34;</span><span class="na">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">libcore</span><span class="o">/</span><span class="n">result</span><span class="p">.</span><span class="n">rs</span>:<span class="mi">945</span>:<span class="mi">5</span><span class="w">
-</span></span></span></code></pre></div><h2 id="unwrap_err-and-expect_err-for-result-types">unwrap_err() and expect_err() for Result types</h2>
-<p>The opposite case of <code>unwrap()</code> and <code>expect()</code>; Panics with <code>Ok</code> values, instead <code>Err</code>. Both print the value inside <code>Ok</code> on the error message.</p>
-<p>💡 Usually use with tests.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 01. unwrap_err error message for Ok
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">o</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">unwrap_err</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ---------- Compile-time error ----------
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">thread</span><span class="w"> </span><span class="na">&#39;main&#39;</span><span class="w"> </span><span class="n">panicked</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="na">&#39;called</span><span class="w"> </span><span class="err">`</span><span class="nb">Result</span>::<span class="n">unwrap_err</span><span class="p">()</span><span class="err">`</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="err">`</span><span class="nb">Ok</span><span class="err">`</span><span class="w"> </span><span class="n">value</span>: <span class="mi">8</span><span class="na">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">libcore</span><span class="o">/</span><span class="n">result</span><span class="p">.</span><span class="n">rs</span>:<span class="mi">945</span>:<span class="mi">5</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. expect_err error message for Ok
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">o</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">expect_err</span><span class="p">(</span><span class="s">&#34;Should not get Ok value&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ---------- Compile-time error ----------
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">thread</span><span class="w"> </span><span class="na">&#39;main&#39;</span><span class="w"> </span><span class="n">panicked</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="na">&#39;Should</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="nb">Ok</span><span class="w"> </span><span class="n">value</span>: <span class="mi">8</span><span class="na">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">libcore</span><span class="o">/</span><span class="n">result</span><span class="p">.</span><span class="n">rs</span>:<span class="mi">945</span>:<span class="mi">5</span><span class="w">
-</span></span></span></code></pre></div><h2 id="unwrap_or-unwrap_or_default-and-unwrap_or_else">unwrap_or(), unwrap_or_default() and unwrap_or_else()</h2>
-<blockquote>
-<p>💡 These are bit similar to <code>unwrap()</code>, If an <code>Option</code> type has <code>Some</code> value or a <code>Result</code> type has a <code>Ok</code> value, the value inside them passes to the next step. But when having <code>None</code> or <code>Err</code>, the functionalities are bit different.</p></blockquote>
-<ul>
-<li><code>unwrap_or()</code> : With <code>None</code> or <code>Err</code>, <strong>the value you passes to <code>unwrap_or()</code></strong> is passing to the next step. But the data type of the value you passes  should match with the data type of the relevant <code>Some</code> or <code>Ok</code>.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s_v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">None</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">s_v1</span><span class="p">.</span><span class="n">unwrap_or</span><span class="p">(</span><span class="n">v2</span><span class="p">),</span><span class="w"> </span><span class="n">v1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Some(v1) unwrap_or v2 = v1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">unwrap_or</span><span class="p">(</span><span class="n">v2</span><span class="p">),</span><span class="w"> </span><span class="n">v2</span><span class="p">);</span><span class="w">    </span><span class="c1">// None unwrap_or v2 = v2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">o_v1</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">e</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="s">&#34;error&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">o_v1</span><span class="p">.</span><span class="n">unwrap_or</span><span class="p">(</span><span class="n">v2</span><span class="p">),</span><span class="w"> </span><span class="n">v1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Ok(v1) unwrap_or v2 = v1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">unwrap_or</span><span class="p">(</span><span class="n">v2</span><span class="p">),</span><span class="w"> </span><span class="n">v2</span><span class="p">);</span><span class="w">    </span><span class="c1">// Err unwrap_or v2 = v2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><ul>
-<li><code>unwrap_or_default()</code> :  With <code>None</code> or <code>Err</code>, <strong>the default value of the data type of the relevant <code>Some</code> or <code>Ok</code></strong>, is passing to the next step.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">v_default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s_v</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="kt">i8</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">n</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="kt">i8</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">None</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">s_v</span><span class="p">.</span><span class="n">unwrap_or_default</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w">       </span><span class="c1">// Some(v) unwrap_or_default = v
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">unwrap_or_default</span><span class="p">(),</span><span class="w"> </span><span class="n">v_default</span><span class="p">);</span><span class="w"> </span><span class="c1">// None unwrap_or_default = default value of v
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">o_v</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">e</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="s">&#34;error&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">o_v</span><span class="p">.</span><span class="n">unwrap_or_default</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w">       </span><span class="c1">// Ok(v) unwrap_or_default = v
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">unwrap_or_default</span><span class="p">(),</span><span class="w"> </span><span class="n">v_default</span><span class="p">);</span><span class="w"> </span><span class="c1">// Err unwrap_or_default = default value of v
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><ul>
-<li><code>unwrap_or_else()</code> : Similar to <code>unwrap_or()</code>. The only difference is, instead of passing a value, you have to pass a <strong><a href="/docs/functions/#closures">closure</a></strong> which returns a value with the same data type of the relevant <code>Some</code> or <code>Ok</code>.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s_v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">None</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">fn_v2_for_option</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">s_v1</span><span class="p">.</span><span class="n">unwrap_or_else</span><span class="p">(</span><span class="n">fn_v2_for_option</span><span class="p">),</span><span class="w"> </span><span class="n">v1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Some(v1) unwrap_or_else fn_v2 = v1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">unwrap_or_else</span><span class="p">(</span><span class="n">fn_v2_for_option</span><span class="p">),</span><span class="w"> </span><span class="n">v2</span><span class="p">);</span><span class="w">    </span><span class="c1">// None unwrap_or_else fn_v2 = v2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">o_v1</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">e</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i8</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="s">&#34;error&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">fn_v2_for_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">_</span><span class="o">|</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">o_v1</span><span class="p">.</span><span class="n">unwrap_or_else</span><span class="p">(</span><span class="n">fn_v2_for_result</span><span class="p">),</span><span class="w"> </span><span class="n">v1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Ok(v1) unwrap_or_else fn_v2 = v1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">unwrap_or_else</span><span class="p">(</span><span class="n">fn_v2_for_result</span><span class="p">),</span><span class="w"> </span><span class="n">v2</span><span class="p">);</span><span class="w">    </span><span class="c1">// Err unwrap_or_else fn_v2 = v2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div>
-        </div>
-
-        <footer>
-          <time datetime="2023-11-11"><i>🕒</i> Updated: 2023-11-11</time>
-          <a href="https://learning-rust.github.io/docs/option-and-result/"><i>﹤</i> Previous</a>
-          <a href="https://learning-rust.github.io/docs/error-and-none-propagation/">Next <i>﹥</i></a>
-          </footer>
-      </article>
-
-      <aside>
-        <div>
-          <button class="btn"><i>❌</i>Close</button>
-        </div>
-        <strong>On this page</strong>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#unwrap">unwrap()</a></li>
-    <li><a href="#expect">expect()</a></li>
-    <li><a href="#unwrap_err-and-expect_err-for-result-types">unwrap_err() and expect_err() for Result types</a></li>
-    <li><a href="#unwrap_or-unwrap_or_default-and-unwrap_or_else">unwrap_or(), unwrap_or_default() and unwrap_or_else()</a></li>
-  </ul>
-</nav>
-      </aside>
-    </main>
-
-    <footer>
-      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
-      <div>
-        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
-      </div>
-    </footer>
-  </div>
-
-</div>
-
-<div id="body-model-outer"></div>
-<script type="text/javascript" src="/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
-</body>
-</html>
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Rust Programming Language Tutorials for Everyone!"><meta name=author content="Dumindu Madunuwan"><meta name=theme-color content="#ffffff" media="(prefers-color-scheme: light)"><meta name=theme-color content="#101010" media="(prefers-color-scheme: dark)"><title>Unwrap and Expect · Learning Rust</title>
+<link rel=canonical href=https://learning-rust.github.io/docs/unwrap-and-expect/><link rel=stylesheet href=/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css integrity><link rel=manifest href=/manifest.json><link rel=icon href=/favicon/favicon.ico><link rel=icon href=/favicon/favicon-16x16.png sizes=16x16 type=image/png><link rel=icon href=/favicon/favicon-32x32.png sizes=32x32 type=image/png><link rel=apple-touch-icon href=/favicon/apple-touch-icon.png sizes=180x180><script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-FZHQCXSZ89")</script></head><body><div id=outer-wrapper><div id=aside-wrapper><aside><div><button class=btn><i>❌</i>Close</button></div><a href=https://learning-rust.github.io/ class=site-logo>Learning Rust</a><nav role=navigation><details open><summary>Documentation</summary><ul><li><a href=https://learning-rust.github.io/docs/overview/>Overview</a></li></ul></details><details open><summary>Basics</summary><ul><li><a href=https://learning-rust.github.io/docs/why-rust/>Why Rust?</a></li><li><a href=https://learning-rust.github.io/docs/installation/>Installation</a></li><li><a href=https://learning-rust.github.io/docs/hello-world/>Hello World</a></li><li><a href=https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/>Cargo, Crates and Basic Project Structure</a></li><li><a href=https://learning-rust.github.io/docs/comments-and-documenting-the-code/>Comments and Documenting the code</a></li><li><a href=https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/>Variable bindings, Constants and Statics</a></li><li><a href=https://learning-rust.github.io/docs/functions/>Functions</a></li><li><a href=https://learning-rust.github.io/docs/primitive-data-types/>Primitive Data Types</a></li><li><a href=https://learning-rust.github.io/docs/operators/>Operators</a></li><li><a href=https://learning-rust.github.io/docs/control-flows/>Control Flows</a></li></ul></details><details open><summary>Beyond The Basics</summary><ul><li><a href=https://learning-rust.github.io/docs/vectors/>Vectors</a></li><li><a href=https://learning-rust.github.io/docs/structs/>Structs</a></li><li><a href=https://learning-rust.github.io/docs/enums/>Enums</a></li><li><a href=https://learning-rust.github.io/docs/generics/>Generics</a></li><li><a href=https://learning-rust.github.io/docs/impls-and-traits/>Impls and Traits</a></li></ul></details><details open><summary>The Tough Part</summary><ul><li><a href=https://learning-rust.github.io/docs/ownership/>Ownership</a></li><li><a href=https://learning-rust.github.io/docs/borrowing/>Borrowing</a></li><li><a href=https://learning-rust.github.io/docs/lifetimes/>Lifetimes</a></li></ul></details><details open><summary>Let's Get It Started</summary><ul><li><a href=https://learning-rust.github.io/docs/code-organization/>Code Organization</a></li><li><a href=https://learning-rust.github.io/docs/functions-02/>Functions (02)</a></li><li><a href=https://learning-rust.github.io/docs/modules/>Modules</a></li><li><a href=https://learning-rust.github.io/docs/crates/>Crates</a></li><li><a href=https://learning-rust.github.io/docs/workspaces/>Workspaces</a></li><li><a href=https://learning-rust.github.io/docs/use/>Use</a></li><li><a href=https://learning-rust.github.io/docs/std-primitives-and-preludes/>STD, Primitives and Preludes</a></li></ul></details><details open><summary>Error Handling</summary><ul><li><a href=https://learning-rust.github.io/docs/smart-compiler/>Smart Compiler</a></li><li><a href=https://learning-rust.github.io/docs/panicking/>Panicking</a></li><li><a href=https://learning-rust.github.io/docs/option-and-result/>Option and Result</a></li><li><a class=active href=https://learning-rust.github.io/docs/unwrap-and-expect/>Unwrap and Expect</a></li><li><a href=https://learning-rust.github.io/docs/error-and-none-propagation/>Error and None Propagation</a></li><li><a href=https://learning-rust.github.io/docs/combinators/>Combinators</a></li><li><a href=https://learning-rust.github.io/docs/custom-error-types/>Custom Error Types</a></li></ul></details></nav></aside></div><div id=content-wrapper><header><a href=https://learning-rust.github.io/ class=site-logo>Learning Rust</a></header><main><article><nav><button class=btn><i>⬅️</i> On this section</button>
+<button class=btn>On this page <i>➡️</i></button></nav><header><h1>Unwrap and Expect</h1><p></p></header><div id=article-body><h2 id=unwrap>unwrap()</h2><ul><li>If an <code>Option</code> type has <strong><code>Some</code></strong> value or a <code>Result</code> type has a <strong><code>Ok</code></strong> value, <strong>the value inside them</strong> passes to the next step.</li><li>If the <code>Option</code> type has <strong><code>None</code></strong> value or the <code>Result</code> type has <strong><code>Err</code></strong> value, <strong>program panics</strong>; If <code>Err</code>, panics with the error message.</li></ul><p>The functionality is bit similar to the following codes, which are using <code>match</code> instead <code>unwrap()</code>.</p><p>Example with <code>Option</code> and <code>match</code>, before using <code>unwrap()</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>match</span><span class=w> </span><span class=n>get_an_optional_value</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nb>Some</span><span class=p>(</span><span class=n>v</span><span class=p>)</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>v</span><span class=p>,</span><span class=w> </span><span class=c1>// if Some(&#34;abc&#34;), set x to &#34;abc&#34;
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>        </span><span class=nb>None</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=fm>panic!</span><span class=p>(),</span><span class=w> </span><span class=c1>// if None, panic without any message
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>x</span><span class=p>);</span><span class=w> </span><span class=c1>// &#34;abc&#34; ; if you change line 14 `false` to `true`
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>get_an_optional_value</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nb>Option</span><span class=o>&lt;&amp;</span><span class=nb>&#39;static</span><span class=w> </span><span class=kt>str</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//if the optional value is not empty
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=k>if</span><span class=w> </span><span class=kc>false</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=nb>Some</span><span class=p>(</span><span class=s>&#34;abc&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//else
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=nb>None</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// --------------- Compile-time error ---------------
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>thread</span><span class=w> </span><span class=na>&#39;main&#39;</span><span class=w> </span><span class=n>panicked</span><span class=w> </span><span class=n>at</span><span class=w> </span><span class=na>&#39;explicit</span><span class=w> </span><span class=n>panic</span><span class=na>&#39;</span><span class=p>,</span><span class=w> </span><span class=n>src</span><span class=o>/</span><span class=n>main</span><span class=p>.</span><span class=n>rs</span>:<span class=mi>5</span>:<span class=mi>17</span><span class=w>
+</span></span></span></code></pre></div><p>Example with <code>Result</code> and <code>match</code>, before using <code>unwrap()</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>match</span><span class=w> </span><span class=n>function_with_error</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nb>Ok</span><span class=p>(</span><span class=n>v</span><span class=p>)</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>v</span><span class=p>,</span><span class=w> </span><span class=c1>// if Ok(255), set x to 255
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>        </span><span class=nb>Err</span><span class=p>(</span><span class=n>e</span><span class=p>)</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=fm>panic!</span><span class=p>(</span><span class=n>e</span><span class=p>),</span><span class=w> </span><span class=c1>// if Err(&#34;some message&#34;), panic with error message &#34;some message&#34;
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>x</span><span class=p>);</span><span class=w> </span><span class=c1>// 255 ; if you change line 13 `true` to `false`
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>function_with_error</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>u64</span><span class=p>,</span><span class=w> </span><span class=nb>String</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//if error happens
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=k>if</span><span class=w> </span><span class=kc>true</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=nb>Err</span><span class=p>(</span><span class=s>&#34;some message&#34;</span><span class=p>.</span><span class=n>to_string</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// else, return valid output
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=nb>Ok</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// ---------- Compile-time error ----------
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>thread</span><span class=w> </span><span class=na>&#39;main&#39;</span><span class=w> </span><span class=n>panicked</span><span class=w> </span><span class=n>at</span><span class=w> </span><span class=na>&#39;some</span><span class=w> </span><span class=n>message</span><span class=na>&#39;</span><span class=p>,</span><span class=w> </span><span class=n>src</span><span class=o>/</span><span class=n>main</span><span class=p>.</span><span class=n>rs</span>:<span class=mi>5</span>:<span class=mi>19</span><span class=w>
+</span></span></span></code></pre></div><p>Same codes in above <code>main</code> functions can be written with <code>unwrap()</code> using two lines.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 01. unwrap error message for None
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>get_an_optional_value</span><span class=p>().</span><span class=n>unwrap</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>x</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// --------------- Compile-time error ---------------
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>thread</span><span class=w> </span><span class=na>&#39;main&#39;</span><span class=w> </span><span class=n>panicked</span><span class=w> </span><span class=n>at</span><span class=w> </span><span class=na>&#39;called</span><span class=w> </span><span class=err>`</span><span class=nb>Option</span>::<span class=n>unwrap</span><span class=p>()</span><span class=err>`</span><span class=w> </span><span class=n>on</span><span class=w> </span><span class=n>a</span><span class=w> </span><span class=err>`</span><span class=nb>None</span><span class=err>`</span><span class=w> </span><span class=n>value</span><span class=na>&#39;</span><span class=p>,</span><span class=w> </span><span class=n>libcore</span><span class=o>/</span><span class=n>option</span><span class=p>.</span><span class=n>rs</span>:<span class=mi>345</span>:<span class=mi>21</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 02. unwrap error message for Err
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>function_with_error</span><span class=p>().</span><span class=n>unwrap</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>x</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// --------------- Compile-time error ---------------
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>thread</span><span class=w> </span><span class=na>&#39;main&#39;</span><span class=w> </span><span class=n>panicked</span><span class=w> </span><span class=n>at</span><span class=w> </span><span class=na>&#39;called</span><span class=w> </span><span class=err>`</span><span class=nb>Result</span>::<span class=n>unwrap</span><span class=p>()</span><span class=err>`</span><span class=w> </span><span class=n>on</span><span class=w> </span><span class=n>an</span><span class=w> </span><span class=err>`</span><span class=nb>Err</span><span class=err>`</span><span class=w> </span><span class=n>value</span>: <span class=s>&#34;some message&#34;</span><span class=na>&#39;</span><span class=p>,</span><span class=w> </span><span class=n>libcore</span><span class=o>/</span><span class=n>result</span><span class=p>.</span><span class=n>rs</span>:<span class=mi>945</span>:<span class=mi>5</span><span class=w>
+</span></span></span></code></pre></div><p>⭐ But as you can see, when using <code>unwrap()</code> error messages are not showing the exact line numbers where the panic happens.</p><h2 id=expect>expect()</h2><p>Similar to <code>unwrap()</code> but can set a custom message for the panics.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 01. expect error message for None
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>n</span>: <span class=nb>Option</span><span class=o>&lt;</span><span class=kt>i8</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>None</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>n</span><span class=p>.</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;empty value returned&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// --------------- Compile-time error ---------------
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>thread</span><span class=w> </span><span class=na>&#39;main&#39;</span><span class=w> </span><span class=n>panicked</span><span class=w> </span><span class=n>at</span><span class=w> </span><span class=na>&#39;empty</span><span class=w> </span><span class=n>value</span><span class=w> </span><span class=n>returned</span><span class=na>&#39;</span><span class=p>,</span><span class=w> </span><span class=n>libcore</span><span class=o>/</span><span class=n>option</span><span class=p>.</span><span class=n>rs</span>:<span class=mi>989</span>:<span class=mi>5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 02. expect error message for Err
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>e</span>: <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>i8</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=kt>str</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Err</span><span class=p>(</span><span class=s>&#34;some message&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>e</span><span class=p>.</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;expect error message&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// --------------- Compile-time error ---------------
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>thread</span><span class=w> </span><span class=na>&#39;main&#39;</span><span class=w> </span><span class=n>panicked</span><span class=w> </span><span class=n>at</span><span class=w> </span><span class=na>&#39;expect</span><span class=w> </span><span class=n>error</span><span class=w> </span><span class=n>message</span>: <span class=s>&#34;some message&#34;</span><span class=na>&#39;</span><span class=p>,</span><span class=w> </span><span class=n>libcore</span><span class=o>/</span><span class=n>result</span><span class=p>.</span><span class=n>rs</span>:<span class=mi>945</span>:<span class=mi>5</span><span class=w>
+</span></span></span></code></pre></div><h2 id=unwrap_err-and-expect_err-for-result-types>unwrap_err() and expect_err() for Result types</h2><p>The opposite case of <code>unwrap()</code> and <code>expect()</code>; Panics with <code>Ok</code> values, instead <code>Err</code>. Both print the value inside <code>Ok</code> on the error message.</p><p>💡 Usually use with tests.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 01. unwrap_err error message for Ok
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>o</span>: <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>i8</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=kt>str</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Ok</span><span class=p>(</span><span class=mi>8</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>o</span><span class=p>.</span><span class=n>unwrap_err</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// ---------- Compile-time error ----------
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>thread</span><span class=w> </span><span class=na>&#39;main&#39;</span><span class=w> </span><span class=n>panicked</span><span class=w> </span><span class=n>at</span><span class=w> </span><span class=na>&#39;called</span><span class=w> </span><span class=err>`</span><span class=nb>Result</span>::<span class=n>unwrap_err</span><span class=p>()</span><span class=err>`</span><span class=w> </span><span class=n>on</span><span class=w> </span><span class=n>an</span><span class=w> </span><span class=err>`</span><span class=nb>Ok</span><span class=err>`</span><span class=w> </span><span class=n>value</span>: <span class=mi>8</span><span class=na>&#39;</span><span class=p>,</span><span class=w> </span><span class=n>libcore</span><span class=o>/</span><span class=n>result</span><span class=p>.</span><span class=n>rs</span>:<span class=mi>945</span>:<span class=mi>5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 02. expect_err error message for Ok
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>o</span>: <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>i8</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=kt>str</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Ok</span><span class=p>(</span><span class=mi>8</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>o</span><span class=p>.</span><span class=n>expect_err</span><span class=p>(</span><span class=s>&#34;Should not get Ok value&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// ---------- Compile-time error ----------
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>thread</span><span class=w> </span><span class=na>&#39;main&#39;</span><span class=w> </span><span class=n>panicked</span><span class=w> </span><span class=n>at</span><span class=w> </span><span class=na>&#39;Should</span><span class=w> </span><span class=n>not</span><span class=w> </span><span class=n>get</span><span class=w> </span><span class=nb>Ok</span><span class=w> </span><span class=n>value</span>: <span class=mi>8</span><span class=na>&#39;</span><span class=p>,</span><span class=w> </span><span class=n>libcore</span><span class=o>/</span><span class=n>result</span><span class=p>.</span><span class=n>rs</span>:<span class=mi>945</span>:<span class=mi>5</span><span class=w>
+</span></span></span></code></pre></div><h2 id=unwrap_or-unwrap_or_default-and-unwrap_or_else>unwrap_or(), unwrap_or_default() and unwrap_or_else()</h2><blockquote><p>💡 These are bit similar to <code>unwrap()</code>, If an <code>Option</code> type has <code>Some</code> value or a <code>Result</code> type has a <code>Ok</code> value, the value inside them passes to the next step. But when having <code>None</code> or <code>Err</code>, the functionalities are bit different.</p></blockquote><ul><li><code>unwrap_or()</code> : With <code>None</code> or <code>Err</code>, <strong>the value you passes to <code>unwrap_or()</code></strong> is passing to the next step. But the data type of the value you passes should match with the data type of the relevant <code>Some</code> or <code>Ok</code>.</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>v1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>8</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>v2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>16</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>s_v1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Some</span><span class=p>(</span><span class=mi>8</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>n</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>None</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>s_v1</span><span class=p>.</span><span class=n>unwrap_or</span><span class=p>(</span><span class=n>v2</span><span class=p>),</span><span class=w> </span><span class=n>v1</span><span class=p>);</span><span class=w> </span><span class=c1>// Some(v1) unwrap_or v2 = v1
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>n</span><span class=p>.</span><span class=n>unwrap_or</span><span class=p>(</span><span class=n>v2</span><span class=p>),</span><span class=w> </span><span class=n>v2</span><span class=p>);</span><span class=w>    </span><span class=c1>// None unwrap_or v2 = v2
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>o_v1</span>: <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>i8</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=kt>str</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Ok</span><span class=p>(</span><span class=mi>8</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>e</span>: <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>i8</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=kt>str</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Err</span><span class=p>(</span><span class=s>&#34;error&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>o_v1</span><span class=p>.</span><span class=n>unwrap_or</span><span class=p>(</span><span class=n>v2</span><span class=p>),</span><span class=w> </span><span class=n>v1</span><span class=p>);</span><span class=w> </span><span class=c1>// Ok(v1) unwrap_or v2 = v1
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>e</span><span class=p>.</span><span class=n>unwrap_or</span><span class=p>(</span><span class=n>v2</span><span class=p>),</span><span class=w> </span><span class=n>v2</span><span class=p>);</span><span class=w>    </span><span class=c1>// Err unwrap_or v2 = v2
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><ul><li><code>unwrap_or_default()</code> : With <code>None</code> or <code>Err</code>, <strong>the default value of the data type of the relevant <code>Some</code> or <code>Ok</code></strong>, is passing to the next step.</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>v</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>8</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>v_default</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>s_v</span>: <span class=nb>Option</span><span class=o>&lt;</span><span class=kt>i8</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Some</span><span class=p>(</span><span class=mi>8</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>n</span>: <span class=nb>Option</span><span class=o>&lt;</span><span class=kt>i8</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>None</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>s_v</span><span class=p>.</span><span class=n>unwrap_or_default</span><span class=p>(),</span><span class=w> </span><span class=n>v</span><span class=p>);</span><span class=w>       </span><span class=c1>// Some(v) unwrap_or_default = v
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>n</span><span class=p>.</span><span class=n>unwrap_or_default</span><span class=p>(),</span><span class=w> </span><span class=n>v_default</span><span class=p>);</span><span class=w> </span><span class=c1>// None unwrap_or_default = default value of v
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>o_v</span>: <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>i8</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=kt>str</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Ok</span><span class=p>(</span><span class=mi>8</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>e</span>: <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>i8</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=kt>str</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Err</span><span class=p>(</span><span class=s>&#34;error&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>o_v</span><span class=p>.</span><span class=n>unwrap_or_default</span><span class=p>(),</span><span class=w> </span><span class=n>v</span><span class=p>);</span><span class=w>       </span><span class=c1>// Ok(v) unwrap_or_default = v
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>e</span><span class=p>.</span><span class=n>unwrap_or_default</span><span class=p>(),</span><span class=w> </span><span class=n>v_default</span><span class=p>);</span><span class=w> </span><span class=c1>// Err unwrap_or_default = default value of v
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><ul><li><code>unwrap_or_else()</code> : Similar to <code>unwrap_or()</code>. The only difference is, instead of passing a value, you have to pass a <strong><a href=/docs/functions/#closures>closure</a></strong> which returns a value with the same data type of the relevant <code>Some</code> or <code>Ok</code>.</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>v1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>8</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>v2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>16</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>s_v1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Some</span><span class=p>(</span><span class=mi>8</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>n</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>None</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>fn_v2_for_option</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>||</span><span class=w> </span><span class=mi>16</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>s_v1</span><span class=p>.</span><span class=n>unwrap_or_else</span><span class=p>(</span><span class=n>fn_v2_for_option</span><span class=p>),</span><span class=w> </span><span class=n>v1</span><span class=p>);</span><span class=w> </span><span class=c1>// Some(v1) unwrap_or_else fn_v2 = v1
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>n</span><span class=p>.</span><span class=n>unwrap_or_else</span><span class=p>(</span><span class=n>fn_v2_for_option</span><span class=p>),</span><span class=w> </span><span class=n>v2</span><span class=p>);</span><span class=w>    </span><span class=c1>// None unwrap_or_else fn_v2 = v2
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>o_v1</span>: <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>i8</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=kt>str</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Ok</span><span class=p>(</span><span class=mi>8</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>e</span>: <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>i8</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=kt>str</span><span class=o>&gt;</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>Err</span><span class=p>(</span><span class=s>&#34;error&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>fn_v2_for_result</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>|</span><span class=n>_</span><span class=o>|</span><span class=w> </span><span class=mi>16</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>o_v1</span><span class=p>.</span><span class=n>unwrap_or_else</span><span class=p>(</span><span class=n>fn_v2_for_result</span><span class=p>),</span><span class=w> </span><span class=n>v1</span><span class=p>);</span><span class=w> </span><span class=c1>// Ok(v1) unwrap_or_else fn_v2 = v1
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=n>e</span><span class=p>.</span><span class=n>unwrap_or_else</span><span class=p>(</span><span class=n>fn_v2_for_result</span><span class=p>),</span><span class=w> </span><span class=n>v2</span><span class=p>);</span><span class=w>    </span><span class=c1>// Err unwrap_or_else fn_v2 = v2
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div></div><footer><time datetime=2023-11-11><i>🕒</i> Updated: 2023-11-11</time>
+<a href=https://learning-rust.github.io/docs/option-and-result/><i>﹤</i> Previous</a>
+<a href=https://learning-rust.github.io/docs/error-and-none-propagation/>Next <i>﹥</i></a></footer></article><aside><div><button class=btn><i>❌</i>Close</button></div><strong>On this page</strong><nav id=TableOfContents><ul><li><a href=#unwrap>unwrap()</a></li><li><a href=#expect>expect()</a></li><li><a href=#unwrap_err-and-expect_err-for-result-types>unwrap_err() and expect_err() for Result types</a></li><li><a href=#unwrap_or-unwrap_or_default-and-unwrap_or_else>unwrap_or(), unwrap_or_default() and unwrap_or_else()</a></li></ul></nav></aside></main><footer><div><i>🧑‍💻</i>Built by and copyright<a href=https://github.com/dumindu target=_blank>Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href=https://github.com/learning-rust target=_blank>GitHub</a></div><div><button class=btn><i>☀️</i><i>⁄</i><i>🌑</i></button></div></footer></div></div><div id=body-model-outer></div><script type=text/javascript src=/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js integrity></script></body></html>

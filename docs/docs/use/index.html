@@ -1,336 +1,95 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rust Programming Language Tutorials for Everyone!">
-  <meta name="author" content="Dumindu Madunuwan">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
-  <title>Use · Learning Rust</title>
-  <link rel="canonical" href="https://learning-rust.github.io/docs/use/">
-  <link rel="stylesheet" href="/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css" integrity="">
-
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon/favicon.ico">
-  <link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-FZHQCXSZ89');
-  </script>
-</head>
-
-<body>
-
-<div id="outer-wrapper">
-
-  <div id="aside-wrapper">
-    <aside>
-      <div>
-        <button class="btn"><i>❌</i>Close</button>
-      </div>
-
-      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
-
-      <nav role="navigation">
-        <details open>
-          <summary>Documentation</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/overview/">Overview</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Basics</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/why-rust/">Why Rust?</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/installation/">Installation</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/hello-world/">Hello World</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/">Cargo, Crates and Basic Project Structure</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/comments-and-documenting-the-code/">Comments and Documenting the code</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/">Variable bindings, Constants and Statics</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/functions/">Functions</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/primitive-data-types/">Primitive Data Types</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/operators/">Operators</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/control-flows/">Control Flows</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Beyond The Basics</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/vectors/">Vectors</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/structs/">Structs</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/enums/">Enums</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/generics/">Generics</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/impls-and-traits/">Impls and Traits</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>The Tough Part</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/ownership/">Ownership</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/borrowing/">Borrowing</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/lifetimes/">Lifetimes</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Let&#39;s Get It Started</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/code-organization/">Code Organization</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/functions-02/">Functions (02)</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/modules/">Modules</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/crates/">Crates</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/workspaces/">Workspaces</a>
-            </li>
-            <li>
-              <a class="active" href="https://learning-rust.github.io/docs/use/">Use</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/std-primitives-and-preludes/">STD, Primitives and Preludes</a>
-            </li>
-            </ul>
-        </details>
-        <details open>
-          <summary>Error Handling</summary>
-          <ul>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/smart-compiler/">Smart Compiler</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/panicking/">Panicking</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/option-and-result/">Option and Result</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/unwrap-and-expect/">Unwrap and Expect</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/error-and-none-propagation/">Error and None Propagation</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/combinators/">Combinators</a>
-            </li>
-            <li>
-              <a class="" href="https://learning-rust.github.io/docs/custom-error-types/">Custom Error Types</a>
-            </li>
-            </ul>
-        </details>
-        
-      </nav>
-    </aside>
-  </div>
-
-  <div id="content-wrapper">
-    <header>
-      <a href="https://learning-rust.github.io/" class="site-logo">Learning Rust</a>
-    </header>
-
-    <main>
-      <article>
-        <nav>
-          <button class="btn"><i>⬅️</i> On this section</button>
-          <button class="btn">On this page <i>➡️</i></button>
-        </nav>
-        <header>
-          <h1>Use</h1>
-          <p></p>
-        </header>
-        <div id="article-body">
-          <p>Let&rsquo;s see the main usages of the <code>use</code> keyword.</p>
-<h2 id="01-bind-a-full-path-to-a-new-name">01. Bind a full path to a new name</h2>
-<p>Mainly <code>use</code> keyword is used to bind a full path of an element to a new name. So the user doesn’t want to repeat the full path each time.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// -- Initial code without the `use` keyword --
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">mod</span> <span class="nn">phrases</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">pub</span><span class="w"> </span><span class="k">mod</span> <span class="nn">greetings</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">phrases</span>::<span class="n">greetings</span>::<span class="n">hello</span><span class="p">();</span><span class="w"> </span><span class="c1">// Using full path
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// -- Usage of the `use` keyword --
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 01. Create an alias for module
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">use</span><span class="w"> </span><span class="n">phrases</span>::<span class="n">greetings</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">greetings</span>::<span class="n">hello</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 02. Create an alias for module elements
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">use</span><span class="w"> </span><span class="n">phrases</span>::<span class="n">greetings</span>::<span class="n">hello</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">hello</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 03. Customize names with the `as` keyword
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">use</span><span class="w"> </span><span class="n">phrases</span>::<span class="n">greetings</span>::<span class="n">hello</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">greet</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">greet</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h2 id="02-import-elements-to-scope">02. Import elements to scope</h2>
-<p>Another common usage of <code>use</code> is importing elements to scope. Remember that, this is also a bit similar to creating an alias and using it instead of using the full path.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">hello</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s">&#34;Hello, world!&#34;</span><span class="p">.</span><span class="n">to_string</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[cfg(test)]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="n">hello</span><span class="p">;</span><span class="w"> </span><span class="c1">// Import the `hello()` function into the scope
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="cp">#[test]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">test_hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">hello</span><span class="p">());</span><span class="w"> </span><span class="c1">// If not using the above `use` statement, we can run same via `super::hello()`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><blockquote>
-<p>💡 By default, <code>use</code> declarations use absolute paths, starting from the crate root. But <code>self</code> and <code>super</code> declarations make that path relative to the current module.</p></blockquote>
-<p>Same way the <code>use</code> keyword is used to import the elements of other crates including the <code>std</code>, Rust’s <a href="https://github.com/rust-lang/rust/tree/master/src/libstd">Standard Library</a>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// -- 01. Importing elements --
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">fs</span>::<span class="n">File</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">File</span>::<span class="n">create</span><span class="p">(</span><span class="s">&#34;empty.txt&#34;</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;Can not create the file!&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// -- 02. Importing module and elements --
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">fs</span>::<span class="p">{</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">File</span><span class="p">}</span><span class="w"> </span><span class="c1">// `use std::fs; use std::fs::File;`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">fs</span>::<span class="n">create_dir</span><span class="p">(</span><span class="s">&#34;some_dir&#34;</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;Can not create the directry!&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">File</span>::<span class="n">create</span><span class="p">(</span><span class="s">&#34;some_dir/empty.txt&#34;</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;Can not create the file!&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// -- 03. Importing multiple elements --
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">fs</span>::<span class="n">File</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span>::<span class="p">{</span><span class="n">BufReader</span><span class="p">,</span><span class="w"> </span><span class="n">BufRead</span><span class="p">};</span><span class="w"> </span><span class="c1">// `use std::io::BufReader; use std::io::BufRead;`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span>::<span class="n">open</span><span class="p">(</span><span class="s">&#34;src/hello.txt&#34;</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;file not found&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">buf_reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BufReader</span>::<span class="n">new</span><span class="p">(</span><span class="n">file</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">buf_reader</span><span class="p">.</span><span class="n">lines</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">unwrap</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><blockquote>
-<p>We <strong>don’t need</strong> to use <code>extern crate std;</code> when using the <code>std</code> library. We will discuss more about this under the Standard Library section.</p></blockquote>
-<p>💡 <code>use</code> statements import only what we’ve specified into the scope, instead of importing all elements of a module or crate. So it improves the efficiency of the program.</p>
-<h2 id="03-re-exporting">03. Re-exporting</h2>
-<p>Another special case is <code>pub use</code>. When creating a module, you can export things from another module into your module. So after that, they can be accessed directly from your module. This is called <strong>re-exporting</strong>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// ↳ main.rs
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">mod</span> <span class="nn">phrases</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">phrases</span>::<span class="n">hello</span><span class="p">();</span><span class="w"> </span><span class="c1">// Not directly map
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ↳ phrases/mod.rs
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">mod</span> <span class="nn">greetings</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="bp">self</span>::<span class="n">greetings</span>::<span class="n">hello</span><span class="p">;</span><span class="w"> </span><span class="c1">// Re-export `greetings::hello` to phrases
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ↳ phrases/greetings.rs
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>This pattern is quite common in large libraries. It helps to hide the complexity of the internal module structure of the library from users. Because users don’t need to know/follow the whole directory map of the elements of the library while working with them.</p>
-
-        </div>
-
-        <footer>
-          <time datetime="2022-10-17"><i>🕒</i> Updated: 2022-10-17</time>
-          <a href="https://learning-rust.github.io/docs/workspaces/"><i>﹤</i> Previous</a>
-          <a href="https://learning-rust.github.io/docs/std-primitives-and-preludes/">Next <i>﹥</i></a>
-          </footer>
-      </article>
-
-      <aside>
-        <div>
-          <button class="btn"><i>❌</i>Close</button>
-        </div>
-        <strong>On this page</strong>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#01-bind-a-full-path-to-a-new-name">01. Bind a full path to a new name</a></li>
-    <li><a href="#02-import-elements-to-scope">02. Import elements to scope</a></li>
-    <li><a href="#03-re-exporting">03. Re-exporting</a></li>
-  </ul>
-</nav>
-      </aside>
-    </main>
-
-    <footer>
-      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/dumindu" target="_blank">Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href="https://github.com/learning-rust" target="_blank">GitHub</a></div>
-      <div>
-        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
-      </div>
-    </footer>
-  </div>
-
-</div>
-
-<div id="body-model-outer"></div>
-<script type="text/javascript" src="/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
-</body>
-</html>
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Rust Programming Language Tutorials for Everyone!"><meta name=author content="Dumindu Madunuwan"><meta name=theme-color content="#ffffff" media="(prefers-color-scheme: light)"><meta name=theme-color content="#101010" media="(prefers-color-scheme: dark)"><title>Use · Learning Rust</title>
+<link rel=canonical href=https://learning-rust.github.io/docs/use/><link rel=stylesheet href=/assets/css/docs.min.8e9408609771a441499aa5571a4585b0ca95783b842d5c758af5eef1457b0fe0.css integrity><link rel=manifest href=/manifest.json><link rel=icon href=/favicon/favicon.ico><link rel=icon href=/favicon/favicon-16x16.png sizes=16x16 type=image/png><link rel=icon href=/favicon/favicon-32x32.png sizes=32x32 type=image/png><link rel=apple-touch-icon href=/favicon/apple-touch-icon.png sizes=180x180><script async src="https://www.googletagmanager.com/gtag/js?id=G-FZHQCXSZ89"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-FZHQCXSZ89")</script></head><body><div id=outer-wrapper><div id=aside-wrapper><aside><div><button class=btn><i>❌</i>Close</button></div><a href=https://learning-rust.github.io/ class=site-logo>Learning Rust</a><nav role=navigation><details open><summary>Documentation</summary><ul><li><a href=https://learning-rust.github.io/docs/overview/>Overview</a></li></ul></details><details open><summary>Basics</summary><ul><li><a href=https://learning-rust.github.io/docs/why-rust/>Why Rust?</a></li><li><a href=https://learning-rust.github.io/docs/installation/>Installation</a></li><li><a href=https://learning-rust.github.io/docs/hello-world/>Hello World</a></li><li><a href=https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/>Cargo, Crates and Basic Project Structure</a></li><li><a href=https://learning-rust.github.io/docs/comments-and-documenting-the-code/>Comments and Documenting the code</a></li><li><a href=https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/>Variable bindings, Constants and Statics</a></li><li><a href=https://learning-rust.github.io/docs/functions/>Functions</a></li><li><a href=https://learning-rust.github.io/docs/primitive-data-types/>Primitive Data Types</a></li><li><a href=https://learning-rust.github.io/docs/operators/>Operators</a></li><li><a href=https://learning-rust.github.io/docs/control-flows/>Control Flows</a></li></ul></details><details open><summary>Beyond The Basics</summary><ul><li><a href=https://learning-rust.github.io/docs/vectors/>Vectors</a></li><li><a href=https://learning-rust.github.io/docs/structs/>Structs</a></li><li><a href=https://learning-rust.github.io/docs/enums/>Enums</a></li><li><a href=https://learning-rust.github.io/docs/generics/>Generics</a></li><li><a href=https://learning-rust.github.io/docs/impls-and-traits/>Impls and Traits</a></li></ul></details><details open><summary>The Tough Part</summary><ul><li><a href=https://learning-rust.github.io/docs/ownership/>Ownership</a></li><li><a href=https://learning-rust.github.io/docs/borrowing/>Borrowing</a></li><li><a href=https://learning-rust.github.io/docs/lifetimes/>Lifetimes</a></li></ul></details><details open><summary>Let's Get It Started</summary><ul><li><a href=https://learning-rust.github.io/docs/code-organization/>Code Organization</a></li><li><a href=https://learning-rust.github.io/docs/functions-02/>Functions (02)</a></li><li><a href=https://learning-rust.github.io/docs/modules/>Modules</a></li><li><a href=https://learning-rust.github.io/docs/crates/>Crates</a></li><li><a href=https://learning-rust.github.io/docs/workspaces/>Workspaces</a></li><li><a class=active href=https://learning-rust.github.io/docs/use/>Use</a></li><li><a href=https://learning-rust.github.io/docs/std-primitives-and-preludes/>STD, Primitives and Preludes</a></li></ul></details><details open><summary>Error Handling</summary><ul><li><a href=https://learning-rust.github.io/docs/smart-compiler/>Smart Compiler</a></li><li><a href=https://learning-rust.github.io/docs/panicking/>Panicking</a></li><li><a href=https://learning-rust.github.io/docs/option-and-result/>Option and Result</a></li><li><a href=https://learning-rust.github.io/docs/unwrap-and-expect/>Unwrap and Expect</a></li><li><a href=https://learning-rust.github.io/docs/error-and-none-propagation/>Error and None Propagation</a></li><li><a href=https://learning-rust.github.io/docs/combinators/>Combinators</a></li><li><a href=https://learning-rust.github.io/docs/custom-error-types/>Custom Error Types</a></li></ul></details></nav></aside></div><div id=content-wrapper><header><a href=https://learning-rust.github.io/ class=site-logo>Learning Rust</a></header><main><article><nav><button class=btn><i>⬅️</i> On this section</button>
+<button class=btn>On this page <i>➡️</i></button></nav><header><h1>Use</h1><p></p></header><div id=article-body><p>Let&rsquo;s see the main usages of the <code>use</code> keyword.</p><h2 id=01-bind-a-full-path-to-a-new-name>01. Bind a full path to a new name</h2><p>Mainly <code>use</code> keyword is used to bind a full path of an element to a new name. So the user doesn’t want to repeat the full path each time.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// -- Initial code without the `use` keyword --
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>mod</span> <span class=nn>phrases</span><span class=w> </span><span class=p>{</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=k>pub</span><span class=w> </span><span class=k>mod</span> <span class=nn>greetings</span><span class=w> </span><span class=p>{</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>hello</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;Hello, world!&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>phrases</span>::<span class=n>greetings</span>::<span class=n>hello</span><span class=p>();</span><span class=w> </span><span class=c1>// Using full path
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// -- Usage of the `use` keyword --
+</span></span></span><span class=line><span class=cl><span class=c1>// 01. Create an alias for module
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>use</span><span class=w> </span><span class=n>phrases</span>::<span class=n>greetings</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>greetings</span>::<span class=n>hello</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 02. Create an alias for module elements
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>use</span><span class=w> </span><span class=n>phrases</span>::<span class=n>greetings</span>::<span class=n>hello</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>hello</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 03. Customize names with the `as` keyword
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>use</span><span class=w> </span><span class=n>phrases</span>::<span class=n>greetings</span>::<span class=n>hello</span><span class=w> </span><span class=k>as</span><span class=w> </span><span class=n>greet</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>greet</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h2 id=02-import-elements-to-scope>02. Import elements to scope</h2><p>Another common usage of <code>use</code> is importing elements to scope. Remember that, this is also a bit similar to creating an alias and using it instead of using the full path.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>hello</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nb>String</span> <span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=s>&#34;Hello, world!&#34;</span><span class=p>.</span><span class=n>to_string</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=cp>#[cfg(test)]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>mod</span> <span class=nn>tests</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=k>use</span><span class=w> </span><span class=k>super</span>::<span class=n>hello</span><span class=p>;</span><span class=w> </span><span class=c1>// Import the `hello()` function into the scope
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=cp>#[test]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=k>fn</span> <span class=nf>test_hello</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=s>&#34;Hello, world!&#34;</span><span class=p>,</span><span class=w> </span><span class=n>hello</span><span class=p>());</span><span class=w> </span><span class=c1>// If not using the above `use` statement, we can run same via `super::hello()`
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><blockquote><p>💡 By default, <code>use</code> declarations use absolute paths, starting from the crate root. But <code>self</code> and <code>super</code> declarations make that path relative to the current module.</p></blockquote><p>Same way the <code>use</code> keyword is used to import the elements of other crates including the <code>std</code>, Rust’s <a href=https://github.com/rust-lang/rust/tree/master/src/libstd>Standard Library</a>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// -- 01. Importing elements --
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>fs</span>::<span class=n>File</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>File</span>::<span class=n>create</span><span class=p>(</span><span class=s>&#34;empty.txt&#34;</span><span class=p>).</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;Can not create the file!&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// -- 02. Importing module and elements --
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>fs</span>::<span class=p>{</span><span class=bp>self</span><span class=p>,</span><span class=w> </span><span class=n>File</span><span class=p>}</span><span class=w> </span><span class=c1>// `use std::fs; use std::fs::File;`
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>fs</span>::<span class=n>create_dir</span><span class=p>(</span><span class=s>&#34;some_dir&#34;</span><span class=p>).</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;Can not create the directry!&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>File</span>::<span class=n>create</span><span class=p>(</span><span class=s>&#34;some_dir/empty.txt&#34;</span><span class=p>).</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;Can not create the file!&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// -- 03. Importing multiple elements --
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>fs</span>::<span class=n>File</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span>::<span class=p>{</span><span class=n>BufReader</span><span class=p>,</span><span class=w> </span><span class=n>BufRead</span><span class=p>};</span><span class=w> </span><span class=c1>// `use std::io::BufReader; use std::io::BufRead;`
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>file</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>File</span>::<span class=n>open</span><span class=p>(</span><span class=s>&#34;src/hello.txt&#34;</span><span class=p>).</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;file not found&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>buf_reader</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>BufReader</span>::<span class=n>new</span><span class=p>(</span><span class=n>file</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>for</span><span class=w> </span><span class=n>line</span><span class=w> </span><span class=k>in</span><span class=w> </span><span class=n>buf_reader</span><span class=p>.</span><span class=n>lines</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>line</span><span class=p>.</span><span class=n>unwrap</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><blockquote><p>We <strong>don’t need</strong> to use <code>extern crate std;</code> when using the <code>std</code> library. We will discuss more about this under the Standard Library section.</p></blockquote><p>💡 <code>use</code> statements import only what we’ve specified into the scope, instead of importing all elements of a module or crate. So it improves the efficiency of the program.</p><h2 id=03-re-exporting>03. Re-exporting</h2><p>Another special case is <code>pub use</code>. When creating a module, you can export things from another module into your module. So after that, they can be accessed directly from your module. This is called <strong>re-exporting</strong>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// ↳ main.rs
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>mod</span> <span class=nn>phrases</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>fn</span> <span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>phrases</span>::<span class=n>hello</span><span class=p>();</span><span class=w> </span><span class=c1>// Not directly map
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// ↳ phrases/mod.rs
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>pub</span><span class=w> </span><span class=k>mod</span> <span class=nn>greetings</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>use</span><span class=w> </span><span class=bp>self</span>::<span class=n>greetings</span>::<span class=n>hello</span><span class=p>;</span><span class=w> </span><span class=c1>// Re-export `greetings::hello` to phrases
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// ↳ phrases/greetings.rs
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>hello</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;Hello, world!&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p>This pattern is quite common in large libraries. It helps to hide the complexity of the internal module structure of the library from users. Because users don’t need to know/follow the whole directory map of the elements of the library while working with them.</p></div><footer><time datetime=2022-10-17><i>🕒</i> Updated: 2022-10-17</time>
+<a href=https://learning-rust.github.io/docs/workspaces/><i>﹤</i> Previous</a>
+<a href=https://learning-rust.github.io/docs/std-primitives-and-preludes/>Next <i>﹥</i></a></footer></article><aside><div><button class=btn><i>❌</i>Close</button></div><strong>On this page</strong><nav id=TableOfContents><ul><li><a href=#01-bind-a-full-path-to-a-new-name>01. Bind a full path to a new name</a></li><li><a href=#02-import-elements-to-scope>02. Import elements to scope</a></li><li><a href=#03-re-exporting>03. Re-exporting</a></li></ul></nav></aside></main><footer><div><i>🧑‍💻</i>Built by and copyright<a href=https://github.com/dumindu target=_blank>Dumindu Madunuwan</a><i>📅</i> 2016-2025<i>🚀</i> <a href=https://github.com/learning-rust target=_blank>GitHub</a></div><div><button class=btn><i>☀️</i><i>⁄</i><i>🌑</i></button></div></footer></div></div><div id=body-model-outer></div><script type=text/javascript src=/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js integrity></script></body></html>
