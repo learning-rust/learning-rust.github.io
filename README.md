@@ -28,8 +28,6 @@
 * [Lifetimes](content/en/docs/c3.lifetimes.md)
 
 ## Lets Get It Started
-* [Code organization](content/en/docs/d1.code-organization.md)
-* [Functions](content/en/docs/d2.functions.md)
 * [Modules](content/en/docs/d3.modules.md)
 * [Crates](content/en/docs/d4.crates.md)
 * [Workspaces](content/en/docs/d5.workspaces.md)
