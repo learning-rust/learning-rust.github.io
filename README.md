@@ -20,7 +20,8 @@
 * [Structs](content/en/docs/b2.structs.md)
 * [Enums](content/en/docs/b3.enums.md)
 * [Generics](content/en/docs/b4.generics.md)
-* [Impls and traits](content/en/docs/b5.impls-and-traits.md)
+* [Impls](content/en/docs/b5.impls.md)
+* [Traits](content/en/docs/b6.traits.md)
 
 ## The Tough Part
 * [Ownership](content/en/docs/c1.ownership.md)
