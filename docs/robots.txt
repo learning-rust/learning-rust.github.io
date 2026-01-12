@@ -19,7 +19,7 @@ Disallow: /docs/error-and-none-propagation/
 Disallow: /docs/functions/
 Disallow: /docs/generics/
 Disallow: /docs/hello-world/
-Disallow: /docs/impls-and-traits/
+Disallow: /docs/impls/
 Disallow: /docs/installation/
 Disallow: /
 Disallow: /docs/lifetimes/
@@ -34,6 +34,7 @@ Disallow: /docs/smart-compiler/
 Disallow: /docs/std-primitives-and-preludes/
 Disallow: /docs/structs/
 Disallow: /tags/
+Disallow: /docs/traits/
 Disallow: /docs/unwrap-and-expect/
 Disallow: /docs/use/
 Disallow: /docs/variable-bindings-constants-and-statics/
