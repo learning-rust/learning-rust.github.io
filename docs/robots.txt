@@ -7,7 +7,6 @@ Allow: /
 User-agent: *
 Disallow: /docs/borrowing/
 Disallow: /docs/cargo-crates-and-basic-project-structure/
-Disallow: /categories/
 Disallow: /docs/combinators/
 Disallow: /docs/comments-and-documenting-the-code/
 Disallow: /docs/control-flows/
@@ -33,7 +32,6 @@ Disallow: /docs/primitive-data-types/
 Disallow: /docs/smart-compiler/
 Disallow: /docs/std-primitives-and-preludes/
 Disallow: /docs/structs/
-Disallow: /tags/
 Disallow: /docs/traits/
 Disallow: /docs/unwrap-and-expect/
 Disallow: /docs/use/
