@@ -1,7 +1,8 @@
 [![buymeacoffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=ffffff&labelColor=333333)](https://www.buymeacoffee.com/dumindu)
 
-
 # Learning Rust
+
+> Build with [Hugo](https://gohugo.io/installation/) and [E25DX](https://themes.gohugo.io/themes/e25dx/) theme. ❤️
 
 ## Basics
 * [Why Rust](content/en/docs/a1.why-rust.md)
