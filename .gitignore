@@ -1,11 +1,6 @@
+.hugo_build.lock
+.DS_Store
+
+.zed
 .idea
 .vscode
-.zed
-.DS_Store
-hugo.yaml
-.hugo_build.lock
-.gitmodules
-/docs
-/data
-/themes
-/static

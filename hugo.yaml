@@ -1,0 +1,75 @@
+theme: E25DX
+
+enableGitInfo: true
+disableKinds: [taxonomy, term]
+disableHugoGeneratorInject: true
+
+publishDir: docs
+baseURL: https://learning-rust.github.io
+
+defaultContentLanguage: en
+      
+languages:
+  en:
+    languageName: English
+    languageCode: en-US
+    contentDir: content/en
+    title: Learning Rust
+    params:
+      description: Rust Programming Language Tutorials for Everyone!
+    weight: 1
+
+services:
+  googleAnalytics:
+    ID: G-FZHQCXSZ89
+
+enableRobotsTXT: true
+
+markup:
+  highlight:
+    noClasses: false
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      attribute:
+        block: true
+        title: true
+  tableOfContents:
+    pre: <nav id="TableOfContents" aria-label="Table of Contents">
+    post: </nav>
+
+params:
+  project:
+    startYear: 2016
+    presentYear: 2026
+    github:
+      repo: learning-rust
+    themeColor:
+      light: "#ffffff"
+      dark: "#101010"
+
+  author:
+    name: Dumindu Madunuwan
+    url: https://github.com/dumindu
+
+  home:
+    heading: Rust Illuminated.
+    headingSegment2: Grasp Quickly.
+    description: Rust Programming Language Tutorials for Everyone!
+    getStartedPath: docs/
+
+  enableOGXSEO: true # og images need to add manually
+
+menus:
+  main:
+    - identifier: home
+      name: Home
+      pre: <i aria-hidden> 🏡 </i>
+      pageRef: /
+      weight: 10
+    - identifier: docs
+      name: Documentation
+      pre: <i aria-hidden> 📖 </i>
+      pageRef: /docs
+      weight: 20
