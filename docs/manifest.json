@@ -1,0 +1,21 @@
+{
+  "name": "Learning Rust",
+  "short_name": "Learning Rust",
+  "description": "Rust Programming Language Tutorials for Everyone!",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#866ee7",
+  "theme_color": "#866ee7"
+}
