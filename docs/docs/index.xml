@@ -1,8 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on Learning Rust</title><link>https://learning-rust.github.io/docs/</link><description>Recent content in Docs on Learning Rust</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://learning-rust.github.io/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Borrowing</title><link>https://learning-rust.github.io/docs/borrowing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/borrowing/</guid><description>&lt;blockquote&gt;
-&lt;p&gt;💭 When we discussed &lt;a href="https://learning-rust.github.io/docs/ownership/#ownership" &gt;Ownership&lt;/a&gt; we mentioned that, &lt;em&gt;&amp;ldquo;each piece of data has a single owner, and data is only scoped to its owner (💯 if it is not borrowed).&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="borrowing--references"&gt;Borrowing &amp;amp; References&lt;/h2&gt;
-&lt;p&gt;In a general sense, borrowing is taking something with the promise of returning it. In Rust, borrowing is the act of creating a reference (via &lt;code&gt;&amp;amp;&lt;/code&gt; or &lt;code&gt;&amp;amp;mut&lt;/code&gt;) to a value without copying the data or taking ownership of it. This is quite similar to the concept of &amp;ldquo;passing by reference&amp;rdquo; in other languages.&lt;/p&gt;</description></item><item><title>Cargo, Crates and Basic Project Structure</title><link>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</guid><description>&lt;h2 id="cargo"&gt;Cargo&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on Learning Rust</title><link>https://learning-rust.github.io/docs/</link><description>Recent content in Docs on Learning Rust</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://learning-rust.github.io/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Borrowing</title><link>https://learning-rust.github.io/docs/borrowing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/borrowing/</guid><description>&lt;h2 id="borrowing"&gt;Borrowing&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In a general sense, borrowing is taking something with the promise of returning it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In Rust, borrowing is the act of creating a reference to a value without copying the data and without taking ownership.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This is similar to the concept of &amp;ldquo;passing by reference&amp;rdquo; in other languages.&lt;/li&gt;
+&lt;li&gt;However in Rust,
+&lt;ul&gt;
+&lt;li&gt;References are immutable by default: shared, read-only/ immutable references: &lt;code&gt;&amp;amp;T&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To mutate the data, you must explicitly create a mutable reference: &lt;code&gt;&amp;amp;mut T&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Liveness&lt;/p&gt;</description></item><item><title>Cargo, Crates and Basic Project Structure</title><link>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</guid><description>&lt;h2 id="cargo"&gt;Cargo&lt;/h2&gt;
 &lt;p&gt;Cargo is Rust’s built-in package manager and build system. It also supports the following actions,&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
