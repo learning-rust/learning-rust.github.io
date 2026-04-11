@@ -205,12 +205,11 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;li&gt;Usage of &lt;code&gt;Self&lt;/code&gt; vs &lt;code&gt;self&lt;/code&gt; keywords:
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Self&lt;/code&gt;: Refers to the type itself (the blueprint).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;self&lt;/code&gt;: Refers to the instance of the type (the actual data).
-&lt;ul&gt;
-&lt;li&gt;💯 This can be any form of &lt;code&gt;self&lt;/code&gt;, &lt;code&gt;&amp;amp;self&lt;/code&gt;, &lt;code&gt;&amp;amp;mut self&lt;/code&gt;, &lt;code&gt;self: Box&amp;lt;Self&amp;gt;&lt;/code&gt;, &lt;code&gt;self: Pin&amp;lt;&amp;amp;mut Self&amp;gt;&lt;/code&gt;, etc.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;self&lt;/code&gt;: Refers to the instance of the type (the actual data).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💯 This can be any form of &lt;code&gt;self&lt;/code&gt;, &lt;code&gt;&amp;amp;self&lt;/code&gt;, &lt;code&gt;&amp;amp;mut self&lt;/code&gt;, &lt;code&gt;self: Box&amp;lt;Self&amp;gt;&lt;/code&gt;, &lt;code&gt;self: Pin&amp;lt;&amp;amp;mut Self&amp;gt;&lt;/code&gt;, etc.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;There are multiple ways to implement a behavior for a type. We discuss only about the &lt;code&gt;impl&lt;/code&gt; blocks with this article. The patterns involving traits are discussed under &lt;a href="https://learning-rust.github.io/docs/traits" &gt;Traits&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
