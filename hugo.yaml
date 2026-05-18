@@ -60,6 +60,7 @@ params:
     getStartedPath: docs/
 
   enableOGXSEO: true # og images need to add manually
+  enablePageFind: true
 
 menus:
   main:

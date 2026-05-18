@@ -1,0 +1,12 @@
+- name: Light
+  value: light
+  background: "#ffffff"
+  color: "#000000"
+  icon: light_mode
+
+- name: dark
+  value: dark
+  background: "#101010"
+  color: "#ffffff"
+  icon: dark_mode
+
