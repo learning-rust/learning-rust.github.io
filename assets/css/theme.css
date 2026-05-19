@@ -1,0 +1,156 @@
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-brand: "Arial", serif;
+
+  --color: rgba(0, 0, 0, 1);
+  --color-fade: rgba(0, 0, 0, .54);
+  --color-nav: rgba(0, 0, 0, .7);
+
+  --background: #ffffff;
+  --background-grey: #f9f9f9;
+  --background-grey-embed: #f0f0f0;
+
+  --foreground: rgba(247, 247, 247, .25);
+  --foreground-hover: rgba(220, 220, 220, .35);
+
+  --foreground-highlight: rgba(239, 194, 79, 1);
+  --color-highlight: #130606;
+
+  --model-background: #ffffff;
+  --model-foreground: rgba(247, 247, 247, .25);
+  --model-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, .37);
+
+  --padding: 12px;
+  --padding_d2: 6px;
+  --padding_x2: 24px;
+
+  --blur: 16px;
+  --model-blur: 10px;
+
+  --border: #efefef;
+  --border-nav: #dddddd;
+
+  --radius: 4px;
+
+  --anchor: #235ce8;
+  --hover: #547ce3;
+
+  /* base16 tomorrow */
+  --chroma-base00: #f9f9f9;
+  --chroma-base01: #e0e0e0;
+  --chroma-base02: rgba(159, 218, 159, .2);
+  --chroma-base03: #8e908c;
+  --chroma-base04: #969896;
+  --chroma-base05: #4d4d4c;
+  --chroma-base06: #282a2e;
+  --chroma-base07: #1d1f21;
+  --chroma-base08: #c82829;
+  --chroma-base09: #f5871f;
+  --chroma-base0A: #eab700;
+  --chroma-base0B: #718c00;
+  --chroma-base0C: #3e999f;
+  --chroma-base0D: #4271ae;
+  --chroma-base0E: #8959a8;
+  --chroma-base0F: #a3685a;
+
+  /* cover */
+  --cover-img-height: 32svh;
+  --section-item-cover-img-height: 24svh;
+
+  --site-header-height: 60px;
+}
+
+:root[data-color="dark"] {
+  --color: rgba(255, 255, 255, 1);
+  --color-fade: rgba(255, 255, 255, .5);
+  --color-nav: rgba(255, 255, 255, .8);
+
+  --background: #101010;
+  --background-grey: #1e1e1e;
+  --background-grey-embed: #2f2d2d;
+
+  --foreground: rgba(19, 19, 19, 1);
+  --foreground-hover: rgba(35, 35, 35, 1);
+
+  --model-background: rgba(16, 16, 16, 1);
+  --model-foreground: rgba(225, 225, 225, .05);
+  --model-box-shadow: 0 8px 32px 0 rgba(241, 235, 235, 0.1);
+
+  --border: rgba(225, 225, 225, .1);
+  --border-nav: rgba(255, 255, 255, .2);
+
+  --anchor: #2e87f1;
+  --hover: #044b9d;
+
+  /* base16 tomorrow night */
+  --chroma-base00: var(--background-grey);
+  --chroma-base01: #393939;
+  --chroma-base02: rgba(159, 218, 159, .1);
+  --chroma-base03: #999999;
+  --chroma-base04: #b4b7b4;
+  --chroma-base05: #cccccc;
+  --chroma-base06: #e0e0e0;
+  --chroma-base07: #ffffff;
+  --chroma-base08: #f2777a;
+  --chroma-base09: #f99157;
+  --chroma-base0A: #ffcc66;
+  --chroma-base0B: #99cc99;
+  --chroma-base0C: #66cccc;
+  --chroma-base0D: #6699cc;
+  --chroma-base0E: #cc99cc;
+  --chroma-base0F: #a3685a;
+
+  --pf-background: var(--background-grey);
+  --pf-text: var(--color-nav);
+  --pf-text-muted: var(--color-fade);
+  --pf-hover: var(--foreground-hover);
+  --pf-text-secondary: var(--color-nav);
+  --pf-modal-backdrop: var(--foreground);
+  --pf-border: var(--border);
+  --pf-mark: var(--foreground-highlight);
+  --pf-skeleton: var(--foreground-hover);
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+main > section > div > header > h1 > span {
+  color: transparent;
+  -webkit-text-stroke: .5px var(--border);
+  background: transparent;
+  background: linear-gradient(45deg, #866ee7, #ea60da, #ed8f57, #fbd41d, #2cca91);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* From Small Tablet & Portrait */
+@media (min-width: 744px) and (orientation: portrait) {
+  :root {
+    --cover-img-height: 30svh;
+    --section-item-cover-img-height: 20svh;
+  }
+}
+
+/* From Large Tablet */
+@media (min-width: 1024px) {
+  :root {
+    --padding: 16px;
+    --padding_d2: 8px;
+    --padding_x2: 32px;
+
+    --cover-img-height: 43svh;
+    --section-item-cover-img-height: 28svh;
+  }
+}
+
+/* From Desktop & Landscape */
+@media (min-width: 1280px) and (orientation: landscape) {
+  :root {
+    --cover-img-height: 50svh;
+    --section-item-cover-img-height: 22svh;
+  }
+}
