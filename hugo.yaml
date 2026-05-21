@@ -43,8 +43,8 @@ params:
   project:
     startYear: 2016
     presentYear: 2026
-    github:
-      repo: learning-rust
+    repo:
+      main: https://github.com/learning-rust/learning-rust.github.io
     themeColor:
       light: "#ffffff"
       dark: "#101010"
@@ -53,12 +53,6 @@ params:
     name: Dumindu Madunuwan
     url: https://github.com/dumindu
 
-  home:
-    heading: Rust Illuminated.
-    headingSegment2: Grasp Quickly.
-    description: Rust Programming Language Tutorials for Everyone!
-    getStartedPath: docs/
-
   enableOGXSEO: true # og images need to add manually
   enablePageFind: true
 
@@ -66,11 +60,13 @@ menus:
   main:
     - identifier: home
       name: Home
-      pre: <i aria-hidden> 🏡 </i>
       pageRef: /
       weight: 10
+      params:
+        icon: home
     - identifier: docs
       name: Documentation
-      pre: <i aria-hidden> 📖 </i>
       pageRef: /docs
       weight: 20
+      params:
+        icon: menu_book

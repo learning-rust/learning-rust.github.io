@@ -1,0 +1,15 @@
+badge: Made by a human · Made for a human
+
+svg: hero.svg
+
+title: Rust Illuminated. <br/><span>Grasp Quickly.</span>
+
+description: Rust Programming Language Tutorials for Everyone!
+
+btn_primary:
+  label: Get Started
+  url: /docs
+
+btn_secondary:
+  label: Contribute
+  url: https://github.com/learning-rust/learning-rust.github.io
