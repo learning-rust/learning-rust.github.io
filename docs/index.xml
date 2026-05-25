@@ -52,9 +52,103 @@
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;blockquote&gt;
-&lt;p&gt;💡 The &lt;code&gt;cargo check&lt;/code&gt; command verifies that the project compiles without errors, without producing an executable.
-Thus, it is often faster than &lt;code&gt;cargo build&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Combinators</title><link>https://learning-rust.github.io/docs/combinators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/combinators/</guid><description>&lt;h2 id="what-is-a-combinator"&gt;What is a combinator?&lt;/h2&gt;
+
+
+&lt;div class="alert alert-important"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M479.79-360q15.21 0 25.71-10.29t10.5-25.5q0-15.21-10.29-25.71t-25.5-10.5q-15.21 0-25.71 10.29t-10.5 25.5q0 15.21 10.29 25.71t25.5 10.5Zm25.71-130.35Q516-500.7 516-516v-192q0-15.3-10.29-25.65Q495.42-744 480.21-744t-25.71 10.35Q444-723.3 444-708v192q0 15.3 10.29 25.65Q464.58-480 479.79-480t25.71-10.35ZM240-240l-82.88 82.88Q140-140 118-149.41q-22-9.4-22-33.59v-609q0-29.7 21.15-50.85Q138.3-864 168-864h624q29.7 0 50.85 21.15Q864-821.7 864-792v480q0 29.7-21.15 50.85Q821.7-240 792-240H240Zm-30-72h582v-480H168v522l42-42Zm-42 0v-480 480Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Important
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;cargo check&lt;/code&gt; command verifies that the project compiles without errors, without producing an executable.
+Thus, it is often faster than &lt;code&gt;cargo build&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Cargo places executables compiled with &lt;code&gt;cargo build&lt;/code&gt; or &lt;code&gt;cargo run&lt;/code&gt; in the &lt;code&gt;target/debug/&lt;/code&gt; directory.
+But, while those built with &lt;strong&gt;&lt;code&gt;cargo build --release&lt;/code&gt;&lt;/strong&gt; for release purposes are stored in &lt;code&gt;target/release/&lt;/code&gt; directory.
+Release builds use more optimizations and remove some runtime safety checks to increase performance, although this comes at the cost of longer compile time.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Command&lt;/th&gt;
+ &lt;th&gt;Action&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;cargo add&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Add a dependency crate to the project&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;cargo remove&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Remove a dependency crate from the project&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;cargo fetch&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Download the dependencies specified in Cargo.lock&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;cargo update&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Update project dependencies&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class="alert alert-important"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M479.79-360q15.21 0 25.71-10.29t10.5-25.5q0-15.21-10.29-25.71t-25.5-10.5q-15.21 0-25.71 10.29t-10.5 25.5q0 15.21 10.29 25.71t25.5 10.5Zm25.71-130.35Q516-500.7 516-516v-192q0-15.3-10.29-25.65Q495.42-744 480.21-744t-25.71 10.35Q444-723.3 444-708v192q0 15.3 10.29 25.65Q464.58-480 479.79-480t25.71-10.35ZM240-240l-82.88 82.88Q140-140 118-149.41q-22-9.4-22-33.59v-609q0-29.7 21.15-50.85Q138.3-864 168-864h624q29.7 0 50.85 21.15Q864-821.7 864-792v480q0 29.7-21.15 50.85Q821.7-240 792-240H240Zm-30-72h582v-480H168v522l42-42Zm-42 0v-480 480Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Important
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;ul&gt;
+&lt;li&gt;A crate is a package that can be shared via &lt;a href="https://crates.io" target="_blank" &gt;crates.io&lt;/a&gt;, Rust community’s crate registry.
+&lt;code&gt;cargo add&lt;/code&gt;, &lt;code&gt;cargo remove&lt;/code&gt;, &lt;code&gt;cargo fetch&lt;/code&gt;, and &lt;code&gt;cargo update&lt;/code&gt; commands manage project dependencies through the crate hosted on crates.io.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;cargo add&lt;/code&gt; command includes a specified crate in the &lt;code&gt;[dependencies]&lt;/code&gt; section of &lt;code&gt;Cargo.toml&lt;/code&gt;, while &lt;code&gt;cargo add --dev&lt;/code&gt; adds a crate to the &lt;code&gt;[dev-dependencies]&lt;/code&gt; section. This indicates that the crate is only used for development purposes like testing and will not be included in the final compiled code.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Command&lt;/th&gt;
+ &lt;th&gt;Action&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;cargo test&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Run tests&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;cargo bench&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Run benchmarks&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;cargo doc&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Generate the project documentation via &lt;a href="https://doc.rust-lang.org/stable/rustdoc/" target="_blank" &gt;rustdoc&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In addition, there are &lt;code&gt;cargo&lt;/code&gt; commands to publish the project as a crate to &lt;a href="https://crates.io/" target="_blank" &gt;crates.io&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Combinators</title><link>https://learning-rust.github.io/docs/combinators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/combinators/</guid><description>&lt;h2 id="what-is-a-combinator"&gt;What is a combinator?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;One meaning of “combinator” is a more informal sense referring to the &lt;strong&gt;combinator pattern&lt;/strong&gt;, a style of organizing libraries centered around the idea of combining things. Usually there is &lt;strong&gt;some type T&lt;/strong&gt;, some &lt;strong&gt;functions for constructing “primitive” values of type T&lt;/strong&gt;, and some “&lt;strong&gt;combinators&lt;/strong&gt;” which can &lt;strong&gt;combine values of type T&lt;/strong&gt; in various ways to &lt;strong&gt;build up more complex values of type T&lt;/strong&gt;. The other definition is &lt;strong&gt;&amp;ldquo;function with no free variables&amp;rdquo;&lt;/strong&gt;.
@@ -119,8 +213,69 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// 💡 FlashMessage is the emnum, Success, Error, Warning are its variants.
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;💡 In Rust, the term &amp;ldquo;instantiation&amp;rdquo; is used to describe the act of creating a concrete instance of a type (struct or enum).&lt;/p&gt;</description></item><item><title>Error and None Propagation</title><link>https://learning-rust.github.io/docs/error-and-none-propagation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/error-and-none-propagation/</guid><description>&lt;p&gt;We should use panics like &lt;code&gt;panic!()&lt;/code&gt;, &lt;code&gt;unwrap()&lt;/code&gt;, &lt;code&gt;expect()&lt;/code&gt; only if we can not handle the situation in a better way. Also if a function contains expressions which can produce either &lt;code&gt;None&lt;/code&gt; or &lt;code&gt;Err&lt;/code&gt;,&lt;/p&gt;
+
+
+&lt;div class="alert alert-important"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M479.79-360q15.21 0 25.71-10.29t10.5-25.5q0-15.21-10.29-25.71t-25.5-10.5q-15.21 0-25.71 10.29t-10.5 25.5q0 15.21 10.29 25.71t25.5 10.5Zm25.71-130.35Q516-500.7 516-516v-192q0-15.3-10.29-25.65Q495.42-744 480.21-744t-25.71 10.35Q444-723.3 444-708v192q0 15.3 10.29 25.65Q464.58-480 479.79-480t25.71-10.35ZM240-240l-82.88 82.88Q140-140 118-149.41q-22-9.4-22-33.59v-609q0-29.7 21.15-50.85Q138.3-864 168-864h624q29.7 0 50.85 21.15Q864-821.7 864-792v480q0 29.7-21.15 50.85Q821.7-240 792-240H240Zm-30-72h582v-480H168v522l42-42Zm-42 0v-480 480Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Important
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;ul&gt;
+&lt;li&gt;In Rust, the term &amp;ldquo;instantiation&amp;rdquo; is used to describe the act of creating a concrete instance of a type (struct or enum).&lt;/li&gt;
+&lt;li&gt;In Rust, the term &amp;ldquo;field&amp;rdquo; is used to describe a named component in a C-like struct &amp;amp; struct-like enum variant, and the term &amp;ldquo;element&amp;rdquo; is used to describe an unnamed component in a tuple struct &amp;amp; tuple-like enum variant. The term &amp;ldquo;member&amp;rdquo; is used to describe both.&lt;/li&gt;
+&lt;li&gt;More complex examples can be found on &lt;a href="https://learning-rust.github.io/docs/generics/" &gt;Generics&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/impls-and-traits" &gt;Impls and Traits&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/lifetimes" &gt;Lifetimes&lt;/a&gt; and &lt;a href="https://learning-rust.github.io/docs/modules" &gt;Modules&lt;/a&gt; sections.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="instantiation"&gt;Instantiation&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#![allow(unused)]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 💡 skip unused warnings, as we don&amp;#39;t read fields in the enums
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#[derive(Debug)]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;enum&lt;/span&gt; &lt;span class="nc"&gt;FlashMessage&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Definition
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Success&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;u32&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Warning&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;field&lt;/span&gt;: &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;: &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 1. Instantiation with separate variable declaration and assignment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;: &lt;span class="nc"&gt;FlashMessage&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Declaration with the data type
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FlashMessage&lt;/span&gt;::&lt;span class="n"&gt;Success&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;{x:?}&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Success
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 2. Instantiation with a direct variable initialization
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FlashMessage&lt;/span&gt;::&lt;span class="n"&gt;Success&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FlashMessage&lt;/span&gt;::&lt;span class="n"&gt;Error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;401&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Unauthorized&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_string&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FlashMessage&lt;/span&gt;::&lt;span class="n"&gt;Warning&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;field&lt;/span&gt;: &lt;span class="s"&gt;&amp;#34;email&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_string&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;: &lt;span class="s"&gt;&amp;#34;This is required&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_string&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;{a:?}&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Success
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;{b:?}&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Error(401, &amp;#34;Unauthorized&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;{c:?}&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Warning { field: &amp;#34;email&amp;#34;, message: &amp;#34;This is required&amp;#34; } 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// 3. Instantiation with a default variant
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#![allow(unused)]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 💡 skip unused warnings, as we don&amp;#39;t use the all variants of the enum
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#[derive(Debug, Default)]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;enum&lt;/span&gt; &lt;span class="nc"&gt;Hand&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Left&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cp"&gt;#[default]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 💡Set Right as the default variant
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Right&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Hand&lt;/span&gt;::&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Instantiation with the default variant
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;{a:?}&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Right
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In Rust, the &lt;code&gt;#[derive()]&lt;/code&gt; attribute is used to automatically generate an implementation of certain traits for a custom data structure (struct and enum), instead of you writing them by hand. The &lt;a href="https://doc.rust-lang.org/std/fmt/trait.Debug.html" target="_blank" &gt;&lt;code&gt;std::fmt::Debug&lt;/code&gt;&lt;/a&gt; trait allows us to format a value with &lt;code&gt;{:?}&lt;/code&gt; or &lt;code&gt;{:#?}&lt;/code&gt; in &lt;code&gt;println!&lt;/code&gt; and similar macros. The &lt;a href="https://doc.rust-lang.org/std/default/trait.Default.html" target="_blank" &gt;&lt;code&gt;std::default::Default&lt;/code&gt;&lt;/a&gt; trait allows us to create a new instance of a type with the &lt;code&gt;Type::default()&lt;/code&gt; method.&lt;/p&gt;</description></item><item><title>Error and None Propagation</title><link>https://learning-rust.github.io/docs/error-and-none-propagation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/error-and-none-propagation/</guid><description>&lt;p&gt;We should use panics like &lt;code&gt;panic!()&lt;/code&gt;, &lt;code&gt;unwrap()&lt;/code&gt;, &lt;code&gt;expect()&lt;/code&gt; only if we can not handle the situation in a better way. Also if a function contains expressions which can produce either &lt;code&gt;None&lt;/code&gt; or &lt;code&gt;Err&lt;/code&gt;,&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;we can handle them inside the same function. Or,&lt;/li&gt;
 &lt;li&gt;we can return &lt;code&gt;None&lt;/code&gt; and &lt;code&gt;Err&lt;/code&gt; types immediately to the caller. So the caller can decide how to handle them.&lt;/li&gt;
@@ -191,30 +346,50 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;fn&lt;/code&gt; means function. The &lt;code&gt;main&lt;/code&gt; function is the beginning of every Rust program.
 &lt;code&gt;println!()&lt;/code&gt; prints text to the console and its &lt;code&gt;!&lt;/code&gt; indicates that it’s a &lt;a href="https://doc.rust-lang.org/book/ch19-06-macros.html" target="_blank" &gt;macro&lt;/a&gt; rather than a function.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;💡 Rust files should have &lt;code&gt;.rs&lt;/code&gt; file extension and if you’re using more than one word for the file name, follow the &lt;a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" &gt;snake_case&lt;/a&gt; convention.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Save the above code in &lt;code&gt;file.rs&lt;/code&gt; , but it can be any name with &lt;code&gt;.rs&lt;/code&gt; extension.&lt;/li&gt;
-&lt;li&gt;Compile it with &lt;code&gt;rustc file.rs&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Execute it with &lt;code&gt;./file&lt;/code&gt; on Linux and Mac or &lt;code&gt;file.exe&lt;/code&gt; on Windows&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="rust-playground"&gt;Rust Playground&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://play.rust-lang.org/" target="_blank" &gt;Rust Playground&lt;/a&gt; is a web interface for running Rust code.&lt;/p&gt;</description></item><item><title>Impls</title><link>https://learning-rust.github.io/docs/impls/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/impls/</guid><description>&lt;ul&gt;
+
+
+&lt;div class="alert alert-important"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M479.79-360q15.21 0 25.71-10.29t10.5-25.5q0-15.21-10.29-25.71t-25.5-10.5q-15.21 0-25.71 10.29t-10.5 25.5q0 15.21 10.29 25.71t25.5 10.5Zm25.71-130.35Q516-500.7 516-516v-192q0-15.3-10.29-25.65Q495.42-744 480.21-744t-25.71 10.35Q444-723.3 444-708v192q0 15.3 10.29 25.65Q464.58-480 479.79-480t25.71-10.35ZM240-240l-82.88 82.88Q140-140 118-149.41q-22-9.4-22-33.59v-609q0-29.7 21.15-50.85Q138.3-864 168-864h624q29.7 0 50.85 21.15Q864-821.7 864-792v480q0 29.7-21.15 50.85Q821.7-240 792-240H240Zm-30-72h582v-480H168v522l42-42Zm-42 0v-480 480Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Important
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;Rust files should have &lt;code&gt;.rs&lt;/code&gt; file extension and if you’re using more than one word for the file name, follow the &lt;a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" &gt;snake_case&lt;/a&gt; convention.&lt;/p&gt;</description></item><item><title>Impls</title><link>https://learning-rust.github.io/docs/impls/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/impls/</guid><description>&lt;ul&gt;
 &lt;li&gt;Earlier, we discussed that structs and enums group related data, while impl blocks and traits add associated and shared behavior to the data.&lt;/li&gt;
 &lt;li&gt;Usage of &lt;code&gt;Self&lt;/code&gt; vs &lt;code&gt;self&lt;/code&gt; keywords:
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Self&lt;/code&gt;: Refers to the type itself (the blueprint).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;self&lt;/code&gt;: Refers to the instance of the type (the actual data).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;💯 This can be any form of &lt;code&gt;self&lt;/code&gt;, &lt;code&gt;&amp;amp;self&lt;/code&gt;, &lt;code&gt;&amp;amp;mut self&lt;/code&gt;, &lt;code&gt;self: Box&amp;lt;Self&amp;gt;&lt;/code&gt;, &lt;code&gt;self: Pin&amp;lt;&amp;amp;mut Self&amp;gt;&lt;/code&gt;, etc.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Self&lt;/code&gt;: Refers to the type itself (the blueprint).&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;There are multiple ways to implement a behavior for a type. We discuss only about the &lt;code&gt;impl&lt;/code&gt; blocks with this article. The patterns involving traits are discussed under &lt;a href="https://learning-rust.github.io/docs/traits" &gt;Traits&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="inherent-impls"&gt;Inherent impls&lt;/h2&gt;
-&lt;p&gt;Implement associated functions, methods, and constants directly for a type.&lt;/p&gt;</description></item><item><title>Installation</title><link>https://learning-rust.github.io/docs/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/installation/</guid><description>&lt;h2 id="rustup"&gt;Rustup&lt;/h2&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;self&lt;/code&gt;: Refers to the instance of the type (the actual data).&lt;/p&gt;
+
+
+&lt;div class="alert alert-important"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M479.79-360q15.21 0 25.71-10.29t10.5-25.5q0-15.21-10.29-25.71t-25.5-10.5q-15.21 0-25.71 10.29t-10.5 25.5q0 15.21 10.29 25.71t25.5 10.5Zm25.71-130.35Q516-500.7 516-516v-192q0-15.3-10.29-25.65Q495.42-744 480.21-744t-25.71 10.35Q444-723.3 444-708v192q0 15.3 10.29 25.65Q464.58-480 479.79-480t25.71-10.35ZM240-240l-82.88 82.88Q140-140 118-149.41q-22-9.4-22-33.59v-609q0-29.7 21.15-50.85Q138.3-864 168-864h624q29.7 0 50.85 21.15Q864-821.7 864-792v480q0 29.7-21.15 50.85Q821.7-240 792-240H240Zm-30-72h582v-480H168v522l42-42Zm-42 0v-480 480Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Important
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;This can be any form of &lt;code&gt;self&lt;/code&gt;, &lt;code&gt;&amp;amp;self&lt;/code&gt;, &lt;code&gt;&amp;amp;mut self&lt;/code&gt;, &lt;code&gt;self: Box&amp;lt;Self&amp;gt;&lt;/code&gt;, &lt;code&gt;self: Pin&amp;lt;&amp;amp;mut Self&amp;gt;&lt;/code&gt;, etc.&lt;/p&gt;</description></item><item><title>Installation</title><link>https://learning-rust.github.io/docs/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/installation/</guid><description>&lt;h2 id="rustup"&gt;Rustup&lt;/h2&gt;
 &lt;p&gt;There are many ways to install Rust on your system. For the moment the official way to install Rust is using &lt;a href="https://rustup.rs/" target="_blank" &gt;Rustup&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://rust-lang.github.io/rustup/index.html" target="_blank" &gt;📖&lt;/a&gt; Rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between &lt;strong&gt;stable, beta, and nightly&lt;/strong&gt; compilers and keep them updated. It also makes cross-compiling simpler with binary builds of the standard library for common platforms.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://rust-lang.github.io/rustup/installation/index.html" target="_blank" &gt;📖&lt;/a&gt; Rustup installs &lt;code&gt;rustc&lt;/code&gt;, &lt;code&gt;cargo&lt;/code&gt;, &lt;code&gt;rustup&lt;/code&gt; and other standard tools to &lt;strong&gt;Cargo&amp;rsquo;s &lt;code&gt;bin&lt;/code&gt; directory&lt;/strong&gt;. On Unix it is located at &lt;code&gt;$HOME/.cargo/bin&lt;/code&gt; and on Windows at &lt;code&gt;%USERPROFILE%\.cargo\bin&lt;/code&gt;. This is the same directory that &lt;code&gt;cargo install&lt;/code&gt; will install Rust programs and Cargo plugins.&lt;/p&gt;</description></item><item><title>Lifetimes</title><link>https://learning-rust.github.io/docs/lifetimes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/lifetimes/</guid><description>&lt;p&gt;When we are dealing with references, we have to make sure that the referencing data stay alive until we stop using the references.&lt;/p&gt;
@@ -224,8 +399,24 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;li&gt;We are &lt;strong&gt;referencing&lt;/strong&gt; the value of &lt;code&gt;a&lt;/code&gt;, &lt;strong&gt;from another variable binding&lt;/strong&gt; &lt;code&gt;x&lt;/code&gt;.
 We have to make sure that &lt;strong&gt;&lt;code&gt;a&lt;/code&gt; lives until we stop using &lt;code&gt;x&lt;/code&gt;&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;🔎 &lt;strong&gt;Memory management&lt;/strong&gt; is a form of resource management applied to computer memory. Up until the mid-1990s, the majority of programming languages used &lt;strong&gt;Manual Memory Management&lt;/strong&gt; which &lt;strong&gt;requires the programmer to give manual instructions&lt;/strong&gt; to identify and deallocate unused objects/ garbage. Around 1959 John McCarthy invented &lt;strong&gt;Garbage collection&lt;/strong&gt;(GC), a form of &lt;strong&gt;Automatic Memory Management&lt;/strong&gt;(AMM). It determines what memory is no longer used and frees it automatically instead of relying on the programmer. However &lt;strong&gt;Objective-C and Swift&lt;/strong&gt; provide similar functionality through &lt;strong&gt;Automatic Reference Counting&lt;/strong&gt;(ARC).&lt;/p&gt;</description></item><item><title>Modules</title><link>https://learning-rust.github.io/docs/modules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/modules/</guid><description>&lt;h2 id="01-in-the-same-file"&gt;01. In the same file&lt;/h2&gt;
+
+
+&lt;div class="alert alert-search"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M384.03-336Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l214 214q11 11 11 25t-11 25q-11 11-25.5 11T740-170L526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Zm-.03-72q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Search
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;&lt;strong&gt;Memory management&lt;/strong&gt; is a form of resource management applied to computer memory. Up until the mid-1990s, the majority of programming languages used &lt;strong&gt;Manual Memory Management&lt;/strong&gt; which &lt;strong&gt;requires the programmer to give manual instructions&lt;/strong&gt; to identify and deallocate unused objects/ garbage. Around 1959 John McCarthy invented &lt;strong&gt;Garbage collection&lt;/strong&gt;(GC), a form of &lt;strong&gt;Automatic Memory Management&lt;/strong&gt;(AMM). It determines what memory is no longer used and frees it automatically instead of relying on the programmer. However &lt;strong&gt;Objective-C and Swift&lt;/strong&gt; provide similar functionality through &lt;strong&gt;Automatic Reference Counting&lt;/strong&gt;(ARC).&lt;/p&gt;</description></item><item><title>Modules</title><link>https://learning-rust.github.io/docs/modules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/modules/</guid><description>&lt;h2 id="01-in-the-same-file"&gt;01. In the same file&lt;/h2&gt;
 &lt;p&gt;Related code and data are grouped into a module and stored in the same file.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;greetings&lt;/span&gt;::&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt;
@@ -277,8 +468,24 @@ We have to make sure that &lt;strong&gt;&lt;code&gt;a&lt;/code&gt; lives until w
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="logical"&gt;Logical&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;! &amp;amp;&amp;amp; ||&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Option and Result</title><link>https://learning-rust.github.io/docs/option-and-result/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/option-and-result/</guid><description>&lt;h2 id="why-option-and-result"&gt;Why Option and Result?&lt;/h2&gt;
 &lt;p&gt;Many languages use &lt;strong&gt;&lt;code&gt;null&lt;/code&gt;\ &lt;code&gt;nil&lt;/code&gt;\ &lt;code&gt;undefined&lt;/code&gt; types&lt;/strong&gt; to represent empty outputs, and &lt;strong&gt;&lt;code&gt;Exceptions&lt;/code&gt;&lt;/strong&gt; to handle errors. Rust skips using both, especially to prevent issues like &lt;strong&gt;null pointer exceptions, sensitive data leakages through exceptions&lt;/strong&gt;, etc. Instead, Rust provides two special &lt;strong&gt;generic enums&lt;/strong&gt;;&lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;Result&lt;/code&gt; to deal with above cases.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;💭 In the previous sections, we have discussed about the basics of &lt;a href="https://learning-rust.github.io/docs/enums" &gt;enums&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/generics" &gt;generics&lt;/a&gt; and &lt;a href="https://learning-rust.github.io/docs/generics/#generalizing-enums" &gt;&lt;code&gt;Result&lt;/code&gt; &amp;amp; &lt;code&gt;Option&lt;/code&gt; types&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Overview</title><link>https://learning-rust.github.io/docs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/overview/</guid><description>&lt;h2 id="about-me"&gt;About me&lt;/h2&gt;
+
+
+&lt;div class="alert alert-recap"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="m687-273-78-160 95-95-79.77-79.77v-112.46H511.77L432-800l-79.77 79.77H239.77v112.46L160-528l79.77 79.77v112.46h112.46L432-256l95-95 160 78Zm104 104q-8 8-19 10.5t-22-3.5L541-264l-84 84q-10.64 11-24.82 11T407-180l-84.26-84H204q-15.3 0-25.65-10.35Q168-284.7 168-300v-118.74L84-503q-11-10.64-11-24.82T84-553l84-84.26V-756q0-15.3 10.35-25.65Q188.7-792 204-792h118.74L407-876q10.64-11 24.82-11T457-876l84.26 84H660q15.3 0 25.65 10.35Q696-771.3 696-756v118.74L780-553q11 10.64 11 24.82T780-503l-84 84 102 209q6 11 3.5 22T791-169ZM432-528Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Recap
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;In the previous sections, we have discussed about the basics of &lt;a href="https://learning-rust.github.io/docs/enums" &gt;enums&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/generics" &gt;generics&lt;/a&gt; and &lt;a href="https://learning-rust.github.io/docs/generics/#generalizing-enums" &gt;&lt;code&gt;Result&lt;/code&gt; &amp;amp; &lt;code&gt;Option&lt;/code&gt; types&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Overview</title><link>https://learning-rust.github.io/docs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/overview/</guid><description>&lt;h2 id="about-me"&gt;About me&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;🧑‍💻 I am an expat working in Singapore as a Go Backend and DevOps Engineer. Feel free to reach out if you find any mistakes or anything that needs to be changed, including spelling or grammar errors. Alternatively, you can create a pull request, open an issue, or &lt;a href="https://gist.github.com/dumindu/00a0be2d175ed5ff3bc3c17bbf1ca5b6" target="_blank" &gt;share your awesome ideas in this gist&lt;/a&gt;. Good luck with learning Rust!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -358,8 +565,24 @@ For above cases, we can use &lt;code&gt;panic!&lt;/code&gt; macro.&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// ⭐ instead using #[allow(unused_variables)], consider using &amp;#34;let _b = a;&amp;#34; in line 4. 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Also you can use &amp;#34;let _ =&amp;#34; to completely ignore return values
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;💭 In the previous sections, we have discussed memory management concepts like &lt;a href="https://learning-rust.github.io/docs/ownership" &gt;ownership&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/borrowing" &gt;borrowing&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/lifetimes" &gt;lifetimes&lt;/a&gt; and etc.&lt;/p&gt;</description></item><item><title>STD, Primitives and Preludes</title><link>https://learning-rust.github.io/docs/std-primitives-and-preludes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/std-primitives-and-preludes/</guid><description>&lt;p&gt;⭐️ In Rust, language elements are implemented by not only &lt;strong&gt;&lt;code&gt;std&lt;/code&gt; library&lt;/strong&gt; crate but also &lt;strong&gt;compiler&lt;/strong&gt; as well. Examples,&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="alert alert-recap"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="m687-273-78-160 95-95-79.77-79.77v-112.46H511.77L432-800l-79.77 79.77H239.77v112.46L160-528l79.77 79.77v112.46h112.46L432-256l95-95 160 78Zm104 104q-8 8-19 10.5t-22-3.5L541-264l-84 84q-10.64 11-24.82 11T407-180l-84.26-84H204q-15.3 0-25.65-10.35Q168-284.7 168-300v-118.74L84-503q-11-10.64-11-24.82T84-553l84-84.26V-756q0-15.3 10.35-25.65Q188.7-792 204-792h118.74L407-876q10.64-11 24.82-11T457-876l84.26 84H660q15.3 0 25.65 10.35Q696-771.3 696-756v118.74L780-553q11 10.64 11 24.82T780-503l-84 84 102 209q6 11 3.5 22T791-169ZM432-528Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Recap
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;In the previous sections, we have discussed memory management concepts like &lt;a href="https://learning-rust.github.io/docs/ownership" &gt;ownership&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/borrowing" &gt;borrowing&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/lifetimes" &gt;lifetimes&lt;/a&gt; and etc.&lt;/p&gt;</description></item><item><title>STD, Primitives and Preludes</title><link>https://learning-rust.github.io/docs/std-primitives-and-preludes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/std-primitives-and-preludes/</guid><description>&lt;p&gt;⭐️ In Rust, language elements are implemented by not only &lt;strong&gt;&lt;code&gt;std&lt;/code&gt; library&lt;/strong&gt; crate but also &lt;strong&gt;compiler&lt;/strong&gt; as well. Examples,&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="https://doc.rust-lang.org/std/#primitives" target="_blank" &gt;Primitives&lt;/a&gt;&lt;/strong&gt;: Defined by the compiler and methods are implemented by &lt;code&gt;std&lt;/code&gt; library directly on primitives.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="https://doc.rust-lang.org/std/#macros" target="_blank" &gt;Standard Macros&lt;/a&gt;&lt;/strong&gt;: Defined by both compiler and &lt;code&gt;std&lt;/code&gt;&lt;/li&gt;
@@ -389,8 +612,88 @@ For above cases, we can use &lt;code&gt;panic!&lt;/code&gt; macro.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;⭐️ In Rust, data (attributes) and behavior (associated functions and methods) are placed separately. Structs and Enums are used to group related data, and impls and traits are used to add associated and shared behavior to that data.&lt;/p&gt;</description></item><item><title>Traits</title><link>https://learning-rust.github.io/docs/traits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/traits/</guid><description>&lt;p&gt;A trait is a contract that defines a set of behaviors or properties that a type must implement. It can contain associated types, constants, function or method signatures, and overridable default implementations.&lt;/p&gt;
+
+
+&lt;div class="alert alert-important"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M479.79-360q15.21 0 25.71-10.29t10.5-25.5q0-15.21-10.29-25.71t-25.5-10.5q-15.21 0-25.71 10.29t-10.5 25.5q0 15.21 10.29 25.71t25.5 10.5Zm25.71-130.35Q516-500.7 516-516v-192q0-15.3-10.29-25.65Q495.42-744 480.21-744t-25.71 10.35Q444-723.3 444-708v192q0 15.3 10.29 25.65Q464.58-480 479.79-480t25.71-10.35ZM240-240l-82.88 82.88Q140-140 118-149.41q-22-9.4-22-33.59v-609q0-29.7 21.15-50.85Q138.3-864 168-864h624q29.7 0 50.85 21.15Q864-821.7 864-792v480q0 29.7-21.15 50.85Q821.7-240 792-240H240Zm-30-72h582v-480H168v522l42-42Zm-42 0v-480 480Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Important
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;ul&gt;
+&lt;li&gt;In Rust, data (attributes) and behavior (associated functions and methods) are placed separately. Structs and Enums are used to group related data, and impls and traits are used to add associated and shared behavior to that data.&lt;/li&gt;
+&lt;li&gt;In Rust, the term &amp;ldquo;instantiation&amp;rdquo; is used to describe the act of creating a concrete instance of a type (struct or enum).&lt;/li&gt;
+&lt;li&gt;In Rust, the term &amp;ldquo;field&amp;rdquo; is used to describe a named component in a C-like struct &amp;amp; struct-like enum variant, and the term &amp;ldquo;element&amp;rdquo; is used to describe an unnamed component in a tuple struct &amp;amp; tuple-like enum variant. The term &amp;ldquo;member&amp;rdquo; is used to describe both.&lt;/li&gt;
+&lt;li&gt;More complex examples can be found on &lt;a href="https://learning-rust.github.io/docs/impls-and-traits" &gt;Impls and Traits&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/lifetimes" &gt;Lifetimes&lt;/a&gt; and &lt;a href="https://learning-rust.github.io/docs/modules" &gt;Modules&lt;/a&gt; sections.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="c-like-structs"&gt;C-like Structs&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Similar to classes (without its methods) in OOP languages.&lt;/li&gt;
+&lt;li&gt;Can access fields using the &lt;code&gt;.&lt;/code&gt;/ dot notation and the field name.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="definition"&gt;Definition&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="nc"&gt;Color&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;: &lt;span class="kt"&gt;u8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;: &lt;span class="kt"&gt;u8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;: &lt;span class="kt"&gt;u8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="instantiation--accessing-fields"&gt;Instantiation &amp;amp; Accessing Fields&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="nc"&gt;Color&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;: &lt;span class="kt"&gt;u8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;: &lt;span class="kt"&gt;u8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;: &lt;span class="kt"&gt;u8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 1. Instantiation
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;white&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Color&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;: &lt;span class="mi"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;: &lt;span class="mi"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;: &lt;span class="mi"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 2. Instantiation without redundant field names, when using the same variable names
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Color&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 3. Instantiation + copy fields&amp;#39; values from another instance
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Color&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;: &lt;span class="mi"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;..&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 💡 Copy green and blue from black
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Color&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;: &lt;span class="mi"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;..&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 💡 Copy red and blue from black
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;mut&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Color&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;..&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 💡 Copy all fields&amp;#39; values from black
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;255&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;RGB(&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;)&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;white&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;white&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;white&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// RGB(255, 255, 255)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;RGB(&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;)&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// RGB(0, 0, 0)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;RGB(&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;)&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// RGB(255, 0, 0)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;RGB(&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;)&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// RGB(0, 255, 0)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;RGB(&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s"&gt;)&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;green&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// RGB(0, 0, 255)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// 4. Instantiation with default values
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#[derive(Default)]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="nc"&gt;Person&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;: &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;: &lt;span class="kt"&gt;f32&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Person&lt;/span&gt;::&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Instantiation with default values
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;assert_eq!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// String default value &amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;assert_eq!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// f32 default value 0.0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;💡 In Rust, the &lt;code&gt;#[derive()]&lt;/code&gt; attribute is used to automatically generate an implementation of certain traits for a custom data structure (struct and enum), instead of you writing them by hand. The &lt;a href="https://doc.rust-lang.org/std/default/trait.Default.html" target="_blank" &gt;&lt;code&gt;std::default::Default&lt;/code&gt;&lt;/a&gt; trait allows us to create a new instance of a type with the &lt;code&gt;Type::default()&lt;/code&gt; method.&lt;/p&gt;</description></item><item><title>Traits</title><link>https://learning-rust.github.io/docs/traits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/traits/</guid><description>&lt;p&gt;A trait is a contract that defines a set of behaviors or properties that a type must implement. It can contain associated types, constants, function or method signatures, and overridable default implementations.&lt;/p&gt;
 &lt;h2 id="definition"&gt;Definition&lt;/h2&gt;
 &lt;h3 id="with-no-associates"&gt;With No Associates&lt;/h3&gt;
 &lt;p&gt;💡 Mostly used to mark a type as having certain properties to allow in certain operations. Known as Marker Traits.&lt;/p&gt;
@@ -458,12 +761,42 @@ For above cases, we can use &lt;code&gt;panic!&lt;/code&gt; macro.&lt;/li&gt;
 &lt;li&gt;Types come after a &lt;code&gt;:&lt;/code&gt; (colon) sign.&lt;/li&gt;
 &lt;li&gt;The naming convention for the variable bindings is using the &lt;a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" &gt;&lt;code&gt;snake_case&lt;/code&gt;&lt;/a&gt;. But, for constants and statics, we should follow the &lt;a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" &gt;&lt;code&gt;SCREAMING_SNAKE_CASE&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;💭 In the following examples, we will use &lt;a href="https://learning-rust.github.io/docs/primitive-data-types" &gt;data types&lt;/a&gt; like &lt;code&gt;bool&lt;/code&gt;, &lt;code&gt;i32&lt;/code&gt;, &lt;code&gt;i64&lt;/code&gt; and &lt;code&gt;f64&lt;/code&gt;. Don&amp;rsquo;t worry about them for now; they&amp;rsquo;ll be discussed later.&lt;/p&gt;</description></item><item><title>Vectors</title><link>https://learning-rust.github.io/docs/vectors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/vectors/</guid><description>&lt;p&gt;If you remember, the array is a fixed-size list of elements, of the same data type. Even with mut, its element count cannot be changed. A vector is &lt;strong&gt;kind of a re-sizable array&lt;/strong&gt; but &lt;strong&gt;all elements must be in the same type&lt;/strong&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;💡 &lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;: capital “V” as &lt;a href="https://doc.rust-lang.org/std/vec/struct.Vec.html" target="_blank" &gt;it’s a struct&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;It’s a generic type, written as &lt;strong&gt;&lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/strong&gt;. T can have any type, ex. A vector of i32s is &lt;code&gt;Vec&amp;lt;i32&amp;gt;&lt;/code&gt;. Also, Vectors always allocate their data in a dynamically allocated heap.&lt;/p&gt;</description></item><item><title>Why Rust?</title><link>https://learning-rust.github.io/docs/why-rust/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/why-rust/</guid><description>&lt;h2 id="history-of-rust"&gt;History of Rust&lt;/h2&gt;
+
+
+&lt;div class="alert alert-recap"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="m687-273-78-160 95-95-79.77-79.77v-112.46H511.77L432-800l-79.77 79.77H239.77v112.46L160-528l79.77 79.77v112.46h112.46L432-256l95-95 160 78Zm104 104q-8 8-19 10.5t-22-3.5L541-264l-84 84q-10.64 11-24.82 11T407-180l-84.26-84H204q-15.3 0-25.65-10.35Q168-284.7 168-300v-118.74L84-503q-11-10.64-11-24.82T84-553l84-84.26V-756q0-15.3 10.35-25.65Q188.7-792 204-792h118.74L407-876q10.64-11 24.82-11T457-876l84.26 84H660q15.3 0 25.65 10.35Q696-771.3 696-756v118.74L780-553q11 10.64 11 24.82T780-503l-84 84 102 209q6 11 3.5 22T791-169ZM432-528Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Recap
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;In the following examples, we will use &lt;a href="https://learning-rust.github.io/docs/primitive-data-types" &gt;data types&lt;/a&gt; like &lt;code&gt;bool&lt;/code&gt;, &lt;code&gt;i32&lt;/code&gt;, &lt;code&gt;i64&lt;/code&gt; and &lt;code&gt;f64&lt;/code&gt;. Don&amp;rsquo;t worry about them for now; they&amp;rsquo;ll be discussed later.&lt;/p&gt;</description></item><item><title>Vectors</title><link>https://learning-rust.github.io/docs/vectors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/vectors/</guid><description>&lt;p&gt;If you remember, the array is a fixed-size list of elements, of the same data type. Even with mut, its element count cannot be changed. A vector is &lt;strong&gt;kind of a re-sizable array&lt;/strong&gt; but &lt;strong&gt;all elements must be in the same type&lt;/strong&gt;.&lt;/p&gt;
+
+
+&lt;div class="alert alert-tip"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M407.74-240Q378-240 357-261.15 336-282.3 336-312v-67q-57-37.3-88.5-95.65Q216-533 216-600q0-110.31 76.78-187.16 76.78-76.84 187-76.84T667-787.16q77 76.85 77 187.16 0 66.82-31.5 125.41T624-379v67q0 29.7-21.18 50.85Q581.65-240 551.91-240H407.74Zm.26-72h144v-86q0-9.29 4-17.64 4-8.36 12-12.92l17-10.93q41-25.51 64-68.69 23-43.18 23-91.82 0-79.68-56.23-135.84-56.22-56.16-136-56.16Q400-792 344-735.84 288-679.68 288-600q0 48.64 23 91.82 23 43.18 64 68.69l17 10.93q8 4.56 12 12.92 4 8.35 4 17.64v86ZM396-96q-15.3 0-25.65-10.29Q360-116.58 360-131.79t10.35-25.71Q380.7-168 396-168h168q15.3 0 25.65 10.29Q600-147.42 600-132.21t-10.35 25.71Q579.3-96 564-96H396Zm84-504Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Tip
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;&lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;: capital “V” as &lt;a href="https://doc.rust-lang.org/std/vec/struct.Vec.html" target="_blank" &gt;it’s a struct&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Why Rust?</title><link>https://learning-rust.github.io/docs/why-rust/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/why-rust/</guid><description>&lt;h2 id="history-of-rust"&gt;History of Rust&lt;/h2&gt;
 &lt;p&gt;Rust was initially designed and developed by former Mozilla employee &lt;strong&gt;&lt;a href="https://github.com/graydon" target="_blank" &gt;Graydon Hoare&lt;/a&gt;&lt;/strong&gt; as a personal project. Mozilla began sponsoring the project in 2009 and announced it in 2010. But the first stable release, Rust 1.0, was released on May 15, 2015.&lt;/p&gt;
 &lt;p&gt;Since Rust 1.0, major updates have been released as &lt;a href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/#rust-editions" &gt;&lt;code&gt;Editions&lt;/code&gt;&lt;/a&gt; approximately every three years: Rust 2015 (with the release of Rust 1.0) , Rust 2018, Rust 2021, and Rust 2024, all maintaining backward compatibility.&lt;/p&gt;</description></item><item><title>Workspaces</title><link>https://learning-rust.github.io/docs/workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/workspaces/</guid><description>&lt;p&gt;When the code base is getting larger, you might need to work with &lt;strong&gt;multiple crates on the same project&lt;/strong&gt;. Rust supports this via Workspaces. You can &lt;strong&gt;analyze (&lt;code&gt;cargo check&lt;/code&gt;), build, run tests or generate docs for all crates&lt;/strong&gt; at once by running &lt;code&gt;cargo&lt;/code&gt; commands from the project root.&lt;/p&gt;
 &lt;p&gt;⭐️ When working on multiple crates same time, there is a higher possibility of having shared dependencies on crates. To prevent downloading and compiling the same dependency multiple times, Rust uses a &lt;strong&gt;shared build directory&lt;/strong&gt; under the project root, while running &lt;code&gt;cargo build&lt;/code&gt; from the project root.&lt;/p&gt;</description></item></channel></rss>
