@@ -1,0 +1,32 @@
+header:
+  title: Contribution
+  description: Without them, we couldn't build this website
+
+items:
+  - icon: build/gohugo
+    title: GoHugo
+    description: The world’s fastest framework for building websites.
+    link:
+      label: Contribute
+      url: https://gohugo.io/
+
+  - icon: build/pagefind
+    title: Pagefind
+    description: Fully static search library that aims to perform well on large sites.
+    link:
+      label: Contribute
+      url: https://pagefind.app/
+
+  - icon: build/terminal
+    title: e25DX
+    description: Modern & modular technical documentation and blog setup.
+    link:
+      label: Contribute
+      url: https://github.com/dumindu/e25dx
+
+  - icon: build/web
+    title: Documentation
+    description: Help us to improve the documentation.
+    link:
+      label: Contribute
+      url: https://github.com/learning-rust/learning-rust.github.io
