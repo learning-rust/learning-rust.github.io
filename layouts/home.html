@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default `en-US` }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.Params.description | .RenderString }}">
+  <meta name="author" content="{{ site.Params.author.name }}">
+  <meta name="theme-color" content="{{ site.Params.project.themeColor.light }}" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="{{ site.Params.project.themeColor.dark }}" media="(prefers-color-scheme: dark)">
+  {{ with .Params.robots }}
+  <meta name="robots" content="{{ . }}">
+  {{ end }}
+
+  <title>{{ site.Title | .RenderString }} · {{ site.Params.description | .RenderString }}</title>
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  {{ $cssFiles := slice
+		(resources.Get "css/reset.css")
+		(resources.Get "css/theme.css")
+		(resources.Get "css/components/button.css")
+		(resources.Get "css/components/dropdown.css")
+		(resources.Get "css/components/badge.css")
+		(resources.Get "css/site/header.css")
+		(resources.Get "css/site/footer.css")
+		(resources.Get "css/site/layout-home.css")
+		(resources.Get "css/sections/hero.css")
+		(resources.Get "css/sections/card-grid.css")
+	}}
+
+	{{ if site.GetPage "/home/showcase" }}
+		{{ $cssFiles = $cssFiles | append
+			(resources.Get "css/components/chroma.css")
+			(resources.Get "css/components/code-window.css")
+			(resources.Get "css/components/accordion-vertical-tabs.css")
+			(resources.Get "css/sections/showcase.css")
+		}}
+	{{ end }}
+
+	{{ $css := $cssFiles | resources.Concat "assets/css/home.css" | minify | fingerprint }}
+	<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.integrity }}">
+
+	{{ with site.Params.enablePageFind }}
+	<link href="{{ "pagefind/pagefind-component-ui.css" | absURL }}" rel="stylesheet">
+	{{ end }}
+
+  {{ partial "favicons.html" . }}
+  {{ partial "analytics.html" . }}
+  {{ partial "og-x-seo.html" . }}
+</head>
+
+<body>
+	<div id="content-wrapper">
+		{{ partial "site/header.html" . }}
+
+		<main>
+			{{ partial "sections/hero.html" (index site.Data site.Language.Lang "home" "hero") }}
+			{{ with site.GetPage "/home/showcase" }}{{ partial "sections/showcase.html" . }}{{ end }}
+			{{ partial "sections/card-grid.html" (index site.Data site.Language.Lang "home" "card-grid") }}
+		</main>
+
+		{{ partial "site/footer.html" . }}
+	</div>
+
+	{{- $js := slice
+		(resources.Get "js/components/dropdown.js")
+		(resources.Get "js/site/color-preference.js")
+	| resources.Concat "assets/js/home.js" | minify | fingerprint }}
+	<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.integrity }}"></script>
+
+	{{ with site.Params.enablePageFind }}
+	<script src="{{ "pagefind/pagefind-component-ui.js" | absURL }}" type="module"></script>
+	{{ end }}
+</body>
+</html>
