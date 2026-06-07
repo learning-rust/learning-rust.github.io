@@ -201,8 +201,24 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;: &lt;span class="kt"&gt;u8&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;is_below_eighteen&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// true
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="if-else-if-else"&gt;&lt;code&gt;if&lt;/code&gt; &lt;code&gt;else if&lt;/code&gt; &lt;code&gt;else&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;i. A simple example,&lt;/p&gt;</description></item><item><title>Crates</title><link>https://learning-rust.github.io/docs/crates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/crates/</guid><description>&lt;p&gt;💭 Crates are a bit similar to the packages in some other languages. Crates compile individually. If the crate has child file modules, those files will get merged with the crate file and compile as a single unit.&lt;/p&gt;
-&lt;p&gt;💭 A crate can produce an executable/ a binary or a library. &lt;code&gt;src/main.rs&lt;/code&gt; is the crate root/ entry point for a binary crate and &lt;code&gt;src/lib.rs&lt;/code&gt; is the entry point for a library crate.&lt;/p&gt;</description></item><item><title>Custom Error Types</title><link>https://learning-rust.github.io/docs/custom-error-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/custom-error-types/</guid><description>&lt;p&gt;Rust allow us to create our own &lt;code&gt;Err&lt;/code&gt; types. We call them “&lt;em&gt;Custom Error Types&lt;/em&gt;”.&lt;/p&gt;
+&lt;p&gt;i. A simple example,&lt;/p&gt;</description></item><item><title>Crates</title><link>https://learning-rust.github.io/docs/crates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/crates/</guid><description>&lt;div class="alert alert-caution"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Caution
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;This needs a refresh!&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;💭 Crates are a bit similar to the packages in some other languages. Crates compile individually. If the crate has child file modules, those files will get merged with the crate file and compile as a single unit.&lt;/p&gt;</description></item><item><title>Custom Error Types</title><link>https://learning-rust.github.io/docs/custom-error-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/custom-error-types/</guid><description>&lt;p&gt;Rust allow us to create our own &lt;code&gt;Err&lt;/code&gt; types. We call them “&lt;em&gt;Custom Error Types&lt;/em&gt;”.&lt;/p&gt;
 &lt;h2 id="error-trait"&gt;Error trait&lt;/h2&gt;
 &lt;p&gt;As you know &lt;strong&gt;traits define the functionality a type must provide&lt;/strong&gt;. But we don’t always need to define new traits for common functionalities, because Rust &lt;strong&gt;standard library provides reusable traits&lt;/strong&gt; which can be implemented on our own types. While creating custom error types the &lt;a href="https://doc.rust-lang.org/std/error/trait.Error.html" target="_blank" &gt;&lt;code&gt;std::error::Error&lt;/code&gt; trait&lt;/a&gt; helps us to convert any type to an &lt;code&gt;Err&lt;/code&gt; type.&lt;/p&gt;</description></item><item><title>Enums</title><link>https://learning-rust.github.io/docs/enums/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/enums/</guid><description>&lt;ul&gt;
 &lt;li&gt;An enum is a single type that contains variants, which represent the possible values of the enum at any given time.&lt;/li&gt;
@@ -467,7 +483,7 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;This article is quite outdated!&lt;/p&gt;
+		&lt;p&gt;This needs a refresh!&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;When we are dealing with references, we have to make sure that the referencing data stay alive until we stop using the references.&lt;/p&gt;
 &lt;p&gt;Think,&lt;/p&gt;
@@ -475,7 +491,24 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;li&gt;We have a variable binding, &lt;code&gt;a&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;We are referencing the value of &lt;code&gt;a&lt;/code&gt;, from another variable binding &lt;code&gt;x&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;We have to make sure that &lt;code&gt;a&lt;/code&gt; lives until we stop using &lt;code&gt;x&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Modules</title><link>https://learning-rust.github.io/docs/modules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/modules/</guid><description>&lt;h2 id="01-in-the-same-file"&gt;01. In the same file&lt;/h2&gt;
+&lt;p&gt;We have to make sure that &lt;code&gt;a&lt;/code&gt; lives until we stop using &lt;code&gt;x&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Modules</title><link>https://learning-rust.github.io/docs/modules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/modules/</guid><description>&lt;div class="alert alert-caution"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Caution
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;This needs a refresh!&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="01-in-the-same-file"&gt;01. In the same file&lt;/h2&gt;
 &lt;p&gt;Related code and data are grouped into a module and stored in the same file.&lt;/p&gt;
 
 
@@ -489,21 +522,7 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;pub&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// ⭐️ So function has to be public to access from outside
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Hello, world!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Modules can also be nested.&lt;/p&gt;
-
-
-
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phrases&lt;/span&gt;::&lt;span class="n"&gt;greetings&lt;/span&gt;::&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;mod&lt;/span&gt; &lt;span class="nn"&gt;phrases&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;pub&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;mod&lt;/span&gt; &lt;span class="nn"&gt;greetings&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;pub&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Hello, world!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Private functions can be called from the same module or from a child module.&lt;/p&gt;</description></item><item><title>Operators</title><link>https://learning-rust.github.io/docs/operators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/operators/</guid><description>&lt;h2 id="arithmetic"&gt;Arithmetic&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Modules can also be nested.&lt;/p&gt;</description></item><item><title>Operators</title><link>https://learning-rust.github.io/docs/operators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/operators/</guid><description>&lt;h2 id="arithmetic"&gt;Arithmetic&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;+ - * / %&lt;/code&gt;&lt;/p&gt;
 
 
@@ -615,62 +634,47 @@ For above cases, we can use &lt;code&gt;panic!&lt;/code&gt; macro.&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// ⭐️ no &amp;#34;x&amp;#34;, only single quotes
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Because of Unicode support, char is not a single byte, but four(32 bits).&lt;/p&gt;
 &lt;h2 id="i8-i16-i32-i64-i128"&gt;i8, i16, i32, i64, i128&lt;/h2&gt;
-&lt;p&gt;8, 16, 32, 64 and 128 bit fixed sized signed(+/-) integer types&lt;/p&gt;</description></item><item><title>Smart Compiler</title><link>https://learning-rust.github.io/docs/smart-compiler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/smart-compiler/</guid><description>&lt;h2 id="why-compiler"&gt;Why Compiler?&lt;/h2&gt;
-&lt;p&gt;The Rust compiler does the most significant job to prevent errors in Rust programs. It &lt;strong&gt;analyzes the code at compile-time&lt;/strong&gt; and issues warnings, if the code does not follow memory management rules or lifetime annotations correctly.&lt;/p&gt;
-&lt;p&gt;For example,&lt;/p&gt;
-
-
-
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#[allow(unused_variables)]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;//💡 A lint attribute used to suppress the warning; unused variable: `b`
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;vec!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;{:?}&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// ------ Compile-time error ------
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;E0382&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;: &lt;span class="nc"&gt;use&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;: &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;-&amp;gt; &lt;span class="nc"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rs&lt;/span&gt;:&lt;span class="mi"&gt;6&lt;/span&gt;:&lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;here&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;{:?}&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;used&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;here&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;after&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;move&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;note&lt;/span&gt;: &lt;span class="nc"&gt;move&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;occurs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;because&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;has&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt; &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;::&lt;span class="n"&gt;vec&lt;/span&gt;::&lt;span class="nb"&gt;Vec&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;i32&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;which&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;does&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;implement&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="nb"&gt;Copy&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;trait&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;error&lt;/span&gt;: &lt;span class="nc"&gt;aborting&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;due&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;previous&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;For&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;more&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;information&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;about&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kr"&gt;try&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;rustc&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;explain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;E0382&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// ⭐ instead using #[allow(unused_variables)], consider using &amp;#34;let _b = a;&amp;#34; in line 4. 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Also you can use &amp;#34;let _ =&amp;#34; to completely ignore return values
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class="alert alert-recap"&gt;
+&lt;p&gt;8, 16, 32, 64 and 128 bit fixed sized signed(+/-) integer types&lt;/p&gt;</description></item><item><title>Smart Compiler</title><link>https://learning-rust.github.io/docs/smart-compiler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/smart-compiler/</guid><description>&lt;div class="alert alert-caution"&gt;
 	&lt;div class="alert-header"&gt;
 		
 		
 
-	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="m687-273-78-160 95-95-79.77-79.77v-112.46H511.77L432-800l-79.77 79.77H239.77v112.46L160-528l79.77 79.77v112.46h112.46L432-256l95-95 160 78Zm104 104q-8 8-19 10.5t-22-3.5L541-264l-84 84q-10.64 11-24.82 11T407-180l-84.26-84H204q-15.3 0-25.65-10.35Q168-284.7 168-300v-118.74L84-503q-11-10.64-11-24.82T84-553l84-84.26V-756q0-15.3 10.35-25.65Q188.7-792 204-792h118.74L407-876q10.64-11 24.82-11T457-876l84.26 84H660q15.3 0 25.65 10.35Q696-771.3 696-756v118.74L780-553q11 10.64 11 24.82T780-503l-84 84 102 209q6 11 3.5 22T791-169ZM432-528Z"/&gt;&lt;/svg&gt;
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
 
 
 		&lt;span&gt;
 		
-			Recap
+			Caution
 		
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;In the previous sections, we have discussed memory management concepts like &lt;a href="https://learning-rust.github.io/docs/ownership" &gt;ownership&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/borrowing" &gt;borrowing&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/lifetimes" &gt;lifetimes&lt;/a&gt; and etc.&lt;/p&gt;</description></item><item><title>STD, Primitives and Preludes</title><link>https://learning-rust.github.io/docs/std-primitives-and-preludes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/std-primitives-and-preludes/</guid><description>&lt;p&gt;⭐️ In Rust, language elements are implemented by not only &lt;strong&gt;&lt;code&gt;std&lt;/code&gt; library&lt;/strong&gt; crate but also &lt;strong&gt;compiler&lt;/strong&gt; as well. Examples,&lt;/p&gt;
+		&lt;p&gt;This needs a refresh!&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="why-compiler"&gt;Why Compiler?&lt;/h2&gt;
+&lt;p&gt;The Rust compiler does the most significant job to prevent errors in Rust programs. It &lt;strong&gt;analyzes the code at compile-time&lt;/strong&gt; and issues warnings, if the code does not follow memory management rules or lifetime annotations correctly.&lt;/p&gt;</description></item><item><title>STD, Primitives and Preludes</title><link>https://learning-rust.github.io/docs/std-primitives-and-preludes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/std-primitives-and-preludes/</guid><description>&lt;div class="alert alert-caution"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Caution
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;This needs a refresh!&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;⭐️ In Rust, language elements are implemented by not only &lt;strong&gt;&lt;code&gt;std&lt;/code&gt; library&lt;/strong&gt; crate but also &lt;strong&gt;compiler&lt;/strong&gt; as well. Examples,&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="https://doc.rust-lang.org/std/#primitives" target="_blank" &gt;Primitives&lt;/a&gt;&lt;/strong&gt;: Defined by the compiler and methods are implemented by &lt;code&gt;std&lt;/code&gt; library directly on primitives.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="https://doc.rust-lang.org/std/#macros" target="_blank" &gt;Standard Macros&lt;/a&gt;&lt;/strong&gt;: Defined by both compiler and &lt;code&gt;std&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The &lt;strong&gt;&lt;code&gt;std&lt;/code&gt;&lt;/strong&gt; library has been divided into &lt;strong&gt;&lt;a href="https://doc.rust-lang.org/std/#modules" target="_blank" &gt;modules&lt;/a&gt;&lt;/strong&gt;, according to the main areas each covered.&lt;/p&gt;
-&lt;p&gt;⭐️ While primitives are implemented by the &lt;strong&gt;compiler&lt;/strong&gt;, the standard library implements the &lt;strong&gt;most useful methods&lt;/strong&gt; directly on the primitive types. But some &lt;strong&gt;rarely useful language elements&lt;/strong&gt; of some primitives are stored on relevant &lt;strong&gt;&lt;code&gt;std&lt;/code&gt; modules&lt;/strong&gt;. This is why you can see &lt;code&gt;char&lt;/code&gt;, &lt;code&gt;str&lt;/code&gt; and integer types on both &lt;a href="https://doc.rust-lang.org/std/#primitives" target="_blank" &gt;primitives&lt;/a&gt; and &lt;a href="https://doc.rust-lang.org/std/#modules" target="_blank" &gt;&lt;code&gt;std&lt;/code&gt; modules&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Structs</title><link>https://learning-rust.github.io/docs/structs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/structs/</guid><description>&lt;ul&gt;
+&lt;p&gt;The &lt;strong&gt;&lt;code&gt;std&lt;/code&gt;&lt;/strong&gt; library has been divided into &lt;strong&gt;&lt;a href="https://doc.rust-lang.org/std/#modules" target="_blank" &gt;modules&lt;/a&gt;&lt;/strong&gt;, according to the main areas each covered.&lt;/p&gt;</description></item><item><title>Structs</title><link>https://learning-rust.github.io/docs/structs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/structs/</guid><description>&lt;ul&gt;
 &lt;li&gt;Used to &lt;strong&gt;encapsulate related properties into one unified data type&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;By convention, the name should follow &lt;a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank" &gt;&lt;code&gt;PascalCase&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;3 variants,
@@ -833,45 +837,26 @@ For above cases, we can use &lt;code&gt;panic!&lt;/code&gt; macro.&lt;/li&gt;
 &lt;li&gt;If the &lt;code&gt;Option&lt;/code&gt; type has &lt;strong&gt;&lt;code&gt;None&lt;/code&gt;&lt;/strong&gt; value or the &lt;code&gt;Result&lt;/code&gt; type has &lt;strong&gt;&lt;code&gt;Err&lt;/code&gt;&lt;/strong&gt; value, &lt;strong&gt;program panics&lt;/strong&gt;; If &lt;code&gt;Err&lt;/code&gt;, panics with the error message.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The functionality is bit similar to the following codes, which are using &lt;code&gt;match&lt;/code&gt; instead &lt;code&gt;unwrap()&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Example with &lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;match&lt;/code&gt;, before using &lt;code&gt;unwrap()&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Use</title><link>https://learning-rust.github.io/docs/use/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/use/</guid><description>&lt;p&gt;Let&amp;rsquo;s see the main usages of the &lt;code&gt;use&lt;/code&gt; keyword.&lt;/p&gt;
+&lt;p&gt;Example with &lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;match&lt;/code&gt;, before using &lt;code&gt;unwrap()&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Use</title><link>https://learning-rust.github.io/docs/use/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/use/</guid><description>&lt;div class="alert alert-caution"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Caution
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;This needs a refresh!&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Let&amp;rsquo;s see the main usages of the &lt;code&gt;use&lt;/code&gt; keyword.&lt;/p&gt;
 &lt;h2 id="01-bind-a-full-path-to-a-new-name"&gt;01. Bind a full path to a new name&lt;/h2&gt;
-&lt;p&gt;Mainly &lt;code&gt;use&lt;/code&gt; keyword is used to bind a full path of an element to a new name. So the user doesn’t want to repeat the full path each time.&lt;/p&gt;
-
-
-
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// -- Initial code without the `use` keyword --
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;mod&lt;/span&gt; &lt;span class="nn"&gt;phrases&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;pub&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;mod&lt;/span&gt; &lt;span class="nn"&gt;greetings&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;pub&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Hello, world!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phrases&lt;/span&gt;::&lt;span class="n"&gt;greetings&lt;/span&gt;::&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Using full path
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// -- Usage of the `use` keyword --
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// 01. Create an alias for module
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;use&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phrases&lt;/span&gt;::&lt;span class="n"&gt;greetings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;greetings&lt;/span&gt;::&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// 02. Create an alias for module elements
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;use&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phrases&lt;/span&gt;::&lt;span class="n"&gt;greetings&lt;/span&gt;::&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// 03. Customize names with the `as` keyword
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;use&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phrases&lt;/span&gt;::&lt;span class="n"&gt;greetings&lt;/span&gt;::&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;greet&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;greet&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="02-import-elements-to-scope"&gt;02. Import elements to scope&lt;/h2&gt;
-&lt;p&gt;Another common usage of &lt;code&gt;use&lt;/code&gt; is importing elements to scope. Remember that, this is also a bit similar to creating an alias and using it instead of using the full path.&lt;/p&gt;</description></item><item><title>Variable bindings, Constants &amp; Statics</title><link>https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/</guid><description>&lt;ul&gt;
+&lt;p&gt;Mainly &lt;code&gt;use&lt;/code&gt; keyword is used to bind a full path of an element to a new name. So the user doesn’t want to repeat the full path each time.&lt;/p&gt;</description></item><item><title>Variable bindings, Constants &amp; Statics</title><link>https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/</guid><description>&lt;ul&gt;
 &lt;li&gt;Rust is a statically typed language; it checks data types at compile-time. But it doesn’t require you to actually type data types when declaring variable bindings. In that case, the compiler checks the usage and sets a better data type for it.&lt;/li&gt;
 &lt;li&gt;⭐️ For &lt;strong&gt;constants and statics, we must annotate the data type&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;Types come after a &lt;code&gt;:&lt;/code&gt; (colon) sign.&lt;/li&gt;
@@ -972,5 +957,21 @@ For above cases, we can use &lt;code&gt;panic!&lt;/code&gt; macro.&lt;/li&gt;
 	&lt;div class="alert-body"&gt;
 		&lt;p&gt;We&amp;rsquo;ll discuss this in the &lt;a href="https://learning-rust.github.io/docs/vectors/#length-and-capacity" &gt;Length and Capacity&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Why Rust?</title><link>https://learning-rust.github.io/docs/why-rust/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/why-rust/</guid><description>&lt;h2 id="history-of-rust"&gt;History of Rust&lt;/h2&gt;
 &lt;p&gt;Rust was initially designed and developed by former Mozilla employee &lt;strong&gt;&lt;a href="https://github.com/graydon" target="_blank" &gt;Graydon Hoare&lt;/a&gt;&lt;/strong&gt; as a personal project. Mozilla began sponsoring the project in 2009 and announced it in 2010. But the first stable release, Rust 1.0, was released on May 15, 2015.&lt;/p&gt;
-&lt;p&gt;Since Rust 1.0, major updates have been released as &lt;a href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/#rust-editions" &gt;&lt;code&gt;Editions&lt;/code&gt;&lt;/a&gt; approximately every three years: Rust 2015 (with the release of Rust 1.0) , Rust 2018, Rust 2021, and Rust 2024, all maintaining backward compatibility.&lt;/p&gt;</description></item><item><title>Workspaces</title><link>https://learning-rust.github.io/docs/workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/workspaces/</guid><description>&lt;p&gt;When the code base is getting larger, you might need to work with &lt;strong&gt;multiple crates on the same project&lt;/strong&gt;. Rust supports this via Workspaces. You can &lt;strong&gt;analyze (&lt;code&gt;cargo check&lt;/code&gt;), build, run tests or generate docs for all crates&lt;/strong&gt; at once by running &lt;code&gt;cargo&lt;/code&gt; commands from the project root.&lt;/p&gt;
-&lt;p&gt;⭐️ When working on multiple crates same time, there is a higher possibility of having shared dependencies on crates. To prevent downloading and compiling the same dependency multiple times, Rust uses a &lt;strong&gt;shared build directory&lt;/strong&gt; under the project root, while running &lt;code&gt;cargo build&lt;/code&gt; from the project root.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Since Rust 1.0, major updates have been released as &lt;a href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/#rust-editions" &gt;&lt;code&gt;Editions&lt;/code&gt;&lt;/a&gt; approximately every three years: Rust 2015 (with the release of Rust 1.0) , Rust 2018, Rust 2021, and Rust 2024, all maintaining backward compatibility.&lt;/p&gt;</description></item><item><title>Workspaces</title><link>https://learning-rust.github.io/docs/workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/workspaces/</guid><description>&lt;div class="alert alert-caution"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Caution
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;This needs a refresh!&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;When the code base is getting larger, you might need to work with &lt;strong&gt;multiple crates on the same project&lt;/strong&gt;. Rust supports this via Workspaces. You can &lt;strong&gt;analyze (&lt;code&gt;cargo check&lt;/code&gt;), build, run tests or generate docs for all crates&lt;/strong&gt; at once by running &lt;code&gt;cargo&lt;/code&gt; commands from the project root.&lt;/p&gt;</description></item></channel></rss>
