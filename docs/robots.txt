@@ -18,6 +18,7 @@ Disallow: /docs/error-and-none-propagation/
 Disallow: /docs/functions/
 Disallow: /docs/generics/
 Disallow: /docs/hello-world/
+Disallow: /home/
 Disallow: /docs/impls/
 Disallow: /docs/installation/
 Disallow: /
