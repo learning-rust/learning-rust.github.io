@@ -501,38 +501,14 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;li&gt;However, most local lifetimes are implicitly figured out by the compiler through a mechanism called lifetime elision.&lt;/li&gt;
 &lt;li&gt;The primary purpose of lifetimes is to prevent dangling references, ensuring data is never dropped while a pointer still looks at it.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Annotating a lifetime does not extend the lifespan of an actual value. It is simply a contract that tells the compiler, &amp;ldquo;The lifespan of this reference is guaranteed to be tied to the lifespan of this data.&amp;rdquo;&lt;/p&gt;</description></item><item><title>Modules</title><link>https://learning-rust.github.io/docs/modules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/modules/</guid><description>&lt;div class="alert alert-caution"&gt;
-	&lt;div class="alert-header"&gt;
-		
-		
-
-	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
-
-
-		&lt;span&gt;
-		
-			Caution
-		
-		&lt;/span&gt;
-	&lt;/div&gt;
-	&lt;div class="alert-body"&gt;
-		&lt;p&gt;This needs a refresh!&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="01-in-the-same-file"&gt;01. In the same file&lt;/h2&gt;
-&lt;p&gt;Related code and data are grouped into a module and stored in the same file.&lt;/p&gt;
-
-
-
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;greetings&lt;/span&gt;::&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;mod&lt;/span&gt; &lt;span class="nn"&gt;greetings&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// ⭐️ By default, everything inside a module is private
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;pub&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// ⭐️ So function has to be public to access from outside
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Hello, world!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Modules can also be nested.&lt;/p&gt;</description></item><item><title>Operators</title><link>https://learning-rust.github.io/docs/operators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/operators/</guid><description>&lt;h2 id="arithmetic"&gt;Arithmetic&lt;/h2&gt;
+&lt;p&gt;Annotating a lifetime does not extend the lifespan of an actual value. It is simply a contract that tells the compiler, &amp;ldquo;The lifespan of this reference is guaranteed to be tied to the lifespan of this data.&amp;rdquo;&lt;/p&gt;</description></item><item><title>Modules</title><link>https://learning-rust.github.io/docs/modules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/modules/</guid><description>&lt;h2 id="rust-module-tree"&gt;Rust Module Tree&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The Rust module tree is the hierarchical representation of all modules in a crate.&lt;/li&gt;
+&lt;li&gt;It defines the namespace structure and governs how items are referenced via paths at compile time.&lt;/li&gt;
+&lt;li&gt;Unlike some languages like Go and JavaScript, Rust&amp;rsquo;s module tree is not purely based on the file system.
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The root of the module tree begins with either &lt;code&gt;main.rs&lt;/code&gt; (in a binary crate) or &lt;code&gt;lib.rs&lt;/code&gt; (in a library crate).&lt;/p&gt;</description></item><item><title>Operators</title><link>https://learning-rust.github.io/docs/operators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/operators/</guid><description>&lt;h2 id="arithmetic"&gt;Arithmetic&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;+ - * / %&lt;/code&gt;&lt;/p&gt;
 
 
