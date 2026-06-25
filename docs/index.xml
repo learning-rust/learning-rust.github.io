@@ -943,21 +943,11 @@ For above cases, we can use &lt;code&gt;panic!&lt;/code&gt; macro.&lt;/li&gt;
 	&lt;div class="alert-body"&gt;
 		&lt;p&gt;We&amp;rsquo;ll discuss this in the &lt;a href="https://learning-rust.github.io/docs/vectors/#length-and-capacity" &gt;Length and Capacity&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Why Rust?</title><link>https://learning-rust.github.io/docs/why-rust/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/why-rust/</guid><description>&lt;h2 id="history-of-rust"&gt;History of Rust&lt;/h2&gt;
 &lt;p&gt;Rust was initially designed and developed by former Mozilla employee &lt;strong&gt;&lt;a href="https://github.com/graydon" target="_blank" &gt;Graydon Hoare&lt;/a&gt;&lt;/strong&gt; as a personal project. Mozilla began sponsoring the project in 2009 and announced it in 2010. But the first stable release, Rust 1.0, was released on May 15, 2015.&lt;/p&gt;
-&lt;p&gt;Since Rust 1.0, major updates have been released as &lt;a href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/#rust-editions" &gt;&lt;code&gt;Editions&lt;/code&gt;&lt;/a&gt; approximately every three years: Rust 2015 (with the release of Rust 1.0) , Rust 2018, Rust 2021, and Rust 2024, all maintaining backward compatibility.&lt;/p&gt;</description></item><item><title>Workspaces</title><link>https://learning-rust.github.io/docs/workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/workspaces/</guid><description>&lt;div class="alert alert-caution"&gt;
-	&lt;div class="alert-header"&gt;
-		
-		
-
-	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
-
-
-		&lt;span&gt;
-		
-			Caution
-		
-		&lt;/span&gt;
-	&lt;/div&gt;
-	&lt;div class="alert-body"&gt;
-		&lt;p&gt;This needs a refresh!&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;When the code base is getting larger, you might need to work with &lt;strong&gt;multiple crates on the same project&lt;/strong&gt;. Rust supports this via Workspaces. You can &lt;strong&gt;analyze (&lt;code&gt;cargo check&lt;/code&gt;), build, run tests or generate docs for all crates&lt;/strong&gt; at once by running &lt;code&gt;cargo&lt;/code&gt; commands from the project root.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Since Rust 1.0, major updates have been released as &lt;a href="https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/#rust-editions" &gt;&lt;code&gt;Editions&lt;/code&gt;&lt;/a&gt; approximately every three years: Rust 2015 (with the release of Rust 1.0) , Rust 2018, Rust 2021, and Rust 2024, all maintaining backward compatibility.&lt;/p&gt;</description></item><item><title>Workspaces</title><link>https://learning-rust.github.io/docs/workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/workspaces/</guid><description>&lt;h2 id="rust-workspaces"&gt;Rust Workspaces&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rust workspaces provide a convenient way to manage multiple related crates together as a single project or monorepo.&lt;/li&gt;
+&lt;li&gt;A Rust workspace uses a shared &lt;code&gt;Cargo.lock&lt;/code&gt; file and a common &lt;code&gt;target&lt;/code&gt; directory to efficiently build and manage shared dependencies, reducing build times.&lt;/li&gt;
+&lt;li&gt;Cargo commands such as &lt;code&gt;cargo test&lt;/code&gt;, &lt;code&gt;cargo build&lt;/code&gt;, &lt;code&gt;cargo check&lt;/code&gt;, &lt;code&gt;cargo fmt&lt;/code&gt;, &lt;code&gt;cargo clippy&lt;/code&gt;, and &lt;code&gt;cargo clean&lt;/code&gt; can be run once from the workspace root to apply to all workspace members.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="simple"&gt;Simple&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s build a sample Rust workspace with two simple crates.&lt;/p&gt;</description></item></channel></rss>
