@@ -33,9 +33,9 @@
 - title: Let's Get It Started
   pages:
     - title: Modules
+    - title: Use
     - title: Crates
     - title: Workspaces
-    - title: Use
     - title: STD, Primitives and Preludes
 
 - title: Error Handling
