@@ -823,26 +823,21 @@ For above cases, we can use &lt;code&gt;panic!&lt;/code&gt; macro.&lt;/li&gt;
 &lt;li&gt;If the &lt;code&gt;Option&lt;/code&gt; type has &lt;strong&gt;&lt;code&gt;None&lt;/code&gt;&lt;/strong&gt; value or the &lt;code&gt;Result&lt;/code&gt; type has &lt;strong&gt;&lt;code&gt;Err&lt;/code&gt;&lt;/strong&gt; value, &lt;strong&gt;program panics&lt;/strong&gt;; If &lt;code&gt;Err&lt;/code&gt;, panics with the error message.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The functionality is bit similar to the following codes, which are using &lt;code&gt;match&lt;/code&gt; instead &lt;code&gt;unwrap()&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Example with &lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;match&lt;/code&gt;, before using &lt;code&gt;unwrap()&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Use</title><link>https://learning-rust.github.io/docs/use/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/use/</guid><description>&lt;div class="alert alert-caution"&gt;
-	&lt;div class="alert-header"&gt;
-		
-		
-
-	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
-
-
-		&lt;span&gt;
-		
-			Caution
-		
-		&lt;/span&gt;
-	&lt;/div&gt;
-	&lt;div class="alert-body"&gt;
-		&lt;p&gt;This needs a refresh!&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Let&amp;rsquo;s see the main usages of the &lt;code&gt;use&lt;/code&gt; keyword.&lt;/p&gt;
-&lt;h2 id="01-bind-a-full-path-to-a-new-name"&gt;01. Bind a full path to a new name&lt;/h2&gt;
-&lt;p&gt;Mainly &lt;code&gt;use&lt;/code&gt; keyword is used to bind a full path of an element to a new name. So the user doesn’t want to repeat the full path each time.&lt;/p&gt;</description></item><item><title>Variable bindings, Constants &amp; Statics</title><link>https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/</guid><description>&lt;ul&gt;
+&lt;p&gt;Example with &lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;match&lt;/code&gt;, before using &lt;code&gt;unwrap()&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Use</title><link>https://learning-rust.github.io/docs/use/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/use/</guid><description>&lt;ul&gt;
+&lt;li&gt;A &lt;code&gt;use&lt;/code&gt; statement is used to bring items (types, functions, traits, modules, etc.) into the current scope.
+&lt;ul&gt;
+&lt;li&gt;It doesn&amp;rsquo;t import anything; instead, it creates a local name (an alias) in the current scope.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;This allows us:
+&lt;ul&gt;
+&lt;li&gt;to refer to items by shorter names instead of their full paths.&lt;/li&gt;
+&lt;li&gt;to re-export items (by publicly exposing items from another module or crate using &lt;code&gt;pub use&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="path-prefixes"&gt;Path Prefixes&lt;/h2&gt;
+&lt;p&gt;A &lt;code&gt;use&lt;/code&gt; statement can start from:&lt;/p&gt;</description></item><item><title>Variable bindings, Constants &amp; Statics</title><link>https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/variable-bindings-constants-and-statics/</guid><description>&lt;ul&gt;
 &lt;li&gt;Rust is a statically typed language; it checks data types at compile-time. But it doesn’t require you to actually type data types when declaring variable bindings. In that case, the compiler checks the usage and sets a better data type for it.&lt;/li&gt;
 &lt;li&gt;⭐️ For &lt;strong&gt;constants and statics, we must annotate the data type&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;Types come after a &lt;code&gt;:&lt;/code&gt; (colon) sign.&lt;/li&gt;
