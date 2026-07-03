@@ -10,7 +10,7 @@ Disallow: /docs/cargo-crates-and-basic-project-structure/
 Disallow: /docs/combinators/
 Disallow: /docs/comments-and-documenting-the-code/
 Disallow: /docs/control-flows/
-Disallow: /docs/crates/
+Disallow: /docs/crates-and-packages/
 Disallow: /docs/custom-error-types/
 Disallow: /docs/
 Disallow: /docs/enums/

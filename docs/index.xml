@@ -201,24 +201,23 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;: &lt;span class="kt"&gt;u8&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;is_below_eighteen&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// true
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="if-else-if-else"&gt;&lt;code&gt;if&lt;/code&gt; &lt;code&gt;else if&lt;/code&gt; &lt;code&gt;else&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;i. A simple example,&lt;/p&gt;</description></item><item><title>Crates</title><link>https://learning-rust.github.io/docs/crates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/crates/</guid><description>&lt;div class="alert alert-caution"&gt;
-	&lt;div class="alert-header"&gt;
-		
-		
-
-	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
-
-
-		&lt;span&gt;
-		
-			Caution
-		
-		&lt;/span&gt;
-	&lt;/div&gt;
-	&lt;div class="alert-body"&gt;
-		&lt;p&gt;This needs a refresh!&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;💭 Crates are a bit similar to the packages in some other languages. Crates compile individually. If the crate has child file modules, those files will get merged with the crate file and compile as a single unit.&lt;/p&gt;</description></item><item><title>Custom Error Types</title><link>https://learning-rust.github.io/docs/custom-error-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/custom-error-types/</guid><description>&lt;p&gt;Rust allow us to create our own &lt;code&gt;Err&lt;/code&gt; types. We call them “&lt;em&gt;Custom Error Types&lt;/em&gt;”.&lt;/p&gt;
+&lt;p&gt;i. A simple example,&lt;/p&gt;</description></item><item><title>Crates and Packages</title><link>https://learning-rust.github.io/docs/crates-and-packages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/crates-and-packages/</guid><description>&lt;h2 id="crate"&gt;Crate&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A crate is the smallest unit of compilation in Rust.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A crate compiles as a single unit. If it contains modules in separate files, the compiler builds an isolated module tree starting from the crate root before compilation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Each crate maintains its own module tree rooted at the crate root:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Binary crates: &lt;code&gt;src/main.rs&lt;/code&gt; or a &lt;code&gt;.rs&lt;/code&gt; file in the &lt;code&gt;src/bin/&lt;/code&gt; directory&lt;/li&gt;
+&lt;li&gt;Library crates: Usually &lt;code&gt;src/lib.rs&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Main crate types are,&lt;/p&gt;</description></item><item><title>Custom Error Types</title><link>https://learning-rust.github.io/docs/custom-error-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/custom-error-types/</guid><description>&lt;p&gt;Rust allow us to create our own &lt;code&gt;Err&lt;/code&gt; types. We call them “&lt;em&gt;Custom Error Types&lt;/em&gt;”.&lt;/p&gt;
 &lt;h2 id="error-trait"&gt;Error trait&lt;/h2&gt;
 &lt;p&gt;As you know &lt;strong&gt;traits define the functionality a type must provide&lt;/strong&gt;. But we don’t always need to define new traits for common functionalities, because Rust &lt;strong&gt;standard library provides reusable traits&lt;/strong&gt; which can be implemented on our own types. While creating custom error types the &lt;a href="https://doc.rust-lang.org/std/error/trait.Error.html" target="_blank" &gt;&lt;code&gt;std::error::Error&lt;/code&gt; trait&lt;/a&gt; helps us to convert any type to an &lt;code&gt;Err&lt;/code&gt; type.&lt;/p&gt;</description></item><item><title>Enums</title><link>https://learning-rust.github.io/docs/enums/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/enums/</guid><description>&lt;ul&gt;
 &lt;li&gt;An enum is a single type that contains variants, which represent the possible values of the enum at any given time.&lt;/li&gt;
