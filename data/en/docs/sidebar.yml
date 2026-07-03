@@ -34,7 +34,7 @@
   pages:
     - title: Modules
     - title: Use
-    - title: Crates
+    - title: Crates and Packages
     - title: Workspaces
     - title: STD, Primitives and Preludes
 
