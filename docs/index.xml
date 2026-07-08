@@ -559,15 +559,26 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
 		&lt;p&gt;In the previous sections, we have discussed about the basics of &lt;a href="https://learning-rust.github.io/docs/enums" &gt;enums&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/generics" &gt;generics&lt;/a&gt; and &lt;a href="https://learning-rust.github.io/docs/generics/#generalizing-enums" &gt;&lt;code&gt;Result&lt;/code&gt; &amp;amp; &lt;code&gt;Option&lt;/code&gt; types&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Overview</title><link>https://learning-rust.github.io/docs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/overview/</guid><description>&lt;h2 id="about-me"&gt;About me&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;🧑‍💻 I am an expat working in Singapore as a Go Backend and DevOps Engineer. Feel free to reach out if you find any mistakes or anything that needs to be changed, including spelling or grammar errors. Alternatively, you can create a pull request, open an issue, or &lt;a href="https://gist.github.com/dumindu/00a0be2d175ed5ff3bc3c17bbf1ca5b6" target="_blank" &gt;share your awesome ideas in this gist&lt;/a&gt;. Good luck with learning Rust!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="https://github.com/learning-rust/learning-rust.github.io" target="_blank" &gt;&lt;img src="https://img.shields.io/github/stars/learning-rust/learning-rust.github.io?style=for-the-badge&amp;amp;logo=rust&amp;amp;label=learning-rust.github.io&amp;amp;logoColor=333333&amp;amp;labelColor=f9f9f9&amp;amp;color=F46623" alt="learning-rust.github.io"&gt;&lt;/a&gt;
-&lt;a href="https://learning-cloud-native-go.github.io" target="_blank" &gt;&lt;img src="https://img.shields.io/github/stars/learning-cloud-native-go/learning-cloud-native-go.github.io?style=for-the-badge&amp;amp;logo=go&amp;amp;logoColor=333333&amp;amp;label=learning-cloud-native-go.github.io&amp;amp;labelColor=f9f9f9&amp;amp;color=00ADD8" alt="learning-cloud-native-go.github.io"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/dumindu" target="_blank" &gt;&lt;img src="https://img.shields.io/badge/dumindu-866ee7?style=for-the-badge&amp;amp;logo=GitHub&amp;amp;logoColor=333333&amp;amp;labelColor=f9f9f9" alt="github.com"&gt;&lt;/a&gt;
-&lt;a href="https://www.buymeacoffee.com/dumindu" target="_blank" &gt;&lt;img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&amp;amp;logo=buymeacoffee&amp;amp;logoColor=333333&amp;amp;labelColor=f9f9f9" alt="buymeacoffee"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-&lt;p&gt;This publication has its origins in the posts I authored on Medium at &lt;a href="https://medium.com/learning-rust" target="_blank" &gt;https://medium.com/learning-rust&lt;/a&gt;. However, please note that I have ceased updating the Medium posts. All current and future updates, new content, code, and grammar fixes will be exclusively maintained and released here, &lt;a href="https://learning-rust.github.io" target="_blank" &gt;https://learning-rust.github.io&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Ownership</title><link>https://learning-rust.github.io/docs/ownership/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/ownership/</guid><description>&lt;p&gt;We discussed in the &lt;a href="https://learning-rust.github.io/docs/traits/#derive-traits" &gt;Derive Traits&lt;/a&gt;, the usage of &lt;a href="https://doc.rust-lang.org/std/marker/trait.Copy.html" target="_blank" &gt;&lt;code&gt;Copy&lt;/code&gt; marker trait&lt;/a&gt; and &lt;a href="https://doc.rust-lang.org/std/clone/index.html" target="_blank" &gt;&lt;code&gt;.clone()&lt;/code&gt;&lt;/a&gt; with the below code.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.buymeacoffee.com/dumindu" target="_blank" &gt;&lt;img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&amp;amp;logo=buymeacoffee&amp;amp;logoColor=333333&amp;amp;labelColor=f9f9f9" alt="buymeacoffee"&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;div class="alert alert-assignment"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h171q8-31 33.5-51.5T480-888q34 0 59.5 20.5T573-816h171q29.7 0 50.85 21.15Q816-773.7 816-744v528q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm0-72h528v-528H216v528Zm108-72h216q15.3 0 25.65-10.29Q576-308.58 576-323.79t-10.35-25.71Q555.3-360 540-360H324q-15.3 0-25.65 10.29Q288-339.42 288-324.21t10.35 25.71Q308.7-288 324-288Zm0-156h312q15.3 0 25.65-10.29Q672-464.58 672-479.79t-10.35-25.71Q651.3-516 636-516H324q-15.3 0-25.65 10.29Q288-495.42 288-480.21t10.35 25.71Q308.7-444 324-444Zm0-156h312q15.3 0 25.65-10.29Q672-620.58 672-635.79t-10.35-25.71Q651.3-672 636-672H324q-15.3 0-25.65 10.29Q288-651.42 288-636.21t10.35 25.71Q308.7-600 324-600Zm173-175q7-7 7-17t-7-17q-7-7-17-7t-17 7q-7 7-7 17t7 17q7 7 17 7t17-7ZM216-216v-528 528Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Dumindu Madunuwan
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;Senior/ Lead Backend - Go/ Rust&lt;br&gt;
+&lt;a href="https://github.com/dumindu" target="_blank" &gt;GitHub&lt;/a&gt; | Currently in Sri Lanka&lt;/p&gt;</description></item><item><title>Ownership</title><link>https://learning-rust.github.io/docs/ownership/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/ownership/</guid><description>&lt;p&gt;We discussed in the &lt;a href="https://learning-rust.github.io/docs/traits/#derive-traits" &gt;Derive Traits&lt;/a&gt;, the usage of &lt;a href="https://doc.rust-lang.org/std/marker/trait.Copy.html" target="_blank" &gt;&lt;code&gt;Copy&lt;/code&gt; marker trait&lt;/a&gt; and &lt;a href="https://doc.rust-lang.org/std/clone/index.html" target="_blank" &gt;&lt;code&gt;.clone()&lt;/code&gt;&lt;/a&gt; with the below code.&lt;/p&gt;
 
 
 
