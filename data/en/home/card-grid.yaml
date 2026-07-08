@@ -22,7 +22,7 @@ items:
     description: Modern & modular technical documentation and blog setup.
     link:
       label: Contribute
-      url: https://github.com/dumindu/e25dx
+      url: https://dumindu.github.io/E25DX/
 
   - icon: build/web
     title: Documentation
