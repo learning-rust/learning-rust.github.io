@@ -70,3 +70,6 @@ menus:
       weight: 20
       params:
         icon: menu_book
+
+ignoreFiles:
+  - ".*-mermaid\\.md$"

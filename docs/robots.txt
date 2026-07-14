@@ -31,8 +31,8 @@ Disallow: /docs/ownership/
 Disallow: /docs/panicking/
 Disallow: /docs/primitive-data-types/
 Disallow: /docs/smart-compiler/
-Disallow: /docs/std-primitives-and-preludes/
 Disallow: /docs/structs/
+Disallow: /docs/the-pillars-of-compilation-and-rust-std/
 Disallow: /docs/traits/
 Disallow: /docs/unwrap-and-expect/
 Disallow: /docs/use/

@@ -36,7 +36,7 @@
     - title: Use
     - title: Crates and Packages
     - title: Workspaces
-    - title: STD, Primitives and Preludes
+    - title: The Pillars of Compilation and Rust STD
 
 - title: Error Handling
   pages:

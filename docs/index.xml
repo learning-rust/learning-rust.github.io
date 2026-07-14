@@ -668,29 +668,7 @@ For above cases, we can use &lt;code&gt;panic!&lt;/code&gt; macro.&lt;/li&gt;
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;&lt;img src="https://learning-rust.github.io/docs/e1-error-typos.jpg" alt="Compile-time Error: Typos"&gt;&lt;/p&gt;</description></item><item><title>STD, Primitives and Preludes</title><link>https://learning-rust.github.io/docs/std-primitives-and-preludes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/std-primitives-and-preludes/</guid><description>&lt;div class="alert alert-caution"&gt;
-	&lt;div class="alert-header"&gt;
-		
-		
-
-	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
-
-
-		&lt;span&gt;
-		
-			Caution
-		
-		&lt;/span&gt;
-	&lt;/div&gt;
-	&lt;div class="alert-body"&gt;
-		&lt;p&gt;This needs a refresh!&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;⭐️ In Rust, language elements are implemented by not only &lt;strong&gt;&lt;code&gt;std&lt;/code&gt; library&lt;/strong&gt; crate but also &lt;strong&gt;compiler&lt;/strong&gt; as well. Examples,&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="https://doc.rust-lang.org/std/#primitives" target="_blank" &gt;Primitives&lt;/a&gt;&lt;/strong&gt;: Defined by the compiler and methods are implemented by &lt;code&gt;std&lt;/code&gt; library directly on primitives.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="https://doc.rust-lang.org/std/#macros" target="_blank" &gt;Standard Macros&lt;/a&gt;&lt;/strong&gt;: Defined by both compiler and &lt;code&gt;std&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The &lt;strong&gt;&lt;code&gt;std&lt;/code&gt;&lt;/strong&gt; library has been divided into &lt;strong&gt;&lt;a href="https://doc.rust-lang.org/std/#modules" target="_blank" &gt;modules&lt;/a&gt;&lt;/strong&gt;, according to the main areas each covered.&lt;/p&gt;</description></item><item><title>Structs</title><link>https://learning-rust.github.io/docs/structs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/structs/</guid><description>&lt;ul&gt;
+		&lt;p&gt;&lt;img src="https://learning-rust.github.io/docs/e1-error-typos.jpg" alt="Compile-time Error: Typos"&gt;&lt;/p&gt;</description></item><item><title>Structs</title><link>https://learning-rust.github.io/docs/structs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/structs/</guid><description>&lt;ul&gt;
 &lt;li&gt;Used to &lt;strong&gt;encapsulate related properties into one unified data type&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;By convention, the name should follow &lt;a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank" &gt;&lt;code&gt;PascalCase&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;3 variants,
@@ -824,7 +802,61 @@ For above cases, we can use &lt;code&gt;panic!&lt;/code&gt; macro.&lt;/li&gt;
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;In Rust, the &lt;code&gt;#[derive()]&lt;/code&gt; attribute is used to automatically generate an implementation of certain traits for a custom data structure (struct and enum), instead of you writing them by hand. The &lt;a href="https://doc.rust-lang.org/std/default/trait.Default.html" target="_blank" &gt;&lt;code&gt;std::default::Default&lt;/code&gt;&lt;/a&gt; trait allows us to create a new instance of a type with the &lt;code&gt;Type::default()&lt;/code&gt; method.&lt;/p&gt;</description></item><item><title>Traits</title><link>https://learning-rust.github.io/docs/traits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/traits/</guid><description>&lt;p&gt;A trait is a contract that defines a set of behaviors or properties that a type must implement. It can contain associated types, constants, function or method signatures, and overridable default implementations.&lt;/p&gt;
+		&lt;p&gt;In Rust, the &lt;code&gt;#[derive()]&lt;/code&gt; attribute is used to automatically generate an implementation of certain traits for a custom data structure (struct and enum), instead of you writing them by hand. The &lt;a href="https://doc.rust-lang.org/std/default/trait.Default.html" target="_blank" &gt;&lt;code&gt;std::default::Default&lt;/code&gt;&lt;/a&gt; trait allows us to create a new instance of a type with the &lt;code&gt;Type::default()&lt;/code&gt; method.&lt;/p&gt;</description></item><item><title>The Pillars of Compilation and Rust STD</title><link>https://learning-rust.github.io/docs/the-pillars-of-compilation-and-rust-std/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/the-pillars-of-compilation-and-rust-std/</guid><description>&lt;h2 id="rustc-proc_macro-core-alloc--std"&gt;&lt;code&gt;rustc&lt;/code&gt;, &lt;code&gt;proc_macro&lt;/code&gt;, &lt;code&gt;core&lt;/code&gt;, &lt;code&gt;alloc&lt;/code&gt; &amp;amp; &lt;code&gt;std&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://learning-rust.github.io/docs/d5-rustc-core-alloc-and-std.jpg" alt="d5-rustc-core-alloc-and-std.png"&gt;&lt;/p&gt;
+&lt;p&gt;Rust language elements are defined and implemented across many major layers.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rustc&lt;/code&gt;:
+&lt;ul&gt;
+&lt;li&gt;The Rust compiler + defines and implement the language&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;proc_macro&lt;/code&gt;:
+&lt;ul&gt;
+&lt;li&gt;Compile-time API to implement procedural macros (derive, attribute, and function-like macros)&lt;/li&gt;
+&lt;li&gt;Generates and transform Rust code at compile-time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;core&lt;/code&gt;:
+&lt;ul&gt;
+&lt;li&gt;Dependency-free foundation(Not depend on an OS or an allocator)&lt;/li&gt;
+&lt;li&gt;Ex. Primitive types, traits, iterators, Option, Result, macros&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;alloc&lt;/code&gt;:
+&lt;ul&gt;
+&lt;li&gt;Depends on a global allocator, but not on OS services&lt;/li&gt;
+&lt;li&gt;Ex. Vec, String, Box, Rc, Arc, collections, allocator APIs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;std&lt;/code&gt;:
+&lt;ul&gt;
+&lt;li&gt;The Rust standard library&lt;/li&gt;
+&lt;li&gt;Depends on operating system services or a supported platform runtime&lt;/li&gt;
+&lt;li&gt;Ex. Files, networking, threads, processes, time, environment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class="alert alert-tip"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M407.74-240Q378-240 357-261.15 336-282.3 336-312v-67q-57-37.3-88.5-95.65Q216-533 216-600q0-110.31 76.78-187.16 76.78-76.84 187-76.84T667-787.16q77 76.85 77 187.16 0 66.82-31.5 125.41T624-379v67q0 29.7-21.18 50.85Q581.65-240 551.91-240H407.74Zm.26-72h144v-86q0-9.29 4-17.64 4-8.36 12-12.92l17-10.93q41-25.51 64-68.69 23-43.18 23-91.82 0-79.68-56.23-135.84-56.22-56.16-136-56.16Q400-792 344-735.84 288-679.68 288-600q0 48.64 23 91.82 23 43.18 64 68.69l17 10.93q8 4.56 12 12.92 4 8.35 4 17.64v86ZM396-96q-15.3 0-25.65-10.29Q360-116.58 360-131.79t10.35-25.71Q380.7-168 396-168h168q15.3 0 25.65 10.29Q600-147.42 600-132.21t-10.35 25.71Q579.3-96 564-96H396Zm84-504Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Tip
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://rustc-dev-guide.rust-lang.org" target="_blank" &gt;&lt;code&gt;rustc&lt;/code&gt;&lt;/a&gt; is the official compiler and core executable of the Rust language toolchain. It transforms Rust source code into optimized machine binaries by &lt;a href="https://rustc-dev-guide.rust-lang.org/syntax-intro.html" target="_blank" &gt;parsing syntax&lt;/a&gt;, lowering code into &lt;a href="https://rustc-dev-guide.rust-lang.org/hir.html" target="_blank" &gt;internal representations&lt;/a&gt;, checking types, resolving traits, enforcing ownership and lifetime rules, and performing borrow checking. It uses pluggable code generation backends to produce binaries for different targets and works with libraries like core that provide compiler-recognized language items and fundamental Rust definitions.&lt;/p&gt;</description></item><item><title>Traits</title><link>https://learning-rust.github.io/docs/traits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/traits/</guid><description>&lt;p&gt;A trait is a contract that defines a set of behaviors or properties that a type must implement. It can contain associated types, constants, function or method signatures, and overridable default implementations.&lt;/p&gt;
 &lt;h2 id="definition"&gt;Definition&lt;/h2&gt;
 &lt;h3 id="with-no-associates"&gt;With No Associates&lt;/h3&gt;
 
