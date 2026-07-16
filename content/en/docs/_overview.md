@@ -15,7 +15,7 @@ aliases:
 > 
 > Global Technical Expertise : Over 12 years of backend experience spanning Singapore, Vietnam, and Europe(Remote).
 > 
-> Engineered mission-critical platforms for Lazada (Alibaba Group), NCS/ MOM (Singapore Gov), Axclusive (Singapore), and Home24 SE (Remote). Distributed Architecture and technical leadership via event-driven Go, Rust, and PHP microservices implementation with FDD and KISS architectures, RabbitMQ (or Iggy), Stripe, OAuth 2.0, Casbin, Redis, and GraphQL.
+> Engineered mission-critical platforms for Lazada (Alibaba Group), NCS/ MOM (Singapore Gov), Axclusive (Singapore), and Home24 SE (Remote). Distributed systems and technical leadership over event-driven Go, Rust, and PHP microservices implementations with FDD and KISS architectures, RabbitMQ (or Iggy), Stripe, OAuth2.0, Casbin, Redis, and GraphQL.
 >
 > - https://learning-rust.github.io : Rust Programming Language Tutorials for Everyone.
 > - https://github.com/dumindu/axum : Future focusing Rust microservice monorepo.
