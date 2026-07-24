@@ -604,7 +604,8 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;move&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;occurs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;because&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;has&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt; &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;which&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;does&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;implement&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="nb"&gt;Copy&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;trait&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;here&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is because of Ownership, which is used to achieve Rust&amp;rsquo;s memory safety.&lt;/p&gt;</description></item><item><title>Panicking</title><link>https://learning-rust.github.io/docs/panicking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/panicking/</guid><description>&lt;ul&gt;
-&lt;li&gt;Panicking immediately terminates the current thread.
+&lt;li&gt;
+&lt;p&gt;Panicking immediately terminates the current thread.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;panic!&lt;/code&gt;: Mainly used with unrecoverable errors.
 &lt;ul&gt;
@@ -629,17 +630,28 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;li&gt;Assertions
 &lt;ul&gt;
 &lt;li&gt;Mainly used with test assertions and ensure runtime conditions true.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;assert!&lt;/code&gt;, &lt;code&gt;assert_eq!&lt;/code&gt; and &lt;code&gt;assert_ne!&lt;/code&gt;: Standard runtime assertions evaluated in both debug and release builds.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;debug_assert!&lt;/code&gt;, &lt;code&gt;debug_assert_eq!&lt;/code&gt; and &lt;code&gt;debug_assert_ne!&lt;/code&gt;: Mirrors to standard assertions that run only in debug builds and are omitted from release builds.&lt;/li&gt;
-&lt;li&gt;Default panic message: &lt;code&gt;assertion failed:&lt;/code&gt; or &lt;code&gt;assertion `left != right` failed&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;assert!&lt;/code&gt;/ &lt;code&gt;debug_assert!&lt;/code&gt;: Ensures a condition is true.
+&lt;ul&gt;
+&lt;li&gt;Default panic message: &lt;code&gt;assertion failed&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;assert_eq!&lt;/code&gt;/ &lt;code&gt;debug_assert_eq!&lt;/code&gt; and &lt;code&gt;assert_ne!&lt;/code&gt;/ &lt;code&gt;debug_assert_ne!&lt;/code&gt;: Ensures two expressions are equal or not equal.
+&lt;ul&gt;
+&lt;li&gt;Default panic message/prefix: &lt;code&gt;assertion `left != right` failed&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;assert_matches!&lt;/code&gt;/ &lt;code&gt;debug_assert_matches!&lt;/code&gt;: Ensures an expression matches a given pattern.
+&lt;ul&gt;
+&lt;li&gt;Default panic message/prefix: &lt;code&gt;assertion `left matches right` failed&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Non-prelude assertions to replace &lt;code&gt;assert!(matches!(value, pattern))&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Rust cleans up memory by destroying variables on the stack in reverse order after a panic occurs. This process is called Unwinding.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="panic"&gt;&lt;code&gt;panic!&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;Mainly used with unrecoverable errors.&lt;/p&gt;</description></item><item><title>Primitive Data Types</title><link>https://learning-rust.github.io/docs/primitive-data-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/primitive-data-types/</guid><description>&lt;h2 id="bool"&gt;bool&lt;/h2&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Rust cleans up memory by destroying variables on the stack in reverse order after a panic occurs. This process is called Unwinding.&lt;/p&gt;</description></item><item><title>Primitive Data Types</title><link>https://learning-rust.github.io/docs/primitive-data-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/primitive-data-types/</guid><description>&lt;h2 id="bool"&gt;bool&lt;/h2&gt;
 &lt;p&gt;true or false&lt;/p&gt;
 
 
