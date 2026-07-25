@@ -629,7 +629,6 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;/li&gt;
 &lt;li&gt;Assertions
 &lt;ul&gt;
-&lt;li&gt;Mainly used with test assertions and ensure runtime conditions true.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;assert!&lt;/code&gt;/ &lt;code&gt;debug_assert!&lt;/code&gt;: Ensures a condition is true.
 &lt;ul&gt;
 &lt;li&gt;Default panic message: &lt;code&gt;assertion failed&lt;/code&gt;&lt;/li&gt;
@@ -643,7 +642,6 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;li&gt;&lt;code&gt;assert_matches!&lt;/code&gt;/ &lt;code&gt;debug_assert_matches!&lt;/code&gt;: Ensures an expression matches a given pattern.
 &lt;ul&gt;
 &lt;li&gt;Default panic message/prefix: &lt;code&gt;assertion `left matches right` failed&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Non-prelude assertions to replace &lt;code&gt;assert!(matches!(value, pattern))&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
