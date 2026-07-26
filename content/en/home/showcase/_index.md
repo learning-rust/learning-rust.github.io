@@ -78,24 +78,23 @@ enum Data<K, V> {
 }
 
 fn main() {
-    let data: Vec<Data<&str, i32>> = vec![
-        Data::Value(10),
-        Data::KeyValue("Steve", 20),
-        Data::KeyValue("Tom", 30),
+    let data = vec![
+        Data::KeyValue("Steve", 10),
+        Data::Value(20),
+        Data::KeyValue("Bill", 30),
         Data::Value(40),
-        Data::KeyValue("Mike", 50),
     ];
 
-    let map: HashMap<String, i32> = data
+    let map = data
         .into_iter()
         // Pattern matching and destructuring
         .map(|item| match item {
             Data::KeyValue(k, v) => {
-                println!("{}: {}", k, v);
+                println!("{k}: {v}");
                 (k.to_string(), v)
             }
             Data::Value(v) => {
-                println!("unknown: {}", v);
+                println!("unknown: {v}");
                 ("unknown".to_string(), v)
             }
         })
@@ -107,7 +106,7 @@ fn main() {
             map
         });
 
-    println!("Map: {:?}", map); // Map: {"unknown": 50, "Steve": 20, "Tom": 30, "Mike": 50}
+    println!("Map: {:?}", map); // Map: {"unknown": 60, "Bill": 30, "Steve": 10}
 }
 ```
 
