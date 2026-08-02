@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Learning Rust</title><link>https://learning-rust.github.io/</link><description>Recent content on Learning Rust</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://learning-rust.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Borrowing</title><link>https://learning-rust.github.io/docs/borrowing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/borrowing/</guid><description>&lt;h2 id="borrowing"&gt;Borrowing&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Learning Rust</title><link>https://learning-rust.github.io/</link><description>Recent content on Learning Rust</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://learning-rust.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://learning-rust.github.io/docs/e4-unwrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/e4-unwrap/</guid><description>&lt;h1 id="option-and-result-in-rust"&gt;&lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;Result&lt;/code&gt; in Rust&lt;/h1&gt;
+&lt;p&gt;Rust uses &lt;code&gt;Option&amp;lt;T&amp;gt;&lt;/code&gt; and &lt;code&gt;Result&amp;lt;T, E&amp;gt;&lt;/code&gt; to represent values that may be absent or operations that may fail. These types make missing values and recoverable errors explicit at compile time, eliminating the need for null references and reducing runtime bugs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="working-with-optiont"&gt;Working with &lt;code&gt;Option&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;Use &lt;code&gt;Option&amp;lt;T&amp;gt;&lt;/code&gt; whenever a value may or may not exist.&lt;/p&gt;
+&lt;p&gt;Typical use cases include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Optional function parameters&lt;/li&gt;
+&lt;li&gt;Functions that may not return a value&lt;/li&gt;
+&lt;li&gt;Optional struct fields&lt;/li&gt;
+&lt;li&gt;Nullable pointer-like data structures&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The wrapped type is written as &lt;code&gt;Option&amp;lt;T&amp;gt;&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Borrowing</title><link>https://learning-rust.github.io/docs/borrowing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/borrowing/</guid><description>&lt;h2 id="borrowing"&gt;Borrowing&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;In a general sense, borrowing is taking something with the promise of returning it.&lt;/p&gt;
@@ -657,7 +669,7 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
 		&lt;p&gt;Senior/ Lead Backend - Go/ Rust&lt;br&gt;
-&lt;a href="https://github.com/dumindu" target="_blank" &gt;GitHub&lt;/a&gt; | Currently in Sri Lanka&lt;/p&gt;</description></item><item><title>Ownership</title><link>https://learning-rust.github.io/docs/ownership/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/ownership/</guid><description>&lt;p&gt;We discussed in the &lt;a href="https://learning-rust.github.io/docs/traits/#derive-traits" &gt;Derive Traits&lt;/a&gt;, the usage of &lt;a href="https://doc.rust-lang.org/std/marker/trait.Copy.html" target="_blank" &gt;&lt;code&gt;Copy&lt;/code&gt; marker trait&lt;/a&gt; and &lt;a href="https://doc.rust-lang.org/std/clone/index.html" target="_blank" &gt;&lt;code&gt;.clone()&lt;/code&gt;&lt;/a&gt; with the below code.&lt;/p&gt;
+&lt;a href="https://dumindu.github.io/nu_1/about-me/" target="_blank" &gt;Portfolio&lt;/a&gt; | &lt;a href="https://github.com/dumindu" target="_blank" &gt;GitHub&lt;/a&gt; | Currently in Sri Lanka&lt;/p&gt;</description></item><item><title>Ownership</title><link>https://learning-rust.github.io/docs/ownership/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/ownership/</guid><description>&lt;p&gt;We discussed in the &lt;a href="https://learning-rust.github.io/docs/traits/#derive-traits" &gt;Derive Traits&lt;/a&gt;, the usage of &lt;a href="https://doc.rust-lang.org/std/marker/trait.Copy.html" target="_blank" &gt;&lt;code&gt;Copy&lt;/code&gt; marker trait&lt;/a&gt; and &lt;a href="https://doc.rust-lang.org/std/clone/index.html" target="_blank" &gt;&lt;code&gt;.clone()&lt;/code&gt;&lt;/a&gt; with the below code.&lt;/p&gt;
 
 
 
@@ -675,6 +687,23 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If we try to remove &lt;code&gt;Copy&lt;/code&gt; derive on &lt;code&gt;Point&lt;/code&gt; and run, we will get the following error while compiling.&lt;/p&gt;
 
 
+&lt;div class="alert alert-caution"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Compile-Time Error
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		
+
 
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;E0382&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;: &lt;span class="nc"&gt;borrow&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;: &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;-&amp;gt; &lt;span class="nc"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rs&lt;/span&gt;:&lt;span class="mi"&gt;11&lt;/span&gt;:&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="w"&gt;
@@ -682,7 +711,9 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;: &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;: &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;move&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;occurs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;because&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;has&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt; &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;which&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;does&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;implement&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="nb"&gt;Copy&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;trait&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;here&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is because of Ownership, which is used to achieve Rust&amp;rsquo;s memory safety.&lt;/p&gt;</description></item><item><title>Panicking</title><link>https://learning-rust.github.io/docs/panicking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/panicking/</guid><description>&lt;ul&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;here&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This is because of Ownership, which is used to achieve Rust&amp;rsquo;s memory safety.&lt;/p&gt;</description></item><item><title>Panicking</title><link>https://learning-rust.github.io/docs/panicking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/panicking/</guid><description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Panicking immediately terminates the current thread.&lt;/p&gt;
 &lt;ul&gt;
@@ -749,7 +780,7 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// ⭐️ no &amp;#34;x&amp;#34;, only single quotes
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Because of Unicode support, char is not a single byte, but four(32 bits).&lt;/p&gt;
 &lt;h2 id="i8-i16-i32-i64-i128"&gt;i8, i16, i32, i64, i128&lt;/h2&gt;
-&lt;p&gt;8, 16, 32, 64 and 128 bit fixed sized signed(+/-) integer types&lt;/p&gt;</description></item><item><title>Smart Compiler</title><link>https://learning-rust.github.io/docs/smart-compiler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/smart-compiler/</guid><description>&lt;h2 id="compile-time-errors"&gt;Compile-time Errors&lt;/h2&gt;
+&lt;p&gt;8, 16, 32, 64 and 128 bit fixed sized signed(+/-) integer types&lt;/p&gt;</description></item><item><title>Smart Compiler</title><link>https://learning-rust.github.io/docs/smart-compiler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/smart-compiler/</guid><description>&lt;h2 id="compile-time-errors"&gt;Compile-Time Errors&lt;/h2&gt;
 &lt;p&gt;Rust focuses on strict code hygiene, and the compiler generates a highly specific set of warnings and errors to make it easier to identify and solve them.&lt;/p&gt;
 &lt;h3 id="typos"&gt;Typos&lt;/h3&gt;
 
@@ -782,12 +813,12 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 
 		&lt;span&gt;
 		
-			Compile-time Error
+			Compile-Time Error
 		
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;&lt;img src="https://learning-rust.github.io/docs/e1-error-typos.jpg" alt="Compile-time Error: Typos"&gt;&lt;/p&gt;</description></item><item><title>Structs</title><link>https://learning-rust.github.io/docs/structs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/structs/</guid><description>&lt;ul&gt;
+		&lt;p&gt;&lt;img src="https://learning-rust.github.io/docs/e1-error-typos.jpg" alt="Compile-Time Error: Typos"&gt;&lt;/p&gt;</description></item><item><title>Structs</title><link>https://learning-rust.github.io/docs/structs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/structs/</guid><description>&lt;ul&gt;
 &lt;li&gt;Used to &lt;strong&gt;encapsulate related properties into one unified data type&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;By convention, the name should follow &lt;a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank" &gt;&lt;code&gt;PascalCase&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;3 variants,
