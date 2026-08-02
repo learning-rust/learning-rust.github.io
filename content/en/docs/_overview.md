@@ -11,16 +11,16 @@ aliases:
 
 > [!assignment] Dumindu Madunuwan
 > Senior/ Lead Backend - Go/ Rust\
-> [GitHub](https://github.com/dumindu) | Currently in Sri Lanka
+> [Portfolio](https://dumindu.github.io/nu_1/about-me/) | [GitHub](https://github.com/dumindu) | Currently in Sri Lanka
 > 
-> Global Technical Expertise : Over 12 years of backend experience spanning Singapore, Vietnam, and Europe/Remote.
+> Global Technical Expertise : Over 12 years of backend experience spanning Singapore, Vietnam, and Remote(For Europe).
 > 
 > Engineered mission-critical platforms for Lazada (Alibaba Group), NCS (Singapore Gov), Axclusive (Singapore), and Home24 SE (Remote). Distributed systems and technical leadership over event-driven Go, Rust, and PHP microservices implementations with FDD and KISS architectures, RabbitMQ (or Iggy), Stripe, OAuth2.0, Casbin, Redis, and GraphQL.
 >
-> - https://learning-rust.github.io : Rust Programming Language Tutorials for Everyone.
+> - https://learning-rust.github.io : Rust programming language tutorials for everyone.
 > - https://github.com/dumindu/axum : Future focusing Rust microservice monorepo.
-> - https://github.com/learning-cloud-native-go/myapp : Production ready Go microservice, GitOps, Kubernetes skeleton.
-> - https://dumindu.github.io/E25DX/ : A Modern And Modular Technical Documentation & Blog Setup.
+> - https://github.com/learning-cloud-native-go/myapp : Production ready Go microservice with Kubernetes, Istio & ArgoCD.
+> - https://dumindu.github.io/E25DX/ : A modern & modular technical documentation & blog setup.
 
 ## Overview
 
