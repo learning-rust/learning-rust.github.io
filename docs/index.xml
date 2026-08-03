@@ -1020,13 +1020,58 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;Mostly used to mark a type as having certain properties to allow in certain operations. Known as Marker Traits.&lt;/p&gt;</description></item><item><title>Unwrap and Expect</title><link>https://learning-rust.github.io/docs/unwrap-and-expect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/unwrap-and-expect/</guid><description>&lt;h2 id="unwrap"&gt;unwrap()&lt;/h2&gt;
+		&lt;p&gt;Mostly used to mark a type as having certain properties to allow in certain operations. Known as Marker Traits.&lt;/p&gt;</description></item><item><title>Unwrap and Expect</title><link>https://learning-rust.github.io/docs/unwrap-and-expect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/unwrap-and-expect/</guid><description>&lt;h2 id="unwrap"&gt;&lt;code&gt;unwrap&lt;/code&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;If an &lt;code&gt;Option&lt;/code&gt; type has &lt;strong&gt;&lt;code&gt;Some&lt;/code&gt;&lt;/strong&gt; value or a &lt;code&gt;Result&lt;/code&gt; type has a &lt;strong&gt;&lt;code&gt;Ok&lt;/code&gt;&lt;/strong&gt; value, &lt;strong&gt;the value inside them&lt;/strong&gt; passes to the next step.&lt;/li&gt;
-&lt;li&gt;If the &lt;code&gt;Option&lt;/code&gt; type has &lt;strong&gt;&lt;code&gt;None&lt;/code&gt;&lt;/strong&gt; value or the &lt;code&gt;Result&lt;/code&gt; type has &lt;strong&gt;&lt;code&gt;Err&lt;/code&gt;&lt;/strong&gt; value, &lt;strong&gt;program panics&lt;/strong&gt;; If &lt;code&gt;Err&lt;/code&gt;, panics with the error message.&lt;/li&gt;
+&lt;li&gt;If an &lt;code&gt;Option&lt;/code&gt; type has &lt;code&gt;Some&lt;/code&gt; value or a &lt;code&gt;Result&lt;/code&gt; type has a &lt;code&gt;Ok&lt;/code&gt; value,
+&lt;ul&gt;
+&lt;li&gt;The value inside them passes to the next step.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The functionality is bit similar to the following codes, which are using &lt;code&gt;match&lt;/code&gt; instead &lt;code&gt;unwrap()&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Example with &lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;match&lt;/code&gt;, before using &lt;code&gt;unwrap()&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Use</title><link>https://learning-rust.github.io/docs/use/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/use/</guid><description>&lt;ul&gt;
+&lt;/li&gt;
+&lt;li&gt;If the &lt;code&gt;Option&lt;/code&gt; type has &lt;code&gt;None&lt;/code&gt; value or the &lt;code&gt;Result&lt;/code&gt; type has &lt;code&gt;Err&lt;/code&gt; value, program panics at runtime.
+&lt;ul&gt;
+&lt;li&gt;If &lt;code&gt;Err&lt;/code&gt;, panics with the error message.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="with-option"&gt;With &lt;code&gt;Option&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Without using &lt;code&gt;unwrap&lt;/code&gt;,&lt;/p&gt;
+
+
+
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;handle_some_none&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;: &lt;span class="nb"&gt;Option&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;i32&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;match&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Some&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;{x}&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;None&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;panic!&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;handle_some_none&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;Some&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 6
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;handle_some_none&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;None&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Crash at runtime
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="alert alert-caution"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Crash at Runtime
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		
+
+
+&lt;pre tabindex="0"&gt;&lt;code&gt;thread &amp;#39;main&amp;#39; (123456) panicked at src/main.rs:4:17:
+explicit panic&lt;/code&gt;&lt;/pre&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;With &lt;code&gt;unwrap&lt;/code&gt;,&lt;/p&gt;</description></item><item><title>Use</title><link>https://learning-rust.github.io/docs/use/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/use/</guid><description>&lt;ul&gt;
 &lt;li&gt;A &lt;code&gt;use&lt;/code&gt; statement is used to bring items (types, functions, traits, modules, etc.) into the current scope.
 &lt;ul&gt;
 &lt;li&gt;It doesn&amp;rsquo;t import anything; instead, it creates a local name (an alias) in the current scope.&lt;/li&gt;
