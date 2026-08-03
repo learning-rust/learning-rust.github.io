@@ -1,16 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on Learning Rust</title><link>https://learning-rust.github.io/docs/</link><description>Recent content in Docs on Learning Rust</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://learning-rust.github.io/docs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://learning-rust.github.io/docs/e4-unwrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/e4-unwrap/</guid><description>&lt;h1 id="option-and-result-in-rust"&gt;&lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;Result&lt;/code&gt; in Rust&lt;/h1&gt;
-&lt;p&gt;Rust uses &lt;code&gt;Option&amp;lt;T&amp;gt;&lt;/code&gt; and &lt;code&gt;Result&amp;lt;T, E&amp;gt;&lt;/code&gt; to represent values that may be absent or operations that may fail. These types make missing values and recoverable errors explicit at compile time, eliminating the need for null references and reducing runtime bugs.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id="working-with-optiont"&gt;Working with &lt;code&gt;Option&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/h1&gt;
-&lt;p&gt;Use &lt;code&gt;Option&amp;lt;T&amp;gt;&lt;/code&gt; whenever a value may or may not exist.&lt;/p&gt;
-&lt;p&gt;Typical use cases include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Optional function parameters&lt;/li&gt;
-&lt;li&gt;Functions that may not return a value&lt;/li&gt;
-&lt;li&gt;Optional struct fields&lt;/li&gt;
-&lt;li&gt;Nullable pointer-like data structures&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The wrapped type is written as &lt;code&gt;Option&amp;lt;T&amp;gt;&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Borrowing</title><link>https://learning-rust.github.io/docs/borrowing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/borrowing/</guid><description>&lt;h2 id="borrowing"&gt;Borrowing&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on Learning Rust</title><link>https://learning-rust.github.io/docs/</link><description>Recent content in Docs on Learning Rust</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://learning-rust.github.io/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Borrowing</title><link>https://learning-rust.github.io/docs/borrowing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/borrowing/</guid><description>&lt;h2 id="borrowing"&gt;Borrowing&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;In a general sense, borrowing is taking something with the promise of returning it.&lt;/p&gt;
@@ -646,9 +634,12 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;In the previous sections, we discussed the basics of &lt;a href="https://learning-rust.github.io/docs/enums" &gt;enums&lt;/a&gt; and &lt;a href="https://learning-rust.github.io/docs/generics" &gt;generics&lt;/a&gt;. We also briefly introduced &lt;code&gt;Result&lt;/code&gt; &amp;amp; &lt;code&gt;Option&lt;/code&gt; types in the &lt;a href="https://learning-rust.github.io/docs/generics/#-before-going-to-the-next" &gt;Before going to the next…&lt;/a&gt; section.&lt;/p&gt;
+		&lt;ul&gt;
+&lt;li&gt;In the previous sections, we discussed the basics of &lt;a href="https://learning-rust.github.io/docs/enums" &gt;enums&lt;/a&gt; and &lt;a href="https://learning-rust.github.io/docs/generics" &gt;generics&lt;/a&gt;. We also briefly introduced &lt;code&gt;Result&lt;/code&gt; &amp;amp; &lt;code&gt;Option&lt;/code&gt; types in the &lt;a href="https://learning-rust.github.io/docs/generics/#-before-going-to-the-next" &gt;Before going to the next…&lt;/a&gt; section.&lt;/li&gt;
+&lt;li&gt;Plus, this is the basics about &lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;Result&lt;/code&gt;. More complex examples can be found on &lt;a href="https://learning-rust.github.io/docs/unwrap-and-expect" &gt;&lt;code&gt;Unwrap&lt;/code&gt; &amp;amp; &lt;code&gt;Expect&lt;/code&gt;&lt;/a&gt;, &lt;a href="https://learning-rust.github.io/docs/error-and-none-propagation" &gt;&lt;code&gt;Error&lt;/code&gt; &amp;amp; &lt;code&gt;None&lt;/code&gt; Propagation&lt;/a&gt; and &lt;a href="https://learning-rust.github.io/docs/combinators" &gt;Combinators&lt;/a&gt; sections.&lt;/li&gt;
+&lt;/ul&gt;
 	&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="why-option-and-result"&gt;Why Option and Result?&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id="why-option-and-result"&gt;Why &lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;Result&lt;/code&gt;?&lt;/h2&gt;
 &lt;p&gt;Many programming languages use exceptions to handle errors and &lt;code&gt;null&lt;/code&gt;\ &lt;code&gt;nil&lt;/code&gt;\ &lt;code&gt;undefined&lt;/code&gt; types to handle missing values. Historically, this decision has led to severe runtime issues (such as null pointer exceptions) and security vulnerabilities (sensitive data leakages, through error traces and exceptions). Rust skip both and provide two special generic enums defined in its standard library to prevent these issues.&lt;/p&gt;</description></item><item><title>Overview</title><link>https://learning-rust.github.io/docs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/overview/</guid><description>&lt;h2 id="about-me"&gt;About me&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.buymeacoffee.com/dumindu" target="_blank" &gt;&lt;img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&amp;amp;logo=buymeacoffee&amp;amp;logoColor=333333&amp;amp;labelColor=f9f9f9" alt="buymeacoffee"&gt;&lt;/a&gt;&lt;/p&gt;
 

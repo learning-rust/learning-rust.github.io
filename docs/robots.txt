@@ -5,7 +5,6 @@ User-agent: Applebot
 Allow: /
 
 User-agent: *
-Disallow: /docs/e4-unwrap/
 Disallow: /docs/borrowing/
 Disallow: /docs/cargo-crates-and-basic-project-structure/
 Disallow: /docs/combinators/
