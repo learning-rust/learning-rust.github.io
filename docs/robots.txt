@@ -22,12 +22,14 @@ Disallow: /home/
 Disallow: /docs/impls/
 Disallow: /docs/installation/
 Disallow: /
+Disallow: /journal/
 Disallow: /docs/lifetimes/
 Disallow: /docs/modules/
 Disallow: /docs/operators/
 Disallow: /docs/option-and-result/
 Disallow: /docs/overview/
 Disallow: /docs/ownership/
+Disallow: /page/
 Disallow: /docs/panicking/
 Disallow: /docs/primitive-data-types/
 Disallow: /docs/smart-compiler/
