@@ -8,9 +8,10 @@ summary: >
 
 ## 2026: August 03
 
-> ![Learning Rust2026.jpg](LearningRust2026.jpg)
-> - Updated to 2026 section by section.
-> - Based on my own [e25DX](https://dumindu.github.io/E25DX/) theme from 2024.
+> ![Learning Rust - Tuesday, August 4, 2026 at 3:35:15 AM GMT+8](LearningRust2026.jpg)
+> - Updated section by section for quite some time now.
+> - Based on my own [e25DX](https://dumindu.github.io/E25DX/) theme, since 2024.
+> - [Reddit: r/rust](https://www.reddit.com/r/rust/comments/1venj1y/learning_rust_updated_humanauthored_from_2016/)
 
 ---
 
