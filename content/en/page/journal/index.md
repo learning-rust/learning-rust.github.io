@@ -3,7 +3,7 @@ title: Learning Rust
 url: "journal"
 
 summary: >
-  This is not just about Rust or learning a new language. It is about how fast you can master it.
+  This isn't just about Rust or learning a new language. It's about how quickly you can master it.
 ---
 
 ## 2026: August 03
@@ -12,6 +12,7 @@ summary: >
 > - Updated section by section for quite some time now.
 > - Based on my own [e25DX](https://dumindu.github.io/E25DX/) theme, since 2024.
 > - [Reddit: r/rust](https://www.reddit.com/r/rust/comments/1venj1y/learning_rust_updated_humanauthored_from_2016/)
+> - [Hacker News](https://news.ycombinator.com/item?id=49166411)
 
 ---
 
