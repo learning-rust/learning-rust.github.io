@@ -16,7 +16,24 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Liveness&lt;/p&gt;</description></item><item><title>Cargo, Crates and Basic Project Structure</title><link>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</guid><description>&lt;h2 id="cargo"&gt;Cargo&lt;/h2&gt;
+&lt;p&gt;Liveness&lt;/p&gt;</description></item><item><title>Building a Containerized RESTful API</title><link>https://learning-rust.github.io/labs/building-a-containerized-restful-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/building-a-containerized-restful-api/</guid><description>&lt;div class="alert alert-caution"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			SPOILER ALERT
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;Coming soon!&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Cargo, Crates and Basic Project Structure</title><link>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</guid><description>&lt;h2 id="cargo"&gt;Cargo&lt;/h2&gt;
 &lt;p&gt;Cargo is Rust’s built-in package manager and build system. It also supports the following actions,&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -660,7 +677,37 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
 		&lt;p&gt;Senior/ Lead Backend - Go/ Rust&lt;br&gt;
-&lt;a href="https://dumindu.github.io/nu_1/about-me/" target="_blank" &gt;Portfolio&lt;/a&gt; | &lt;a href="https://github.com/dumindu" target="_blank" &gt;GitHub&lt;/a&gt; | Currently in Sri Lanka&lt;/p&gt;</description></item><item><title>Ownership</title><link>https://learning-rust.github.io/docs/ownership/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/ownership/</guid><description>&lt;p&gt;We discussed in the &lt;a href="https://learning-rust.github.io/docs/traits/#derive-traits" &gt;Derive Traits&lt;/a&gt;, the usage of &lt;a href="https://doc.rust-lang.org/std/marker/trait.Copy.html" target="_blank" &gt;&lt;code&gt;Copy&lt;/code&gt; marker trait&lt;/a&gt; and &lt;a href="https://doc.rust-lang.org/std/clone/index.html" target="_blank" &gt;&lt;code&gt;.clone()&lt;/code&gt;&lt;/a&gt; with the below code.&lt;/p&gt;
+&lt;a href="https://dumindu.github.io/nu_1/about-me/" target="_blank" &gt;Portfolio&lt;/a&gt; | &lt;a href="https://github.com/dumindu" target="_blank" &gt;GitHub&lt;/a&gt; | Currently in Sri Lanka&lt;/p&gt;</description></item><item><title>Overview</title><link>https://learning-rust.github.io/labs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/overview/</guid><description>&lt;div class="alert alert-caution"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M480-300q15 0 25.5-10.5T516-336q0-15-10.5-25.5T480-372q-15 0-25.5 10.5T444-336q0 15 10.5 25.5T480-300Zm25.5-142.5Q516-453 516-468v-168q0-15-10.5-25.5T480-672q-15 0-25.5 10.5T444-636v168q0 15 10.5 25.5T480-432q15 0 25.5-10.5ZM371-144q-14 0-27-5t-24-16L165-321q-10-10-15.5-23.5T144-372v-217q0-14 5-27t16-24l155-155q11-11 24-16t27-5h218q14 0 27 5t24 16l155 155q11 11 16 24t5 27v218q0 14-5 27t-16 24L639-165q-10 10-23.5 15.5T588-144H371Zm0-72h218l155-155v-218L588-744H371L216-589v218l155 155Zm109-264Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			SPOILER ALERT
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;Coming soon!&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Project Scope&lt;/th&gt;
+ &lt;th&gt;Technology Stack&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;RESTful API Workspace&lt;/td&gt;
+ &lt;td&gt;Axum, Tokio, Tower, Toasty ORM, Garde, Utoipa, Docker &amp;amp; PostgreSQL&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>Ownership</title><link>https://learning-rust.github.io/docs/ownership/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/ownership/</guid><description>&lt;p&gt;We discussed in the &lt;a href="https://learning-rust.github.io/docs/traits/#derive-traits" &gt;Derive Traits&lt;/a&gt;, the usage of &lt;a href="https://doc.rust-lang.org/std/marker/trait.Copy.html" target="_blank" &gt;&lt;code&gt;Copy&lt;/code&gt; marker trait&lt;/a&gt; and &lt;a href="https://doc.rust-lang.org/std/clone/index.html" target="_blank" &gt;&lt;code&gt;.clone()&lt;/code&gt;&lt;/a&gt; with the below code.&lt;/p&gt;
 
 
 
