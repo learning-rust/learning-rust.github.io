@@ -70,16 +70,10 @@ menus:
       weight: 20
       params:
         icon: menu_book
-    - identifier: labs
-      name: Laboratory
-      pageRef: /labs
-      weight: 30
-      params:
-        icon: science
     - identifier: journal
       name: Journal
       pageRef: /page/journal
-      weight: 40
+      weight: 30
       params:
         icon: news
 
