@@ -13,7 +13,182 @@
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;We build a production-ready containerized RESTful API server application using Axum, Tokio, Tower, Toasty ORM, Garde, Utoipa with Docker and PostgreSQL.&lt;/p&gt;</description></item><item><title>Overview</title><link>https://learning-rust.github.io/labs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/overview/</guid><description>&lt;div class="alert alert-assignment"&gt;
+		&lt;p&gt;We build a production-ready containerized RESTful API server application using Axum, Tokio, Tower, Toasty ORM, Garde, Utoipa with Docker and PostgreSQL.&lt;/p&gt;</description></item><item><title>Configurations</title><link>https://learning-rust.github.io/labs/configurations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/configurations/</guid><description/></item><item><title>Database and DB Migrations</title><link>https://learning-rust.github.io/labs/database-and-db-migrations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/database-and-db-migrations/</guid><description/></item><item><title>Generate OpenAPI Specification</title><link>https://learning-rust.github.io/labs/generate-openapi-specification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/generate-openapi-specification/</guid><description/></item><item><title>Initialize the Server</title><link>https://learning-rust.github.io/labs/initialize-the-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/initialize-the-server/</guid><description>&lt;h2 id="create-new-workspace"&gt;Create New Workspace&lt;/h2&gt;
+&lt;p&gt;Run following commands to create the workspace.&lt;/p&gt;
+
+
+
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir rest_api_workspace &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; rest_api_workspace
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;#34;[workspace]\nresolver = \&amp;#34;3\&amp;#34;&amp;#34;&lt;/span&gt; &amp;gt; ./Cargo.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cargo new crates/book_service
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir crates/book_service/src/bin &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv crates/book_service/src/main.rs crates/book_service/src/bin/app.rs&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then manually update &lt;code&gt;book_service/Cargo.toml&lt;/code&gt; to add &lt;code&gt;default-run&lt;/code&gt; and &lt;code&gt;[[bin]]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;These steps will generate the following folder structure,&lt;/p&gt;
+
+
+
+
+&lt;div class="code-window highlight"&gt;
+ 
+	&lt;div class="code-header"&gt;
+		&lt;div class="traffic-lights"&gt;
+			&lt;div class="light light-red"&gt;&lt;/div&gt;
+			&lt;div class="light light-yellow"&gt;&lt;/div&gt;
+			&lt;div class="light light-green"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;span class="code-title"&gt;Folder Structure&lt;/span&gt;
+		&lt;div&gt;
+			
+		&lt;/div&gt;
+	&lt;/div&gt;
+ 
+	&lt;div class="code-body"&gt;
+		&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell" &gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── Cargo.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── Cargo.lock
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── crates
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── book_service
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── Cargo.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── src
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── bin
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── app.rs&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;div class="tabs" style="--tabs-count: 3;" aria-label="Select File" &gt;
+	
+
+&lt;details name="tabs-1" style="--n: 1" open&gt;
+	&lt;summary data-index="app.rs"&gt;
+		app.rs
+	&lt;/summary&gt;
+	&lt;div&gt;
+		
+
+
+
+&lt;div class="code-window highlight"&gt;
+ 
+	&lt;div class="code-header"&gt;
+		&lt;div class="traffic-lights"&gt;
+			&lt;div class="light light-red"&gt;&lt;/div&gt;
+			&lt;div class="light light-yellow"&gt;&lt;/div&gt;
+			&lt;div class="light light-green"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;span class="code-title"&gt;crates/book_service/src/bin/app.rs&lt;/span&gt;
+		&lt;div&gt;
+			
+		&lt;/div&gt;
+	&lt;/div&gt;
+ 
+	&lt;div class="code-body"&gt;
+		&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust" &gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Hello, world!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+	&lt;/div&gt;
+&lt;/details&gt;
+
+
+&lt;details name="tabs-1" style="--n: 2" open&gt;
+	&lt;summary data-index="Cargo.toml"&gt;
+		Cargo.toml
+	&lt;/summary&gt;
+	&lt;div&gt;
+		
+
+
+
+&lt;div class="code-window highlight"&gt;
+ 
+	&lt;div class="code-header"&gt;
+		&lt;div class="traffic-lights"&gt;
+			&lt;div class="light light-red"&gt;&lt;/div&gt;
+			&lt;div class="light light-yellow"&gt;&lt;/div&gt;
+			&lt;div class="light light-green"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;span class="code-title"&gt;crates/book_service/Cargo.toml&lt;/span&gt;
+		&lt;div&gt;
+			
+		&lt;/div&gt;
+	&lt;/div&gt;
+ 
+	&lt;div class="code-body"&gt;
+		&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust" &gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;package&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;book_service&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;0.1.0&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;edition&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;2024&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;app&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;app&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;src/bin/app.rs&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;dependencies&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+	&lt;/div&gt;
+&lt;/details&gt;
+
+
+&lt;details name="tabs-1" style="--n: 3" open&gt;
+	&lt;summary data-index="Root Cargo.toml"&gt;
+		Root Cargo.toml
+	&lt;/summary&gt;
+	&lt;div&gt;
+		
+
+
+
+&lt;div class="code-window highlight"&gt;
+ 
+	&lt;div class="code-header"&gt;
+		&lt;div class="traffic-lights"&gt;
+			&lt;div class="light light-red"&gt;&lt;/div&gt;
+			&lt;div class="light light-yellow"&gt;&lt;/div&gt;
+			&lt;div class="light light-green"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;span class="code-title"&gt;Cargo.toml&lt;/span&gt;
+		&lt;div&gt;
+			
+		&lt;/div&gt;
+	&lt;/div&gt;
+ 
+	&lt;div class="code-body"&gt;
+		&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml" &gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;workspace&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;resolver&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;members&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;crates/book_service&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+	&lt;/div&gt;
+&lt;/details&gt;
+
+
+&lt;/div&gt;
+
+
+
+&lt;div class="alert alert-tip"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M407.74-240Q378-240 357-261.15 336-282.3 336-312v-67q-57-37.3-88.5-95.65Q216-533 216-600q0-110.31 76.78-187.16 76.78-76.84 187-76.84T667-787.16q77 76.85 77 187.16 0 66.82-31.5 125.41T624-379v67q0 29.7-21.18 50.85Q581.65-240 551.91-240H407.74Zm.26-72h144v-86q0-9.29 4-17.64 4-8.36 12-12.92l17-10.93q41-25.51 64-68.69 23-43.18 23-91.82 0-79.68-56.23-135.84-56.22-56.16-136-56.16Q400-792 344-735.84 288-679.68 288-600q0 48.64 23 91.82 23 43.18 64 68.69l17 10.93q8 4.56 12 12.92 4 8.35 4 17.64v86ZM396-96q-15.3 0-25.65-10.29Q360-116.58 360-131.79t10.35-25.71Q380.7-168 396-168h168q15.3 0 25.65 10.29Q600-147.42 600-132.21t-10.35 25.71Q579.3-96 564-96H396Zm84-504Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Tip
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;p&gt;You should see &lt;code&gt;Hello, world!&lt;/code&gt; while running &lt;code&gt;cargo run -p book_service&lt;/code&gt; from the project root.&lt;/p&gt;</description></item><item><title>Overview</title><link>https://learning-rust.github.io/labs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/overview/</guid><description>&lt;div class="alert alert-assignment"&gt;
 	&lt;div class="alert-header"&gt;
 		
 		
@@ -50,4 +225,4 @@
  &lt;td&gt;&lt;a href="https://github.com/dumindu/axum" target="_blank" &gt;dumindu/axum&lt;/a&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
-&lt;/table&gt;</description></item></channel></rss>
+&lt;/table&gt;</description></item><item><title>Routes and Error Responses</title><link>https://learning-rust.github.io/labs/routes-and-error-responses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/routes-and-error-responses/</guid><description/></item></channel></rss>
