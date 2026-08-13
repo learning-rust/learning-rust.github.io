@@ -6,7 +6,7 @@
   pages:
     - title: Building a Containerized RESTful API
     - title: Initialize the Server
-    - title: Configurations
+    - title: Configurations and Middleware
     - title: Database and DB Migrations
     - title: Routes and Error Responses
     - title: Generate OpenAPI Specification

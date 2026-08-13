@@ -17,7 +17,7 @@ Disallow: /labs/building-a-containerized-restful-api/
 Disallow: /docs/cargo-crates-and-basic-project-structure/
 Disallow: /docs/combinators/
 Disallow: /docs/comments-and-documenting-the-code/
-Disallow: /labs/configurations/
+Disallow: /labs/configurations-and-middleware/
 Disallow: /docs/control-flows/
 Disallow: /docs/crates-and-packages/
 Disallow: /docs/custom-error-types/
