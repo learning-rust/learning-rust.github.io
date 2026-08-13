@@ -603,8 +603,7 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 
 
 &lt;div class="tabs" style="--tabs-count: 3;" aria-label="Select File" &gt;
-	
-
+	 
 &lt;details name="tabs-1" style="--n: 1" open&gt;
 	&lt;summary data-index="app.rs"&gt;
 		app.rs
@@ -637,8 +636,7 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 
 	&lt;/div&gt;
 &lt;/details&gt;
-
-
+ 
 &lt;details name="tabs-1" style="--n: 2" open&gt;
 	&lt;summary data-index="Cargo.toml"&gt;
 		Cargo.toml
@@ -679,8 +677,7 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 
 	&lt;/div&gt;
 &lt;/details&gt;
-
-
+ 
 &lt;details name="tabs-1" style="--n: 3" open&gt;
 	&lt;summary data-index="Root Cargo.toml"&gt;
 		Root Cargo.toml
@@ -713,8 +710,7 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 
 	&lt;/div&gt;
 &lt;/details&gt;
-
-
+ 
 &lt;/div&gt;
 
 
