@@ -38,7 +38,78 @@
 &lt;/ul&gt;
 	&lt;/div&gt;
 &lt;/div&gt;&lt;h3 id="add-envconfig"&gt;Add &lt;code&gt;envconfig&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Run following &lt;code&gt;cargo add&lt;/code&gt; command from the &lt;code&gt;book_service&lt;/code&gt; folder.&lt;/p&gt;</description></item><item><title>Database and DB Migrations</title><link>https://learning-rust.github.io/labs/database-and-db-migrations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/database-and-db-migrations/</guid><description/></item><item><title>Generate OpenAPI Specification</title><link>https://learning-rust.github.io/labs/generate-openapi-specification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/generate-openapi-specification/</guid><description/></item><item><title>Initialize the Server</title><link>https://learning-rust.github.io/labs/initialize-the-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/initialize-the-server/</guid><description>&lt;h2 id="create-new-workspace"&gt;Create New Workspace&lt;/h2&gt;
+&lt;p&gt;Run following &lt;code&gt;cargo add&lt;/code&gt; command from the &lt;code&gt;book_service&lt;/code&gt; folder.&lt;/p&gt;</description></item><item><title>Database and DB Migrations</title><link>https://learning-rust.github.io/labs/database-and-db-migrations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/database-and-db-migrations/</guid><description>&lt;h2 id="database-design"&gt;Database Design&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Column Name&lt;/th&gt;
+ &lt;th&gt;Datatype&lt;/th&gt;
+ &lt;th&gt;Not Null&lt;/th&gt;
+ &lt;th&gt;Primary Key&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;created_at&lt;/td&gt;
+ &lt;td&gt;TIMESTAMPTZ&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;updated_at&lt;/td&gt;
+ &lt;td&gt;TIMESTAMPTZ&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;id&lt;/td&gt;
+ &lt;td&gt;UUID&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;published_date&lt;/td&gt;
+ &lt;td&gt;DATE&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;status&lt;/td&gt;
+ &lt;td&gt;SMALLINT&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;title&lt;/td&gt;
+ &lt;td&gt;TEXT&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;description&lt;/td&gt;
+ &lt;td&gt;TEXT&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;image_url&lt;/td&gt;
+ &lt;td&gt;TEXT&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="add-jiff-uuid-toasty-and-toasty-cli"&gt;Add &lt;code&gt;jiff&lt;/code&gt;, &lt;code&gt;uuid&lt;/code&gt;, &lt;code&gt;toasty&lt;/code&gt; and &lt;code&gt;toasty-cli&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Run following &lt;code&gt;cargo add&lt;/code&gt; commands from the &lt;code&gt;book_service&lt;/code&gt; folder.&lt;/p&gt;
+
+
+
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cargo add jiff
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cargo add uuid -F v7,fast-rng
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cargo add toasty -F postgresql,migration,jiff
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cargo add toasty-cli&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="initial-model"&gt;Initial Model&lt;/h2&gt;
+&lt;h3 id="add-initial-bookrs"&gt;Add Initial &lt;code&gt;book.rs&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Add a new file &lt;code&gt;book_service/src/models/book.rs&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Generate OpenAPI Specification</title><link>https://learning-rust.github.io/labs/generate-openapi-specification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/generate-openapi-specification/</guid><description/></item><item><title>Initialize the Server</title><link>https://learning-rust.github.io/labs/initialize-the-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/initialize-the-server/</guid><description>&lt;h2 id="create-new-workspace"&gt;Create New Workspace&lt;/h2&gt;
 &lt;p&gt;Run following commands to create the workspace.&lt;/p&gt;
 
 
