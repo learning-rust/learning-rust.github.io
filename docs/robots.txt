@@ -4,20 +4,13 @@ User-agent: baiduspider
 User-agent: Applebot
 Allow: /
 
-User-agent: GPTBot
-User-agent: OAI-SearchBot
-User-agent: ChatGPT-User
-User-agent: ClaudeBot
-User-agent: Google-Extended
-User-agent: CCBot
-User-agent: Bytespider
 User-agent: *
 Disallow: /docs/borrowing/
 Disallow: /labs/building-a-containerized-restful-api/
 Disallow: /docs/cargo-crates-and-basic-project-structure/
 Disallow: /docs/combinators/
 Disallow: /docs/comments-and-documenting-the-code/
-Disallow: /labs/configurations-and-middleware/
+Disallow: /labs/configuration-and-middleware/
 Disallow: /docs/control-flows/
 Disallow: /docs/crates-and-packages/
 Disallow: /docs/custom-error-types/

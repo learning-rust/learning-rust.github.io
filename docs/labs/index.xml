@@ -13,7 +13,7 @@
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;We build a production-ready containerized RESTful API server application using Axum, Tokio, Tower, Toasty ORM, Garde, Utoipa with Docker and PostgreSQL.&lt;/p&gt;</description></item><item><title>Configurations and Middleware</title><link>https://learning-rust.github.io/labs/configurations-and-middleware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/configurations-and-middleware/</guid><description>&lt;h2 id="server-configurations"&gt;Server Configurations&lt;/h2&gt;
+		&lt;p&gt;We build a production-ready containerized RESTful API server application using Axum, Tokio, Tower, Toasty ORM, Garde, Utoipa with Docker and PostgreSQL.&lt;/p&gt;</description></item><item><title>Configuration and Middleware</title><link>https://learning-rust.github.io/labs/configuration-and-middleware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/configuration-and-middleware/</guid><description>&lt;h2 id="server-configuration"&gt;Server Configuration&lt;/h2&gt;
 
 
 &lt;div class="alert alert-tip"&gt;
@@ -82,7 +82,8 @@
 
 
 &lt;div class="tabs" style="--tabs-count: 3;" aria-label="Select File" &gt;
-	 
+	
+
 &lt;details name="tabs-1" style="--n: 1" open&gt;
 	&lt;summary data-index="app.rs"&gt;
 		app.rs
@@ -115,7 +116,8 @@
 
 	&lt;/div&gt;
 &lt;/details&gt;
- 
+
+
 &lt;details name="tabs-1" style="--n: 2" open&gt;
 	&lt;summary data-index="Cargo.toml"&gt;
 		Cargo.toml
@@ -156,7 +158,8 @@
 
 	&lt;/div&gt;
 &lt;/details&gt;
- 
+
+
 &lt;details name="tabs-1" style="--n: 3" open&gt;
 	&lt;summary data-index="Root Cargo.toml"&gt;
 		Root Cargo.toml
@@ -189,7 +192,8 @@
 
 	&lt;/div&gt;
 &lt;/details&gt;
- 
+
+
 &lt;/div&gt;
 
 

@@ -190,7 +190,7 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;By convention, try to avoid using block comments. Use line comments instead.&lt;/p&gt;</description></item><item><title>Configurations and Middleware</title><link>https://learning-rust.github.io/labs/configurations-and-middleware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/configurations-and-middleware/</guid><description>&lt;h2 id="server-configurations"&gt;Server Configurations&lt;/h2&gt;
+		&lt;p&gt;By convention, try to avoid using block comments. Use line comments instead.&lt;/p&gt;</description></item><item><title>Configuration and Middleware</title><link>https://learning-rust.github.io/labs/configuration-and-middleware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/configuration-and-middleware/</guid><description>&lt;h2 id="server-configuration"&gt;Server Configuration&lt;/h2&gt;
 
 
 &lt;div class="alert alert-tip"&gt;
@@ -628,7 +628,8 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 
 
 &lt;div class="tabs" style="--tabs-count: 3;" aria-label="Select File" &gt;
-	 
+	
+
 &lt;details name="tabs-1" style="--n: 1" open&gt;
 	&lt;summary data-index="app.rs"&gt;
 		app.rs
@@ -661,7 +662,8 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 
 	&lt;/div&gt;
 &lt;/details&gt;
- 
+
+
 &lt;details name="tabs-1" style="--n: 2" open&gt;
 	&lt;summary data-index="Cargo.toml"&gt;
 		Cargo.toml
@@ -702,7 +704,8 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 
 	&lt;/div&gt;
 &lt;/details&gt;
- 
+
+
 &lt;details name="tabs-1" style="--n: 3" open&gt;
 	&lt;summary data-index="Root Cargo.toml"&gt;
 		Root Cargo.toml
@@ -735,7 +738,8 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 
 	&lt;/div&gt;
 &lt;/details&gt;
- 
+
+
 &lt;/div&gt;
 
 
