@@ -31,7 +31,7 @@
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;We build a production-ready containerized RESTful API server application using Axum, Tokio, Tower, Toasty ORM, Garde, Utoipa with Docker and PostgreSQL.&lt;/p&gt;</description></item><item><title>Cargo, Crates and Basic Project Structure</title><link>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</guid><description>&lt;h2 id="cargo"&gt;Cargo&lt;/h2&gt;
+		&lt;p&gt;We build a production-ready containerized RESTful API server application using Axum, Tokio, Tower, Serde, Toasty ORM, Garde, Utoipa with Docker and PostgreSQL.&lt;/p&gt;</description></item><item><title>Cargo, Crates and Basic Project Structure</title><link>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/cargo-crates-and-basic-project-structure/</guid><description>&lt;h2 id="cargo"&gt;Cargo&lt;/h2&gt;
 &lt;p&gt;Cargo is Rust’s built-in package manager and build system. It also supports the following actions,&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;

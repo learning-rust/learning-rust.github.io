@@ -13,7 +13,7 @@
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;We build a production-ready containerized RESTful API server application using Axum, Tokio, Tower, Toasty ORM, Garde, Utoipa with Docker and PostgreSQL.&lt;/p&gt;</description></item><item><title>Configuration and Middleware</title><link>https://learning-rust.github.io/labs/configuration-and-middleware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/configuration-and-middleware/</guid><description>&lt;h2 id="server-configuration"&gt;Server Configuration&lt;/h2&gt;
+		&lt;p&gt;We build a production-ready containerized RESTful API server application using Axum, Tokio, Tower, Serde, Toasty ORM, Garde, Utoipa with Docker and PostgreSQL.&lt;/p&gt;</description></item><item><title>Configuration and Middleware</title><link>https://learning-rust.github.io/labs/configuration-and-middleware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/configuration-and-middleware/</guid><description>&lt;h2 id="server-configuration"&gt;Server Configuration&lt;/h2&gt;
 
 
 &lt;div class="alert alert-tip"&gt;
