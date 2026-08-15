@@ -260,7 +260,30 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;p&gt;Main crate types are,&lt;/p&gt;</description></item><item><title>Custom Error Types</title><link>https://learning-rust.github.io/docs/custom-error-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/custom-error-types/</guid><description>&lt;p&gt;Rust allow us to create our own &lt;code&gt;Err&lt;/code&gt; types. We call them “&lt;em&gt;Custom Error Types&lt;/em&gt;”.&lt;/p&gt;
 &lt;h2 id="error-trait"&gt;Error trait&lt;/h2&gt;
 &lt;p&gt;As you know &lt;strong&gt;traits define the functionality a type must provide&lt;/strong&gt;. But we don’t always need to define new traits for common functionalities, because Rust &lt;strong&gt;standard library provides reusable traits&lt;/strong&gt; which can be implemented on our own types. While creating custom error types the &lt;a href="https://doc.rust-lang.org/std/error/trait.Error.html" target="_blank" &gt;&lt;code&gt;std::error::Error&lt;/code&gt; trait&lt;/a&gt; helps us to convert any type to an &lt;code&gt;Err&lt;/code&gt; type.&lt;/p&gt;</description></item><item><title>Database and DB Migrations</title><link>https://learning-rust.github.io/labs/database-and-db-migrations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/database-and-db-migrations/</guid><description>&lt;h2 id="database-design"&gt;Database Design&lt;/h2&gt;
-&lt;table&gt;
+
+
+&lt;div class="alert alert-tip"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M407.74-240Q378-240 357-261.15 336-282.3 336-312v-67q-57-37.3-88.5-95.65Q216-533 216-600q0-110.31 76.78-187.16 76.78-76.84 187-76.84T667-787.16q77 76.85 77 187.16 0 66.82-31.5 125.41T624-379v67q0 29.7-21.18 50.85Q581.65-240 551.91-240H407.74Zm.26-72h144v-86q0-9.29 4-17.64 4-8.36 12-12.92l17-10.93q41-25.51 64-68.69 23-43.18 23-91.82 0-79.68-56.23-135.84-56.22-56.16-136-56.16Q400-792 344-735.84 288-679.68 288-600q0 48.64 23 91.82 23 43.18 64 68.69l17 10.93q8 4.56 12 12.92 4 8.35 4 17.64v86ZM396-96q-15.3 0-25.65-10.29Q360-116.58 360-131.79t10.35-25.71Q380.7-168 396-168h168q15.3 0 25.65 10.29Q600-147.42 600-132.21t-10.35 25.71Q579.3-96 564-96H396Zm84-504Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Tip
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;ul&gt;
+&lt;li&gt;To keep this series simple, we use only a single Postgres database table named &lt;code&gt;books&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;We order fixed-width table columns by decreasing alignment requirements to optimize using Column Tetris.&lt;/li&gt;
+&lt;li&gt;We map &lt;code&gt;TIMESTAMPTZ&lt;/code&gt;, &lt;code&gt;DATE&lt;/code&gt;, &lt;code&gt;UUID&lt;/code&gt; types to &lt;code&gt;jiff::{Timestamp, civil::Date}&lt;/code&gt;, &lt;code&gt;uuid::Uuid&lt;/code&gt; Rust types.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
  &lt;th&gt;Column Name&lt;/th&gt;
@@ -321,16 +344,7 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="add-jiff-uuid-toasty-and-toasty-cli"&gt;Add &lt;code&gt;jiff&lt;/code&gt;, &lt;code&gt;uuid&lt;/code&gt;, &lt;code&gt;toasty&lt;/code&gt; and &lt;code&gt;toasty-cli&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;Run following &lt;code&gt;cargo add&lt;/code&gt; commands from the &lt;code&gt;book_service&lt;/code&gt; folder.&lt;/p&gt;
-
-
-
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cargo add jiff
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cargo add uuid -F v7,fast-rng
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cargo add toasty -F postgresql,migration,jiff
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cargo add toasty-cli&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="initial-model"&gt;Initial Model&lt;/h2&gt;
-&lt;h3 id="add-initial-bookrs"&gt;Add Initial &lt;code&gt;book.rs&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Add a new file &lt;code&gt;book_service/src/models/book.rs&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Enums</title><link>https://learning-rust.github.io/docs/enums/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/enums/</guid><description>&lt;ul&gt;
+&lt;p&gt;Run following &lt;code&gt;cargo add&lt;/code&gt; commands from the &lt;code&gt;book_service&lt;/code&gt; folder.&lt;/p&gt;</description></item><item><title>Enums</title><link>https://learning-rust.github.io/docs/enums/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/enums/</guid><description>&lt;ul&gt;
 &lt;li&gt;An enum is a single type that contains variants, which represent the possible values of the enum at any given time.&lt;/li&gt;
 &lt;li&gt;By convention, the enum name and its variants&amp;rsquo; names should follow &lt;a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank" &gt;&lt;code&gt;PascalCase&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Can access the variants using the &lt;code&gt;::&lt;/code&gt; notation and the variant name. ex. Day::Sunday&lt;/li&gt;
@@ -656,163 +670,6 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
 		&lt;p&gt;This can be any form of &lt;code&gt;self&lt;/code&gt;, &lt;code&gt;&amp;amp;self&lt;/code&gt;, &lt;code&gt;&amp;amp;mut self&lt;/code&gt;, &lt;code&gt;self: Box&amp;lt;Self&amp;gt;&lt;/code&gt;, &lt;code&gt;self: Pin&amp;lt;&amp;amp;mut Self&amp;gt;&lt;/code&gt;, etc.&lt;/p&gt;</description></item><item><title>Initialize the Server</title><link>https://learning-rust.github.io/labs/initialize-the-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/initialize-the-server/</guid><description>&lt;h2 id="create-new-workspace"&gt;Create New Workspace&lt;/h2&gt;
-&lt;p&gt;Run following commands to create the workspace.&lt;/p&gt;
-
-
-
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir rest_api_workspace &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; rest_api_workspace
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;#34;[workspace]\nresolver = \&amp;#34;3\&amp;#34;&amp;#34;&lt;/span&gt; &amp;gt; ./Cargo.toml
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cargo new crates/book_service
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir crates/book_service/src/bin &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv crates/book_service/src/main.rs crates/book_service/src/bin/app.rs&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then manually update &lt;code&gt;book_service/Cargo.toml&lt;/code&gt; to add &lt;code&gt;default-run&lt;/code&gt; and &lt;code&gt;[[bin]]&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;These steps will generate the following folder structure,&lt;/p&gt;
-
-
-
-
-&lt;div class="code-window highlight"&gt;
- 
-	&lt;div class="code-header"&gt;
-		&lt;div class="traffic-lights"&gt;
-			&lt;div class="light light-red"&gt;&lt;/div&gt;
-			&lt;div class="light light-yellow"&gt;&lt;/div&gt;
-			&lt;div class="light light-green"&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;span class="code-title"&gt;Folder Structure&lt;/span&gt;
-		&lt;div&gt;
-			
-		&lt;/div&gt;
-	&lt;/div&gt;
- 
-	&lt;div class="code-body"&gt;
-		&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell" &gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── Cargo.toml
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── Cargo.lock
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── crates
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── book_service
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── Cargo.toml
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── src
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── bin
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── app.rs&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-
-
-
-&lt;div class="tabs" style="--tabs-count: 3;" aria-label="Select File" &gt;
-	
-
-&lt;details name="tabs-1" style="--n: 1" open&gt;
-	&lt;summary data-index="app.rs"&gt;
-		app.rs
-	&lt;/summary&gt;
-	&lt;div&gt;
-		
-
-
-
-&lt;div class="code-window highlight"&gt;
- 
-	&lt;div class="code-header"&gt;
-		&lt;div class="traffic-lights"&gt;
-			&lt;div class="light light-red"&gt;&lt;/div&gt;
-			&lt;div class="light light-yellow"&gt;&lt;/div&gt;
-			&lt;div class="light light-green"&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;span class="code-title"&gt;crates/book_service/src/bin/app.rs&lt;/span&gt;
-		&lt;div&gt;
-			
-		&lt;/div&gt;
-	&lt;/div&gt;
- 
-	&lt;div class="code-body"&gt;
-		&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust" &gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;Hello, world!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-	&lt;/div&gt;
-&lt;/details&gt;
-
-
-&lt;details name="tabs-1" style="--n: 2" open&gt;
-	&lt;summary data-index="Cargo.toml"&gt;
-		Cargo.toml
-	&lt;/summary&gt;
-	&lt;div&gt;
-		
-
-
-
-&lt;div class="code-window highlight"&gt;
- 
-	&lt;div class="code-header"&gt;
-		&lt;div class="traffic-lights"&gt;
-			&lt;div class="light light-red"&gt;&lt;/div&gt;
-			&lt;div class="light light-yellow"&gt;&lt;/div&gt;
-			&lt;div class="light light-green"&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;span class="code-title"&gt;crates/book_service/Cargo.toml&lt;/span&gt;
-		&lt;div&gt;
-			
-		&lt;/div&gt;
-	&lt;/div&gt;
- 
-	&lt;div class="code-body"&gt;
-		&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-rust" data-lang="rust" &gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;package&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;book_service&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;0.1.0&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;edition&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;2024&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;app&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;app&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;src/bin/app.rs&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;dependencies&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-	&lt;/div&gt;
-&lt;/details&gt;
-
-
-&lt;details name="tabs-1" style="--n: 3" open&gt;
-	&lt;summary data-index="Root Cargo.toml"&gt;
-		Root Cargo.toml
-	&lt;/summary&gt;
-	&lt;div&gt;
-		
-
-
-
-&lt;div class="code-window highlight"&gt;
- 
-	&lt;div class="code-header"&gt;
-		&lt;div class="traffic-lights"&gt;
-			&lt;div class="light light-red"&gt;&lt;/div&gt;
-			&lt;div class="light light-yellow"&gt;&lt;/div&gt;
-			&lt;div class="light light-green"&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;span class="code-title"&gt;Cargo.toml&lt;/span&gt;
-		&lt;div&gt;
-			
-		&lt;/div&gt;
-	&lt;/div&gt;
- 
-	&lt;div class="code-body"&gt;
-		&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml" &gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;workspace&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;resolver&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;3&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;members&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;crates/book_service&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-	&lt;/div&gt;
-&lt;/details&gt;
-
-
-&lt;/div&gt;
-
 
 
 &lt;div class="alert alert-tip"&gt;
@@ -830,7 +687,7 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;You should see &lt;code&gt;Hello, world!&lt;/code&gt; while running &lt;code&gt;cargo run -p book_service&lt;/code&gt; from the project root.&lt;/p&gt;</description></item><item><title>Installation</title><link>https://learning-rust.github.io/docs/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/installation/</guid><description>&lt;h2 id="rustup"&gt;Rustup&lt;/h2&gt;
+		&lt;p&gt;We build an Axum based web service inside the &lt;code&gt;book_service&lt;/code&gt; crate within the &lt;code&gt;rest_api_workspace&lt;/code&gt; Rust workspace.&lt;/p&gt;</description></item><item><title>Installation</title><link>https://learning-rust.github.io/docs/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/installation/</guid><description>&lt;h2 id="rustup"&gt;Rustup&lt;/h2&gt;
 &lt;p&gt;There are many ways to install Rust on your system. For the moment the official way to install Rust is using &lt;a href="https://rustup.rs/" target="_blank" &gt;Rustup&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://rust-lang.github.io/rustup/index.html" target="_blank" &gt;📖&lt;/a&gt; Rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between &lt;strong&gt;stable, beta, and nightly&lt;/strong&gt; compilers and keep them updated. It also makes cross-compiling simpler with binary builds of the standard library for common platforms.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://rust-lang.github.io/rustup/installation/index.html" target="_blank" &gt;📖&lt;/a&gt; Rustup installs &lt;code&gt;rustc&lt;/code&gt;, &lt;code&gt;cargo&lt;/code&gt;, &lt;code&gt;rustup&lt;/code&gt; and other standard tools to &lt;strong&gt;Cargo&amp;rsquo;s &lt;code&gt;bin&lt;/code&gt; directory&lt;/strong&gt;. On Unix it is located at &lt;code&gt;$HOME/.cargo/bin&lt;/code&gt; and on Windows at &lt;code&gt;%USERPROFILE%\.cargo\bin&lt;/code&gt;. This is the same directory that &lt;code&gt;cargo install&lt;/code&gt; will install Rust programs and Cargo plugins.&lt;/p&gt;</description></item><item><title>Learning Rust</title><link>https://learning-rust.github.io/journal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/journal/</guid><description>This isn&amp;rsquo;t just about Rust or learning a new language. It&amp;rsquo;s about how quickly you can master it.</description></item><item><title>Lifetimes</title><link>https://learning-rust.github.io/docs/lifetimes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/lifetimes/</guid><description>&lt;div class="alert alert-recap"&gt;
@@ -1094,7 +951,31 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// ⭐️ no &amp;#34;x&amp;#34;, only single quotes
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Because of Unicode support, char is not a single byte, but four(32 bits).&lt;/p&gt;
 &lt;h2 id="i8-i16-i32-i64-i128"&gt;i8, i16, i32, i64, i128&lt;/h2&gt;
-&lt;p&gt;8, 16, 32, 64 and 128 bit fixed sized signed(+/-) integer types&lt;/p&gt;</description></item><item><title>Routes and Error Responses</title><link>https://learning-rust.github.io/labs/routes-and-error-responses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/routes-and-error-responses/</guid><description/></item><item><title>Smart Compiler</title><link>https://learning-rust.github.io/docs/smart-compiler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/smart-compiler/</guid><description>&lt;h2 id="compile-time-errors"&gt;Compile-Time Errors&lt;/h2&gt;
+&lt;p&gt;8, 16, 32, 64 and 128 bit fixed sized signed(+/-) integer types&lt;/p&gt;</description></item><item><title>Routes and Error Responses</title><link>https://learning-rust.github.io/labs/routes-and-error-responses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/routes-and-error-responses/</guid><description>&lt;h2 id="request-and-response-structures"&gt;Request and Response Structures&lt;/h2&gt;
+
+
+&lt;div class="alert alert-tip"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M407.74-240Q378-240 357-261.15 336-282.3 336-312v-67q-57-37.3-88.5-95.65Q216-533 216-600q0-110.31 76.78-187.16 76.78-76.84 187-76.84T667-787.16q77 76.85 77 187.16 0 66.82-31.5 125.41T624-379v67q0 29.7-21.18 50.85Q581.65-240 551.91-240H407.74Zm.26-72h144v-86q0-9.29 4-17.64 4-8.36 12-12.92l17-10.93q41-25.51 64-68.69 23-43.18 23-91.82 0-79.68-56.23-135.84-56.22-56.16-136-56.16Q400-792 344-735.84 288-679.68 288-600q0 48.64 23 91.82 23 43.18 64 68.69l17 10.93q8 4.56 12 12.92 4 8.35 4 17.64v86ZM396-96q-15.3 0-25.65-10.29Q360-116.58 360-131.79t10.35-25.71Q380.7-168 396-168h168q15.3 0 25.65 10.29Q600-147.42 600-132.21t-10.35 25.71Q579.3-96 564-96H396Zm84-504Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Tip
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;ul&gt;
+&lt;li&gt;We use &lt;a href="https://serde.rs/#data-structures" target="_blank" &gt;Serde&amp;rsquo;s &lt;code&gt;Serialize&lt;/code&gt; and &lt;code&gt;Deserialize&lt;/code&gt;&lt;/a&gt; derive macros to parse Rust structs directly from a JSON stream and to generate a JSON stream from Rust structs. This process eliminates the need of maintaining intermediate types, and maximizing the processing efficiency.&lt;/li&gt;
+&lt;li&gt;Third-party crates support Serde serialization and deserialization through feature flags.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="add-serde-support"&gt;Add Serde Support&lt;/h3&gt;
+&lt;p&gt;Run following &lt;code&gt;cargo add&lt;/code&gt; commands from the &lt;code&gt;book_service&lt;/code&gt; folder.&lt;/p&gt;</description></item><item><title>Smart Compiler</title><link>https://learning-rust.github.io/docs/smart-compiler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/smart-compiler/</guid><description>&lt;h2 id="compile-time-errors"&gt;Compile-Time Errors&lt;/h2&gt;
 &lt;p&gt;Rust focuses on strict code hygiene, and the compiler generates a highly specific set of warnings and errors to make it easier to identify and solve them.&lt;/p&gt;
 &lt;h3 id="typos"&gt;Typos&lt;/h3&gt;
 
