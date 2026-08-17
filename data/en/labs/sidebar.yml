@@ -9,4 +9,4 @@
     - title: Configuration and Middleware
     - title: Database and DB Migrations
     - title: Routes and Error Responses
-    - title: Generate OpenAPI Specification
+    - title: Form Validation

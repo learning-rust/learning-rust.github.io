@@ -470,7 +470,28 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;li&gt;we can handle them inside the same function. Or,&lt;/li&gt;
 &lt;li&gt;we can return &lt;code&gt;None&lt;/code&gt; and &lt;code&gt;Err&lt;/code&gt; types immediately to the caller. So the caller can decide how to handle them.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;💡 &lt;code&gt;None&lt;/code&gt; types no need to handle by the caller of the function always. But Rusts’ convention to handle &lt;strong&gt;&lt;code&gt;Err&lt;/code&gt;&lt;/strong&gt; types is, &lt;strong&gt;return them immediately to the caller to give more control to the caller to decide how to handle them.&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Functions</title><link>https://learning-rust.github.io/docs/functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/functions/</guid><description>&lt;h2 id="named-functions"&gt;Named Functions&lt;/h2&gt;
+&lt;p&gt;💡 &lt;code&gt;None&lt;/code&gt; types no need to handle by the caller of the function always. But Rusts’ convention to handle &lt;strong&gt;&lt;code&gt;Err&lt;/code&gt;&lt;/strong&gt; types is, &lt;strong&gt;return them immediately to the caller to give more control to the caller to decide how to handle them.&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Form Validation</title><link>https://learning-rust.github.io/labs/form-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/form-validation/</guid><description>&lt;div class="alert alert-tip"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M407.74-240Q378-240 357-261.15 336-282.3 336-312v-67q-57-37.3-88.5-95.65Q216-533 216-600q0-110.31 76.78-187.16 76.78-76.84 187-76.84T667-787.16q77 76.85 77 187.16 0 66.82-31.5 125.41T624-379v67q0 29.7-21.18 50.85Q581.65-240 551.91-240H407.74Zm.26-72h144v-86q0-9.29 4-17.64 4-8.36 12-12.92l17-10.93q41-25.51 64-68.69 23-43.18 23-91.82 0-79.68-56.23-135.84-56.22-56.16-136-56.16Q400-792 344-735.84 288-679.68 288-600q0 48.64 23 91.82 23 43.18 64 68.69l17 10.93q8 4.56 12 12.92 4 8.35 4 17.64v86ZM396-96q-15.3 0-25.65-10.29Q360-116.58 360-131.79t10.35-25.71Q380.7-168 396-168h168q15.3 0 25.65 10.29Q600-147.42 600-132.21t-10.35 25.71Q579.3-96 564-96H396Zm84-504Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Tip
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;ul&gt;
+&lt;li&gt;To validate user inputs, we use &lt;a href="https://docs.rs/garde/latest/garde/" target="_blank" &gt;Garde&lt;/a&gt; and a custom extractor &lt;code&gt;ValidatedJson&lt;/code&gt;, which we build by implementing Axum&amp;rsquo;s &lt;a href="https://docs.rs/axum/latest/axum/extract/trait.FromRequest.html" target="_blank" &gt;&lt;code&gt;FromRequest&lt;/code&gt;&lt;/a&gt; trait, to improve developers&amp;rsquo; productivity.&lt;/li&gt;
+&lt;li&gt;Later, we customize Garde&amp;rsquo;s default validation error messages with its &lt;a href="https://docs.rs/garde/latest/garde/#i18n" target="_blank" &gt;&lt;code&gt;I18n&lt;/code&gt;&lt;/a&gt; trait, which even can be used to support different languages.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="add-garde"&gt;Add &lt;code&gt;garde&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Run following &lt;code&gt;cargo add&lt;/code&gt; command from the &lt;code&gt;book_service&lt;/code&gt; folder.&lt;/p&gt;</description></item><item><title>Functions</title><link>https://learning-rust.github.io/docs/functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/functions/</guid><description>&lt;h2 id="named-functions"&gt;Named Functions&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Named functions are declared with the keyword &lt;strong&gt;&lt;code&gt;fn&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;When using &lt;strong&gt;arguments&lt;/strong&gt;, we &lt;strong&gt;must declare the data types&lt;/strong&gt;.&lt;/li&gt;
@@ -491,7 +512,7 @@ __ &lt;a href="https://wiki.haskell.org/Combinator" target="_blank" &gt;wiki.has
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="returning-values"&gt;Returning Values&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Without the &lt;code&gt;return&lt;/code&gt; keyword. Only the last expression returns.&lt;/p&gt;</description></item><item><title>Generate OpenAPI Specification</title><link>https://learning-rust.github.io/labs/generate-openapi-specification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/generate-openapi-specification/</guid><description/></item><item><title>Generics</title><link>https://learning-rust.github.io/docs/generics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/generics/</guid><description>&lt;ul&gt;
+&lt;p&gt;Without the &lt;code&gt;return&lt;/code&gt; keyword. Only the last expression returns.&lt;/p&gt;</description></item><item><title>Generics</title><link>https://learning-rust.github.io/docs/generics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/generics/</guid><description>&lt;ul&gt;
 &lt;li&gt;Rust let us write one piece of code to operate with multiple data type via generics, without repeating ourselves to write separate versions for each type.&lt;/li&gt;
 &lt;li&gt;Use an uppercase letter (&lt;code&gt;T&lt;/code&gt;, &lt;code&gt;U&lt;/code&gt;, &amp;hellip;) or a &lt;a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank" &gt;&lt;code&gt;PascalCase&lt;/code&gt;&lt;/a&gt; identifier for the data type.
 &lt;ul&gt;
