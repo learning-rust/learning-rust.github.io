@@ -56,5 +56,6 @@ Disallow: /docs/unwrap-and-expect/
 Disallow: /docs/use/
 Disallow: /docs/variable-bindings-constants-and-statics/
 Disallow: /docs/vectors/
+Disallow: /labs/whats-next/
 Disallow: /docs/why-rust/
 Disallow: /docs/workspaces/
