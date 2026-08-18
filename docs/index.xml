@@ -751,7 +751,28 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 &lt;li&gt;Unlike some languages like Go and JavaScript, Rust&amp;rsquo;s module tree is not purely based on the file system.
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;The root of the module tree begins with either &lt;code&gt;main.rs&lt;/code&gt; (in a binary crate) or &lt;code&gt;lib.rs&lt;/code&gt; (in a library crate).&lt;/p&gt;</description></item><item><title>Operators</title><link>https://learning-rust.github.io/docs/operators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/operators/</guid><description>&lt;h2 id="arithmetic"&gt;Arithmetic&lt;/h2&gt;
+&lt;p&gt;The root of the module tree begins with either &lt;code&gt;main.rs&lt;/code&gt; (in a binary crate) or &lt;code&gt;lib.rs&lt;/code&gt; (in a library crate).&lt;/p&gt;</description></item><item><title>OpenAPI Specification</title><link>https://learning-rust.github.io/labs/openapi-specification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/openapi-specification/</guid><description>&lt;div class="alert alert-tip"&gt;
+	&lt;div class="alert-header"&gt;
+		
+		
+
+	&lt;svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"&gt;&lt;path d="M407.74-240Q378-240 357-261.15 336-282.3 336-312v-67q-57-37.3-88.5-95.65Q216-533 216-600q0-110.31 76.78-187.16 76.78-76.84 187-76.84T667-787.16q77 76.85 77 187.16 0 66.82-31.5 125.41T624-379v67q0 29.7-21.18 50.85Q581.65-240 551.91-240H407.74Zm.26-72h144v-86q0-9.29 4-17.64 4-8.36 12-12.92l17-10.93q41-25.51 64-68.69 23-43.18 23-91.82 0-79.68-56.23-135.84-56.22-56.16-136-56.16Q400-792 344-735.84 288-679.68 288-600q0 48.64 23 91.82 23 43.18 64 68.69l17 10.93q8 4.56 12 12.92 4 8.35 4 17.64v86ZM396-96q-15.3 0-25.65-10.29Q360-116.58 360-131.79t10.35-25.71Q380.7-168 396-168h168q15.3 0 25.65 10.29Q600-147.42 600-132.21t-10.35 25.71Q579.3-96 564-96H396Zm84-504Z"/&gt;&lt;/svg&gt;
+
+
+		&lt;span&gt;
+		
+			Tip
+		
+		&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="alert-body"&gt;
+		&lt;ul&gt;
+&lt;li&gt;We use &lt;a href="https://docs.rs/utoipa/latest/utoipa/" target="_blank" &gt;Utoipa&lt;/a&gt; to generate OpenAPI 3.1 specification from code, by using its macros.&lt;/li&gt;
+&lt;li&gt;We use its &lt;code&gt;jiff_0_2&lt;/code&gt; and &lt;code&gt;uuid&lt;/code&gt; features to automatically add support for &lt;code&gt;jiff::{Timestamp, civil::Date}&lt;/code&gt; and &lt;code&gt;uuid::Uuid&lt;/code&gt; types, the &lt;code&gt;axum_extras&lt;/code&gt; feature to enhance Axum integration, and the &lt;code&gt;yaml&lt;/code&gt; feature to generate a YAML version of OpenAPI specification.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="add-utoipa"&gt;Add &lt;code&gt;utoipa&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Run following &lt;code&gt;cargo add&lt;/code&gt; command from the &lt;code&gt;book_service&lt;/code&gt; folder.&lt;/p&gt;</description></item><item><title>Operators</title><link>https://learning-rust.github.io/docs/operators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/operators/</guid><description>&lt;h2 id="arithmetic"&gt;Arithmetic&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;+ - * / %&lt;/code&gt;&lt;/p&gt;
 
 

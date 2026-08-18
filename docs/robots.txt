@@ -38,6 +38,7 @@ Disallow: /
 Disallow: /journal/
 Disallow: /docs/lifetimes/
 Disallow: /docs/modules/
+Disallow: /labs/openapi-specification/
 Disallow: /docs/operators/
 Disallow: /docs/option-and-result/
 Disallow: /docs/overview/
