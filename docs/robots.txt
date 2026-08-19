@@ -4,13 +4,6 @@ User-agent: baiduspider
 User-agent: Applebot
 Allow: /
 
-User-agent: GPTBot
-User-agent: OAI-SearchBot
-User-agent: ChatGPT-User
-User-agent: ClaudeBot
-User-agent: Google-Extended
-User-agent: CCBot
-User-agent: Bytespider
 User-agent: *
 Disallow: /docs/borrowing/
 Disallow: /labs/building-a-containerized-restful-api/

@@ -1,10 +1,13 @@
 ---
 title: Learning Rust
 url: "journal"
-
-summary: >
-  This isn't just about Rust or learning a new language. It's about how quickly you can master it.
 ---
+
+## 2026: August 18
+
+> ![Learning Rust - Laboratory - Tuesday, August 18, 2026 at 1:15:25 PM GMT+8](LearningRustLaboratory.jpg)
+> - Added long-awaited "Learning Rust - Laboratory" with its first project, RESTful API Workspace.
+> - [Reddit: r/rust](https://www.reddit.com/r/rust/comments/1vrfuve/learningrustgithubio_labs_project_1_restful_api/)
 
 ## 2026: August 03
 

@@ -711,7 +711,28 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 		&lt;p&gt;We build an Axum based web service inside the &lt;code&gt;book_service&lt;/code&gt; crate within the &lt;code&gt;rest_api_workspace&lt;/code&gt; Rust workspace.&lt;/p&gt;</description></item><item><title>Installation</title><link>https://learning-rust.github.io/docs/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/installation/</guid><description>&lt;h2 id="rustup"&gt;Rustup&lt;/h2&gt;
 &lt;p&gt;There are many ways to install Rust on your system. For the moment the official way to install Rust is using &lt;a href="https://rustup.rs/" target="_blank" &gt;Rustup&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://rust-lang.github.io/rustup/index.html" target="_blank" &gt;📖&lt;/a&gt; Rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between &lt;strong&gt;stable, beta, and nightly&lt;/strong&gt; compilers and keep them updated. It also makes cross-compiling simpler with binary builds of the standard library for common platforms.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://rust-lang.github.io/rustup/installation/index.html" target="_blank" &gt;📖&lt;/a&gt; Rustup installs &lt;code&gt;rustc&lt;/code&gt;, &lt;code&gt;cargo&lt;/code&gt;, &lt;code&gt;rustup&lt;/code&gt; and other standard tools to &lt;strong&gt;Cargo&amp;rsquo;s &lt;code&gt;bin&lt;/code&gt; directory&lt;/strong&gt;. On Unix it is located at &lt;code&gt;$HOME/.cargo/bin&lt;/code&gt; and on Windows at &lt;code&gt;%USERPROFILE%\.cargo\bin&lt;/code&gt;. This is the same directory that &lt;code&gt;cargo install&lt;/code&gt; will install Rust programs and Cargo plugins.&lt;/p&gt;</description></item><item><title>Learning Rust</title><link>https://learning-rust.github.io/journal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/journal/</guid><description>This isn&amp;rsquo;t just about Rust or learning a new language. It&amp;rsquo;s about how quickly you can master it.</description></item><item><title>Lifetimes</title><link>https://learning-rust.github.io/docs/lifetimes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/lifetimes/</guid><description>&lt;div class="alert alert-recap"&gt;
+&lt;p&gt;&lt;a href="https://rust-lang.github.io/rustup/installation/index.html" target="_blank" &gt;📖&lt;/a&gt; Rustup installs &lt;code&gt;rustc&lt;/code&gt;, &lt;code&gt;cargo&lt;/code&gt;, &lt;code&gt;rustup&lt;/code&gt; and other standard tools to &lt;strong&gt;Cargo&amp;rsquo;s &lt;code&gt;bin&lt;/code&gt; directory&lt;/strong&gt;. On Unix it is located at &lt;code&gt;$HOME/.cargo/bin&lt;/code&gt; and on Windows at &lt;code&gt;%USERPROFILE%\.cargo\bin&lt;/code&gt;. This is the same directory that &lt;code&gt;cargo install&lt;/code&gt; will install Rust programs and Cargo plugins.&lt;/p&gt;</description></item><item><title>Learning Rust</title><link>https://learning-rust.github.io/journal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/journal/</guid><description>&lt;h2 id="2026-august-18"&gt;2026: August 18&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src="https://learning-rust.github.io/journal/LearningRustLaboratory.jpg" alt="Learning Rust - Laboratory - Tuesday, August 18, 2026 at 1:15:25 PM GMT&amp;#43;8"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added long-awaited &amp;ldquo;Learning Rust - Laboratory&amp;rdquo; with its first project, RESTful API Workspace.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.reddit.com/r/rust/comments/1vrfuve/learningrustgithubio_labs_project_1_restful_api/" target="_blank" &gt;Reddit: r/rust&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="2026-august-03"&gt;2026: August 03&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src="https://learning-rust.github.io/journal/LearningRust2026.jpg" alt="Learning Rust - Tuesday, August 4, 2026 at 3:35:15 AM GMT&amp;#43;8"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Updated section by section for quite some time now.&lt;/li&gt;
+&lt;li&gt;Based on my own &lt;a href="https://dumindu.github.io/E25DX/" target="_blank" &gt;e25DX&lt;/a&gt; theme, since 2024.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.reddit.com/r/rust/comments/1venj1y/learning_rust_updated_humanauthored_from_2016/" target="_blank" &gt;Reddit: r/rust&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://news.ycombinator.com/item?id=49166411" target="_blank" &gt;Hacker News&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="2018-december-07"&gt;2018: December 07&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src="https://learning-rust.github.io/journal/RustErrorHandling.jpg" alt="Rust: Error Handling - Friday, December 7, 2018 at 3:16:22 AM GMT&amp;#43;8"&gt;&lt;/p&gt;</description></item><item><title>Lifetimes</title><link>https://learning-rust.github.io/docs/lifetimes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/lifetimes/</guid><description>&lt;div class="alert alert-recap"&gt;
 	&lt;div class="alert-header"&gt;
 		
 		
