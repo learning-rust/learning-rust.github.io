@@ -1,14 +1,14 @@
 theme: E25DX
 
 enableGitInfo: true
-disableKinds: [taxonomy, term]
+disableKinds: [ taxonomy, term ]
 disableHugoGeneratorInject: true
 
 publishDir: docs
 baseURL: https://learning-rust.github.io
 
 defaultContentLanguage: en
-      
+
 languages:
   en:
     languageName: English
@@ -82,6 +82,3 @@ menus:
       weight: 40
       params:
         icon: news
-
-ignoreFiles:
-  - ".*-mermaid\\.md$"
