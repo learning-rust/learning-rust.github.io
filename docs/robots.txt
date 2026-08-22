@@ -5,7 +5,6 @@ User-agent: Applebot
 Allow: /
 
 User-agent: *
-Disallow: /docs/d5-rustc-core-alloc-and-std-mermaid/
 Disallow: /docs/borrowing/
 Disallow: /labs/building-a-containerized-restful-api/
 Disallow: /docs/cargo-crates-and-basic-project-structure/

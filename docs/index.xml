@@ -1,35 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Learning Rust</title><link>https://learning-rust.github.io/</link><description>Recent content on Learning Rust</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://learning-rust.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://learning-rust.github.io/docs/d5-rustc-core-alloc-and-std-mermaid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/d5-rustc-core-alloc-and-std-mermaid/</guid><description>&lt;pre tabindex="0"&gt;&lt;code class="language-mermaid" data-lang="mermaid"&gt;flowchart TB
-
- subgraph STD[Rust std]
- direction TB
-
- subgraph ALLOC[Rust alloc]
- direction TB
- CORE[Rust core]
- end
- end
-
- STD --&amp;gt; PLATFORM
-
- PLATFORM[&amp;#34;Platform &amp;amp; Runtime Specific Implementations&amp;#34;]
-
- PLATFORM --&amp;gt; UNIX
- PLATFORM --&amp;gt; WINDOWS
- PLATFORM --&amp;gt; WASM
- PLATFORM --&amp;gt; EMBEDDED
-
- UNIX[&amp;#34;Linux / Unix / macOS&amp;lt;br/&amp;gt;libc (C)&amp;lt;br/&amp;gt;POSIX APIs&amp;lt;br/&amp;gt;Syscalls&amp;lt;br/&amp;gt;Raw system calls&amp;#34;]
- WINDOWS[&amp;#34;Windows&amp;lt;br/&amp;gt;Win32 APIs&amp;lt;br/&amp;gt;System DLLs&amp;#34;]
- WASM[&amp;#34;WebAssembly&amp;lt;br/&amp;gt;WASI&amp;lt;br/&amp;gt;Browser APIs&amp;#34;]
- EMBEDDED[&amp;#34;Embedded / no_std&amp;lt;br/&amp;gt;Hardware Access&amp;lt;br/&amp;gt;Interrupts&amp;lt;br/&amp;gt;Drivers&amp;lt;br/&amp;gt;RTOS (optional)&amp;#34;]
-
- UNIX --&amp;gt; KERNEL
- WINDOWS --&amp;gt; KERNEL
-
- KERNEL[&amp;#34;Operating System Kernel&amp;#34;]
-	style STD color:#000000,stroke:#5E17EB,stroke-width:0.5px,fill:#FFFFFF
-	style CORE color:#000000,stroke-width:2px,stroke-dasharray:5 5,fill:#FFFFFF,stroke:#FF914D
-	style ALLOC color:#000000,stroke-width:2px,stroke-dasharray:5 5,fill:#FFFFFF,stroke:#5271FF&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Borrowing</title><link>https://learning-rust.github.io/docs/borrowing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/borrowing/</guid><description>&lt;h2 id="borrowing"&gt;Borrowing&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Learning Rust</title><link>https://learning-rust.github.io/</link><description>Recent content on Learning Rust</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://learning-rust.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Borrowing</title><link>https://learning-rust.github.io/docs/borrowing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/borrowing/</guid><description>&lt;h2 id="borrowing"&gt;Borrowing&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;In a general sense, borrowing is taking something with the promise of returning it.&lt;/p&gt;
@@ -750,6 +719,7 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 &lt;li&gt;&lt;a href="https://www.reddit.com/r/rust/comments/1vrfuve/learningrustgithubio_labs_project_1_restful_api/" target="_blank" &gt;Reddit: r/rust&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
+&lt;hr&gt;
 &lt;h2 id="2026-august-03"&gt;2026: August 03&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img src="https://learning-rust.github.io/journal/LearningRust2026.jpg" alt="Learning Rust - Tuesday, August 4, 2026 at 3:35:15 AM GMT&amp;#43;8"&gt;&lt;/p&gt;
