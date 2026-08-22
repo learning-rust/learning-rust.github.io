@@ -9,6 +9,8 @@ url: "journal"
 > - Added long-awaited "Learning Rust - Laboratory" with its first project, RESTful API Workspace.
 > - [Reddit: r/rust](https://www.reddit.com/r/rust/comments/1vrfuve/learningrustgithubio_labs_project_1_restful_api/)
 
+---
+
 ## 2026: August 03
 
 > ![Learning Rust - Tuesday, August 4, 2026 at 3:35:15 AM GMT+8](LearningRust2026.jpg)
