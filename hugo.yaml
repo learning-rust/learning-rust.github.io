@@ -21,7 +21,7 @@ languages:
 
 services:
   googleAnalytics:
-    ID: G-FZHQCXSZ89
+    ID: ~
 
 enableRobotsTXT: true
 
@@ -55,6 +55,11 @@ params:
 
   enableOGXSEO: true # og images need to add manually
   enablePageFind: true
+
+  services:
+    umami:
+      id: bdae094e-f156-4bf5-92d5-41e1809afd94
+      scriptPath: https://cloud.umami.is/script.js
 
 menus:
   main:
