@@ -210,6 +210,7 @@
  &lt;th&gt;Project Scope&lt;/th&gt;
  &lt;th&gt;Technology Stack&lt;/th&gt;
  &lt;th&gt;Codebase&lt;/th&gt;
+ &lt;th&gt;Support&lt;/th&gt;
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
@@ -218,6 +219,7 @@
  &lt;td&gt;&lt;a href="https://learning-rust.github.io/labs/building-a-containerized-restful-api/" &gt;RESTful API Workspace&lt;/a&gt;&lt;/td&gt;
  &lt;td&gt;Axum, Tokio, Tower, Toasty ORM, Garde, Utoipa, Docker &amp;amp; PostgreSQL&lt;/td&gt;
  &lt;td&gt;&lt;a href="https://github.com/dumindu/axum" target="_blank" &gt;dumindu/axum&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://www.buymeacoffee.com/dumindu" target="_blank" &gt;&lt;img src="https://img.shields.io/badge/Support-FFDD00?style=for-the-badge&amp;amp;logo=buymeacoffee&amp;amp;logoColor=333333&amp;amp;labelColor=f9f9f9" alt="support"&gt;&lt;/a&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>Routes and Error Responses</title><link>https://learning-rust.github.io/labs/routes-and-error-responses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/routes-and-error-responses/</guid><description>&lt;h2 id="request-and-response-structures"&gt;Request and Response Structures&lt;/h2&gt;
