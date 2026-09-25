@@ -7,15 +7,13 @@ aliases:
 
 ## About me
 
-[![buymeacoffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=333333&labelColor=f9f9f9)](https://www.buymeacoffee.com/dumindu)
-
 > [!assignment] Dumindu Madunuwan
-> Senior/ Lead Backend - Go/ Rust\
-> [Portfolio](https://dumindu.github.io/nu_1/about-me/) | [GitHub](https://github.com/dumindu) | Currently in Sri Lanka
+[![buymeacoffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=333333&labelColor=f9f9f9)](https://www.buymeacoffee.com/dumindu)
+[![hireme](https://img.shields.io/badge/Seeking%20On%20site%20Roles-%5BVisa%20Sponsorship%20Required%5D-FFDD00?style=for-the-badge&logo=readdotcv&logoColor=333333&labelColor=f9f9f9)](https://github.com/dumindu/dumindu/blob/master/Dumindu%20Madunuwan.pdf)
+>
+> Global Technical Expertise : Over 12 years of backend experience spanning Singapore, Vietnam, and Remote(Short-term).
 > 
-> Global Technical Expertise : Over 12 years of backend experience spanning Singapore, Vietnam, and Remote(For Europe).
-> 
-> Engineered mission-critical platforms for Lazada (Alibaba Group), NCS (Singapore Gov), Axclusive (Singapore), and Home24 SE (Remote). Distributed systems and technical leadership over event-driven Go, Rust, and PHP microservices implementations with FDD and KISS architectures, RabbitMQ (or Iggy), Stripe, OAuth2.0, Casbin, Redis, and GraphQL.
+> Engineered mission-critical platforms for Lazada (Alibaba Group), NCS (Singapore Gov), Axclusive (Singapore), and Home24 SE (Short-term: Remote). Distributed systems and technical leadership over event-driven Go, Rust, and PHP microservices implementations with FDD and KISS architectures, RabbitMQ (or Iggy), Stripe, OAuth2.0, Casbin, Redis, and GraphQL.
 >
 > - https://learning-rust.github.io : Rust programming language tutorials for everyone.
 > - https://github.com/dumindu/axum : Future focusing Rust microservice monorepo.

@@ -848,7 +848,6 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 	&lt;/div&gt;
 &lt;/div&gt;&lt;h2 id="why-option-and-result"&gt;Why &lt;code&gt;Option&lt;/code&gt; and &lt;code&gt;Result&lt;/code&gt;?&lt;/h2&gt;
 &lt;p&gt;Many programming languages use exceptions to handle errors and &lt;code&gt;null&lt;/code&gt;\ &lt;code&gt;nil&lt;/code&gt;\ &lt;code&gt;undefined&lt;/code&gt; types to handle missing values. Historically, this decision has led to severe runtime issues (such as null pointer exceptions) and security vulnerabilities (sensitive data leakages, through error traces and exceptions). Rust skip both and provide two special generic enums defined in its standard library to prevent these issues.&lt;/p&gt;</description></item><item><title>Overview</title><link>https://learning-rust.github.io/docs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/docs/overview/</guid><description>&lt;h2 id="about-me"&gt;About me&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://www.buymeacoffee.com/dumindu" target="_blank" &gt;&lt;img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&amp;amp;logo=buymeacoffee&amp;amp;logoColor=333333&amp;amp;labelColor=f9f9f9" alt="buymeacoffee"&gt;&lt;/a&gt;&lt;/p&gt;
 
 
 &lt;div class="alert alert-assignment"&gt;
@@ -866,8 +865,9 @@ However, it&amp;rsquo;s good practice to specify the type on variables when usin
 		&lt;/span&gt;
 	&lt;/div&gt;
 	&lt;div class="alert-body"&gt;
-		&lt;p&gt;Senior/ Lead Backend - Go/ Rust&lt;br&gt;
-&lt;a href="https://dumindu.github.io/nu_1/about-me/" target="_blank" &gt;Portfolio&lt;/a&gt; | &lt;a href="https://github.com/dumindu" target="_blank" &gt;GitHub&lt;/a&gt; | Currently in Sri Lanka&lt;/p&gt;</description></item><item><title>Overview</title><link>https://learning-rust.github.io/labs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/overview/</guid><description>&lt;div class="alert alert-assignment"&gt;
+		&lt;p&gt;&lt;a href="https://www.buymeacoffee.com/dumindu" target="_blank" &gt;&lt;img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&amp;amp;logo=buymeacoffee&amp;amp;logoColor=333333&amp;amp;labelColor=f9f9f9" alt="buymeacoffee"&gt;&lt;/a&gt;
+&lt;a href="https://github.com/dumindu/dumindu/blob/master/Dumindu%20Madunuwan.pdf" target="_blank" &gt;&lt;img src="https://img.shields.io/badge/Seeking%20On%20site%20Roles-%5BVisa%20Sponsorship%20Required%5D-FFDD00?style=for-the-badge&amp;amp;logo=readdotcv&amp;amp;logoColor=333333&amp;amp;labelColor=f9f9f9" alt="hireme"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Global Technical Expertise : Over 12 years of backend experience spanning Singapore, Vietnam, and Remote(Short-term).&lt;/p&gt;</description></item><item><title>Overview</title><link>https://learning-rust.github.io/labs/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learning-rust.github.io/labs/overview/</guid><description>&lt;div class="alert alert-assignment"&gt;
 	&lt;div class="alert-header"&gt;
 		
 		
