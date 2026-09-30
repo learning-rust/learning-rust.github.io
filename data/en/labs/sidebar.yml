@@ -12,3 +12,7 @@
     - title: Form Validation
     - title: OpenAPI Specification
     - title: What's Next?
+
+- title: AUTHN API Workspace
+  pages:
+    - title: Building an Authentication RESTful API
