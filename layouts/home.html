@@ -25,6 +25,7 @@
 		(resources.Get "css/site/footer.css")
 		(resources.Get "css/site/layout-home.css")
 		(resources.Get "css/sections/hero.css")
+		(resources.Get "css/sections/card-slider.css")
 		(resources.Get "css/sections/card-grid.css")
 	}}
 
@@ -56,6 +57,7 @@
 		<main>
 			{{ partial "sections/hero.html" (index site.Data site.Language.Lang "home" "hero") }}
 			{{ with site.GetPage "/home/showcase" }}{{ partial "sections/showcase.html" . }}{{ end }}
+			{{ with site.GetPage "/home/testimonial" }}{{ partial "sections/card-slider.html" . }}{{ end }}
 			{{ partial "sections/card-grid.html" (index site.Data site.Language.Lang "home" "card-grid") }}
 		</main>
 

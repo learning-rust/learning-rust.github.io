@@ -45,3 +45,8 @@ description: These are random posts handpicked from X.
         {{< x user="heyyrudyy404" id="1255104157222080512" >}}
     </div>
 </div>
+<div class="card-slider-card">
+    <div class="card-slider-card-x-embed">
+        {{< x user="o_gabsferreira" id="974624860738609153" >}}
+    </div>
+</div>
