@@ -9,7 +9,7 @@ aliases:
 
 > [!assignment] Dumindu Madunuwan
 [![buymeacoffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=333333&labelColor=f9f9f9)](https://www.buymeacoffee.com/dumindu)
-[![hireme](https://img.shields.io/badge/Seeking%20On%20site%20Roles-%5BVisa%20Sponsorship%20Required%5D-FFDD00?style=for-the-badge&logo=readdotcv&logoColor=333333&labelColor=f9f9f9)](https://github.com/dumindu/dumindu/blob/master/Dumindu%20Madunuwan.pdf)
+[![hireme](https://img.shields.io/badge/Open%20to%20work-%5BVisa%20Sponsorship%20Required%5D-FFDD00?style=for-the-badge&logo=readdotcv&logoColor=333333&labelColor=f9f9f9)](https://github.com/dumindu/dumindu/blob/master/Dumindu%20Madunuwan.pdf)
 >
 > Global Technical Expertise : Over 12 years of backend experience spanning Singapore, Vietnam, and Remote(Short-term).
 > 
