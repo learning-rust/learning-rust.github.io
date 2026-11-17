@@ -1,0 +1,15 @@
+<section class="card-slider-section">
+    <header class="card-slider-header">
+        <div>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Params.description }}</p>
+        </div>
+        <a href="{{ .Params.view_all.url }}" style="color: var(--primary)">{{ .Params.view_all.description }}</a>
+    </header>
+
+    <div class="card-slider-container">
+        <div class="card-slider-track">
+            {{ .Content }}
+        </div>
+    </div>
+</section>
