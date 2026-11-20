@@ -88,6 +88,7 @@ Disallow: /labs/routes-and-error-responses/
 Disallow: /docs/smart-compiler/
 Disallow: /docs/structs/
 Disallow: /docs/the-pillars-of-compilation-and-rust-std/
+Disallow: /docs/threads/
 Disallow: /docs/traits/
 Disallow: /docs/unwrap-and-expect/
 Disallow: /docs/use/
