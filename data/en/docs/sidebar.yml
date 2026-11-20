@@ -47,3 +47,7 @@
     - title: Error and None Propagation
     - title: Combinators
     - title: Custom Error Types
+
+- title: Concurrent & Parallel Computing
+  pages:
+    - title: Threads
